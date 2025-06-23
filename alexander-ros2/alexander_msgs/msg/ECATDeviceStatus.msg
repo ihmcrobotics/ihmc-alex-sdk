@@ -3,5 +3,5 @@ string device_name
 int32 alias
 int32 position
 
-int32 status
+int32 state
 bool is_operational
