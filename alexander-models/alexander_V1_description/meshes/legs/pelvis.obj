@@ -1,5 +1,5 @@
 mtllib Pelvis.mtl
-usemtl material_0
+usemtl Procedural_Car_paint
 v -0.06425000 0.07315600 -0.03881600
 v -0.06535000 0.07370600 -0.03976800
 v -0.06425000 0.08322200 -0.00125000
