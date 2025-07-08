@@ -272,14 +272,14 @@
     </worldbody>
 
     <actuator>
-        <general class="alexander/hip/x/left" name="left_hip_x" joint="left_hip_x"/>
-        <general class="alexander/hip/z/left" name="left_hip_z" joint="left_hip_z"/>
+        <general class="alexander/hip/x" name="left_hip_x" joint="left_hip_x"/>
+        <general class="alexander/hip/z" name="left_hip_z" joint="left_hip_z"/>
         <general class="alexander/hip/y" name="left_hip_y" joint="left_hip_y"/>
         <general class="alexander/knee" name="left_knee" joint="left_knee_y"/>
         <general class="alexander/ankle/y" name="left_ankle_y" joint="left_ankle_y"/>
         <general class="alexander/ankle/x" name="left_ankle_x" joint="left_ankle_x"/>
-        <general class="alexander/hip/x/right" name="right_hip_x" joint="right_hip_x"/>
-        <general class="alexander/hip/z/right" name="right_hip_z" joint="right_hip_z"/>
+        <general class="alexander/hip/x" name="right_hip_x" joint="right_hip_x"/>
+        <general class="alexander/hip/z" name="right_hip_z" joint="right_hip_z"/>
         <general class="alexander/hip/y" name="right_hip_y" joint="right_hip_y"/>
         <general class="alexander/knee" name="right_knee" joint="right_knee_y"/>
         <general class="alexander/ankle/y" name="right_ankle_y" joint="right_ankle_y"/>
