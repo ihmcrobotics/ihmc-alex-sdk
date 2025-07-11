@@ -1,0 +1,27 @@
+#ifndef __alexander_msgs__msg__HardwareResources__idl__
+#define __alexander_msgs__msg__HardwareResources__idl__
+
+module alexander_msgs
+{
+  module msg
+  {
+    module dds
+    {
+
+      /**
+       * Designates the resources to use for hardware
+       */
+      @TypeCode(type="alexander_msgs::msg::dds_::HardwareResources_")
+      struct HardwareResources
+      {
+        /**
+         * Designate the number of xml resources and their names
+         */
+        unsigned long num_resources;
+        string xml_resources[7];
+      };
+    };
+  };
+};
+
+#endif
