@@ -2,12 +2,6 @@ plugins {
    id("us.ihmc.ihmc-build")
 }
 
-buildscript {
-   dependencies {
-      classpath("us.ihmc:ros2-msg-to-pubsub-generator:1.2.3")
-   }
-}
-
 ihmc {
    group = "us.ihmc"
    version = "0.1"
@@ -33,9 +27,6 @@ mainDependencies {
       exclude(group = "org.junit.platform", module = "junit-platform-launcher")
    }
 }
-
-ihmc.jarWithLibFolder()
-tasks.getByPath("installDist").dependsOn("compositeJar")
 
 val generator = us.ihmc.ros2.rosidl.ROS2InterfaceGenerator()
 val msg_packages = listOf("alexander_msgs")
