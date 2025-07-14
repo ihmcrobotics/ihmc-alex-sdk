@@ -168,7 +168,6 @@
             <robotSide>left</robotSide>
             <leftMotor>LeftAnkleBottomMotor</leftMotor>
             <rightMotor>LeftAnkleTopMotor</rightMotor>
-            <!--Weird offset stuff is happening with left motor, use 0.438359 if not working 6.722-->
             <leftMotorOffset>0.0</leftMotorOffset>
             <rightMotorOffset>0.0</rightMotorOffset>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
