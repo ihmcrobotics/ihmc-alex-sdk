@@ -7,7 +7,8 @@
             <address>0</address>
             <actuatorPackage>A013</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
+            <inputOffset>-13569</inputOffset>
+            <outputOffset>77582</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -16,7 +17,8 @@
             <address>0</address>
             <actuatorPackage>A005</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
+            <inputOffset>126037</inputOffset>
+            <outputOffset>25588</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -25,7 +27,8 @@
             <address>0</address>
             <actuatorPackage>A009</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
+            <inputOffset>75578</inputOffset>
+            <outputOffset>74134</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -55,7 +58,7 @@
         <XmlCycloidMotorMechanism>
             <jointName>SPINE_Z</jointName>
             <motorName>PelvisYawMotor</motorName>
-            <jointPositionOffset>-1.2219754872146167</jointPositionOffset>
+            <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-0.5235987756</lowerJointLimit>
             <upperJointLimit>0.5235987756</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
@@ -64,7 +67,7 @@
         <XmlCycloidMotorMechanism>
             <jointName>LEFT_HIP_X</jointName>
             <motorName>LeftHipRollMotor</motorName>
-            <jointPositionOffset>5.632559073909523</jointPositionOffset>
+            <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-0.3490658504</lowerJointLimit>
             <upperJointLimit>0.872664626</upperJointLimit>
             <torqueBreakFrequency>20.0</torqueBreakFrequency>
@@ -73,7 +76,7 @@
         <XmlCycloidMotorMechanism>
             <jointName>RIGHT_HIP_X</jointName>
             <motorName>RightHipRollMotor</motorName>
-            <jointPositionOffset>3.5528220101504533</jointPositionOffset>
+            <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-0.872664626</lowerJointLimit>
             <upperJointLimit>0.3490658504</upperJointLimit>
             <torqueBreakFrequency>20.0</torqueBreakFrequency>

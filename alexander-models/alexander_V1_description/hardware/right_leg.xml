@@ -7,7 +7,8 @@
             <address>0</address>
             <actuatorPackage>A012</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
+            <inputOffset>121461</inputOffset>
+            <outputOffset>80949</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -16,7 +17,8 @@
             <address>0</address>
             <actuatorPackage>A011</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
+            <inputOffset>106153</inputOffset>
+            <outputOffset>2927</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -25,7 +27,8 @@
             <address>0</address>
             <actuatorPackage>A010</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
+            <inputOffset>105564</inputOffset>
+            <outputOffset>114039</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -34,7 +37,8 @@
             <address>0</address>
             <actuatorPackage>A001</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
+            <inputOffset>98005</inputOffset>
+            <outputOffset>100599</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -43,7 +47,8 @@
             <address>0</address>
             <actuatorPackage>A002</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
+            <inputOffset>45356</inputOffset>
+            <outputOffset>44774</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -132,7 +137,7 @@
         <XmlCycloidMotorMechanism>
             <jointName>RIGHT_HIP_Z</jointName>
             <motorName>RightHipYawMotor</motorName>
-            <jointPositionOffset>3.881288523878079</jointPositionOffset>
+            <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-1.0472</lowerJointLimit>
             <upperJointLimit>0.3490658504</upperJointLimit>
             <torqueBreakFrequency>20.0</torqueBreakFrequency>
@@ -141,7 +146,7 @@
         <XmlCycloidMotorMechanism>
             <jointName>RIGHT_HIP_Y</jointName>
             <motorName>RightHipPitchMotor</motorName>
-            <jointPositionOffset>0.16028889135900348</jointPositionOffset>
+            <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-2.61799</lowerJointLimit>
             <upperJointLimit>0.785398</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
@@ -150,8 +155,7 @@
         <XmlCycloidMotorMechanism>
             <jointName>RIGHT_KNEE_Y</jointName>
             <motorName>RightKneePitchMotor</motorName>
-            <!--Currently set to use input encoder, -5.4700796158009535 for joint offset if using output encoder-->
-            <jointPositionOffset>0.06656952981060084</jointPositionOffset>
+            <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>0.0</lowerJointLimit>
             <upperJointLimit>2.445206282</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
@@ -165,8 +169,8 @@
             <leftMotor>RightAnkleTopMotor</leftMotor>
             <rightMotor>RightAnkleBottomMotor</rightMotor>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
-            <leftMotorOffset>4.793532404033188</leftMotorOffset>
-            <rightMotorOffset>-2.148555408106209</rightMotorOffset>
+            <leftMotorOffset>0.0</leftMotorOffset>
+            <rightMotorOffset>0.0</rightMotorOffset>
             <rollJointLowerLimit>-0.436332</rollJointLowerLimit>
             <rollJointUpperLimit>0.436332</rollJointUpperLimit>
             <pitchJointLowerLimit>-1.0472</pitchJointLowerLimit>
