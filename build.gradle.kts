@@ -13,6 +13,7 @@ ihmc {
    resourceDirectory("main", "../../alexander-models")
    resourceDirectory("main", "../../alexander-ros2")
    ihmc.sourceSet("main").resources.exclude("/ihmc_psyonic_ros2")
+   ihmc.sourceSet("main").resources.exclude("/ihmc_sake_ros2")
    resourceDirectory("main", "../../alexander-ros2/alexander_msgs/src/main/generated-idl")
    javaDirectory("main", "../../alexander-ros2/alexander_msgs/src/main/generated-java")
    configurePublications()
