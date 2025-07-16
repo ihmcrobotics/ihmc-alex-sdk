@@ -125,12 +125,12 @@
             <alias>6110</alias>
             <address>0</address>
             <present>true</present>
-            <fxOffset>188.92116507233635</fxOffset>
-            <fyOffset>41.54594015499189</fyOffset>
-            <fzOffset>-474.78600141455195</fzOffset>
-            <txOffset>1.1384460380159669</txOffset>
-            <tyOffset>1.5184652274217516</tyOffset>
-            <tzOffset>15.18584664543155</tzOffset>
+            <fxOffset>181.2353230100984</fxOffset>
+            <fyOffset>33.26823683108733</fyOffset>
+            <fzOffset>-619.9111257345963</fzOffset>
+            <txOffset>0.9846304855941986</txOffset>
+            <tyOffset>0.5370547108277306</tyOffset>
+            <tzOffset>15.174520115086388</tzOffset>
         </XmlAtiForceTorqueSensor>
     </devices>
     <transmissions>
