@@ -36,7 +36,7 @@
             <alias>7008</alias>
             <address>0</address>
             <actuatorPackage>A001</actuatorPackage>
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>98005</inputOffset>
             <outputOffset>100599</outputOffset>
             <present>true</present>
@@ -46,7 +46,7 @@
             <alias>7007</alias>
             <address>0</address>
             <actuatorPackage>A002</actuatorPackage>
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <inputOffset>45356</inputOffset>
             <outputOffset>44774</outputOffset>
             <present>true</present>
@@ -175,6 +175,8 @@
             <rollJointUpperLimit>0.436332</rollJointUpperLimit>
             <pitchJointLowerLimit>-1.0472</pitchJointLowerLimit>
             <pitchJointUpperLimit>0.523599</pitchJointUpperLimit>
+            <rollSign>-1.0</rollSign>
+            <pitchSign>-1.0</pitchSign>
             <present>true</present>
         </XmlJointPairMechanism>
     </transmissions>
