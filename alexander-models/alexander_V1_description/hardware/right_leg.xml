@@ -125,6 +125,12 @@
             <alias>7110</alias>
             <address>0</address>
             <present>true</present>
+            <fxScalar>1.0</fxScalar>
+            <fyScalar>1.0</fyScalar>
+            <fzScalar>-1.0</fzScalar>
+            <txScalar>1.0</txScalar>
+            <tyScalar>1.0</tyScalar>
+            <tzScalar>-1.0</tzScalar>
             <fxOffset>-27.720063167189345</fxOffset>
             <fyOffset>-21.044991860218705</fyOffset>
             <fzOffset>136.40101978876788</fzOffset>
