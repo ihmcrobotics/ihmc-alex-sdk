@@ -9,3 +9,4 @@ bool missed_deadline_fault
 bool motor_fault
 
 ECATDeviceStatus[] device_statuses
+TwitterStatus[] actuator_statuses
