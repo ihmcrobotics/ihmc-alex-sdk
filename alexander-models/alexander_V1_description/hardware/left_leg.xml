@@ -65,9 +65,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularBiasX>-0.00465</angularBiasX>
-                    <angularBiasY>0.00609</angularBiasY>
-                    <angularBiasZ>0.00509</angularBiasZ>
+                    <angularVelocityBiasX>-0.00465</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.00609</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.00509</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftHipTempSensor</name>
@@ -88,9 +88,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularBiasX>-0.02129</angularBiasX>
-                    <angularBiasY>0.00107</angularBiasY>
-                    <angularBiasZ>-0.01555</angularBiasZ>
+                    <angularVelocityBiasX>-0.02129</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.00107</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.01555</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftThighTempSensor</name>
@@ -111,9 +111,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularBiasX>-0.0069</angularBiasX>
-                    <angularBiasY>0.00941</angularBiasY>
-                    <angularBiasZ>-0.01479</angularBiasZ>
+                    <angularVelocityBiasX>-0.0069</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.00941</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.01479</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftShinTempSensor</name>
@@ -128,9 +128,9 @@
             <address>0</address>
             <imuType>H4</imuType>
             <present>true</present>
-            <angularBiasX>0.00144</angularBiasX>
-            <angularBiasY>0.00516</angularBiasY>
-            <angularBiasZ>0.00076</angularBiasZ>
+            <angularVelocityBiasX>0.00144</angularVelocityBiasX>
+            <angularVelocityBiasY>0.00516</angularVelocityBiasY>
+            <angularVelocityBiasZ>0.00076</angularVelocityBiasZ>
         </XmlIMU>
         <XmlAtiForceTorqueSensor>
             <name>LeftFootFTSensor</name>

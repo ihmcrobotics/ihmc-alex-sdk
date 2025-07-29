@@ -45,9 +45,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularBiasX>-0.01992</angularBiasX>
-                    <angularBiasY>-0.01209</angularBiasY>
-                    <angularBiasZ>0.00129</angularBiasZ>
+                    <angularVelocityBiasX>-0.01992</angularVelocityBiasX>
+                    <angularVelocityBiasY>-0.01209</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.00129</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>PelvisTempSensor</name>
