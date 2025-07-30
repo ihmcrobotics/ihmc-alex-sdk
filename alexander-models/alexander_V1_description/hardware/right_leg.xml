@@ -152,7 +152,7 @@
         </XmlAtiForceTorqueSensor>
     </devices>
     <transmissions>
-        <XmlCycloidMotorMechanism>
+        <XmlCycloidMechanism>
             <jointName>RIGHT_HIP_Z</jointName>
             <motorName>RightHipYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
@@ -160,8 +160,8 @@
             <upperJointLimit>0.3490658504</upperJointLimit>
             <torqueBreakFrequency>20.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>RIGHT_HIP_Y</jointName>
             <motorName>RightHipPitchMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
@@ -169,8 +169,8 @@
             <upperJointLimit>0.785398</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>RIGHT_KNEE_Y</jointName>
             <motorName>RightKneePitchMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
@@ -178,7 +178,7 @@
             <upperJointLimit>2.445206282</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
         <XmlJointPairMechanism>
             <name>R_ANKLE_DIFFERENTIAL</name>
             <pitchJoint>RIGHT_ANKLE_Y</pitchJoint>

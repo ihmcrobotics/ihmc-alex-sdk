@@ -30,11 +30,11 @@
         </XmlEtherSnacksBoard>
     </devices>
     <transmissions>
-        <XmlCycloidMotorMechanism>
+        <XmlCycloidMechanism>
             <jointName>NECK_Y</jointName>
             <motorName>NeckPitchMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
     </transmissions>
 </XmlHardware>

@@ -77,23 +77,23 @@
         </XmlH4EtherCATJunctionPort>
     </devices>
     <transmissions>
-        <XmlCycloidMotorMechanism>
+        <XmlCycloidMechanism>
             <jointName>NECK_Y</jointName>
             <motorName>NeckPitchMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <present>false</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_SHOULDER_Y</jointName>
             <motorName>LeftArmJ1Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <present>false</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>RIGHT_SHOULDER_Y</jointName>
             <motorName>RightArmJ1Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <present>false</present>
-        </XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
     </transmissions>
 </XmlHardware>
