@@ -2,31 +2,34 @@
 <XmlHardware>
     <devices>
         <XmlPlatinumTwitter>
-            <name>LeftArmJ1Motor</name>
-            <alias>1</alias>
-            <address>1</address>
-            <actuatorPackage>A</actuatorPackage>
+            <name>LeftJ1Motor</name>
+            <alias>6002</alias>
+            <address>0</address>
+            <actuatorPackage>J1L_Nadia</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
-            <present>false</present>
+            <inputOffset>0</inputOffset>
+            <outputOffset>0</outputOffset>
+            <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
-            <name>RightArmJ1Motor</name>
-            <alias>1</alias>
-            <address>3</address>
-            <actuatorPackage>A</actuatorPackage>
+            <name>RightJ1Motor</name>
+            <alias>6002</alias>
+            <address>0</address>
+            <actuatorPackage>J1R_Nadia</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
-            <present>false</present>
+            <inputOffset>0</inputOffset>
+            <outputOffset>0</outputOffset>
+            <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
-            <name>NeckYawMotor</name>
-            <alias>1</alias>
-            <address>4</address>
-            <actuatorPackage>A</actuatorPackage>
+            <name>NeckPitchMotor</name>
+            <alias>6002</alias>
+            <address>0</address>
+            <actuatorPackage>A008</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
-            <present>false</present>
+            <inputOffset>0</inputOffset>
+            <outputOffset>0</outputOffset>
+            <present>true</present>
         </XmlPlatinumTwitter>
 
         <XmlEtherSnacksBoard>
@@ -85,13 +88,13 @@
         </XmlCycloidMotorMechanism>
         <XmlCycloidMotorMechanism>
             <jointName>LEFT_SHOULDER_Y</jointName>
-            <motorName>LeftArmJ1Motor</motorName>
+            <motorName>LeftJ1Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <present>false</present>
         </XmlCycloidMotorMechanism>
         <XmlCycloidMotorMechanism>
             <jointName>RIGHT_SHOULDER_Y</jointName>
-            <motorName>RightArmJ1Motor</motorName>
+            <motorName>RightJ1Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <present>false</present>
         </XmlCycloidMotorMechanism>
