@@ -65,6 +65,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
+                    <angularVelocityBiasX>-0.005001057382112406</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.00604280777729136</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.005685206559750579</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftHipTempSensor</name>
@@ -85,6 +88,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
+                    <angularVelocityBiasX>-0.020732574386992393</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.001774096097402237</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.014363536756118598</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftThighTempSensor</name>
@@ -105,6 +111,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
+                    <angularVelocityBiasX>-0.006934528609168481</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.011076664085967636</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.01593973960591908</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftShinTempSensor</name>
@@ -119,6 +128,9 @@
             <address>0</address>
             <imuType>H4</imuType>
             <present>true</present>
+            <angularVelocityBiasX>0.0011881794274969087</angularVelocityBiasX>
+            <angularVelocityBiasY>0.005216176597711319</angularVelocityBiasY>
+            <angularVelocityBiasZ>-0.0004778292656720103</angularVelocityBiasZ>
         </XmlIMU>
         <XmlAtiForceTorqueSensor>
             <name>LeftFootFTSensor</name>
