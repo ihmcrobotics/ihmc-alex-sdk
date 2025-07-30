@@ -2,7 +2,7 @@
 <CycloidParameters>
     <physicalParameters>
         <kt>0.21</kt>
-        <gearRatio>19</gearRatio>
+        <gearRatio>18.95528987</gearRatio>
         <inputResolution>17</inputResolution>
         <outputResolution>17</outputResolution>
     </physicalParameters>
@@ -10,5 +10,6 @@
         <frictionGain>0.03</frictionGain>
         <frictionSlope>100</frictionSlope>
         <dampingGain>0.0007</dampingGain>
+        <dampingScalar>0.0</dampingScalar>
     </silParameters>
 </CycloidParameters>

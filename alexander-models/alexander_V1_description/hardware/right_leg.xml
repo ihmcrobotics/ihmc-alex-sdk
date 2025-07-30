@@ -36,7 +36,7 @@
             <alias>7008</alias>
             <address>0</address>
             <actuatorPackage>A001</actuatorPackage>
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>98005</inputOffset>
             <outputOffset>100599</outputOffset>
             <present>true</present>
@@ -46,7 +46,7 @@
             <alias>7007</alias>
             <address>0</address>
             <actuatorPackage>A002</actuatorPackage>
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <inputOffset>45356</inputOffset>
             <outputOffset>44774</outputOffset>
             <present>true</present>
@@ -65,6 +65,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
+                    <angularVelocityBiasX>-0.009061312552727973</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.017586886062658548</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.017607187485247883</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>RightHipTempSensor</name>
@@ -85,6 +88,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
+                    <angularVelocityBiasX>-0.006198858693553023</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.012725947399650335</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.013478511517580751</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>RightThighTempSensor</name>
@@ -105,6 +111,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
+                    <angularVelocityBiasX>-0.01126097010398283</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.013066076284680208</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.01533141856765187</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>RightAnkleTempSensor</name>
@@ -119,12 +128,21 @@
             <address>0</address>
             <imuType>H4</imuType>
             <present>true</present>
+            <angularVelocityBiasX>0.0011671421093480262</angularVelocityBiasX>
+            <angularVelocityBiasY>0.0030392159135175013</angularVelocityBiasY>
+            <angularVelocityBiasZ>-0.0009495023986011424</angularVelocityBiasZ>
         </XmlIMU>
         <XmlAtiForceTorqueSensor>
             <name>RightFootFTSensor</name>
             <alias>7110</alias>
             <address>0</address>
             <present>true</present>
+            <fxScalar>1.0</fxScalar>
+            <fyScalar>1.0</fyScalar>
+            <fzScalar>-1.0</fzScalar>
+            <txScalar>1.0</txScalar>
+            <tyScalar>1.0</tyScalar>
+            <tzScalar>-1.0</tzScalar>
             <fxOffset>-27.720063167189345</fxOffset>
             <fyOffset>-21.044991860218705</fyOffset>
             <fzOffset>136.40101978876788</fzOffset>
@@ -175,6 +193,8 @@
             <rollJointUpperLimit>0.436332</rollJointUpperLimit>
             <pitchJointLowerLimit>-1.0472</pitchJointLowerLimit>
             <pitchJointUpperLimit>0.523599</pitchJointUpperLimit>
+            <rollSign>-1.0</rollSign>
+            <pitchSign>-1.0</pitchSign>
             <present>true</present>
         </XmlJointPairMechanism>
     </transmissions>
