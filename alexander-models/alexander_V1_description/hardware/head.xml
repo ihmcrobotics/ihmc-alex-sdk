@@ -5,10 +5,11 @@
             <name>NeckPitchMotor</name>
             <alias>1</alias>
             <address>1</address>
-            <actuatorPackage>A</actuatorPackage>
+            <actuatorPackage>A018</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
-            <present>true</present>
+            <inputOffset>0</inputOffset>
+            <outputOffset>0</outputOffset>
+            <present>false</present>
         </XmlPlatinumTwitter>
 
         <XmlEtherSnacksBoard>
@@ -34,7 +35,10 @@
             <jointName>NECK_Y</jointName>
             <motorName>NeckPitchMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <present>true</present>
+            <lowerJointLimit>-1.0472</lowerJointLimit>
+            <upperJointLimit>1.0472</upperJointLimit>
+            <torqueBreakFrequency>25.0</torqueBreakFrequency>
+            <present>false</present>
         </XmlCycloidMotorMechanism>
     </transmissions>
 </XmlHardware>

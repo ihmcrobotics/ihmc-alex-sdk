@@ -52,21 +52,30 @@
     </devices>
     <transmissions>
         <XmlCycloidMotorMechanism>
-            <jointName>RIGHT_ELBOW_Z</jointName>
-            <motorName>RightJ5Motor</motorName>
-            <jointPositionOffset>-6.69994</jointPositionOffset>
-            <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
-            <jointName>RIGHT_WRIST_Y</jointName>
-            <motorName>RightJ6Motor</motorName>
-            <jointPositionOffset>-6.69994</jointPositionOffset>
-            <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
             <jointName>RIGHT_WRIST_Z</jointName>
+            <motorName>RightJ5Motor</motorName>
+            <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-2.61799</lowerJointLimit>
+            <upperJointLimit>2.61799</upperJointLimit>
+            <torqueBreakFrequency>25.0</torqueBreakFrequency>
+            <present>true</present>
+        </XmlCycloidMotorMechanism>
+        <XmlCycloidMotorMechanism>
+            <jointName>RIGHT_WRIST_X</jointName>
+            <motorName>RightJ6Motor</motorName>
+            <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-0.610865</lowerJointLimit>
+            <upperJointLimit>1.8326</upperJointLimit>
+            <torqueBreakFrequency>25.0</torqueBreakFrequency>
+            <present>true</present>
+        </XmlCycloidMotorMechanism>
+        <XmlCycloidMotorMechanism>
+            <jointName>RIGHT_GRIPPER_Z</jointName>
             <motorName>RightJ7Motor</motorName>
-            <jointPositionOffset>-6.69994</jointPositionOffset>
+            <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-2.61799</lowerJointLimit>
+            <upperJointLimit>2.61799</upperJointLimit>
+            <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
         </XmlCycloidMotorMechanism>
     </transmissions>

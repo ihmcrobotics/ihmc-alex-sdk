@@ -22,10 +22,10 @@
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
-            <name>NeckPitchMotor</name>
+            <name>NeckYawMotor</name>
             <alias>6002</alias>
             <address>0</address>
-            <actuatorPackage>A008</actuatorPackage>
+            <actuatorPackage>A019</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
             <outputOffset>0</outputOffset>
@@ -81,21 +81,30 @@
     </devices>
     <transmissions>
         <XmlCycloidMotorMechanism>
-            <jointName>NECK_Y</jointName>
-            <motorName>NeckPitchMotor</motorName>
+            <jointName>NECK_Z</jointName>
+            <motorName>NeckYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-1.5708</lowerJointLimit>
+            <upperJointLimit>1.5708</upperJointLimit>
+            <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>false</present>
         </XmlCycloidMotorMechanism>
         <XmlCycloidMotorMechanism>
             <jointName>LEFT_SHOULDER_Y</jointName>
             <motorName>LeftJ1Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-3.141592</lowerJointLimit>
+            <upperJointLimit>1.22173</upperJointLimit>
+            <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>false</present>
         </XmlCycloidMotorMechanism>
         <XmlCycloidMotorMechanism>
             <jointName>RIGHT_SHOULDER_Y</jointName>
             <motorName>RightJ1Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-3.141592</lowerJointLimit>
+            <upperJointLimit>1.22173</upperJointLimit>
+            <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>false</present>
         </XmlCycloidMotorMechanism>
     </transmissions>

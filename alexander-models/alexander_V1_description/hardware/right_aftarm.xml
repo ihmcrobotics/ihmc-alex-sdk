@@ -72,19 +72,28 @@
         <XmlCycloidMotorMechanism>
             <jointName>RIGHT_SHOULDER_X</jointName>
             <motorName>RightJ2Motor</motorName>
-            <jointPositionOffset>-1.4364172129311332</jointPositionOffset>
+            <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-2.79253</lowerJointLimit>
+            <upperJointLimit>0.349066</upperJointLimit>
+            <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
         </XmlCycloidMotorMechanism>
         <XmlCycloidMotorMechanism>
             <jointName>RIGHT_SHOULDER_Z</jointName>
             <motorName>RightJ3Motor</motorName>
-            <jointPositionOffset>0.9624590942616389</jointPositionOffset>
+            <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-1.22173</lowerJointLimit>
+            <upperJointLimit>1.91986</upperJointLimit>
+            <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
         </XmlCycloidMotorMechanism>
         <XmlCycloidMotorMechanism>
             <jointName>RIGHT_ELBOW_Y</jointName>
             <motorName>RightJ4Motor</motorName>
-            <jointPositionOffset>-6.69994</jointPositionOffset>
+            <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-2.35619</lowerJointLimit>
+            <upperJointLimit>0.174532925</upperJointLimit>
+            <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
         </XmlCycloidMotorMechanism>
     </transmissions>
