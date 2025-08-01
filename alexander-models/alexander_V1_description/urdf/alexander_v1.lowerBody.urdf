@@ -126,7 +126,7 @@
     <joint name="PELVIS_STIM_IMU_JOINT" type="fixed">
         <parent link="PELVIS_LINK"/>
         <child link="PELVIS_STIM_IMU_LINK"/>
-        <origin xyz="-0.08687724 0.01225028 -0.08051472" rpy="0.0 0.0 1.570796"/>
+        <origin xyz="-0.08687724 0.01225028 -0.08051472" rpy="-0.01399 -0.013054 1.570796"/>
     </joint>
     <link name="PELVIS_STIM_IMU_LINK">
         <inertial>
@@ -262,7 +262,7 @@
 		</inertial>
 	</link>
 	<joint name="LEFT_THIGH_IMU_JOINT" type="fixed">
-		<origin rpy="1.6947717585 0 1.570796" xyz="0.10004 0.03746 -0.21194"/>
+		<origin rpy="1.437982 0 1.570796" xyz="0.10004 0.03746 -0.21194"/>
 		<axis xyz="0 0 1"/>
 		<parent link="LEFT_THIGH"/>
 		<child link="LEFT_THIGH_IMU_LINK"/>
