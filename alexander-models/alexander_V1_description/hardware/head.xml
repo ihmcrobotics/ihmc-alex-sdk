@@ -14,9 +14,10 @@
 
         <XmlEtherSnacksBoard>
             <name>HeadEtherSnacksBoard</name>
-            <alias>1</alias>
-            <address>2</address>
-            <present>true</present>
+            <alias>4103</alias>
+            <address>0</address>
+            <boardType>ALEXANDER</boardType>
+            <present>false</present>
             <XmlIMU>
                 <name>HeadIMU</name>
                 <alias>0</alias>

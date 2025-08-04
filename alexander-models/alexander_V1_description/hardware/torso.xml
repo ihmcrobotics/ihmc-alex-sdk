@@ -3,7 +3,7 @@
     <devices>
         <XmlPlatinumTwitter>
             <name>LeftJ1Motor</name>
-            <alias>6002</alias>
+            <alias>2001</alias>
             <address>0</address>
             <actuatorPackage>J1L_Nadia</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
@@ -13,7 +13,7 @@
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>RightJ1Motor</name>
-            <alias>6002</alias>
+            <alias>3001</alias>
             <address>0</address>
             <actuatorPackage>J1R_Nadia</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
@@ -23,7 +23,7 @@
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>NeckYawMotor</name>
-            <alias>6002</alias>
+            <alias>4001</alias>
             <address>0</address>
             <actuatorPackage>A019</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
@@ -31,24 +31,6 @@
             <outputOffset>0</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
-
-        <XmlEtherSnacksBoard>
-            <name>TorsoEtherSnacksBoard</name>
-            <alias>1</alias>
-            <address>2</address>
-            <present>false</present>
-            <XmlIMU>
-                <name>PelvisIMU</name>
-                <alias>0</alias>
-                <address>1</address>
-                <imuType>TDK</imuType>
-                <present>true</present>
-            </XmlIMU>
-            <XmlTemperatureSensor>
-                <name>PelvisTempSensor</name>
-                <conversionConstant>1.0</conversionConstant>
-            </XmlTemperatureSensor>
-        </XmlEtherSnacksBoard>
 
         <XmlH4EtherCATJunctionPort>
             <name>EtherCATJunctionA</name>
@@ -96,7 +78,7 @@
             <lowerJointLimit>-3.141592</lowerJointLimit>
             <upperJointLimit>1.22173</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
-            <present>false</present>
+            <present>true</present>
         </XmlCycloidMotorMechanism>
         <XmlCycloidMotorMechanism>
             <jointName>RIGHT_SHOULDER_Y</jointName>
@@ -105,7 +87,7 @@
             <lowerJointLimit>-3.141592</lowerJointLimit>
             <upperJointLimit>1.22173</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
-            <present>false</present>
+            <present>true</present>
         </XmlCycloidMotorMechanism>
     </transmissions>
 </XmlHardware>

@@ -3,9 +3,10 @@
     <devices>
         <XmlPlatinumTwitter>
             <name>LeftJ2Motor</name>
-            <alias>1</alias>
-            <address>1</address>
+            <alias>2002</alias>
+            <address>0</address>
             <actuatorPackage>J2L_Nadia</actuatorPackage>
+            <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
             <outputOffset>0</outputOffset>
@@ -13,8 +14,9 @@
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>LeftJ3Motor</name>
-            <alias>1</alias>
-            <address>1</address>
+            <alias>2004</alias>
+            <address>0</address>
+            <useLatestCode>true</useLatestCode>
             <actuatorPackage>J3L_Nadia</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
@@ -23,8 +25,9 @@
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>LeftJ4Motor</name>
-            <alias>1</alias>
-            <address>1</address>
+            <alias>2006</alias>
+            <address>0</address>
+            <useLatestCode>true</useLatestCode>
             <actuatorPackage>J4L_Nadia</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
@@ -34,37 +37,43 @@
 
         <XmlEtherSnacksBoard>
             <name>LeftShoulderEtherSnacksBoard</name>
-            <alias>1</alias>
-            <address>2</address>
-            <present>true</present>
-            <XmlIMU>
-                <name>LeftShoulderIMU</name>
-                <alias>0</alias>
-                <address>1</address>
-                <imuType>TDK</imuType>
-                <present>true</present>
-            </XmlIMU>
-            <XmlTemperatureSensor>
-                <name>LeftShoulderTempSensor</name>
-                <conversionConstant>1.0</conversionConstant>
-            </XmlTemperatureSensor>
+            <alias>2103</alias>
+            <address>0</address>
+            <boardType>ALEXANDER</boardType>
+            <present>false</present>
+            <daughterDevices>
+                <XmlIMU>
+                    <name>LeftShoulderIMU</name>
+                    <alias>0</alias>
+                    <address>1</address>
+                    <imuType>TDK</imuType>
+                    <present>true</present>
+                </XmlIMU>
+                <XmlTemperatureSensor>
+                    <name>LeftShoulderTempSensor</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+            </daughterDevices>
         </XmlEtherSnacksBoard>
         <XmlEtherSnacksBoard>
             <name>LeftUpperArmEtherSnacksBoard</name>
-            <alias>1</alias>
-            <address>2</address>
-            <present>true</present>
-            <XmlIMU>
-                <name>LeftUpperArmIMU</name>
-                <alias>0</alias>
-                <address>1</address>
-                <imuType>TDK</imuType>
-                <present>true</present>
-            </XmlIMU>
-            <XmlTemperatureSensor>
-                <name>LeftUpperArmTempSensor</name>
-                <conversionConstant>1.0</conversionConstant>
-            </XmlTemperatureSensor>
+            <alias>2105</alias>
+            <address>0</address>
+            <boardType>ALEXANDER</boardType>
+            <present>false</present>
+            <daughterDevices>
+                <XmlIMU>
+                    <name>LeftUpperArmIMU</name>
+                    <alias>0</alias>
+                    <address>1</address>
+                    <imuType>TDK</imuType>
+                    <present>true</present>
+                </XmlIMU>
+                <XmlTemperatureSensor>
+                    <name>LeftUpperArmTempSensor</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+            </daughterDevices>
         </XmlEtherSnacksBoard>
     </devices>
 
