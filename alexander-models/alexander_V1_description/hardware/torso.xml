@@ -78,8 +78,8 @@
     </devices>
     <transmissions>
         <XmlCycloidMotorMechanism>
-            <jointName>NECK_Y</jointName>
-            <motorName>NeckPitchMotor</motorName>
+            <jointName>NECK_Z</jointName>
+            <motorName>NeckYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <present>false</present>
         </XmlCycloidMotorMechanism>
