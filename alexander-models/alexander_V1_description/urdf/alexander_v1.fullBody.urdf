@@ -254,7 +254,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/legs/pelvis.obj"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/Pelvis.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -308,7 +308,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/legs/left_hip_roll.obj"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/LeftHipRollLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -359,7 +359,7 @@
          </inertial>
          <visual>
              <geometry>
-                 <mesh filename="package://alexander_V1_description/meshes/legs/left_hip_yaw.obj"/>
+                 <mesh filename="package://alexander_V1_description/meshes/legs/LeftHipYawLink.obj"/>
              </geometry>
              <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
          </visual>
@@ -372,7 +372,7 @@
          </inertial>
          <visual>
              <geometry>
-                 <mesh filename="package://alexander_V1_description/meshes/legs/left_thigh.obj"/>
+                 <mesh filename="package://alexander_V1_description/meshes/legs/LeftThigh.obj"/>
              </geometry>
              <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
          </visual>
@@ -385,7 +385,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/legs/left_shin.obj"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/LeftShin.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -473,7 +473,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/legs/left_ankle.obj"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/AnklePitchLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -486,7 +486,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/legs/left_foot.obj"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/Foot.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -538,7 +538,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/legs/right_hip_roll.obj"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/RightHipRollLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -589,7 +589,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/legs/right_hip_yaw.obj"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/RightHipYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -602,7 +602,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/legs/right_thigh.obj"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/RightThigh.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -653,7 +653,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/legs/right_shin.obj"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/RightShin.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -704,7 +704,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/legs/right_ankle.obj"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/AnklePitchLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -717,7 +717,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/legs/right_foot.obj"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/Foot.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
