@@ -109,41 +109,41 @@
         </XmlEtherSnacksBoard>
     </devices>
     <transmissions>
-        <XmlCycloidMotorMechanism>
+        <XmlCycloidMechanism>
             <jointName>RIGHT_SHOULDER_X</jointName>
             <motorName>right_j2_shX</motorName>
             <jointPositionOffset>-1.4364172129311332</jointPositionOffset>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>RIGHT_SHOULDER_Z</jointName>
             <motorName>right_j3_shZ</motorName>
             <jointPositionOffset>0.9624590942616389</jointPositionOffset>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidrMechanism>
             <jointName>RIGHT_ELBOW_Y</jointName>
             <motorName>right_j4_elY</motorName>
             <jointPositionOffset>-6.69994</jointPositionOffset>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidrMechanism>
+        <XmlCycloidMechanism>
             <jointName>RIGHT_ELBOW_Z</jointName>
             <motorName>right_j5_elZ</motorName>
             <jointPositionOffset>-6.69994</jointPositionOffset>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>RIGHT_WRIST_Y</jointName>
             <motorName>right_j6_wrY</motorName>
             <jointPositionOffset>-6.69994</jointPositionOffset>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>RIGHT_WRIST_Z</jointName>
             <motorName>right_j7_wrZ</motorName>
             <jointPositionOffset>-6.69994</jointPositionOffset>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
     </transmissions>
 </XmlHardware>
