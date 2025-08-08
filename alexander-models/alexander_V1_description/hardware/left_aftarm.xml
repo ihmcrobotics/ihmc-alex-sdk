@@ -39,18 +39,30 @@
             <name>LeftShoulderEtherSnacksBoard</name>
             <alias>2103</alias>
             <address>0</address>
-            <boardType>ALEXANDER</boardType>
-            <present>false</present>
+            <boardType>NADIA_ARM</boardType>
+            <present>true</present>
             <daughterDevices>
                 <XmlIMU>
-                    <name>LeftShoulderIMU</name>
+                    <name>left_shoulder_pitch_imu</name>
                     <alias>0</alias>
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
                 </XmlIMU>
                 <XmlTemperatureSensor>
-                    <name>LeftShoulderTempSensor</name>
+                    <name>left_shoulder_pitch_temp_sensor</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+                <XmlTemperatureSensor>
+                    <name>left_shoulder_pitch_temp_sensor2</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+                <XmlTemperatureSensor>
+                    <name>left_shoulder_pitch_temp_sensor3</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+                <XmlTemperatureSensor>
+                    <name>left_shoulder_pitch_temp_sensor4</name>
                     <conversionConstant>1.0</conversionConstant>
                 </XmlTemperatureSensor>
             </daughterDevices>
@@ -59,18 +71,30 @@
             <name>LeftUpperArmEtherSnacksBoard</name>
             <alias>2105</alias>
             <address>0</address>
-            <boardType>ALEXANDER</boardType>
-            <present>false</present>
+            <boardType>NADIA_ARM</boardType>
+            <present>true</present>
             <daughterDevices>
                 <XmlIMU>
-                    <name>LeftUpperArmIMU</name>
+                    <name>left_shoulder_yaw_imu</name>
                     <alias>0</alias>
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
                 </XmlIMU>
                 <XmlTemperatureSensor>
-                    <name>LeftUpperArmTempSensor</name>
+                    <name>left_shoulder_yaw_temp_sensor1</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+                <XmlTemperatureSensor>
+                    <name>left_shoulder_yaw_temp_sensor2</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+                <XmlTemperatureSensor>
+                    <name>left_shoulder_yaw_temp_sensor3</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+                <XmlTemperatureSensor>
+                    <name>left_shoulder_yaw_temp_sensor4</name>
                     <conversionConstant>1.0</conversionConstant>
                 </XmlTemperatureSensor>
             </daughterDevices>
