@@ -29,7 +29,7 @@
             <address>0</address>
             <actuatorPackage>J4R_Nadia</actuatorPackage>
             <useLatestCode>true</useLatestCode>
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
             <outputOffset>0</outputOffset>
             <present>true</present>
@@ -40,17 +40,17 @@
             <alias>3103</alias>
             <address>0</address>
             <boardType>ALEXANDER</boardType>
-            <present>false</present>
+            <present>true</present>
             <daughterDevices>
                 <XmlIMU>
-                    <name>RightShoulderIMU</name>
+                    <name>right_shoulder_pitch_imu</name>
                     <alias>0</alias>
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
                 </XmlIMU>
                 <XmlTemperatureSensor>
-                    <name>RightShoulderTempSensor</name>
+                    <name>right_shoulder_pitch_temp_sensor</name>
                     <conversionConstant>1.0</conversionConstant>
                 </XmlTemperatureSensor>
             </daughterDevices>
@@ -59,18 +59,30 @@
             <name>RightUpperArmEtherSnacksBoard</name>
             <alias>3105</alias>
             <address>0</address>
-            <boardType>ALEXANDER</boardType>
-            <present>false</present>
+            <boardType>NADIA_ARM</boardType>
+            <present>true</present>
             <daughterDevices>
                 <XmlIMU>
-                    <name>RightUpperArmIMU</name>
+                    <name>right_shoulder_yaw_imu</name>
                     <alias>0</alias>
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
                 </XmlIMU>
                 <XmlTemperatureSensor>
-                    <name>RightUpperArmTempSensor</name>
+                    <name>right_shoulder_yaw_temp_sensor1</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+                <XmlTemperatureSensor>
+                    <name>right_shoulder_yaw_temp_sensor2</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+                <XmlTemperatureSensor>
+                    <name>right_shoulder_yaw_temp_sensor3</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+                <XmlTemperatureSensor>
+                    <name>right_shoulder_yaw_temp_sensor4</name>
                     <conversionConstant>1.0</conversionConstant>
                 </XmlTemperatureSensor>
             </daughterDevices>

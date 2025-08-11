@@ -3,32 +3,37 @@
     <devices>
         <XmlPlatinumTwitter>
             <name>NeckPitchMotor</name>
-            <alias>1</alias>
-            <address>1</address>
+            <alias>4003</alias>
+            <address>0</address>
             <actuatorPackage>A018</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
             <outputOffset>0</outputOffset>
-            <present>false</present>
+            <present>true</present>
         </XmlPlatinumTwitter>
 
         <XmlEtherSnacksBoard>
             <name>HeadEtherSnacksBoard</name>
-            <alias>4103</alias>
+            <alias>4104</alias>
             <address>0</address>
             <boardType>ALEXANDER</boardType>
-            <present>false</present>
-            <XmlIMU>
-                <name>HeadIMU</name>
-                <alias>0</alias>
-                <address>1</address>
-                <imuType>TDK</imuType>
-                <present>true</present>
-            </XmlIMU>
-            <XmlTemperatureSensor>
-                <name>HeadTempSensor</name>
-                <conversionConstant>1.0</conversionConstant>
-            </XmlTemperatureSensor>
+            <present>true</present>
+            <daughterDevices>
+                <XmlIMU>
+                    <name>head_imu</name>
+                    <alias>0</alias>
+                    <address>1</address>
+                    <imuType>TDK</imuType>
+                    <present>true</present>
+                    <angularVelocityBiasX>0.0</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.0</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+                </XmlIMU>
+                <XmlTemperatureSensor>
+                    <name>HeadTempSensor</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+            </daughterDevices>
         </XmlEtherSnacksBoard>
     </devices>
     <transmissions>

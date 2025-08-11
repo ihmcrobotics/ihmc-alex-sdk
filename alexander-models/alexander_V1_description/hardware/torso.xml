@@ -16,7 +16,7 @@
             <alias>3001</alias>
             <address>0</address>
             <actuatorPackage>J1R_Nadia</actuatorPackage>
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
             <outputOffset>0</outputOffset>
             <present>true</present>
@@ -31,6 +31,31 @@
             <outputOffset>0</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
+
+        <XmlEtherSnacksBoard>
+            <name>NeckYawEtherSnacksBoard</name>
+            <alias>4102</alias>
+            <address>0</address>
+            <boardType>ALEXANDER</boardType>
+            <present>true</present>
+            <daughterDevices>
+                <XmlIMU>
+                    <name>torso_imu</name>
+                    <alias>0</alias>
+                    <address>1</address>
+                    <imuType>TDK</imuType>
+                    <present>true</present>
+                    <angularVelocityBiasX>0.0</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.0</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+                </XmlIMU>
+                <XmlTemperatureSensor>
+                    <name>TorsoTempSensor</name>
+                    <conversionConstant>1.0</conversionConstant>
+                    <present>true</present>
+                </XmlTemperatureSensor>
+            </daughterDevices>
+        </XmlEtherSnacksBoard>
 
         <XmlH4EtherCATJunctionPort>
             <name>EtherCATJunctionA</name>
