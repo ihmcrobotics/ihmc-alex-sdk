@@ -94,7 +94,7 @@
             <lowerJointLimit>-1.5708</lowerJointLimit>
             <upperJointLimit>1.5708</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
-            <present>false</present>
+            <present>true</present>
         </XmlCycloidMotorMechanism>
         <XmlCycloidMotorMechanism>
             <jointName>LEFT_SHOULDER_Y</jointName>

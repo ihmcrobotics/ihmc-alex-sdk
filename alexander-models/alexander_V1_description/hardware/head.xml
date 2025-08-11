@@ -44,7 +44,7 @@
             <lowerJointLimit>-1.0472</lowerJointLimit>
             <upperJointLimit>1.0472</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
-            <present>false</present>
+            <present>true</present>
         </XmlCycloidMotorMechanism>
     </transmissions>
 </XmlHardware>
