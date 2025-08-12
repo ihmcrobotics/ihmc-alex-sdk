@@ -263,7 +263,7 @@
     <joint name="PELVIS_STIM_IMU_JOINT" type="fixed">
         <parent link="PELVIS_LINK"/>
         <child link="PELVIS_STIM_IMU_LINK"/>
-        <origin xyz="-0.08687724 0.01225028 -0.08051472" rpy="0.0 0.0 1.570796"/>
+        <origin xyz="-0.08687724 0.01225028 -0.08051472" rpy="-0.01399 -0.013054 1.570796"/>
     </joint>
 
     <link name="PELVIS_STIM_IMU_LINK">
