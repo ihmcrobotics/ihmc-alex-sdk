@@ -634,9 +634,9 @@
     <!-- SPINE LINKS -->
     <link name="TORSO_LINK">
         <inertial>
-            <mass value="4.352"/> <!-- This probably needs to be updated  -->
+            <mass value="7.0081"/> <!-- Original was 4.352, measured mass of whole robot and put delta into this torso mass (08/12/2025 Stefan and Robert)-->
             <origin rpy="0 0 0" xyz="-0.034 0.0 0.297"/>
-            <inertia ixx="0.078" ixy="9.78E-06" ixz="0.0081" iyy="0.0689" iyz="1.4734E-04" izz="0.0334"/>
+            <inertia ixx="0.12560473345" ixy="0.0000157489" ixz="0.01304356847" iyy="0.11095084788" iyz="0.00023726412" izz="0.05378459099"/>
         </inertial>
         <visual>
             <geometry>
