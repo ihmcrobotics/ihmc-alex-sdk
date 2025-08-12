@@ -102,7 +102,7 @@
     </devices>
 
     <transmissions>
-        <XmlCycloidMotorMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_SHOULDER_X</jointName>
             <motorName>LeftJ2Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
@@ -110,8 +110,8 @@
             <upperJointLimit>2.79253</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_SHOULDER_Z</jointName>
             <motorName>LeftJ3Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
@@ -119,8 +119,8 @@
             <upperJointLimit>1.22173</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_ELBOW_Y</jointName>
             <motorName>LeftJ4Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
@@ -128,6 +128,6 @@
             <upperJointLimit>0.174532925</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
     </transmissions>
 </XmlHardware>

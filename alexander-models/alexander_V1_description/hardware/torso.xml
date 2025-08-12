@@ -87,7 +87,7 @@
         </XmlH4EtherCATJunctionPort>
     </devices>
     <transmissions>
-        <XmlCycloidMotorMechanism>
+        <XmlCycloidMechanism>
             <jointName>NECK_Z</jointName>
             <motorName>NeckYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
@@ -95,8 +95,8 @@
             <upperJointLimit>1.5708</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_SHOULDER_Y</jointName>
             <motorName>LeftJ1Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
@@ -104,8 +104,8 @@
             <upperJointLimit>1.22173</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>RIGHT_SHOULDER_Y</jointName>
             <motorName>RightJ1Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
@@ -113,6 +113,6 @@
             <upperJointLimit>1.22173</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
     </transmissions>
 </XmlHardware>
