@@ -51,7 +51,7 @@
         </XmlEtherSnacksBoard>
     </devices>
     <transmissions>
-        <XmlCycloidMotorMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_WRIST_Z</jointName>
             <motorName>LeftJ5Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
@@ -59,8 +59,8 @@
             <upperJointLimit>2.61799</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_WRIST_X</jointName>
             <motorName>LeftJ6Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
@@ -68,8 +68,8 @@
             <upperJointLimit>0.610865</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_GRIPPER_Z</jointName>
             <motorName>LeftJ7Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
@@ -77,6 +77,6 @@
             <upperJointLimit>2.61799</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
     </transmissions>
 </XmlHardware>
