@@ -8,8 +8,8 @@
             <actuatorPackage>J2L_Nadia</actuatorPackage>
             <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>0</inputOffset>
-            <outputOffset>0</outputOffset>
+            <inputOffset>272804</inputOffset>
+            <outputOffset>249911</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -18,9 +18,9 @@
             <address>0</address>
             <useLatestCode>true</useLatestCode>
             <actuatorPackage>J3L_Nadia</actuatorPackage>
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>0</inputOffset>
-            <outputOffset>0</outputOffset>
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <inputOffset>-1069540</inputOffset>
+            <outputOffset>134525</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -30,8 +30,8 @@
             <useLatestCode>true</useLatestCode>
             <actuatorPackage>J4L_Nadia</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>0</inputOffset>
-            <outputOffset>0</outputOffset>
+            <inputOffset>-107872</inputOffset>
+            <outputOffset>69087</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 

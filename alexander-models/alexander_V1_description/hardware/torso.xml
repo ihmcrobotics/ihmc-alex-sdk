@@ -7,8 +7,8 @@
             <address>0</address>
             <actuatorPackage>J1L_Nadia</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>0</inputOffset>
-            <outputOffset>0</outputOffset>
+            <inputOffset>238036</inputOffset>
+            <outputOffset>347795</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -17,8 +17,8 @@
             <address>0</address>
             <actuatorPackage>J1R_Nadia</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <inputOffset>0</inputOffset>
-            <outputOffset>0</outputOffset>
+            <inputOffset>207975</inputOffset>
+            <outputOffset>505106</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -27,8 +27,8 @@
             <address>0</address>
             <actuatorPackage>A019</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>0</inputOffset>
-            <outputOffset>0</outputOffset>
+            <inputOffset>262144</inputOffset>
+            <outputOffset>131072</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 

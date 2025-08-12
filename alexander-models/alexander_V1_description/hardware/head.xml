@@ -6,9 +6,9 @@
             <alias>4003</alias>
             <address>0</address>
             <actuatorPackage>A018</actuatorPackage>
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>0</inputOffset>
-            <outputOffset>0</outputOffset>
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <inputOffset>332466</inputOffset>
+            <outputOffset>39160</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
