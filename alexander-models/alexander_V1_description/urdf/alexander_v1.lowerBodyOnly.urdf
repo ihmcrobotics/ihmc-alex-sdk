@@ -627,10 +627,9 @@
     <!-- SPINE LINKS -->
     <link name="TORSO_LINK">
         <inertial>
-            <!-- This is modified to enable the total measured weight of 51.03 on June 9. CAD shows 4.208-->
-            <mass value="4.806"/> <!-- This probably needs to be updated  -->
+            <mass value="7.0081"/> <!-- Original was 4.352, measured mass of whole robot and put delta into this torso mass (08/12/2025 Stefan and Robert)-->
             <origin rpy="0 0 0" xyz="0.0 0.0 0.297"/>
-            <inertia ixx="0.088" ixy="11.01E-06" ixz="0.0091" iyy="0.078" iyz="8.27E-06" izz="0.038"/>
+            <inertia ixx="0.12560473345" ixy="0.0000157489" ixz="0.01304356847" iyy="0.11095084788" iyz="0.00023726412" izz="0.05378459099"/>
         </inertial>
         <visual>
             <geometry>
@@ -639,4 +638,43 @@
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
     </link>
+
+    <!-- TORSO IMU -->
+        <joint name="TORSO_IMU_JOINT" type="fixed">
+            <origin rpy="0.0 0 0.0" xyz="0.0 0.0 0.0"/>
+            <axis xyz="0 0 1"/>
+            <parent link="TORSO_LINK"/>
+            <child link="TORSO_IMU_LINK"/>
+        </joint>
+
+        <link name="TORSO_IMU_LINK">
+            <inertial>
+                <mass value="0"/>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+            </inertial>
+         </link>
+
+        <gazebo reference="TORSO_IMU_LINK">
+            <sensor name="torso_imu" type="imu">
+                <always_on>true</always_on>
+                <imu>
+                    <noise>
+                        <type>gaussian</type>
+                        <rate>
+                            <mean>0</mean>
+                            <stddev>0.0002</stddev>
+                            <bias_mean>7.5e-06</bias_mean>
+                            <bias_stddev>8e-07</bias_stddev>
+                        </rate>
+                        <accel>
+                            <mean>0</mean>
+                            <stddev>0.017</stddev>
+                            <bias_mean>0.1</bias_mean>
+                            <bias_stddev>0.001</bias_stddev>
+                        </accel>
+                    </noise>
+                </imu>
+            </sensor>
+        </gazebo>
 </robot>
