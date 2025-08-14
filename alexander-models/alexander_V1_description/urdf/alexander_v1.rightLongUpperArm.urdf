@@ -27,10 +27,17 @@
 
      <!-- RIGHT SHOULDER PITCH IMU INFORMATION -->
      <joint name="RIGHT_SHOULDER_PITCH_IMU_JOINT" type="fixed">
+<<<<<<< HEAD
          <origin rpy="1.570796 -1.570796 0" xyz="0.0175 -0.0704 -0.00778"/>
          <axis xyz="0 0 1"/>
          <parent link="RIGHT_SHOULDER_Y_LINK"/>
          <child link="RIGHT_SHOULDER_PITCH_IMU_LINK"/>
+=======
+             <origin rpy="1.570796 -1.570796 0" xyz="0.0175 -0.0704 -0.00778"/>
+             <axis xyz="0 0 1"/>
+             <parent link="RIGHT_SHOULDER_Y_LINK"/>
+             <child link="RIGHT_SHOULDER_PITCH_IMU_LINK"/>
+>>>>>>> 5cea516 (Merge/develop to ahs 08132025 (#37))
      </joint>
      <link name="RIGHT_SHOULDER_PITCH_IMU_LINK">
          <inertial>
@@ -72,6 +79,7 @@
     </joint>
 
     <link name="RIGHT_SHOULDER_X_LINK">
+<<<<<<< HEAD
         <inertial>
             <mass value="1.17068"/>
             <origin rpy="0 0 0" xyz="0.01053 -0.02124 -0.1052690"/>
@@ -84,6 +92,20 @@
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
     </link>
+=======
+            <inertial>
+                <mass value="1.17068"/>
+                <origin rpy="0 0 0" xyz="0.01053 -0.02124 -0.1052690"/>
+                <inertia ixx="0.00787035" ixy="-1.667e-4" ixz="-0.00075945" iyy="0.00727481" iyz="-0.000988837" izz="0.00182144" />
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="package://alexander_V1_description/meshes/cycloidal_arm/RightShoulderRollLink_longBicep.obj"/>
+                </geometry>
+                <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            </visual>
+        </link>
+>>>>>>> 5cea516 (Merge/develop to ahs 08132025 (#37))
 
     <joint name="RIGHT_SHOULDER_Z" type="revolute">
         <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.035 -0.08" />
