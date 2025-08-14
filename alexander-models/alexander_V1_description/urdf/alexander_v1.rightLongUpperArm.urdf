@@ -72,21 +72,21 @@
     </joint>
 
     <link name="RIGHT_SHOULDER_X_LINK">
-        <inertial>
-            <mass value="0.972"/>
-            <origin rpy="0 0 0" xyz="0.012489 -0.01882 -0.0385"/>
-            <inertia ixx="0.002949" ixy="-0.000135" ixz="-0.0003358" iyy="0.0023603" iyz="-0.0005249" izz="0.0014377" />
-        </inertial>
-        <visual>
-            <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/cycloidal_arm/RightShoulderRollLink_shortBicep.obj"/>
-            </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-        </visual>
-    </link>
+            <inertial>
+                <mass value="1.17068"/>
+                <origin rpy="0 0 0" xyz="0.01053 -0.02124 -0.1052690"/>
+                <inertia ixx="0.00787035" ixy="-1.667e-4" ixz="-0.00075945" iyy="0.00727481" iyz="-0.000988837" izz="0.00182144" />
+            </inertial>
+            <visual>
+                <geometry>
+                    <mesh filename="package://alexander_V1_description/meshes/cycloidal_arm/RightShoulderRollLink_longBicep.obj"/>
+                </geometry>
+                <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            </visual>
+        </link>
 
     <joint name="RIGHT_SHOULDER_Z" type="revolute">
-        <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.035 0.0" />
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.035 -0.08" />
         <axis xyz="0.0 0.0 1.0" />
         <parent link="RIGHT_SHOULDER_X_LINK" />
         <child link="RIGHT_SHOULDER_Z_LINK" />
@@ -146,34 +146,5 @@
             </imu>
         </sensor>
     </gazebo>
-
-    <joint name="RIGHT_ELBOW_Y" type="revolute">
-        <origin rpy="0.0 0.0 0.0" xyz="0.015 0.0 -0.3127" />
-        <axis xyz="0.0 1.0 0.0" />
-        <parent link="RIGHT_SHOULDER_Z_LINK" />
-        <child link="RIGHT_ELBOW_PITCH_LINK" />
-         <limit effort="1000" lower="-2.35619" upper="0.174532925" velocity = "100" />
-        <dynamics damping="0.05" friction="0.0"/>
-    </joint>
-
-    <link name="RIGHT_ELBOW_PITCH_LINK">
-        <inertial>
-            <!-- Normal forearm knub -->
-            <mass value="0.616"/>
-            <origin rpy="0 0 0" xyz="-0.01090935 0.01147189 -0.10388715"/>
-            <inertia ixx="0.00760733" ixy="-2.242e-5" ixz="-2.583e-4" iyy="0.00767556" iyz="-0.00061995" izz="4.554e-4" />
-
-            <!-- 12lbs dumbbell -->
-            <!--<mass value="5.9"/>-->
-            <!--<origin rpy="0 0 0" xyz="0.05 0.0 -0.225"/>-->
-            <!--<inertia ixx="0.05" ixy="2.242e-5" ixz="-2.583e-4" iyy="0.015" iyz="0.00061995" izz="0.05" />-->
-        </inertial>
-        <visual>
-            <geometry>
-                <mesh filename="package://alexander_V1_description/meshes/cycloidal_arm/RIGHT_ELBOW_PITCH_LINK_413mm_LENGTH.obj"/>
-            </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-        </visual>
-    </link>
 
 </robot>
