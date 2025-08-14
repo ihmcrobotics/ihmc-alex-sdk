@@ -1,14 +1,6 @@
 <?xml version = "1.0" ?>
 <robot name="Alexander">
-    <!-- SPINE JOINTS -->
-    <joint name="SPINE_Z" type="revolute">
-        <origin rpy="0 0 0" xyz="0.0 0 0.018"/> <!-- check with CAD -->
-        <axis xyz="0 0 1"/>
-        <parent link="PELVIS_LINK"/>
-        <child link="TORSO_LINK"/>
-        <limit effort="150" lower="-0.5235987756" upper="0.5235987756" velocity="9.0"/>
-        <dynamics damping="0.05" friction="0.0"/>
-    </joint>
+
     <!-- LEFT LEG JOINTS -->
     <joint name="LEFT_HIP_X" type="revolute">
         <origin rpy="0 0 0" xyz="-0.162	0.0595	-0.015"/>
@@ -58,6 +50,7 @@
         <limit effort="90" lower="-0.436332" upper="0.436332" velocity="8"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
+
     <!-- RIGHT LEG JOINTS -->
     <joint name="RIGHT_HIP_X" type="revolute">
         <origin rpy="0 0 0" xyz="-0.162	-0.0595	-0.015"/>
@@ -107,6 +100,17 @@
         <limit effort="90" lower="-0.436332" upper="0.436332" velocity="8"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
+
+    <!-- SPINE JOINTS -->
+    <joint name="SPINE_Z" type="revolute">
+        <origin rpy="0 0 0" xyz="0.0 0 0.018"/> <!-- check with CAD -->
+        <axis xyz="0 0 1"/>
+        <parent link="PELVIS_LINK"/>
+        <child link="TORSO_LINK"/>
+        <limit effort="150" lower="-0.5235987756" upper="0.5235987756" velocity="9.0"/>
+        <dynamics damping="0.05" friction="0.0"/>
+    </joint>
+
     <!-- LINKS -->
     <link name="PELVIS_LINK">
         <inertial>
@@ -159,6 +163,7 @@
         </sensor>
     </gazebo>
     <!-- end pelvis imu -->
+
     <!-- LEFT LEG LINKS -->
     <link name="LEFT_HIP_X_LINK">
         <inertial>
