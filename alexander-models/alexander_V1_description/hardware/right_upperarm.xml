@@ -48,6 +48,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
+                    <angularVelocityBiasX>0.005177264157895743</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.0036752183836914224</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.006753879580464818</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>right_shoulder_pitch_temp_sensor</name>
@@ -68,6 +71,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
+                    <angularVelocityBiasX>0.010173430598334234</angularVelocityBiasX>
+                    <angularVelocityBiasY>-0.007190644663744087</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.014264108451486417</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>right_shoulder_yaw_temp_sensor1</name>

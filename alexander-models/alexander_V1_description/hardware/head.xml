@@ -7,8 +7,8 @@
             <address>0</address>
             <actuatorPackage>A018</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <inputOffset>332466</inputOffset>
-            <outputOffset>39160</outputOffset>
+            <inputOffset>244001</inputOffset>
+            <outputOffset>34631</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -25,9 +25,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.0</angularVelocityBiasX>
-                    <angularVelocityBiasY>0.0</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+                    <angularVelocityBiasX>0.0038882745218764324</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.005124000123349491</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.013401231091837131</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>HeadTempSensor</name>
@@ -41,8 +41,8 @@
             <jointName>NECK_Y</jointName>
             <motorName>NeckPitchMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-1.0472</lowerJointLimit>
-            <upperJointLimit>1.0472</upperJointLimit>
+            <lowerJointLimit>-0.488692</lowerJointLimit>
+            <upperJointLimit>0.488692</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
         </XmlCycloidMechanism>
