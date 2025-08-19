@@ -8,8 +8,8 @@
             <actuatorPackage>J2L_Nadia</actuatorPackage>
             <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>272804</inputOffset>
-            <outputOffset>249911</outputOffset>
+            <inputOffset>302116</inputOffset>
+            <outputOffset>255870</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -19,8 +19,8 @@
             <useLatestCode>true</useLatestCode>
             <actuatorPackage>J3L_Nadia</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <inputOffset>-1069540</inputOffset>
-            <outputOffset>134525</outputOffset>
+            <inputOffset>1156066</inputOffset>
+            <outputOffset>1208760</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -30,8 +30,8 @@
             <useLatestCode>true</useLatestCode>
             <actuatorPackage>J4L_Nadia</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>-107872</inputOffset>
-            <outputOffset>69087</outputOffset>
+            <inputOffset>405162</inputOffset>
+            <outputOffset>67542</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -112,7 +112,7 @@
             <jointName>LEFT_SHOULDER_X</jointName>
             <motorName>LeftJ2Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-0.349066</lowerJointLimit>
+            <lowerJointLimit>-0.349066</lowerJointLimit> <!-- Lower limit reads a -0.360 when moved manually, upper limit as 2.790 -->
             <upperJointLimit>2.79253</upperJointLimit>
             <torqueBreakFrequency>25.0</torqueBreakFrequency>
             <present>true</present>
