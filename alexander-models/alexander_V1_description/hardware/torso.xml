@@ -27,8 +27,8 @@
             <address>0</address>
             <actuatorPackage>A019</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>262144</inputOffset>
-            <outputOffset>131072</outputOffset>
+            <inputOffset>183269</inputOffset>
+            <outputOffset>122459</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -45,9 +45,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.0</angularVelocityBiasX>
-                    <angularVelocityBiasY>0.0</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+                    <angularVelocityBiasX>-0.014839360024585942</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.0011718087600175553</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.017513214558807815</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>TorsoTempSensor</name>
