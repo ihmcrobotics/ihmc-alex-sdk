@@ -54,7 +54,7 @@
 
         <!-- HEAD IMU -->
             <joint name="HEAD_IMU_JOINT" type="fixed">
-                <origin rpy="0.0 0 0.0" xyz="0.0 0.0 0.0"/>
+                <origin rpy="0.0 0 0.0" xyz="0.040556 -0.14155 0.057016"/>
                 <axis xyz="0 0 1"/>
                 <parent link="HEAD_LINK"/>
                 <child link="HEAD_IMU_LINK"/>
