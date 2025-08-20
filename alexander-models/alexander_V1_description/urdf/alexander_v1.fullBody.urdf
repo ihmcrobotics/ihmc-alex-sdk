@@ -320,7 +320,7 @@
         </visual>
         <collision name="left_hip_x_collision">
             <geometry>
-                    <box size="0.02 0.12 0.10"/>
+                <box size="0.02 0.12 0.10"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="-0.02 0.02 0.0"/>
         </collision>
@@ -390,7 +390,7 @@
          </visual>
          <collision name="left_thigh_collision">
             <geometry>
-                    <box size="0.16 0.13 0.29"/> <!-- width (X), depth (Y), height (Z) -->
+                <box size="0.16 0.13 0.29"/> <!-- width (X), depth (Y), height (Z) -->
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.03 0.03 -0.15"/> <!-- Centered along thigh -->
          </collision>
@@ -409,7 +409,7 @@
         </visual>
         <collision name="left_shin_collision">
             <geometry>
-                    <cylinder radius="0.08" length="0.3"/>  <!-- Adjust based on shin dimensions -->
+                <cylinder radius="0.08" length="0.3"/>  <!-- Adjust based on shin dimensions -->
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.04 0.0 -0.14"/> <!-- Centered along shin -->
         </collision>
@@ -516,7 +516,7 @@
         </visual>
         <collision name="left_foot_collision">
             <geometry>
-                    <box size="0.22 0.1 0.02"/>
+                <box size="0.22 0.1 0.02"/>
             </geometry>
             <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
         </collision>
@@ -574,7 +574,7 @@
         </visual>
         <collision name="right_hip_x_collision">
             <geometry>
-                    <box size="0.02 0.12 0.10"/>
+                <box size="0.02 0.12 0.10"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="-0.02 -0.02 0.0"/>
         </collision>
@@ -771,7 +771,7 @@
         </visual>
         <collision name="right_foot_collision">
             <geometry>
-                    <box size="0.22 0.1 0.02"/>
+                <box size="0.22 0.1 0.02"/>
             </geometry>
             <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
         </collision>
@@ -827,6 +827,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="torso_collision>
+            <origin xyz="0.00 0.00 0.20" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.24 0.24 0.4"/>
+            </geometry>
+        </collision>
     </link>
 
     <!-- TORSO IMU -->
@@ -897,6 +903,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="head_collision">
+            <origin xyz="0.03237 -0.013568 0.007163" rpy="0 0 0"/>
+            <geometry>
+                <sphere radius="0.1"/>
+            </geometry>
+        </collision>
     </link>-
 
     <!-- HEAD IMU -->
@@ -968,7 +980,7 @@
     <link name="LEFT_SHOULDER_Z_LINK">
         <inertial>
             <mass value="2.91"/>
-            <origin rpy="0 0 0" xyz="0.00510403 0.00314332 -0.21695413"/>
+            <origin rpy="0 0 0" xyz="0.00510403 0.00274 -0.21745"/>
             <inertia ixx="0.0267829" ixy="-0.000011" ixz="0.0015998" iyy="0.0265514" iyz="0.0004426" izz="0.003052"/>
         </inertial>
         <visual>
@@ -977,6 +989,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0867"/>
         </visual>
+        <collision name="left_shoulder_z_collision">
+            <origin xyz="0 0 -0.17" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.15"/>
+            </geometry>
+        </collision>
     </link>
     <link name="LEFT_ELBOW_Y_LINK">
         <inertial>
@@ -1003,6 +1021,18 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="left_wrist_z_box_collision">
+            <origin xyz="-0.06 0 -0.15" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.01 0.06 0.1"/>
+            </geometry>
+        </collision>
+        <collision name="left_wrist_z_cylinder_collision">
+            <origin xyz="0 0 -0.15" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.044" length="0.12"/>
+            </geometry>
+        </collision>
     </link>
     <link name="LEFT_WRIST_X_LINK">
         <inertial>
@@ -1031,6 +1061,12 @@
             </geometry>
             <origin rpy="0.0 1.57 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="left_gripper_z_collision">
+            <origin xyz="0 0 -0.02" rpy="0 0 0"/>
+            <geometry>
+                <sphere radius="0.05"/>
+            </geometry>
+        </collision>
     </link>
 
     <!-- Left arm IMU Information -->
@@ -1225,6 +1261,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0867"/>
         </visual>
+        <collision name="right_shoulder_z_collision">
+            <origin xyz="0 0 -0.17" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.15"/>
+            </geometry>
+        </collision>
     </link>
     <link name="RIGHT_ELBOW_Y_LINK">
         <inertial>
@@ -1251,6 +1293,18 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="right_wrist_z_box_collision">
+            <origin xyz="-0.06 0 -0.15" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.01 0.06 0.1"/>
+            </geometry>
+        </collision>
+        <collision name="right_wrist_z_cylinder_collision">
+            <origin xyz="0 0 -0.15" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.044" length="0.12"/>
+            </geometry>
+        </collision>
     </link>
     <link name="RIGHT_WRIST_X_LINK">
         <inertial>
@@ -1277,6 +1331,12 @@
             </geometry>
             <origin rpy="0.0 1.57 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="right_gripper_z_collision">
+            <origin xyz="0 0 -0.02" rpy="0 0 0"/>
+            <geometry>
+                <sphere radius="0.05"/>
+            </geometry>
+        </collision>
     </link>
 
     <!-- Right arm IMU Information -->
