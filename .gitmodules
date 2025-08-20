@@ -1,6 +1,3 @@
-[submodule "alexander-ros2/ihmc_psyonic_ros2"]
-	path = alexander-ros2/ihmc_psyonic_ros2
-	url = git@github.com:ihmcrobotics/ihmc_psyonic_ros2.git
-[submodule "alexander-ros2/ihmc_sake_ros2"]
-	path = alexander-ros2/ihmc_sake_ros2
-	url = https://github.com/ihmcrobotics/ihmc_sake_ros2.git
+[submodule "alexander-ros2/ihmc_hands_ros2"]
+	path = alexander-ros2/ihmc_hands_ros2
+	url = git@github.com:ihmcrobotics/ihmc_hands_ros2.git
