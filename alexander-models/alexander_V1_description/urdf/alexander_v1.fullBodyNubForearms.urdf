@@ -1148,7 +1148,7 @@
         <origin rpy="1.570796 0 0.314159" xyz="0.002 0.016 -0.318"/>
         <axis xyz="0 0 1"/>
         <parent link="RIGHT_SHOULDER_Z_LINK"/>
-        <child link="RIGHT_SHOULDER_YAW_IMU_LINK"/> 
+        <child link="RIGHT_SHOULDER_YAW_IMU_LINK"/>
     </joint>
 
     <link name="RIGHT_SHOULDER_YAW_IMU_LINK">
