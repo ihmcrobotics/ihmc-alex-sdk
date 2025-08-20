@@ -129,11 +129,11 @@
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_SHOULDER_Z" type="revolute">
-        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.035 0.0"/>
-        <axis xyz="0.0 0.0 1.0"/>
-        <parent link="LEFT_SHOULDER_X_LINK"/>
-        <child link="LEFT_SHOULDER_Z_LINK"/>
-        <limit effort="80.0" lower="-1.91986" upper="1.22173" velocity="11.5"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.035 -0.08" /> <!-- Z translation for elongated upper arm -->
+        <axis xyz="0.0 0.0 1.0" />
+        <parent link="LEFT_SHOULDER_X_LINK" />
+        <child link="LEFT_SHOULDER_Z_LINK" />
+        <limit effort="80.0" lower="-1.91986" upper="1.22173" velocity = "11.5" />
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_ELBOW_Y" type="revolute">
@@ -181,11 +181,11 @@
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_SHOULDER_Z" type="revolute">
-        <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.035 0.0"/>
-        <axis xyz="0.0 0.0 1.0"/>
-        <parent link="RIGHT_SHOULDER_X_LINK"/>
-        <child link="RIGHT_SHOULDER_Z_LINK"/>
-        <limit effort="1000" lower="-1.22173" upper="1.91986" velocity="100"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.035 -0.08" /> <!-- Z translation for elongated upper arm -->
+        <axis xyz="0.0 0.0 1.0" />
+        <parent link="RIGHT_SHOULDER_X_LINK" />
+        <child link="RIGHT_SHOULDER_Z_LINK" />
+         <limit effort="1000" lower="-1.22173" upper="1.91986" velocity = "100" />
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_ELBOW_Y" type="revolute">
