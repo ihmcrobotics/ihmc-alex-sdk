@@ -144,7 +144,7 @@
                     <site pos="0.04529 -0.02427 0.33757" euler="3.141592 0 0"/>
                 </default>
                 <default class="alexander/imu/head">
-                    <site pos="0.040556 -0.14155 0.057016" euler="0.0 0.0 0.0"/>
+                    <site pos="0.040556 -0.014155 0.057016" euler="0.56723 0.0 1.5708"/>
                 </default>
                 <default class="alexander/imu/shoulder_pitch">
                     <default class="alexander/imu/shoulder_pitch/left">
