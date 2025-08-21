@@ -646,7 +646,7 @@
 
     <!-- TORSO IMU -->
         <joint name="TORSO_IMU_JOINT" type="fixed">
-            <origin rpy="0.0 0.0 -1.57" xyz="-0.009753 -0.01075 0.373405"/>
+            <origin rpy="0.0 0.0 -1.5708" xyz="-0.009753 -0.01075 0.373405"/>
             <axis xyz="0 0 1"/>
             <parent link="TORSO_LINK"/>
             <child link="TORSO_IMU_LINK"/>

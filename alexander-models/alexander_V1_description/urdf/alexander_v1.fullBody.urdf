@@ -837,7 +837,7 @@
 
     <!-- TORSO IMU -->
     <joint name="TORSO_IMU_JOINT" type="fixed">
-        <origin rpy="0.0 0.0 -1.57" xyz="-0.009753 -0.01075 0.373405"/>
+        <origin rpy="0.0 0.0 -1.5708" xyz="-0.009753 -0.01075 0.373405"/>
         <axis xyz="0 0 1"/>
         <parent link="TORSO_LINK"/>
         <child link="TORSO_IMU_LINK"/>
@@ -913,7 +913,7 @@
 
     <!-- HEAD IMU -->
     <joint name="HEAD_IMU_JOINT" type="fixed">
-        <origin rpy="0.0 0 0.0" xyz="0.040556 -0.14155 0.057016"/>
+        <origin rpy="0.56723 0.0 1.5708 " xyz="0.040556 -0.014155 0.057016"/>
         <axis xyz="0 0 1"/>
         <parent link="HEAD_LINK"/>
         <child link="HEAD_IMU_LINK"/>
