@@ -113,7 +113,7 @@
 
     <!-- LEFT ARM JOINTS -->
     <joint name="LEFT_SHOULDER_Y" type="revolute">
-        <origin xyz="-0.02 0.1 0.214" rpy="0.698132 0.0 0.0"/>
+        <origin xyz="-0.015 0.115474 0.352984" rpy="0.698132 0.0 0.0"/>
         <axis xyz="0.0 1.0 0.0"/>
         <parent link="TORSO_LINK"/>
         <child link="LEFT_SHOULDER_Y_LINK"/>
@@ -147,7 +147,7 @@
 
     <!-- NECK JOINTS -->
     <joint name="NECK_Z" type="revolute">
-        <origin rpy="0 0 0" xyz="0.005 0 0.307953"/> <!-- placeholder for the joint location -->
+        <origin rpy="0 0 0" xyz="-0.015 0 0.450403"/>
         <axis xyz="0 0 1"/>
         <parent link="TORSO_LINK"/>
         <child link="NECK_Z_LINK"/>
@@ -155,7 +155,7 @@
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="NECK_Y" type="revolute">
-        <origin rpy="0 0 0" xyz="0.025 0.01 0.207252"/>
+        <origin rpy="0 0 0" xyz="0.025 0.024 0.189597"/>
         <axis xyz="0 1 0"/>
         <parent link="NECK_Z_LINK"/>
         <child link="HEAD_LINK"/>
@@ -165,7 +165,7 @@
 
     <!-- RIGHT ARM JOINTS -->
     <joint name="RIGHT_SHOULDER_Y" type="revolute">
-        <origin xyz="-0.02 -0.1 0.214" rpy="-0.698132 0.0 0.0"/>
+        <origin xyz="-0.015 -0.115474 0.352984" rpy="-0.698132 0.0 0.0" />
         <axis xyz="0.0 1.0 0.0"/>
         <parent link="TORSO_LINK"/>
         <child link="RIGHT_SHOULDER_Y_LINK"/>
@@ -777,7 +777,7 @@
             <geometry>
                 <mesh filename="package://alexander_V1_description/meshes/torso.obj"/>
             </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.105063"/>
         </visual>
         <collision name="torso_collision>
             <origin xyz="0.00 0.00 0.20" rpy="0 0 0"/>
