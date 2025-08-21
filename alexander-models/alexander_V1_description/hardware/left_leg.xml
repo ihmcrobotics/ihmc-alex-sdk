@@ -158,7 +158,7 @@
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-0.3490658504</lowerJointLimit>
             <upperJointLimit>1.0472</upperJointLimit>
-            <torqueBreakFrequency>20.0</torqueBreakFrequency>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -167,7 +167,7 @@
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-2.61799</lowerJointLimit>
             <upperJointLimit>0.785398</upperJointLimit>
-            <torqueBreakFrequency>25.0</torqueBreakFrequency>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -176,7 +176,7 @@
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>0.0</lowerJointLimit>
             <upperJointLimit>2.445206282</upperJointLimit>
-            <torqueBreakFrequency>25.0</torqueBreakFrequency>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlJointPairMechanism>
@@ -188,7 +188,7 @@
             <rightMotor>LeftAnkleTopMotor</rightMotor>
             <leftMotorOffset>0.0</leftMotorOffset>
             <rightMotorOffset>0.0</rightMotorOffset>
-            <torqueBreakFrequency>25.0</torqueBreakFrequency>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <rollJointLowerLimit>-0.436332</rollJointLowerLimit>
             <rollJointUpperLimit>0.436332</rollJointUpperLimit>
             <pitchJointLowerLimit>-1.0472</pitchJointLowerLimit>
