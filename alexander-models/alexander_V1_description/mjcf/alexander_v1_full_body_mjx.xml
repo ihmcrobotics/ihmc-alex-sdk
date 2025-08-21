@@ -369,9 +369,9 @@
                     fullinertia="0.077 0.068 0.033 9.64E-06 0.008 7.24E-06"
                 />
                 <joint name="spine_z" class="alexander/spine"/>
-                <geom mesh="torso" material="gray" class="alexander/visual"/>
+                <geom mesh="torso" pos="0.0 0.0 0.105063" material="gray" class="alexander/visual"/>
                 <site name="imu_torso" class="alexander/imu/torso"/>
-                <body name="left_shoulder_pitch" pos="-0.02 0.1 0.214" euler="0.698132 0.0 0.0">
+                <body name="left_shoulder_pitch" pos="-0.015 0.115474 0.352984" euler="0.698132 0.0 0.0">
                     <inertial 
                         pos="-0.00264 0.12135 -0.006824"
                         mass="2.99"
@@ -436,7 +436,7 @@
                         </body>
                     </body>
                 </body>
-                <body name="neck_yaw" pos="0.005 0.0 0.307953" euler="0.0 0.0 0.0">
+                <body name="neck_yaw" pos="-0.015 0 0.450403" euler="0.0 0.0 0.0">
                     <inertial 
                         pos="0.007143 0.006943 0.109823"
                         mass="1.141"
@@ -444,7 +444,7 @@
                     />
                     <joint name="neck_z" class="alexander/neck/z"/>
                     <geom type="cylinder" size="0.05 0.05" material="gray" class="alexander/visual"/>
-                    <body name="head" pos="0.025 0.01 0.207252" euler="0.0 0.0 0.0">
+                    <body name="head" pos="0.025 0.024 0.189597" euler="0.0 0.0 0.0">
                         <inertial 
                             pos="0.03237 -0.013568 0.007163"
                             mass="1.677"
@@ -455,7 +455,7 @@
                         <site name="imu_head" class="alexander/imu/head"/>
                     </body>
                 </body>
-                <body name="right_shoulder_pitch" pos="-0.02 -0.1 0.214" euler="-0.698132 0.0 0.0">
+                <body name="right_shoulder_pitch" pos="-0.015 -0.115474 0.352984" euler="-0.698132 0.0 0.0">
                     <inertial 
                         pos="-0.00264 -0.12135 -0.006824"
                         mass="2.99"
