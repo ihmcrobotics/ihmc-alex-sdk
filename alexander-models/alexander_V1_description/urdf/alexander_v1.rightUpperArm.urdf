@@ -40,7 +40,7 @@
         </inertial>
     </link>
     <gazebo reference="RIGHT_SHOULDER_Y_IMU_LINK">
-        <sensor name="right_shoulder_pitch_imu" type="imu">
+        <sensor name="right_shoulder_y_imu" type="imu">
             <always_on>true</always_on>
             <imu>
                 <noise>
@@ -125,7 +125,7 @@
     </link>
 
     <gazebo reference="RIGHT_SHOULDER_Z_IMU_LINK">
-        <sensor name="right_shoulder_yaw_imu" type="imu">
+        <sensor name="right_shoulder_z_imu" type="imu">
             <always_on>true</always_on>
             <imu>
                 <noise>

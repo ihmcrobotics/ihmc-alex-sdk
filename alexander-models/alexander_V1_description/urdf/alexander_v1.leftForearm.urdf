@@ -112,7 +112,7 @@
     </link>
 
     <gazebo reference="LEFT_WRIST_Z_IMU_LINK">
-        <sensor name="left_wrist_yaw_imu" type="imu">
+        <sensor name="left_wrist_z_imu" type="imu">
             <always_on>true</always_on>
             <imu>
                 <noise>
@@ -150,7 +150,7 @@
     </link>
 
     <gazebo reference="LEFT_GRIPPER_Z_IMU_LINK">
-        <sensor name="left_gripper_yaw_imu" type="imu">
+        <sensor name="left_gripper_z_imu" type="imu">
             <always_on>true</always_on>
             <imu>
                 <noise>
