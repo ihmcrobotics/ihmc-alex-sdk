@@ -41,7 +41,7 @@
         <child link="LEFT_SHOULDER_Y_IMU_LINK"/>
     </joint>
     <gazebo reference="LEFT_SHOULDER_Y_IMU_LINK">
-        <sensor name="left_shoulder_pitch_imu" type="imu">
+        <sensor name="left_shoulder_y_imu" type="imu">
             <always_on>true</always_on>
             <imu>
                 <noise>
@@ -124,7 +124,7 @@
         <child link="LEFT_SHOULDER_Z_IMU_LINK"/>
     </joint>
     <gazebo reference="LEFT_SHOULDER_Z_IMU_LINK">
-        <sensor name="left_shoulder_yaw_imu" type="imu">
+        <sensor name="left_shoulder_z_imu" type="imu">
             <always_on>true</always_on>
             <pose>0 0 0 0 0 0</pose>
             <imu>

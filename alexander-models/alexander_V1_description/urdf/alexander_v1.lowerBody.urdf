@@ -132,21 +132,21 @@
             <origin xyz="0.0 0.0 -0.05" rpy="0.0 0.0 0.0"/>
         </collision>
     </link>
-    <!-- pelvis_stim_imu -->
-    <joint name="PELVIS_STIM_IMU_JOINT" type="fixed">
+    <!-- Pelvis IMU -->
+    <joint name="PELVIS_IMU_JOINT" type="fixed">
         <parent link="PELVIS_LINK"/>
-        <child link="PELVIS_STIM_IMU_LINK"/>
+        <child link="PELVIS_IMU_LINK"/>
         <origin xyz="-0.08687724 0.01225028 -0.08051472" rpy="-0.01399 -0.013054 1.570796"/>
     </joint>
-    <link name="PELVIS_STIM_IMU_LINK">
+    <link name="PELVIS_IMU_LINK">
         <inertial>
             <mass value="0.0"/>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
-    <gazebo reference="PELVIS_STIM_IMU_LINK">
-        <sensor name="pelvis_stim_imu" type="imu">
+    <gazebo reference="PELVIS_IMU_LINK">
+        <sensor name="pelvis_imu" type="imu">
             <always_on>1</always_on>
             <update_rate>1000.0</update_rate>
             <imu>
