@@ -2,49 +2,59 @@
 <XmlHardware>
     <devices>
         <XmlPlatinumTwitter>
-            <name>LeftArmJ1Motor</name>
-            <alias>1</alias>
-            <address>1</address>
-            <actuatorPackage>A</actuatorPackage>
+            <name>LeftJ1Motor</name>
+            <alias>2001</alias>
+            <address>0</address>
+            <actuatorPackage>J1L_Nadia</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
-            <present>false</present>
+            <inputOffset>445770</inputOffset>
+            <outputOffset>389428</outputOffset>
+            <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
-            <name>RightArmJ1Motor</name>
-            <alias>1</alias>
-            <address>3</address>
-            <actuatorPackage>A</actuatorPackage>
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
-            <present>false</present>
+            <name>RightJ1Motor</name>
+            <alias>3001</alias>
+            <address>0</address>
+            <actuatorPackage>J1R_Nadia</actuatorPackage>
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <inputOffset>-49685</inputOffset>
+            <outputOffset>296104</outputOffset>
+            <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>NeckYawMotor</name>
-            <alias>1</alias>
-            <address>4</address>
-            <actuatorPackage>A</actuatorPackage>
+            <alias>4001</alias>
+            <address>0</address>
+            <actuatorPackage>A019</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <zeroPositionOffset>0.0</zeroPositionOffset>
-            <present>false</present>
+            <inputOffset>183269</inputOffset>
+            <outputOffset>122459</outputOffset>
+            <present>true</present>
         </XmlPlatinumTwitter>
 
         <XmlEtherSnacksBoard>
-            <name>TorsoEtherSnacksBoard</name>
-            <alias>1</alias>
-            <address>2</address>
-            <present>false</present>
-            <XmlIMU>
-                <name>PelvisIMU</name>
-                <alias>0</alias>
-                <address>1</address>
-                <imuType>TDK</imuType>
-                <present>true</present>
-            </XmlIMU>
-            <XmlTemperatureSensor>
-                <name>PelvisTempSensor</name>
-                <conversionConstant>1.0</conversionConstant>
-            </XmlTemperatureSensor>
+            <name>NeckYawEtherSnacksBoard</name>
+            <alias>4102</alias>
+            <address>0</address>
+            <boardType>ALEXANDER</boardType>
+            <present>true</present>
+            <daughterDevices>
+                <XmlIMU>
+                    <name>torso_imu</name>
+                    <alias>0</alias>
+                    <address>1</address>
+                    <imuType>TDK</imuType>
+                    <present>true</present>
+                    <angularVelocityBiasX>-0.014839360024585942</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.0011718087600175553</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.017513214558807815</angularVelocityBiasZ>
+                </XmlIMU>
+                <XmlTemperatureSensor>
+                    <name>TorsoTempSensor</name>
+                    <conversionConstant>1.0</conversionConstant>
+                    <present>true</present>
+                </XmlTemperatureSensor>
+            </daughterDevices>
         </XmlEtherSnacksBoard>
 
         <XmlH4EtherCATJunctionPort>
@@ -77,23 +87,32 @@
         </XmlH4EtherCATJunctionPort>
     </devices>
     <transmissions>
-        <XmlCycloidMotorMechanism>
-            <jointName>NECK_Y</jointName>
-            <motorName>NeckPitchMotor</motorName>
+        <XmlCycloidMechanism>
+            <jointName>NECK_Z</jointName>
+            <motorName>NeckYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <present>false</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+            <lowerJointLimit>-1.5708</lowerJointLimit>
+            <upperJointLimit>1.5708</upperJointLimit>
+            <torqueBreakFrequency>50.0</torqueBreakFrequency>
+            <present>true</present>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_SHOULDER_Y</jointName>
-            <motorName>LeftArmJ1Motor</motorName>
+            <motorName>LeftJ1Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <present>false</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+            <lowerJointLimit>-3.141592</lowerJointLimit>
+            <upperJointLimit>1.22173</upperJointLimit>
+            <torqueBreakFrequency>50.0</torqueBreakFrequency>
+            <present>true</present>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>RIGHT_SHOULDER_Y</jointName>
-            <motorName>RightArmJ1Motor</motorName>
+            <motorName>RightJ1Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <present>false</present>
-        </XmlCycloidMotorMechanism>
+            <lowerJointLimit>-3.141592</lowerJointLimit>
+            <upperJointLimit>1.22173</upperJointLimit>
+            <torqueBreakFrequency>50.0</torqueBreakFrequency>
+            <present>true</present>
+        </XmlCycloidMechanism>
     </transmissions>
 </XmlHardware>

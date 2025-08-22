@@ -36,7 +36,7 @@
             <alias>6008</alias>
             <address>0</address>
             <actuatorPackage>A007</actuatorPackage>
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <inputOffset>96195</inputOffset>
             <outputOffset>70932</outputOffset>
             <present>true</present>
@@ -46,7 +46,7 @@
             <alias>6007</alias>
             <address>0</address>
             <actuatorPackage>A006</actuatorPackage>
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>109141</inputOffset>
             <outputOffset>9232</outputOffset>
             <present>true</present>
@@ -65,6 +65,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
+                    <angularVelocityBiasX>-0.005001057382112406</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.00604280777729136</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.005685206559750579</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftHipTempSensor</name>
@@ -85,6 +88,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
+                    <angularVelocityBiasX>-0.020732574386992393</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.001774096097402237</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.012235667009482478</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftThighTempSensor</name>
@@ -105,6 +111,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
+                    <angularVelocityBiasX>-0.006934528609168481</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.0182477907283269</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.01032483123267395</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftShinTempSensor</name>
@@ -119,48 +128,57 @@
             <address>0</address>
             <imuType>H4</imuType>
             <present>true</present>
+            <angularVelocityBiasX>0.0011881794274969087</angularVelocityBiasX>
+            <angularVelocityBiasY>0.005216176597711319</angularVelocityBiasY>
+            <angularVelocityBiasZ>-0.0004778292656720103</angularVelocityBiasZ>
         </XmlIMU>
         <XmlAtiForceTorqueSensor>
             <name>LeftFootFTSensor</name>
             <alias>6110</alias>
             <address>0</address>
             <present>true</present>
-            <fxOffset>188.92116507233635</fxOffset>
-            <fyOffset>41.54594015499189</fyOffset>
-            <fzOffset>-474.78600141455195</fzOffset>
-            <txOffset>1.1384460380159669</txOffset>
-            <tyOffset>1.5184652274217516</tyOffset>
-            <tzOffset>15.18584664543155</tzOffset>
+            <fxScalar>1.0</fxScalar>
+            <fyScalar>1.0</fyScalar>
+            <fzScalar>-1.0</fzScalar>
+            <txScalar>1.0</txScalar>
+            <tyScalar>1.0</tyScalar>
+            <tzScalar>-1.0</tzScalar>
+            <fxOffset>181.2353230100984</fxOffset>
+            <fyOffset>33.26823683108733</fyOffset>
+            <fzOffset>-619.9111257345963</fzOffset>
+            <txOffset>0.9846304855941986</txOffset>
+            <tyOffset>0.5370547108277306</tyOffset>
+            <tzOffset>15.174520115086388</tzOffset>
         </XmlAtiForceTorqueSensor>
     </devices>
     <transmissions>
-        <XmlCycloidMotorMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_HIP_Z</jointName>
             <motorName>LeftHipYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-0.3490658504</lowerJointLimit>
             <upperJointLimit>1.0472</upperJointLimit>
-            <torqueBreakFrequency>20.0</torqueBreakFrequency>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_HIP_Y</jointName>
             <motorName>LeftHipPitchMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-2.61799</lowerJointLimit>
             <upperJointLimit>0.785398</upperJointLimit>
-            <torqueBreakFrequency>25.0</torqueBreakFrequency>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_KNEE_Y</jointName>
             <motorName>LeftKneePitchMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>0.0</lowerJointLimit>
             <upperJointLimit>2.445206282</upperJointLimit>
-            <torqueBreakFrequency>25.0</torqueBreakFrequency>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
         <XmlJointPairMechanism>
             <name>L_ANKLE_DIFFERENTIAL</name>
             <pitchJoint>LEFT_ANKLE_Y</pitchJoint>
@@ -170,11 +188,13 @@
             <rightMotor>LeftAnkleTopMotor</rightMotor>
             <leftMotorOffset>0.0</leftMotorOffset>
             <rightMotorOffset>0.0</rightMotorOffset>
-            <torqueBreakFrequency>25.0</torqueBreakFrequency>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <rollJointLowerLimit>-0.436332</rollJointLowerLimit>
             <rollJointUpperLimit>0.436332</rollJointUpperLimit>
             <pitchJointLowerLimit>-1.0472</pitchJointLowerLimit>
             <pitchJointUpperLimit>0.523599</pitchJointUpperLimit>
+            <rollSign>-1.0</rollSign>
+            <pitchSign>-1.0</pitchSign>
             <present>true</present>
         </XmlJointPairMechanism>
     </transmissions>

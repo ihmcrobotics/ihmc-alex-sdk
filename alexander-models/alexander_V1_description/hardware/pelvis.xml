@@ -40,11 +40,14 @@
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
-                    <name>pelvis_stim_imu</name>
+                    <name>pelvis_imu</name>
                     <alias>0</alias>
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
+                    <angularVelocityBiasX>-0.019942908320279583</angularVelocityBiasX>
+                    <angularVelocityBiasY>-0.01199134942640296</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.0011030842173576823</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>PelvisTempSensor</name>
@@ -55,32 +58,32 @@
         </XmlEtherSnacksBoard>
     </devices>
     <transmissions>
-        <XmlCycloidMotorMechanism>
+        <XmlCycloidMechanism>
             <jointName>SPINE_Z</jointName>
             <motorName>PelvisYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-0.5235987756</lowerJointLimit>
             <upperJointLimit>0.5235987756</upperJointLimit>
-            <torqueBreakFrequency>25.0</torqueBreakFrequency>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>LEFT_HIP_X</jointName>
             <motorName>LeftHipRollMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-0.3490658504</lowerJointLimit>
             <upperJointLimit>0.872664626</upperJointLimit>
-            <torqueBreakFrequency>20.0</torqueBreakFrequency>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
-        <XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
             <jointName>RIGHT_HIP_X</jointName>
             <motorName>RightHipRollMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-0.872664626</lowerJointLimit>
             <upperJointLimit>0.3490658504</upperJointLimit>
-            <torqueBreakFrequency>20.0</torqueBreakFrequency>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <present>true</present>
-        </XmlCycloidMotorMechanism>
+        </XmlCycloidMechanism>
     </transmissions>
 </XmlHardware>
