@@ -2,7 +2,7 @@
 # File Created: 28.08.2023 17:21:28
 
 mtllib LeftShoulderRollLink_longBicep.mtl
-
+usemtl Procedural_Car_paint
 #
 # object N17_25_P04_02_Left_Shoulder_Roll_Structure
 #
@@ -2342,8 +2342,6 @@ vn -0.0005 -56.2030 82.7117
 # 1212 vertex normals
 
 o N17_25_P04_02_Left_Shoulder_Roll_Structure
-g N17_25_P04_02_Left_Shoulder_Roll_Structure
-usemtl Material__81
 s off
 f 1//1 2//2 3//3 
 f 4//4 5//5 6//6 
@@ -4492,8 +4490,6 @@ vn 96.7441 -25.3096 0.0000
 # 61 vertex normals
 
 o N17_25_P04_03_Left_Shoulder_Yaw_Hard_Stop
-g N17_25_P04_03_Left_Shoulder_Yaw_Hard_Stop
-usemtl Material__81
 s off
 f 1119//1213 1120//1213 1121//1214 
 f 1122//1215 1123//1216 1124//1217 
@@ -4648,8 +4644,6 @@ vn -65.2041 75.8184 -0.0000
 # 16 vertex normals
 
 o N17_25_P05_07_J3_gearbox_cover_outside
-g N17_25_P05_07_J3_gearbox_cover_outside
-usemtl Material__82
 s off
 f 1218//1274 1219//1275 1220//1276 
 f 1221//1277 1222//1277 1223//1278 
@@ -4826,8 +4820,6 @@ vn -95.1057 30.9017 -0.0000
 # 66 vertex normals
 
 o N17_25_P05_06_J3_gearbox_cover_inside
-g N17_25_P05_06_J3_gearbox_cover_inside
-usemtl Material__82
 s off
 f 1243//1290 1244//1291 1245//1292 
 f 1246//1293 1247//1294 1248//1295 
@@ -5467,8 +5459,6 @@ vn 37.1418 -50.3869 -77.9849
 # 212 vertex normals
 
 o N17_25_P04_01_Shoulder_Roll_Ring_Pin_Housing
-g N17_25_P04_01_Shoulder_Roll_Ring_Pin_Housing
-usemtl wire_165165165
 s off
 f 1318//1356 1319//1357 1320//1358 
 f 1321//1359 1322//1360 1323//1361 
@@ -6046,8 +6036,6 @@ vn 8.2579 -99.6584 0.0000
 # 23 vertex normals
 
 o N17_25_P12_01_Bicep_Extension
-g N17_25_P12_01_Bicep_Extension
-usemtl Material__81
 s off
 f 1635//1568 1636//1569 1637//1569 
 f 1638//1570 1639//1571 1640//1571 
