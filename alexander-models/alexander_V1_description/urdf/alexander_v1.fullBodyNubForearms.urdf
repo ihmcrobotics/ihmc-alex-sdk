@@ -1082,7 +1082,7 @@
         <inertial>
             <mass value="2.91"/>
             <origin rpy="0 0 0" xyz="0.00524 -0.00274 -0.21745"/>
-            <inertia ixx="0.0248699" ixy="0.0000211" ixz="0.0000211" iyy="0.0245973" iyz="-0.0004444" izz="0.0029883"/>
+            <inertia ixx="0.0267829" ixy="0.000011" ixz="0.0015998" iyy="0.0265514" iyz="-0.0004426" izz="0.003052"/>
         </inertial>
         <visual>
             <geometry>
