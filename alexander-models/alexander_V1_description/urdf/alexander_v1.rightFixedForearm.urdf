@@ -3,11 +3,11 @@
 
 
     <joint name="RIGHT_ELBOW_Y" type="revolute">
-        <origin rpy="0.0 0.0 0.0" xyz="0.015 0.0 -0.3127" />
-        <axis xyz="0.0 1.0 0.0" />
-        <parent link="RIGHT_SHOULDER_Z_LINK" />
-        <child link="RIGHT_ELBOW_Y_LINK" />
-         <limit effort="1000" lower="-2.35619" upper="0.174532925" velocity = "100" />
+        <origin rpy="0.0 0.0 0.0" xyz="0.015 0.0 -0.3127"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <parent link="RIGHT_SHOULDER_Z_LINK"/>
+        <child link="RIGHT_ELBOW_Y_LINK"/>
+        <limit effort="1000" lower="-2.35619" upper="0.174532925" velocity="100"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
@@ -16,7 +16,7 @@
             <!-- Normal forearm knub -->
             <mass value="0.616"/>
             <origin rpy="0 0 0" xyz="-0.01090935 0.01147189 -0.10388715"/>
-            <inertia ixx="0.00760733" ixy="-2.242e-5" ixz="-2.583e-4" iyy="0.00767556" iyz="-0.00061995" izz="4.554e-4" />
+            <inertia ixx="0.00760733" ixy="-2.242e-5" ixz="-2.583e-4" iyy="0.00767556" iyz="-0.00061995" izz="4.554e-4"/>
 
             <!-- 12lbs dumbbell -->
             <!--<mass value="5.9"/>-->

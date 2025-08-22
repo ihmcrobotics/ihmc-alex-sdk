@@ -1,6 +1,6 @@
 # Blender 4.4.3
 # www.blender.org
-mtllib head.mtl
+mtllib Head.mtl
 o head_0
 v 0.099060 0.022250 -0.095334
 v 0.099060 0.022250 -0.095334
