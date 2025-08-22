@@ -40,7 +40,7 @@
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
-                    <name>pelvis_stim_imu</name>
+                    <name>pelvis_imu</name>
                     <alias>0</alias>
                     <address>1</address>
                     <imuType>TDK</imuType>

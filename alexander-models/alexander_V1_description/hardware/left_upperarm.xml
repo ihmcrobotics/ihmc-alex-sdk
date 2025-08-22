@@ -43,7 +43,7 @@
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
-                    <name>left_shoulder_pitch_imu</name>
+                    <name>left_shoulder_y_imu</name>
                     <alias>0</alias>
                     <address>1</address>
                     <imuType>TDK</imuType>
@@ -78,7 +78,7 @@
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
-                    <name>left_shoulder_yaw_imu</name>
+                    <name>left_shoulder_z_imu</name>
                     <alias>0</alias>
                     <address>1</address>
                     <imuType>TDK</imuType>
