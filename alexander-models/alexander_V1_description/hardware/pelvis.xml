@@ -57,6 +57,7 @@
             </daughterDevices>
         </XmlEtherSnacksBoard>
     </devices>
+    
     <transmissions>
         <XmlCycloidMechanism>
             <jointName>SPINE_Z</jointName>

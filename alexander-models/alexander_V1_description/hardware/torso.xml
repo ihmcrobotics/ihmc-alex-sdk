@@ -86,6 +86,7 @@
             <present>true</present>
         </XmlH4EtherCATJunctionPort>
     </devices>
+
     <transmissions>
         <XmlCycloidMechanism>
             <jointName>NECK_Z</jointName>

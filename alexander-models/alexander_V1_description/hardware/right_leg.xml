@@ -151,6 +151,7 @@
             <tzOffset>7.960432441306164</tzOffset>
         </XmlAtiForceTorqueSensor>
     </devices>
+
     <transmissions>
         <XmlCycloidMechanism>
             <jointName>RIGHT_HIP_Z</jointName>
