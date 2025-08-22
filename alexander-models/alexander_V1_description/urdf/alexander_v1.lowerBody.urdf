@@ -456,7 +456,7 @@
             <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
-    <joint name="RIGHT_HIP_ROLL_IMU_JOINT" type="fixed">
+    <joint name="RIGHT_HIP_X_IMU_JOINT" type="fixed">
         <origin rpy="-1.570796 0 1.570796" xyz="-0.01922309 -0.07694987 -0.01488788"/>
         <axis xyz="0 0 1"/>
         <parent link="RIGHT_HIP_X_LINK"/>
