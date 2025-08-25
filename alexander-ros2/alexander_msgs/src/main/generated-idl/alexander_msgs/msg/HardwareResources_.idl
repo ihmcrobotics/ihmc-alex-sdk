@@ -18,7 +18,18 @@ module alexander_msgs
          * Designate the number of xml resources and their names
          */
         unsigned long num_resources;
-        string xml_resources[7];
+        /**
+         * The directory containing the resources of the desired version of the robot
+         */
+        string<32> version_directory;
+        /**
+         * The list of individual XML files comprising the full XML description of the robot
+         */
+        string xml_resources[9];
+        /**
+         * The list of individual URDF files comprising the full URDF description of the robot
+         */
+        string urdf_resources[6];
       };
     };
   };
