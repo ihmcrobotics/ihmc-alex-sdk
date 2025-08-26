@@ -15,7 +15,7 @@ public class AlexanderStatePubSubType implements us.ihmc.pubsub.TopicDataType<al
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "3317250a3a8e4c85297fde5b8e12b07f47200746c0c38fc31d91e5db6866bfd8";
+   		return "f1940b4524d0e7e79b12f2f39355824a21bbaba8d4ba9cabe884092bb8fa81d4";
    }
    
    @Override

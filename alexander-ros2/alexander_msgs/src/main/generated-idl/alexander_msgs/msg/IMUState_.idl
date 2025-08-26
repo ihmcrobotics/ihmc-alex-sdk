@@ -16,10 +16,21 @@ module alexander_msgs
       {
         string<32> sensor_name;
         /**
-         * Sensor Data
+         * SensorData
+         * This is the position of the IMU in the world frame
+         */
+        double position[3];
+        /**
+         * This is the orientation of the IMU in the world frame
          */
         double quaternion[4];
+        /**
+         * This is the angular velocity of the IMU in the sensor frame
+         */
         double gyroscope[3];
+        /**
+         * This is the linear acceleration of the IMU in the sensor frame
+         */
         double accelerometer[3];
         /**
          * Sensor Status
