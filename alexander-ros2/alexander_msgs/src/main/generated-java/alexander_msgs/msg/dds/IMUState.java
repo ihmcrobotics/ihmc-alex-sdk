@@ -18,7 +18,7 @@ public class IMUState extends Packet<IMUState> implements Settable<IMUState>, Ep
             */
    public double[] position_;
    /**
-            * This is the orientation of the IMU in the world frame
+            * This is the orientation of the IMU in the world frame, stored as x, y, z, s
             */
    public double[] quaternion_;
    /**
@@ -116,7 +116,7 @@ public class IMUState extends Packet<IMUState> implements Settable<IMUState>, Ep
 
 
    /**
-            * This is the orientation of the IMU in the world frame
+            * This is the orientation of the IMU in the world frame, stored as x, y, z, s
             */
    public double[] getQuaternion()
    {

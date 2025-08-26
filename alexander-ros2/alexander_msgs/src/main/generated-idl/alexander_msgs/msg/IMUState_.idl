@@ -21,7 +21,7 @@ module alexander_msgs
          */
         double position[3];
         /**
-         * This is the orientation of the IMU in the world frame
+         * This is the orientation of the IMU in the world frame, stored as x, y, z, s
          */
         double quaternion[4];
         /**
