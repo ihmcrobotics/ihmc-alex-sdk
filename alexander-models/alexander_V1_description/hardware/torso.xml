@@ -27,8 +27,8 @@
             <address>0</address>
             <actuatorPackage>A019</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>183269</inputOffset>
-            <outputOffset>122459</outputOffset>
+            <inputOffset>56589</inputOffset>
+            <outputOffset>56589</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
