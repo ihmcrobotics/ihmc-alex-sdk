@@ -5,11 +5,11 @@
             <name>LeftJ2Motor</name>
             <alias>2002</alias>
             <address>0</address>
-            <actuatorPackage>J2L_Nadia</actuatorPackage>
+            <actuatorPackage>A025</actuatorPackage> <!-- Use J2L_Nadia for Nadia arms -->
             <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>302116</inputOffset>
-            <outputOffset>255870</outputOffset>
+            <inputOffset>0</inputOffset> <!-- Use 302116 for Nadia arms -->
+            <outputOffset>255870</outputOffset> <!-- Use 255870 for Nadia arms -->
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -17,10 +17,10 @@
             <alias>2004</alias>
             <address>0</address>
             <useLatestCode>true</useLatestCode>
-            <actuatorPackage>J3L_Nadia</actuatorPackage>
+            <actuatorPackage>A026</actuatorPackage> <!-- Use J3L_Nadia for Nadia arms -->
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <inputOffset>1156066</inputOffset>
-            <outputOffset>1208760</outputOffset>
+            <inputOffset>0</inputOffset> <!-- Use 1156066 for Nadia arms -->
+            <outputOffset>0</outputOffset> <!-- Use 1208760 for Nadia arms -->
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -28,10 +28,10 @@
             <alias>2006</alias>
             <address>0</address>
             <useLatestCode>true</useLatestCode>
-            <actuatorPackage>J4L_Nadia</actuatorPackage>
+            <actuatorPackage>A027</actuatorPackage> <!-- Use J4L_Nadia for Nadia arms -->
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>405162</inputOffset>
-            <outputOffset>67542</outputOffset>
+            <inputOffset>0</inputOffset> <!-- Use 405162 for Nadia arms -->
+            <outputOffset>0</outputOffset> <!-- Use 67542 for Nadia arms -->
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -48,9 +48,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>-0.0021944782233056037</angularVelocityBiasX>
-                    <angularVelocityBiasY>-0.01763039543480957</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.020911459962858755</angularVelocityBiasZ>
+                    <angularVelocityBiasX>0.0</angularVelocityBiasX> <!-- Use -0.0021944782233056037 for Nadia arms -->
+                    <angularVelocityBiasY>0.0</angularVelocityBiasY> <!-- Use -0.01763039543480957 for Nadia arms -->
+                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ> <!-- Use 0.020911459962858755 for Nadia arms -->
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>left_shoulder_pitch_temp_sensor</name>
@@ -83,9 +83,9 @@
                     <address>1</address>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.032885214928856314</angularVelocityBiasX>
-                    <angularVelocityBiasY>-0.01019473621215273</angularVelocityBiasY>
-                    <angularVelocityBiasZ>-0.008692690437948404</angularVelocityBiasZ>
+                    <angularVelocityBiasX>0.0</angularVelocityBiasX> <!-- Use 0.032885214928856314 for Nadia arms -->
+                    <angularVelocityBiasY>0.0</angularVelocityBiasY> <!-- Use -0.01019473621215273 for Nadia arms -->
+                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ> <!-- Use -0.008692690437948404 for Nadia arms -->
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>left_shoulder_yaw_temp_sensor1</name>
@@ -112,7 +112,7 @@
             <jointName>LEFT_SHOULDER_X</jointName>
             <motorName>LeftJ2Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-0.349066</lowerJointLimit> <!-- Lower limit reads a -0.360 when moved manually, upper limit as 2.790 -->
+            <lowerJointLimit>-0.349066</lowerJointLimit> <!-- Nadia arm Lower limit reads a -0.360 when moved manually, upper limit as 2.790 -->
             <upperJointLimit>2.79253</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <present>true</present>
