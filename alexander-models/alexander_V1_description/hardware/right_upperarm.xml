@@ -62,7 +62,7 @@
             <name>RightUpperArmEtherSnacksBoard</name>
             <alias>3105</alias>
             <address>0</address>
-            <boardType>NADIA_ARM</boardType>
+            <boardType>ALEXANDER</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -76,19 +76,7 @@
                     <angularVelocityBiasZ>0.0</angularVelocityBiasZ> <!-- Use 0.014264108451486417 for Nadia arms -->
                 </XmlIMU>
                 <XmlTemperatureSensor>
-                    <name>right_shoulder_yaw_temp_sensor1</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
-                <XmlTemperatureSensor>
-                    <name>right_shoulder_yaw_temp_sensor2</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
-                <XmlTemperatureSensor>
-                    <name>right_shoulder_yaw_temp_sensor3</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
-                <XmlTemperatureSensor>
-                    <name>right_shoulder_yaw_temp_sensor4</name>
+                    <name>right_shoulder_yaw_temp_sensor</name>
                     <conversionConstant>1.0</conversionConstant>
                 </XmlTemperatureSensor>
             </daughterDevices>

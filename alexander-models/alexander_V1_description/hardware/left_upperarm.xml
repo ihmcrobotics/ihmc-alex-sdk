@@ -39,7 +39,7 @@
             <name>LeftShoulderEtherSnacksBoard</name>
             <alias>2103</alias>
             <address>0</address>
-            <boardType>NADIA_ARM</boardType>
+            <boardType>ALEXANDER</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -56,25 +56,13 @@
                     <name>left_shoulder_pitch_temp_sensor</name>
                     <conversionConstant>1.0</conversionConstant>
                 </XmlTemperatureSensor>
-                <XmlTemperatureSensor>
-                    <name>left_shoulder_pitch_temp_sensor2</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
-                <XmlTemperatureSensor>
-                    <name>left_shoulder_pitch_temp_sensor3</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
-                <XmlTemperatureSensor>
-                    <name>left_shoulder_pitch_temp_sensor4</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
             </daughterDevices>
         </XmlEtherSnacksBoard>
         <XmlEtherSnacksBoard>
             <name>LeftUpperArmEtherSnacksBoard</name>
             <alias>2105</alias>
             <address>0</address>
-            <boardType>NADIA_ARM</boardType>
+            <boardType>ALEXANDER</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -88,19 +76,7 @@
                     <angularVelocityBiasZ>0.0</angularVelocityBiasZ> <!-- Use -0.008692690437948404 for Nadia arms -->
                 </XmlIMU>
                 <XmlTemperatureSensor>
-                    <name>left_shoulder_yaw_temp_sensor1</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
-                <XmlTemperatureSensor>
-                    <name>left_shoulder_yaw_temp_sensor2</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
-                <XmlTemperatureSensor>
-                    <name>left_shoulder_yaw_temp_sensor3</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
-                <XmlTemperatureSensor>
-                    <name>left_shoulder_yaw_temp_sensor4</name>
+                    <name>left_shoulder_yaw_temp_sensor</name>
                     <conversionConstant>1.0</conversionConstant>
                 </XmlTemperatureSensor>
             </daughterDevices>
