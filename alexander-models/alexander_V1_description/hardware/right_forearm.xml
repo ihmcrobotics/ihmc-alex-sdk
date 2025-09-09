@@ -6,6 +6,7 @@
             <alias>3007</alias>
             <address>0</address>
             <actuatorPackage>J5R_Nadia</actuatorPackage>
+            <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
             <outputOffset>0</outputOffset>
@@ -16,6 +17,7 @@
             <alias>3009</alias>
             <address>0</address>
             <actuatorPackage>J6R_Nadia</actuatorPackage>
+            <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
             <outputOffset>0</outputOffset>
@@ -26,6 +28,7 @@
             <alias>3010</alias>
             <address>0</address>
             <actuatorPackage>J7R_Nadia</actuatorPackage>
+            <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
             <outputOffset>0</outputOffset>

@@ -6,6 +6,7 @@
             <alias>2007</alias>
             <address>0</address>
             <actuatorPackage>J5L_Nadia</actuatorPackage>
+            <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
             <outputOffset>0</outputOffset>
@@ -16,6 +17,7 @@
             <alias>2009</alias>
             <address>0</address>
             <actuatorPackage>J6L_Nadia</actuatorPackage>
+            <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
             <outputOffset>0</outputOffset>
@@ -26,6 +28,7 @@
             <alias>2010</alias>
             <address>0</address>
             <actuatorPackage>J7L_Nadia</actuatorPackage>
+            <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <inputOffset>0</inputOffset>
             <outputOffset>0</outputOffset>
