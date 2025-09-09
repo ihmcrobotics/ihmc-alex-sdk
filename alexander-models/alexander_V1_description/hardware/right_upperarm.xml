@@ -60,7 +60,7 @@
             <alias>3105</alias>
             <address>0</address>
             <boardType>ALEXANDER</boardType>
-            <present>true</present>
+            <present>false</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>right_shoulder_z_imu</name>
