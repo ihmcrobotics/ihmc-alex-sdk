@@ -12,13 +12,13 @@ import us.ihmc.pubsub.TopicDataType;
 public class HardwareResources extends Packet<HardwareResources> implements Settable<HardwareResources>, EpsilonComparable<HardwareResources>
 {
    /**
-            * Designate the number of xml resources and their names
+            * Designate the number of xml resources
             */
-   public long num_resources_;
+   public long num_xml_resources_;
    /**
-            * The directory containing the resources of the desired version of the robot
+            * Designate the number of xml resources
             */
-   public java.lang.StringBuilder version_directory_;
+   public long num_urdf_resources_;
    /**
             * The list of individual XML files comprising the full XML description of the robot
             */
@@ -27,22 +27,26 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
             * The list of individual URDF files comprising the full URDF description of the robot
             */
    public java.lang.StringBuilder[] urdf_resources_;
+   /**
+            * The directory containing the xml and URDF resources of the desired version of the robot
+            */
+   public java.lang.StringBuilder directory_;
 
    public HardwareResources()
    {
-      version_directory_ = new java.lang.StringBuilder(32);
       xml_resources_ = new java.lang.StringBuilder[9];
 
       for(int i1 = 0; i1 < xml_resources_.length; ++i1)
       {
           xml_resources_[i1] = new java.lang.StringBuilder();
       }
-      urdf_resources_ = new java.lang.StringBuilder[6];
+      urdf_resources_ = new java.lang.StringBuilder[9];
 
       for(int i3 = 0; i3 < urdf_resources_.length; ++i3)
       {
           urdf_resources_[i3] = new java.lang.StringBuilder();
       }
+      directory_ = new java.lang.StringBuilder(32);
    }
 
    public HardwareResources(HardwareResources other)
@@ -53,10 +57,9 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
 
    public void set(HardwareResources other)
    {
-      num_resources_ = other.num_resources_;
+      num_xml_resources_ = other.num_xml_resources_;
 
-      version_directory_.setLength(0);
-      version_directory_.append(other.version_directory_);
+      num_urdf_resources_ = other.num_urdf_resources_;
 
       for(int i5 = 0; i5 < xml_resources_.length; ++i5)
       {
@@ -70,45 +73,39 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
             urdf_resources_[i7].append(other.urdf_resources_[i7]);
       }
 
+      directory_.setLength(0);
+      directory_.append(other.directory_);
+
    }
 
    /**
-            * Designate the number of xml resources and their names
+            * Designate the number of xml resources
             */
-   public void setNumResources(long num_resources)
+   public void setNumXmlResources(long num_xml_resources)
    {
-      num_resources_ = num_resources;
+      num_xml_resources_ = num_xml_resources;
    }
    /**
-            * Designate the number of xml resources and their names
+            * Designate the number of xml resources
             */
-   public long getNumResources()
+   public long getNumXmlResources()
    {
-      return num_resources_;
-   }
-
-   /**
-            * The directory containing the resources of the desired version of the robot
-            */
-   public void setVersionDirectory(java.lang.String version_directory)
-   {
-      version_directory_.setLength(0);
-      version_directory_.append(version_directory);
+      return num_xml_resources_;
    }
 
    /**
-            * The directory containing the resources of the desired version of the robot
+            * Designate the number of xml resources
             */
-   public java.lang.String getVersionDirectoryAsString()
+   public void setNumUrdfResources(long num_urdf_resources)
    {
-      return getVersionDirectory().toString();
+      num_urdf_resources_ = num_urdf_resources;
    }
    /**
-            * The directory containing the resources of the desired version of the robot
+            * Designate the number of xml resources
             */
-   public java.lang.StringBuilder getVersionDirectory()
+   public long getNumUrdfResources()
    {
-      return version_directory_;
+      return num_urdf_resources_;
    }
 
 
@@ -129,6 +126,30 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
       return urdf_resources_;
    }
 
+   /**
+            * The directory containing the xml and URDF resources of the desired version of the robot
+            */
+   public void setDirectory(java.lang.String directory)
+   {
+      directory_.setLength(0);
+      directory_.append(directory);
+   }
+
+   /**
+            * The directory containing the xml and URDF resources of the desired version of the robot
+            */
+   public java.lang.String getDirectoryAsString()
+   {
+      return getDirectory().toString();
+   }
+   /**
+            * The directory containing the xml and URDF resources of the desired version of the robot
+            */
+   public java.lang.StringBuilder getDirectory()
+   {
+      return directory_;
+   }
+
 
    public static Supplier<HardwareResourcesPubSubType> getPubSubType()
    {
@@ -147,9 +168,9 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
       if(other == null) return false;
       if(other == this) return true;
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.num_resources_, other.num_resources_, epsilon)) return false;
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.num_xml_resources_, other.num_xml_resources_, epsilon)) return false;
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsStringBuilder(this.version_directory_, other.version_directory_, epsilon)) return false;
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.num_urdf_resources_, other.num_urdf_resources_, epsilon)) return false;
 
       for(int i9 = 0; i9 < xml_resources_.length; ++i9)
       {
@@ -158,6 +179,8 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
       for(int i11 = 0; i11 < urdf_resources_.length; ++i11)
       {
                 if (!us.ihmc.idl.IDLTools.epsilonEqualsStringBuilder(this.urdf_resources_[i11], other.urdf_resources_[i11], epsilon)) return false;}
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsStringBuilder(this.directory_, other.directory_, epsilon)) return false;
 
 
       return true;
@@ -172,9 +195,9 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
 
       HardwareResources otherMyClass = (HardwareResources) other;
 
-      if(this.num_resources_ != otherMyClass.num_resources_) return false;
+      if(this.num_xml_resources_ != otherMyClass.num_xml_resources_) return false;
 
-      if (!us.ihmc.idl.IDLTools.equals(this.version_directory_, otherMyClass.version_directory_)) return false;
+      if(this.num_urdf_resources_ != otherMyClass.num_urdf_resources_) return false;
 
       for(int i13 = 0; i13 < xml_resources_.length; ++i13)
       {
@@ -182,6 +205,8 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
       for(int i15 = 0; i15 < urdf_resources_.length; ++i15)
       {
                 if (!us.ihmc.idl.IDLTools.equals(this.urdf_resources_[i15], otherMyClass.urdf_resources_[i15])) return false;}
+      if (!us.ihmc.idl.IDLTools.equals(this.directory_, otherMyClass.directory_)) return false;
+
 
       return true;
    }
@@ -192,14 +217,16 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
       StringBuilder builder = new StringBuilder();
 
       builder.append("HardwareResources {");
-      builder.append("num_resources=");
-      builder.append(this.num_resources_);      builder.append(", ");
-      builder.append("version_directory=");
-      builder.append(this.version_directory_);      builder.append(", ");
+      builder.append("num_xml_resources=");
+      builder.append(this.num_xml_resources_);      builder.append(", ");
+      builder.append("num_urdf_resources=");
+      builder.append(this.num_urdf_resources_);      builder.append(", ");
       builder.append("xml_resources=");
       builder.append(java.util.Arrays.toString(this.xml_resources_));      builder.append(", ");
       builder.append("urdf_resources=");
-      builder.append(java.util.Arrays.toString(this.urdf_resources_));
+      builder.append(java.util.Arrays.toString(this.urdf_resources_));      builder.append(", ");
+      builder.append("directory=");
+      builder.append(this.directory_);
       builder.append("}");
       return builder.toString();
    }
