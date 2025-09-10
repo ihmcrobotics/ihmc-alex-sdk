@@ -5,20 +5,20 @@
             <name>LeftJ1Motor</name>
             <alias>2001</alias>
             <address>0</address>
-            <actuatorPackage>J1L_Nadia</actuatorPackage>
+            <actuatorPackage>A024</actuatorPackage> <!-- Use J1L_Nadia for Nadia arms -->
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>445770</inputOffset>
-            <outputOffset>389428</outputOffset>
+            <inputOffset>35418844</inputOffset> <!-- Use 445770 for Nadia arms -->
+            <outputOffset>562184</outputOffset> <!-- Use 389428 for Nadia arms -->
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>RightJ1Motor</name>
             <alias>3001</alias>
             <address>0</address>
-            <actuatorPackage>J1R_Nadia</actuatorPackage>
+            <actuatorPackage>A020</actuatorPackage> <!-- Use J1R_Nadia for Nadia arms -->
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <inputOffset>-49685</inputOffset>
-            <outputOffset>296104</outputOffset>
+            <inputOffset>-17593547</inputOffset> <!-- Use -49685 for Nadia arms -->
+            <outputOffset>35154</outputOffset> <!-- Use 296104 for Nadia arms -->
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
