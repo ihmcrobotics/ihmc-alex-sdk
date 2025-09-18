@@ -39,7 +39,7 @@
             <name>RightForearmEtherSnacksBoard</name>
             <alias>3108</alias>
             <address>0</address>
-            <boardType>NADIA_ARM</boardType>
+            <boardType>ALEXANDER_HAND_CONTROL</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -56,18 +56,11 @@
                     <name>right_forearm_temp_sensor</name>
                     <conversionConstant>1.0</conversionConstant>
                 </XmlTemperatureSensor>
-                <XmlTemperatureSensor>
-                    <name>right_forearm_temp_sensor2</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
-                <XmlTemperatureSensor>
-                    <name>right_forearm_sensor3</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
-                <XmlTemperatureSensor>
-                    <name>right_forearm_sensor4</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
+                <XmlHand>
+                    <name>left_sake_hand</name>
+                    <handSide>RIGHT</handSide>
+                    <handType>ABILITY_HAND</handType>
+                </XmlHand>
             </daughterDevices>
         </XmlEtherSnacksBoard>
     </devices>
