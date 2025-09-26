@@ -7,48 +7,48 @@
             <address>0</address>
             <actuatorPackage>A012</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <inputOffset>121461</inputOffset>
-            <outputOffset>80949</outputOffset>
+            <motorOffset>5.742820620458881</motorOffset>
+            <outputOffset>3.876952910158193</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>RightHipPitchMotor</name>
             <alias>7005</alias>
             <address>0</address>
-            <actuatorPackage>A011</actuatorPackage>
+            <actuatorPackage>A010</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <inputOffset>106153</inputOffset>
-            <outputOffset>2927</outputOffset>
+            <motorOffset>0.8905710488820737</motorOffset>
+            <outputOffset>0.2499365219564606</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>RightKneePitchMotor</name>
             <alias>7004</alias>
             <address>0</address>
-            <actuatorPackage>A010</actuatorPackage>
+            <actuatorPackage>A011</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>105564</inputOffset>
-            <outputOffset>114039</outputOffset>
+            <motorOffset>4.984881497860406</motorOffset>
+            <outputOffset>5.464612985279976</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>RightAnkleTopMotor</name>
             <alias>7008</alias>
             <address>0</address>
-            <actuatorPackage>A001</actuatorPackage>
+            <actuatorPackage>A002</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>98005</inputOffset>
-            <outputOffset>100599</outputOffset>
+            <motorOffset>5.247987974021597</motorOffset>
+            <outputOffset>4.852556177975117</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>RightAnkleBottomMotor</name>
             <alias>7007</alias>
             <address>0</address>
-            <actuatorPackage>A002</actuatorPackage>
+            <actuatorPackage>A001</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <inputOffset>45356</inputOffset>
-            <outputOffset>44774</outputOffset>
+            <motorOffset>1.3214487355267897</motorOffset>
+            <outputOffset>2.1016015267647443</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
