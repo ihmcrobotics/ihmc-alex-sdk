@@ -56,11 +56,6 @@
                     <name>left_forearm_temp_sensor</name>
                     <conversionConstant>1.0</conversionConstant>
                 </XmlTemperatureSensor>
-                <XmlHand>
-                    <name>left_sake_hand</name>
-                    <handSide>LEFT</handSide>
-                    <handType>ABILITY_HAND</handType>
-                </XmlHand>
             </daughterDevices>
         </XmlEtherSnacksBoard>
     </devices>
