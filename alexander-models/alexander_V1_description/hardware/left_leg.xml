@@ -7,8 +7,8 @@
             <address>0</address>
             <actuatorPackage>A008</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <inputOffset>37107</inputOffset>
-            <outputOffset>125868</outputOffset>
+            <motorOffset>1.737393161363939</motorOffset>
+            <outputOffset>6.03121012690502</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -17,8 +17,8 @@
             <address>0</address>
             <actuatorPackage>A004</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>119644</inputOffset>
-            <outputOffset>61316</outputOffset>
+            <motorOffset>9.933543529667986</motorOffset>
+            <outputOffset>2.92319048094258</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -27,28 +27,28 @@
             <address>0</address>
             <actuatorPackage>A003</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <inputOffset>109842</inputOffset>
-            <outputOffset>39580</outputOffset>
+            <motorOffset>5.323194139717714</motorOffset>
+            <outputOffset>1.9029896834916267</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>LeftAnkleTopMotor</name>
             <alias>6008</alias>
             <address>0</address>
-            <actuatorPackage>A007</actuatorPackage>
+            <actuatorPackage>A006</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <inputOffset>96195</inputOffset>
-            <outputOffset>70932</outputOffset>
+            <motorOffset>3.46066110610157</motorOffset>
+            <outputOffset>3.339043805197627</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>LeftAnkleBottomMotor</name>
             <alias>6007</alias>
             <address>0</address>
-            <actuatorPackage>A006</actuatorPackage>
+            <actuatorPackage>A007</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>109141</inputOffset>
-            <outputOffset>9232</outputOffset>
+            <motorOffset>5.231881161582086</motorOffset>
+            <outputOffset>0.4425534573050075</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
