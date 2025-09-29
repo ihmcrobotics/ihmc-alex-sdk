@@ -1,0 +1,7 @@
+<?xml version = "1.0" ?>
+<robot name="Alexander">
+    <joint name="LEFT_ABILITY_HAND_ADAPTER" type="fixed">
+        <parent link="LEFT_GRIPPER_Z_LINK"/>
+        <child link="base"/>
+    </joint>
+</robot>
