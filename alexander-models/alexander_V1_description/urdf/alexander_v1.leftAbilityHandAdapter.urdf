@@ -1,0 +1,9 @@
+<?xml version = "1.0" ?>
+<robot name="Alexander">
+    <joint name="LEFT_ABILITY_HAND_ADAPTER" type="fixed">
+        <!-- TODO: Figure out correct origin -->
+        <origin xyz="0 0 -0.022" rpy="3.141592 0 0"/>
+        <parent link="LEFT_GRIPPER_Z_LINK"/>
+        <child link="base"/>
+    </joint>
+</robot>
