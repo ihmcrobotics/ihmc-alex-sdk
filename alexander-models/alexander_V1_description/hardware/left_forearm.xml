@@ -8,7 +8,7 @@
             <actuatorPackage>J5L_Nadia</actuatorPackage>
             <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>0</inputOffset>
+            <motorOffset>0</motorOffset>
             <outputOffset>0</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
@@ -19,7 +19,7 @@
             <actuatorPackage>J6L_Nadia</actuatorPackage>
             <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>0</inputOffset>
+            <motorOffset>0</motorOffset>
             <outputOffset>0</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
@@ -30,7 +30,7 @@
             <actuatorPackage>J7L_Nadia</actuatorPackage>
             <useLatestCode>true</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <inputOffset>0</inputOffset>
+            <motorOffset>0</motorOffset>
             <outputOffset>0</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
