@@ -3,10 +3,10 @@
     <devices>
         <XmlPlatinumTwitter>
             <name>LeftJ5Motor</name>
-            <alias>2007</alias>
+            <alias>2008</alias>
             <address>0</address>
             <actuatorPackage>J5L_Nadia</actuatorPackage>
-            <useLatestCode>true</useLatestCode>
+            <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>0</motorOffset>
             <outputOffset>0</outputOffset>
@@ -17,7 +17,7 @@
             <alias>2009</alias>
             <address>0</address>
             <actuatorPackage>J6L_Nadia</actuatorPackage>
-            <useLatestCode>true</useLatestCode>
+            <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>0</motorOffset>
             <outputOffset>0</outputOffset>
@@ -28,7 +28,7 @@
             <alias>2010</alias>
             <address>0</address>
             <actuatorPackage>J7L_Nadia</actuatorPackage>
-            <useLatestCode>true</useLatestCode>
+            <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>0</motorOffset>
             <outputOffset>0</outputOffset>
@@ -37,7 +37,7 @@
 
         <XmlEtherSnacksBoard>
             <name>LeftForearmEtherSnacksBoard</name>
-            <alias>2108</alias>
+            <alias>2107</alias>
             <address>0</address>
             <boardType>ALEXANDER_HAND_CONTROL</boardType>
             <present>true</present>

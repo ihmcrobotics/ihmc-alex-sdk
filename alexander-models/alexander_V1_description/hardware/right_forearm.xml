@@ -3,10 +3,10 @@
     <devices>
         <XmlPlatinumTwitter>
             <name>RightJ5Motor</name>
-            <alias>3007</alias>
+            <alias>3008</alias>
             <address>0</address>
             <actuatorPackage>J5R_Nadia</actuatorPackage>
-            <useLatestCode>true</useLatestCode>
+            <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>0</motorOffset>
             <outputOffset>0</outputOffset>
@@ -17,7 +17,7 @@
             <alias>3009</alias>
             <address>0</address>
             <actuatorPackage>J6R_Nadia</actuatorPackage>
-            <useLatestCode>true</useLatestCode>
+            <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>0</motorOffset>
             <outputOffset>0</outputOffset>
@@ -28,7 +28,7 @@
             <alias>3010</alias>
             <address>0</address>
             <actuatorPackage>J7R_Nadia</actuatorPackage>
-            <useLatestCode>true</useLatestCode>
+            <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>0</motorOffset>
             <outputOffset>0</outputOffset>
@@ -37,7 +37,7 @@
 
         <XmlEtherSnacksBoard>
             <name>RightForearmEtherSnacksBoard</name>
-            <alias>3108</alias>
+            <alias>3107</alias>
             <address>0</address>
             <boardType>ALEXANDER_HAND_CONTROL</boardType>
             <present>true</present>
