@@ -2,6 +2,16 @@
 <XmlHardware>
     <devices>
         <XmlPlatinumTwitter>
+            <name>LeftJ1Motor</name>
+            <alias>2001</alias>
+            <address>0</address>
+            <actuatorPackage>A024</actuatorPackage> <!-- Use J1L_Nadia for Nadia arms -->
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <motorOffset>358.04593404828364</motorOffset> <!-- Use 445770 for Nadia arms -->
+            <outputOffset>3.3647337351240534</outputOffset> <!-- Use 389428 for Nadia arms -->
+            <present>true</present>
+        </XmlPlatinumTwitter>
+        <XmlPlatinumTwitter>
             <name>LeftJ2Motor</name>
             <alias>2002</alias>
             <address>0</address>
@@ -81,6 +91,15 @@
     </devices>
 
     <transmissions>
+        <XmlCycloidMechanism>
+            <jointName>LEFT_SHOULDER_Y</jointName>
+            <motorName>LeftJ1Motor</motorName>
+            <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-3.141592</lowerJointLimit>
+            <upperJointLimit>1.22173</upperJointLimit>
+            <torqueBreakFrequency>50.0</torqueBreakFrequency>
+            <present>true</present>
+        </XmlCycloidMechanism>
         <XmlCycloidMechanism>
             <jointName>LEFT_SHOULDER_X</jointName>
             <motorName>LeftJ2Motor</motorName>
