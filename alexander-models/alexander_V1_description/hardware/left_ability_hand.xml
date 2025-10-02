@@ -5,7 +5,7 @@
             <name>left_ability_hand</name>
             <handSide>LEFT</handSide>
             <handType>ABILITY_HAND</handType>
-            <parentBoardAlias>2107</parentBoardAlias>v
+            <parentBoardAlias>2107</parentBoardAlias>
         </XmlHand>
     </devices>
 </XmlHardware>
