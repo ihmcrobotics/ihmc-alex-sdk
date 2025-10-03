@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XmlHardware>
+    <devices>
+        <XmlHand>
+            <name>left_ability_hand</name>
+            <handSide>LEFT</handSide>
+            <handType>ABILITY_HAND</handType>
+            <parentBoardAlias>2107</parentBoardAlias>
+        </XmlHand>
+    </devices>
+</XmlHardware>

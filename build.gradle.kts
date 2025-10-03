@@ -20,7 +20,7 @@ ihmc {
 
 mainDependencies {
    // TODO: Add psyonic ros2 dep
-   api("us.ihmc:ros2-common-interfaces:1.2.3") {
+   api("us.ihmc:ros2-common-interfaces:1.2.4") {
       exclude(group = "org.junit.jupiter", module = "junit-jupiter-api")
       exclude(group = "org.junit.jupiter", module = "junit-jupiter-engine")
       exclude(group = "org.junit.platform", module = "junit-platform-commons")
