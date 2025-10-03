@@ -2,7 +2,7 @@
 <robot name="Alexander">
     <joint name="RIGHT_ABILITY_HAND_ADAPTER" type="fixed">
         <!-- TODO: Figure out correct origin -->
-        <origin xyz="0 0 -0.022" rpy="3.141592 0 3.141592"/>
+        <origin xyz="0 0 -0.022" rpy="3.141592 0 -1.570796"/>
         <parent link="RIGHT_GRIPPER_Z_LINK"/>
         <child link="right_ability_hand_base"/>
     </joint>
