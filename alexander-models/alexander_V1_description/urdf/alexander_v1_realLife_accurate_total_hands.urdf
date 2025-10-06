@@ -592,7 +592,7 @@
 			<inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
 		</inertial>
 	</link>
-	<joint name="RIGHT_HIP_ROLL_IMU_JOINT" type="fixed">
+	<joint name="RIGHT_HIP_X_IMU_JOINT" type="fixed">
 		<origin rpy="-1.570796 0 1.570796" xyz="-0.01922309 -0.07694987 -0.01488788"/>
 		<axis xyz="0 0 1"/>
 		<parent link="RIGHT_HIP_X_LINK"/>
@@ -1053,21 +1053,21 @@
     </link>
    
     <!-- Left arm IMU Information -->
-    <link name="LEFT_SHOULDER_PITCH_IMU_LINK">
+    <link name="LEFT_SHOULDER_Y_IMU_LINK">
         <inertial>
             <mass value="0"/>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
-    <!-- LEFT SHOULDER PITCH IMU Information -->
-    <joint name="LEFT_SHOULDER_PITCH_IMU_JOINT" type="fixed">
+    <!-- LEFT SHOULDER Y IMU Information -->
+    <joint name="LEFT_SHOULDER_Y_IMU_JOINT" type="fixed">
         <origin rpy="-1.570796 1.570796 0" xyz="0.0174 0.06944 -0.03025"/>
         <axis xyz="0 0 1"/>
         <parent link="LEFT_SHOULDER_Y_LINK"/>
-        <child link="LEFT_SHOULDER_PITCH_IMU_LINK"/>
+        <child link="LEFT_SHOULDER_Y_IMU_LINK"/>
     </joint>
-    <gazebo reference="LEFT_SHOULDER_PITCH_IMU_LINK">
+    <gazebo reference="LEFT_SHOULDER_Y_IMU_LINK">
         <sensor name="left_shoulder_pitch_imu" type="imu">
             <always_on>true</always_on>
             <imu>
@@ -1092,20 +1092,20 @@
 
     <!-- Left Shoulder Yaw IMU -->
     <!-- Note: in CAD this is the left bicep IMU -->
-    <link name="LEFT_SHOULDER_YAW_IMU_LINK">
+    <link name="LEFT_SHOULDER_Z_IMU_LINK">
         <inertial>
             <mass value="0"/>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
      </link>
-    <joint name="LEFT_SHOULDER_YAW_IMU_JOINT" type="fixed">
+    <joint name="LEFT_SHOULDER_Z_IMU_JOINT" type="fixed">
         <origin rpy="-1.570796 3.1415926 -0.314159" xyz="-0.00763459 -0.0123324 -0.318"/>
         <axis xyz="0 0 1"/>
         <parent link="LEFT_SHOULDER_Z_LINK"/>
-        <child link="LEFT_SHOULDER_YAW_IMU_LINK"/>
+        <child link="LEFT_SHOULDER_Z_IMU_LINK"/>
     </joint>
-    <gazebo reference="LEFT_SHOULDER_YAW_IMU_LINK">
+    <gazebo reference="LEFT_SHOULDER_Z_IMU_LINK">
         <sensor name="left_shoulder_yaw_imu" type="imu">
             <always_on>true</always_on>
                 <pose>0 0 0 0 0 0 </pose>
@@ -1231,20 +1231,20 @@
 
     <!-- Right arm IMU Information -->
     <!-- Right Shoulder Pitch IMU -->
-    <joint name="RIGHT_SHOULDER_PITCH_IMU_JOINT" type="fixed">
+    <joint name="RIGHT_SHOULDER_Y_IMU_JOINT" type="fixed">
         <origin rpy="1.570796 -1.570796 0" xyz="0.0175 -0.0704 -0.00778"/>
         <axis xyz="0 0 1"/>
         <parent link="RIGHT_SHOULDER_Y_LINK"/>
-        <child link="RIGHT_SHOULDER_PITCH_IMU_LINK"/>
+        <child link="RIGHT_SHOULDER_Y_IMU_LINK"/>
     </joint>
-    <link name="RIGHT_SHOULDER_PITCH_IMU_LINK">
+    <link name="RIGHT_SHOULDER_Y_IMU_LINK">
         <inertial>
           <mass value="0"/>
           <origin rpy="0 0 0" xyz="0 0 0"/>
           <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
-    <gazebo reference="RIGHT_SHOULDER_PITCH_IMU_LINK">
+    <gazebo reference="RIGHT_SHOULDER_Y_IMU_LINK">
         <sensor name="right_shoulder_pitch_imu" type="imu">
             <always_on>true</always_on>
             <imu>
@@ -1268,14 +1268,14 @@
     </gazebo>
 
     <!-- Right Shoulder Yaw IMU -->
-    <joint name="RIGHT_SHOULDER_YAW_IMU_JOINT" type="fixed">
+    <joint name="RIGHT_SHOULDER_Z_IMU_JOINT" type="fixed">
         <origin rpy="1.570796 0 0.314159" xyz="0.002 0.016 -0.318"/>
         <axis xyz="0 0 1"/>
         <parent link="RIGHT_SHOULDER_Z_LINK"/>
-        <child link="RIGHT_SHOULDER_YAW_IMU_LINK"/>
+        <child link="RIGHT_SHOULDER_Z_IMU_LINK"/>
     </joint>
 
-    <link name="RIGHT_SHOULDER_YAW_IMU_LINK">
+    <link name="RIGHT_SHOULDER_Z_IMU_LINK">
         <inertial>
             <mass value="0"/>
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1283,7 +1283,7 @@
         </inertial>
      </link>
 
-    <gazebo reference="RIGHT_SHOULDER_YAW_IMU_LINK">
+    <gazebo reference="RIGHT_SHOULDER_Z_IMU_LINK">
         <sensor name="right_shoulder_yaw_imu" type="imu">
             <always_on>true</always_on>
             <imu>
