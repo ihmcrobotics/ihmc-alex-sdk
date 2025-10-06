@@ -13,10 +13,21 @@ public class IMUState extends Packet<IMUState> implements Settable<IMUState>, Ep
 {
    public java.lang.StringBuilder sensor_name_;
    /**
-            * Sensor Data
+            * SensorData
+            * This is the position of the IMU in the world frame
+            */
+   public double[] position_;
+   /**
+            * This is the orientation of the IMU in the world frame, stored as x, y, z, s
             */
    public double[] quaternion_;
+   /**
+            * This is the angular velocity of the IMU in the sensor frame
+            */
    public double[] gyroscope_;
+   /**
+            * This is the linear acceleration of the IMU in the sensor frame
+            */
    public double[] accelerometer_;
    /**
             * Sensor Status
@@ -27,6 +38,8 @@ public class IMUState extends Packet<IMUState> implements Settable<IMUState>, Ep
    public IMUState()
    {
       sensor_name_ = new java.lang.StringBuilder(32);
+      position_ = new double[3];
+
       quaternion_ = new double[4];
 
       gyroscope_ = new double[3];
@@ -46,21 +59,27 @@ public class IMUState extends Packet<IMUState> implements Settable<IMUState>, Ep
       sensor_name_.setLength(0);
       sensor_name_.append(other.sensor_name_);
 
-      for(int i1 = 0; i1 < quaternion_.length; ++i1)
+      for(int i1 = 0; i1 < position_.length; ++i1)
       {
-            quaternion_[i1] = other.quaternion_[i1];
+            position_[i1] = other.position_[i1];
 
       }
 
-      for(int i3 = 0; i3 < gyroscope_.length; ++i3)
+      for(int i3 = 0; i3 < quaternion_.length; ++i3)
       {
-            gyroscope_[i3] = other.gyroscope_[i3];
+            quaternion_[i3] = other.quaternion_[i3];
 
       }
 
-      for(int i5 = 0; i5 < accelerometer_.length; ++i5)
+      for(int i5 = 0; i5 < gyroscope_.length; ++i5)
       {
-            accelerometer_[i5] = other.accelerometer_[i5];
+            gyroscope_[i5] = other.gyroscope_[i5];
+
+      }
+
+      for(int i7 = 0; i7 < accelerometer_.length; ++i7)
+      {
+            accelerometer_[i7] = other.accelerometer_[i7];
 
       }
 
@@ -87,7 +106,17 @@ public class IMUState extends Packet<IMUState> implements Settable<IMUState>, Ep
 
 
    /**
-            * Sensor Data
+            * SensorData
+            * This is the position of the IMU in the world frame
+            */
+   public double[] getPosition()
+   {
+      return position_;
+   }
+
+
+   /**
+            * This is the orientation of the IMU in the world frame, stored as x, y, z, s
             */
    public double[] getQuaternion()
    {
@@ -95,12 +124,18 @@ public class IMUState extends Packet<IMUState> implements Settable<IMUState>, Ep
    }
 
 
+   /**
+            * This is the angular velocity of the IMU in the sensor frame
+            */
    public double[] getGyroscope()
    {
       return gyroscope_;
    }
 
 
+   /**
+            * This is the linear acceleration of the IMU in the sensor frame
+            */
    public double[] getAccelerometer()
    {
       return accelerometer_;
@@ -150,19 +185,24 @@ public class IMUState extends Packet<IMUState> implements Settable<IMUState>, Ep
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsStringBuilder(this.sensor_name_, other.sensor_name_, epsilon)) return false;
 
-      for(int i7 = 0; i7 < quaternion_.length; ++i7)
+      for(int i9 = 0; i9 < position_.length; ++i9)
       {
-                if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.quaternion_[i7], other.quaternion_[i7], epsilon)) return false;
+                if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.position_[i9], other.position_[i9], epsilon)) return false;
       }
 
-      for(int i9 = 0; i9 < gyroscope_.length; ++i9)
+      for(int i11 = 0; i11 < quaternion_.length; ++i11)
       {
-                if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.gyroscope_[i9], other.gyroscope_[i9], epsilon)) return false;
+                if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.quaternion_[i11], other.quaternion_[i11], epsilon)) return false;
       }
 
-      for(int i11 = 0; i11 < accelerometer_.length; ++i11)
+      for(int i13 = 0; i13 < gyroscope_.length; ++i13)
       {
-                if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.accelerometer_[i11], other.accelerometer_[i11], epsilon)) return false;
+                if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.gyroscope_[i13], other.gyroscope_[i13], epsilon)) return false;
+      }
+
+      for(int i15 = 0; i15 < accelerometer_.length; ++i15)
+      {
+                if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.accelerometer_[i15], other.accelerometer_[i15], epsilon)) return false;
       }
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.temperature_, other.temperature_, epsilon)) return false;
@@ -184,19 +224,24 @@ public class IMUState extends Packet<IMUState> implements Settable<IMUState>, Ep
 
       if (!us.ihmc.idl.IDLTools.equals(this.sensor_name_, otherMyClass.sensor_name_)) return false;
 
-      for(int i13 = 0; i13 < quaternion_.length; ++i13)
+      for(int i17 = 0; i17 < position_.length; ++i17)
       {
-                if(this.quaternion_[i13] != otherMyClass.quaternion_[i13]) return false;
+                if(this.position_[i17] != otherMyClass.position_[i17]) return false;
 
       }
-      for(int i15 = 0; i15 < gyroscope_.length; ++i15)
+      for(int i19 = 0; i19 < quaternion_.length; ++i19)
       {
-                if(this.gyroscope_[i15] != otherMyClass.gyroscope_[i15]) return false;
+                if(this.quaternion_[i19] != otherMyClass.quaternion_[i19]) return false;
 
       }
-      for(int i17 = 0; i17 < accelerometer_.length; ++i17)
+      for(int i21 = 0; i21 < gyroscope_.length; ++i21)
       {
-                if(this.accelerometer_[i17] != otherMyClass.accelerometer_[i17]) return false;
+                if(this.gyroscope_[i21] != otherMyClass.gyroscope_[i21]) return false;
+
+      }
+      for(int i23 = 0; i23 < accelerometer_.length; ++i23)
+      {
+                if(this.accelerometer_[i23] != otherMyClass.accelerometer_[i23]) return false;
 
       }
       if(this.temperature_ != otherMyClass.temperature_) return false;
@@ -215,6 +260,8 @@ public class IMUState extends Packet<IMUState> implements Settable<IMUState>, Ep
       builder.append("IMUState {");
       builder.append("sensor_name=");
       builder.append(this.sensor_name_);      builder.append(", ");
+      builder.append("position=");
+      builder.append(java.util.Arrays.toString(this.position_));      builder.append(", ");
       builder.append("quaternion=");
       builder.append(java.util.Arrays.toString(this.quaternion_));      builder.append(", ");
       builder.append("gyroscope=");

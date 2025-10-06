@@ -15,7 +15,7 @@ public class IMUStatePubSubType implements us.ihmc.pubsub.TopicDataType<alexande
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "ffae4be8e284995c928f19e3a7035836bf195d2aa42f552bf2f1dddf16dcbeda";
+   		return "0b081b32e122babfdeb44cef727c67dcb2c08019a64e642afa495b9164dfc7c5";
    }
    
    @Override
@@ -53,6 +53,8 @@ public class IMUStatePubSubType implements us.ihmc.pubsub.TopicDataType<alexande
       int initial_alignment = current_alignment;
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 32 + 1;
+      current_alignment += ((3) * 8) + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
       current_alignment += ((4) * 8) + us.ihmc.idl.CDR.alignment(current_alignment, 8);
 
       current_alignment += ((3) * 8) + us.ihmc.idl.CDR.alignment(current_alignment, 8);
@@ -78,6 +80,7 @@ public class IMUStatePubSubType implements us.ihmc.pubsub.TopicDataType<alexande
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + data.getSensorName().length() + 1;
 
+      current_alignment += ((3) * 8) + us.ihmc.idl.CDR.alignment(current_alignment, 8);
       current_alignment += ((4) * 8) + us.ihmc.idl.CDR.alignment(current_alignment, 8);
       current_alignment += ((3) * 8) + us.ihmc.idl.CDR.alignment(current_alignment, 8);
       current_alignment += ((3) * 8) + us.ihmc.idl.CDR.alignment(current_alignment, 8);
@@ -96,6 +99,11 @@ public class IMUStatePubSubType implements us.ihmc.pubsub.TopicDataType<alexande
       if(data.getSensorName().length() <= 32)
       cdr.write_type_d(data.getSensorName());else
           throw new RuntimeException("sensor_name field exceeds the maximum length: %d > %d".formatted(data.getSensorName().length(), 32));
+
+      for(int i0 = 0; i0 < data.getPosition().length; ++i0)
+      {
+        	cdr.write_type_6(data.getPosition()[i0]);	
+      }
 
       for(int i0 = 0; i0 < data.getQuaternion().length; ++i0)
       {
@@ -121,6 +129,12 @@ public class IMUStatePubSubType implements us.ihmc.pubsub.TopicDataType<alexande
    public static void read(alexander_msgs.msg.dds.IMUState data, us.ihmc.idl.CDR cdr)
    {
       cdr.read_type_d(data.getSensorName());	
+      for(int i0 = 0; i0 < data.getPosition().length; ++i0)
+      {
+        	data.getPosition()[i0] = cdr.read_type_6();
+        	
+      }
+      	
       for(int i0 = 0; i0 < data.getQuaternion().length; ++i0)
       {
         	data.getQuaternion()[i0] = cdr.read_type_6();
@@ -150,6 +164,7 @@ public class IMUStatePubSubType implements us.ihmc.pubsub.TopicDataType<alexande
    public final void serialize(alexander_msgs.msg.dds.IMUState data, us.ihmc.idl.InterchangeSerializer ser)
    {
       ser.write_type_d("sensor_name", data.getSensorName());
+      ser.write_type_f("position", data.getPosition());
       ser.write_type_f("quaternion", data.getQuaternion());
       ser.write_type_f("gyroscope", data.getGyroscope());
       ser.write_type_f("accelerometer", data.getAccelerometer());
@@ -161,6 +176,7 @@ public class IMUStatePubSubType implements us.ihmc.pubsub.TopicDataType<alexande
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, alexander_msgs.msg.dds.IMUState data)
    {
       ser.read_type_d("sensor_name", data.getSensorName());
+      ser.read_type_f("position", data.getPosition());
       ser.read_type_f("quaternion", data.getQuaternion());
       ser.read_type_f("gyroscope", data.getGyroscope());
       ser.read_type_f("accelerometer", data.getAccelerometer());

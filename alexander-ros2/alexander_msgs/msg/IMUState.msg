@@ -2,9 +2,14 @@
 
 string<=32 sensor_name
 
-# Sensor Data
+# SensorData
+# This is the position of the IMU in the world frame
+float64[3] position
+# This is the orientation of the IMU in the world frame, stored as x, y, z, s
 float64[4] quaternion
+# This is the angular velocity of the IMU in the sensor frame
 float64[3] gyroscope
+# This is the linear acceleration of the IMU in the sensor frame
 float64[3] accelerometer
 
 # Sensor Status
