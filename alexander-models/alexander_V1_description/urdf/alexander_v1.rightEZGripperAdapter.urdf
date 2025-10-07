@@ -2,7 +2,7 @@
 <robot name="Alexander">
     <joint name="RIGHT_EZGRIPPER_ADAPTER" type="fixed">
         <!-- TODO: Figure out correct origin -->
-        <origin xyz="0 0 -0.022" rpy="3.141592 1.570796 0"/>
+        <origin xyz="0 0 -0.02" rpy="3.141592 1.570796 0"/>
         <parent link="RIGHT_GRIPPER_Z_LINK"/>
         <child link="right_ezgripper_palm_link"/>
     </joint>
