@@ -26,7 +26,7 @@ public class OneDOFJointState extends Packet<OneDOFJointState> implements Settab
 
    public OneDOFJointState()
    {
-      joint_name_ = new java.lang.StringBuilder(32);
+      joint_name_ = new java.lang.StringBuilder(35);
    }
 
    public OneDOFJointState(OneDOFJointState other)

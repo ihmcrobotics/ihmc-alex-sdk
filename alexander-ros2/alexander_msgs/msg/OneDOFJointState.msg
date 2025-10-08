@@ -1,6 +1,6 @@
 # Holds info for each 1DOF controlled Joint
 
-string<=32 joint_name
+string<=35 joint_name
 
 # Joint Data
 float64 q

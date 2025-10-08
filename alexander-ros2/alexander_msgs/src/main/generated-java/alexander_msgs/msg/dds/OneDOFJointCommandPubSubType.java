@@ -15,7 +15,7 @@ public class OneDOFJointCommandPubSubType implements us.ihmc.pubsub.TopicDataTyp
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "782963cb3b1bb0a086040b216a91d5fb596ed705047e79849178756295cb8318";
+   		return "7bddd363e4af7e6f38176d384c22cb10577679f8ce8c29ab8ffd6cf3b02aac60";
    }
    
    @Override
@@ -52,7 +52,7 @@ public class OneDOFJointCommandPubSubType implements us.ihmc.pubsub.TopicDataTyp
    {
       int initial_alignment = current_alignment;
 
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 32 + 1;
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 35 + 1;
       current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
 
       current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
@@ -124,9 +124,9 @@ public class OneDOFJointCommandPubSubType implements us.ihmc.pubsub.TopicDataTyp
 
    public static void write(alexander_msgs.msg.dds.OneDOFJointCommand data, us.ihmc.idl.CDR cdr)
    {
-      if(data.getJointName().length() <= 32)
+      if(data.getJointName().length() <= 35)
       cdr.write_type_d(data.getJointName());else
-          throw new RuntimeException("joint_name field exceeds the maximum length: %d > %d".formatted(data.getJointName().length(), 32));
+          throw new RuntimeException("joint_name field exceeds the maximum length: %d > %d".formatted(data.getJointName().length(), 35));
 
       cdr.write_type_6(data.getQDes());
 

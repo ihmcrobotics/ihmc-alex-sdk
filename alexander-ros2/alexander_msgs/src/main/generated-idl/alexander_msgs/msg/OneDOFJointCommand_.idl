@@ -14,7 +14,7 @@ module alexander_msgs
       @TypeCode(type="alexander_msgs::msg::dds_::OneDOFJointCommand_")
       struct OneDOFJointCommand
       {
-        string<32> joint_name;
+        string<35> joint_name;
         /**
          * Joint Desireds
          */

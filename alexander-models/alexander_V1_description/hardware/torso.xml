@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <XmlHardware>
     <devices>
-        <XmlPlatinumTwitter>
-            <name>LeftJ1Motor</name>
-            <alias>2001</alias>
-            <address>0</address>
-            <actuatorPackage>A024</actuatorPackage> <!-- Use J1L_Nadia for Nadia arms -->
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>358.04593404828364</motorOffset> <!-- Use 445770 for Nadia arms -->
-            <outputOffset>3.3647337351240534</outputOffset> <!-- Use 389428 for Nadia arms -->
-            <present>true</present>
-        </XmlPlatinumTwitter>
-        <XmlPlatinumTwitter>
-            <name>RightJ1Motor</name>
-            <alias>3001</alias>
-            <address>0</address>
-            <actuatorPackage>A020</actuatorPackage> <!-- Use J1R_Nadia for Nadia arms -->
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>57.046560269335444</motorOffset> <!-- Use -49685 for Nadia arms -->
-            <outputOffset>0.23038651734328028</outputOffset> <!-- Use 296104 for Nadia arms -->
-            <present>true</present>
-        </XmlPlatinumTwitter>
-        <XmlPlatinumTwitter>
-            <name>NeckYawMotor</name>
-            <alias>4001</alias>
-            <address>0</address>
-            <actuatorPackage>A019</actuatorPackage>
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>6.913761661923452</motorOffset>
-            <outputOffset>2.71450987492</outputOffset>
-            <present>true</present>
-        </XmlPlatinumTwitter>
-
         <XmlEtherSnacksBoard>
             <name>NeckYawEtherSnacksBoard</name>
             <alias>4102</alias>
@@ -86,34 +55,4 @@
             <present>true</present>
         </XmlH4EtherCATJunctionPort>
     </devices>
-
-    <transmissions>
-        <XmlCycloidMechanism>
-            <jointName>NECK_Z</jointName>
-            <motorName>NeckYawMotor</motorName>
-            <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-1.5708</lowerJointLimit>
-            <upperJointLimit>1.5708</upperJointLimit>
-            <torqueBreakFrequency>50.0</torqueBreakFrequency>
-            <present>true</present>
-        </XmlCycloidMechanism>
-        <XmlCycloidMechanism>
-            <jointName>LEFT_SHOULDER_Y</jointName>
-            <motorName>LeftJ1Motor</motorName>
-            <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-3.141592</lowerJointLimit>
-            <upperJointLimit>1.22173</upperJointLimit>
-            <torqueBreakFrequency>50.0</torqueBreakFrequency>
-            <present>true</present>
-        </XmlCycloidMechanism>
-        <XmlCycloidMechanism>
-            <jointName>RIGHT_SHOULDER_Y</jointName>
-            <motorName>RightJ1Motor</motorName>
-            <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-3.141592</lowerJointLimit>
-            <upperJointLimit>1.22173</upperJointLimit>
-            <torqueBreakFrequency>50.0</torqueBreakFrequency>
-            <present>true</present>
-        </XmlCycloidMechanism>
-    </transmissions>
 </XmlHardware>

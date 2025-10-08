@@ -34,7 +34,7 @@ public class OneDOFJointCommand extends Packet<OneDOFJointCommand> implements Se
 
    public OneDOFJointCommand()
    {
-      joint_name_ = new java.lang.StringBuilder(32);
+      joint_name_ = new java.lang.StringBuilder(35);
    }
 
    public OneDOFJointCommand(OneDOFJointCommand other)

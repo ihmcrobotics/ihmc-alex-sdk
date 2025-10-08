@@ -2,6 +2,16 @@
 <XmlHardware>
     <devices>
         <XmlPlatinumTwitter>
+            <name>NeckYawMotor</name>
+            <alias>4001</alias>
+            <address>0</address>
+            <actuatorPackage>A019</actuatorPackage>
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <motorOffset>6.913761661923452</motorOffset>
+            <outputOffset>2.71450987492</outputOffset>
+            <present>true</present>
+        </XmlPlatinumTwitter>
+        <XmlPlatinumTwitter>
             <name>NeckPitchMotor</name>
             <alias>4003</alias>
             <address>0</address>
@@ -36,7 +46,17 @@
             </daughterDevices>
         </XmlEtherSnacksBoard>
     </devices>
+
     <transmissions>
+        <XmlCycloidMechanism>
+            <jointName>NECK_Z</jointName>
+            <motorName>NeckYawMotor</motorName>
+            <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-1.5708</lowerJointLimit>
+            <upperJointLimit>1.5708</upperJointLimit>
+            <torqueBreakFrequency>50.0</torqueBreakFrequency>
+            <present>true</present>
+        </XmlCycloidMechanism>
         <XmlCycloidMechanism>
             <jointName>NECK_Y</jointName>
             <motorName>NeckPitchMotor</motorName>
