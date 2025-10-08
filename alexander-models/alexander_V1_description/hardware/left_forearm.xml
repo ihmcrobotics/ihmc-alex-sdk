@@ -29,9 +29,9 @@
             <address>0</address>
             <actuatorPackage>J7L_Nadia</actuatorPackage>
             <useLatestCode>false</useLatestCode>
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>6.207014532419132</motorOffset>
-            <outputOffset>2.92974212013</outputOffset>
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <motorOffset>-31.525193904894962</motorOffset>
+            <outputOffset>1.88185227402</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
