@@ -15,7 +15,7 @@ public class AlexanderCommandPubSubType implements us.ihmc.pubsub.TopicDataType<
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "98a92767d58e4b8900edacf4db18dcdfcfb8db57905db0656ceea14142f7e00d";
+   		return "841be886501ffc89e0b75b1dfcbc8a08567641b49ad2e7adbb319ba403fde2d4";
    }
    
    @Override

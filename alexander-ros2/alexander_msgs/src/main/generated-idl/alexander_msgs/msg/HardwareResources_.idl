@@ -25,11 +25,11 @@ module alexander_msgs
         /**
          * The list of individual XML files comprising the full XML description of the robot
          */
-        string xml_resources[9];
+        string xml_resources[11];
         /**
          * The list of individual URDF files comprising the full URDF description of the robot
          */
-        string urdf_resources[9];
+        string urdf_resources[10];
         /**
          * The directory containing the xml and URDF resources of the desired version of the robot
          */

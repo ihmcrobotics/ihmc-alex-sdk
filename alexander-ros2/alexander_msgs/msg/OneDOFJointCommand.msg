@@ -1,6 +1,6 @@
 # Sets the desireds for controlling each 1DOF joint
 
-string<=32 joint_name
+string<=35 joint_name
 
 # Joint Desireds
 float64 q_des

@@ -15,7 +15,7 @@ public class HardwareResourcesPubSubType implements us.ihmc.pubsub.TopicDataType
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "f865a9b4b81be8e454ac539fdb2a5b6d4c4f872d67baf377e9664a7d981d7145";
+   		return "24e5fabc147a31a1f57974d14da62966c08616c5a3ffe399bc60590f2075db46";
    }
    
    @Override
@@ -56,11 +56,11 @@ public class HardwareResourcesPubSubType implements us.ihmc.pubsub.TopicDataType
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
-      for(int i0 = 0; i0 < (9); ++i0)
+      for(int i0 = 0; i0 < (11); ++i0)
       {
           current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 255 + 1;
       }
-      for(int i0 = 0; i0 < (9); ++i0)
+      for(int i0 = 0; i0 < (10); ++i0)
       {
           current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 255 + 1;
       }

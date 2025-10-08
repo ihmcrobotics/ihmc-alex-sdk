@@ -34,13 +34,13 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
 
    public HardwareResources()
    {
-      xml_resources_ = new java.lang.StringBuilder[9];
+      xml_resources_ = new java.lang.StringBuilder[11];
 
       for(int i1 = 0; i1 < xml_resources_.length; ++i1)
       {
           xml_resources_[i1] = new java.lang.StringBuilder();
       }
-      urdf_resources_ = new java.lang.StringBuilder[9];
+      urdf_resources_ = new java.lang.StringBuilder[10];
 
       for(int i3 = 0; i3 < urdf_resources_.length; ++i3)
       {
