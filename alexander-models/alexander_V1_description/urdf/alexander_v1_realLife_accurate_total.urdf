@@ -326,7 +326,7 @@
             <geometry>
                 <box size="0.02 0.12 0.10"/>
             </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="-0.02 0.02 0.0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="-0.02 0.06 0.0"/>
         </collision>
     </link>
 
@@ -394,9 +394,9 @@
          </visual>
          <collision name="left_thigh_collision">
              <geometry>
-                 <box size="0.16 0.13 0.29"/> <!-- width (X), depth (Y), height (Z) -->
+                 <box size="0.13 0.13 0.29"/> <!-- width (X), depth (Y), height (Z) -->
              </geometry>
-             <origin rpy="0.0 0.0 0.0" xyz="0.03 0.03 -0.15"/> <!-- Centered along thigh -->
+             <origin rpy="0.0 -0.15 0.0" xyz="0.03 0.03 -0.15"/> <!-- Centered along thigh -->
           </collision>
      </link>
     <link name="LEFT_SHIN">
@@ -413,9 +413,9 @@
         </visual>
         <collision name="left_shin_collision">
             <geometry>
-                <cylinder radius="0.08" length="0.3"/>  <!-- Adjust based on shin dimensions -->
+                <cylinder radius="0.06" length="0.3"/>  <!-- Adjust based on shin dimensions -->
             </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="0.04 0.0 -0.20"/> <!-- Centered along shin -->
+            <origin rpy="0.0 0.2 0.0" xyz="0.04 0.0 -0.20"/> <!-- Centered along shin -->
         </collision>
     </link>
 
@@ -580,7 +580,7 @@
             <geometry>
                 <box size="0.02 0.12 0.10"/>
             </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="-0.02 -0.02 0.0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="-0.02 -0.06 0.0"/>
         </collision>
     </link>
 
@@ -648,9 +648,9 @@
         </visual>
         <collision name="right_thigh_collision">
             <geometry>
-                <box size="0.16 0.13 0.29"/><!-- width (X), depth (Y), height (Z) -->
+                 <box size="0.13 0.13 0.29"/> <!-- width (X), depth (Y), height (Z) -->
             </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="0.03 -0.03 -0.15"/>
+             <origin rpy="0.0 -0.15 0.0" xyz="0.03 -0.03 -0.15"/> <!-- Centered along thigh -->
         </collision>
     </link>
 
@@ -705,9 +705,9 @@
         </visual>
         <collision name="right_shin_collision">
             <geometry>
-                <cylinder radius="0.08" length="0.3"/>
+                <cylinder radius="0.06" length="0.3"/>  <!-- Adjust based on shin dimensions -->
             </geometry>
-            <origin rpy="0 0 0" xyz="0.04 0 -0.20"/> <!-- centered along the shin length -->
+            <origin rpy="0.0 0.2 0.0" xyz="0.04 0.0 -0.20"/> <!-- Centered along shin -->
         </collision>
     </link>
 
@@ -751,7 +751,7 @@
     <link name="RIGHT_ANKLE_Y_LINK">
         <inertial>
             <mass value="0.05045632"/>
-            <origin rpy="0 0 0" xyz="2.94E-07 2.22E-07 -0.00462997"/>
+            <origin rpy="0 0 0" xyz="2.94E-07	2.22E-07	-0.00462997"/>
             <inertia ixx="0.00001733" ixy="2.12E-10" ixz="-1.26E-10" iyy="0.00000714" iyz="-2.02E-11" izz="0.00001851"/>
         </inertial>
         <visual>
@@ -834,7 +834,7 @@
         <collision name="torso_collision">
             <origin xyz="-0.01 0.00 0.25" rpy="0 0 0"/>
             <geometry>
-                <box size="0.27 0.24 0.4"/>
+                <box size="0.27 0.24 0.3"/>
             </geometry>
         </collision>
     </link>
@@ -994,9 +994,9 @@
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0867"/>
         </visual>
         <collision name="left_shoulder_z_collision">
-            <origin xyz="0 0 -0.17" rpy="0 0 0"/>
+            <origin xyz="0 0 -0.12" rpy="0 0 0"/>
             <geometry>
-                <cylinder radius="0.05" length="0.15"/>
+                <cylinder radius="0.05" length="0.22"/>
             </geometry>
         </collision>
     </link>
@@ -1189,9 +1189,9 @@
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0867"/>
         </visual>
         <collision name="right_shoulder_z_collision">
-            <origin xyz="0 0 -0.17" rpy="0 0 0"/>
+           <origin xyz="0 0 -0.12" rpy="0 0 0"/>
             <geometry>
-                <cylinder radius="0.05" length="0.15"/>
+                <cylinder radius="0.05" length="0.22"/>
             </geometry>
         </collision>
     </link>
