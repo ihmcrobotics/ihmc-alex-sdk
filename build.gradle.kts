@@ -4,7 +4,7 @@ plugins {
 
 ihmc {
    group = "us.ihmc"
-   version = "0.3"
+   version = "0.3.1"
    vcsUrl = "https://github.com/ihmcrobotics/ihmc-alexander-sdk"
    openSource = true
 
@@ -20,6 +20,7 @@ ihmc {
 
 mainDependencies {
    // TODO: Add psyonic ros2 dep
+   api("us.ihmc:ihmc_hands_ros2:source")
    api("us.ihmc:ros2-common-interfaces:1.2.4") {
       exclude(group = "org.junit.jupiter", module = "junit-jupiter-api")
       exclude(group = "org.junit.jupiter", module = "junit-jupiter-engine")
