@@ -4,19 +4,24 @@
 </p>
 
 # ihmc-alexander-sdk
-Light SDK consisting of meshes and URDF description of Alexander robot model, along with a ROS2 package containing messages for sending low-level control commands to and receiving low-level robot data from IHMC's Alexander humanoid.
+Light SDK with resources for visualizing/simulating Alex, properly initializing hardware, and communicating between low and high-level processes.
 
-## Running ihmc-alexander-sdk as a Git Submodule
-If integrating `ihmc-alexander-sdk` into your workspace as a git submodule, it is helpful to do the following:
-```
-git submodule add <https or ssh link to ihmc-alexander-sdk>
-git submodule init
-git config --global submodule.recurse true
-```
-These commands do the following, respectively:
-* Clone the `ihmc-alexander-sdk` and set it up as a git submodule
-* Ensures the `ihmc-alexander-sdk` submodule is initialized as a proper git repo locally
-* Ensures that when you call `git pull` in the parent repo (housing the submodule), it will properly update (merge or rebase) the local reference of the submodule with the commit referenced by the remote version of the parent repo
+## SDK Structure
+### alexander-models
+This directory contains all files specific to describing Alex. The files in the directories are as follows:
+- `hardware`: Contains XML files describing the hardware on the robot, including parameters for all sensors and actuators
+  - For simplicity when switching robot configurations, each body segment is split into its own file to be selected if that segment is included
+- `meshes`: Contains the OBJ and MTL files to describe each link on Alex
+- `mjcf`: Contains XML files for use with MuJoCo
+- `rl_urdf`: URDF files describing Alex for use in reinforcement learning applications.
+- `urdf`: URDF files describing Alex for use in visualization/simulation within the IHMC Java Framework
+  - For simplicity when switching robot configurations, each body segment is split into its own file to be selected if that segment is included
+### alexander-ros2
+This directory contains all files specific to ROS communication between the low-level and high-level communication of Alex
+- `alexander_msgs`: Contains all Alex-specific messages used for communication
+  - The generated Java code for using these messages is contained within `src/main/generated-java`
+- `ihmc-hands-ros2`: Git submodule of [`ihmc-hands-ros2`](https://github.com/ihmcrobotics/ihmc_hands_ros2)
+  - This contains URDF and OBJ files for hands used on Alex and ROS messages for communication with hands
 
 ## Maintainers
 * Stefan Fasano (sfasano@ihmc.org)
