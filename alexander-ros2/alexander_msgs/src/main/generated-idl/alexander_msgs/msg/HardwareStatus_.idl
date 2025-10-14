@@ -25,12 +25,12 @@ module alexander_msgs
         /**
          * Important EtherCAT Stuff
          */
-        double working_counter_mismatch_count;
-        double missed_deadlines;
+        unsigned long working_counter_mismatch_count;
+        unsigned long missed_deadlines;
         /**
          * Joint States
          */
-        sequence<alexander_msgs::msg::dds::ROSDeviceStatusProvider, 50> device_status_holders;
+        sequence<alexander_msgs::msg::dds::ROSDeviceStatusProvider, 50> device_status_providers;
       };
     };
   };

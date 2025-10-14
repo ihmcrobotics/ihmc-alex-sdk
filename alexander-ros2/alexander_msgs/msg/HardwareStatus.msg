@@ -7,8 +7,8 @@ bool missed_deadline_fault
 bool working_counter_fault
 
 # Important EtherCAT Stuff
-float64 working_counter_mismatch_count
-float64 missed_deadlines
+uint32 working_counter_mismatch_count
+uint32 missed_deadlines
 
 # Joint States
-ROSDeviceStatusProvider[<=50] device_status_holders
+ROSDeviceStatusProvider[<=50] device_status_providers

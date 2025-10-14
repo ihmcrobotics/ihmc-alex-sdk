@@ -21,16 +21,16 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
    /**
             * Important EtherCAT Stuff
             */
-   public double working_counter_mismatch_count_;
-   public double missed_deadlines_;
+   public long working_counter_mismatch_count_;
+   public long missed_deadlines_;
    /**
             * Joint States
             */
-   public us.ihmc.idl.IDLSequence.Object<alexander_msgs.msg.dds.ROSDeviceStatusProvider>  device_status_holders_;
+   public us.ihmc.idl.IDLSequence.Object<alexander_msgs.msg.dds.ROSDeviceStatusProvider>  device_status_providers_;
 
    public HardwareStatus()
    {
-      device_status_holders_ = new us.ihmc.idl.IDLSequence.Object<alexander_msgs.msg.dds.ROSDeviceStatusProvider> (50, new alexander_msgs.msg.dds.ROSDeviceStatusProviderPubSubType());
+      device_status_providers_ = new us.ihmc.idl.IDLSequence.Object<alexander_msgs.msg.dds.ROSDeviceStatusProvider> (50, new alexander_msgs.msg.dds.ROSDeviceStatusProviderPubSubType());
 
    }
 
@@ -54,7 +54,7 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       missed_deadlines_ = other.missed_deadlines_;
 
-      device_status_holders_.set(other.device_status_holders_);
+      device_status_providers_.set(other.device_status_providers_);
    }
 
    /**
@@ -102,23 +102,23 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
    /**
             * Important EtherCAT Stuff
             */
-   public void setWorkingCounterMismatchCount(double working_counter_mismatch_count)
+   public void setWorkingCounterMismatchCount(long working_counter_mismatch_count)
    {
       working_counter_mismatch_count_ = working_counter_mismatch_count;
    }
    /**
             * Important EtherCAT Stuff
             */
-   public double getWorkingCounterMismatchCount()
+   public long getWorkingCounterMismatchCount()
    {
       return working_counter_mismatch_count_;
    }
 
-   public void setMissedDeadlines(double missed_deadlines)
+   public void setMissedDeadlines(long missed_deadlines)
    {
       missed_deadlines_ = missed_deadlines;
    }
-   public double getMissedDeadlines()
+   public long getMissedDeadlines()
    {
       return missed_deadlines_;
    }
@@ -127,9 +127,9 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
    /**
             * Joint States
             */
-   public us.ihmc.idl.IDLSequence.Object<alexander_msgs.msg.dds.ROSDeviceStatusProvider>  getDeviceStatusHolders()
+   public us.ihmc.idl.IDLSequence.Object<alexander_msgs.msg.dds.ROSDeviceStatusProvider>  getDeviceStatusProviders()
    {
-      return device_status_holders_;
+      return device_status_providers_;
    }
 
 
@@ -162,11 +162,11 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.missed_deadlines_, other.missed_deadlines_, epsilon)) return false;
 
-      if (this.device_status_holders_.size() != other.device_status_holders_.size()) { return false; }
+      if (this.device_status_providers_.size() != other.device_status_providers_.size()) { return false; }
       else
       {
-         for (int i = 0; i < this.device_status_holders_.size(); i++)
-         {  if (!this.device_status_holders_.get(i).epsilonEquals(other.device_status_holders_.get(i), epsilon)) return false; }
+         for (int i = 0; i < this.device_status_providers_.size(); i++)
+         {  if (!this.device_status_providers_.get(i).epsilonEquals(other.device_status_providers_.get(i), epsilon)) return false; }
       }
 
 
@@ -194,7 +194,7 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       if(this.missed_deadlines_ != otherMyClass.missed_deadlines_) return false;
 
-      if (!this.device_status_holders_.equals(otherMyClass.device_status_holders_)) return false;
+      if (!this.device_status_providers_.equals(otherMyClass.device_status_providers_)) return false;
 
       return true;
    }
@@ -217,8 +217,8 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
       builder.append(this.working_counter_mismatch_count_);      builder.append(", ");
       builder.append("missed_deadlines=");
       builder.append(this.missed_deadlines_);      builder.append(", ");
-      builder.append("device_status_holders=");
-      builder.append(this.device_status_holders_);
+      builder.append("device_status_providers=");
+      builder.append(this.device_status_providers_);
       builder.append("}");
       return builder.toString();
    }

@@ -15,7 +15,7 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "b5e4685efc1ee9fc6e8f773772cd7c9987370dbc1f12c8465aa8666c3f4cdae5";
+   		return "47a052ddd867464557bb9b550b0c476edfc2f8a4fe44e40b7704cf73042caa93";
    }
    
    @Override
@@ -60,9 +60,9 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
-      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
-      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 50; ++i0)
       {
@@ -92,16 +92,16 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
-      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
-
-
-      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
-      for(int i0 = 0; i0 < data.getDeviceStatusHolders().size(); ++i0)
+
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      for(int i0 = 0; i0 < data.getDeviceStatusProviders().size(); ++i0)
       {
-          current_alignment += alexander_msgs.msg.dds.ROSDeviceStatusProviderPubSubType.getCdrSerializedSize(data.getDeviceStatusHolders().get(i0), current_alignment);}
+          current_alignment += alexander_msgs.msg.dds.ROSDeviceStatusProviderPubSubType.getCdrSerializedSize(data.getDeviceStatusProviders().get(i0), current_alignment);}
 
 
       return current_alignment - initial_alignment;
@@ -117,13 +117,13 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
 
       cdr.write_type_7(data.getWorkingCounterFault());
 
-      cdr.write_type_6(data.getWorkingCounterMismatchCount());
+      cdr.write_type_4(data.getWorkingCounterMismatchCount());
 
-      cdr.write_type_6(data.getMissedDeadlines());
+      cdr.write_type_4(data.getMissedDeadlines());
 
-      if(data.getDeviceStatusHolders().size() <= 50)
-      cdr.write_type_e(data.getDeviceStatusHolders());else
-          throw new RuntimeException("device_status_holders field exceeds the maximum length: %d > %d".formatted(data.getDeviceStatusHolders().size(), 50));
+      if(data.getDeviceStatusProviders().size() <= 50)
+      cdr.write_type_e(data.getDeviceStatusProviders());else
+          throw new RuntimeException("device_status_providers field exceeds the maximum length: %d > %d".formatted(data.getDeviceStatusProviders().size(), 50));
 
    }
 
@@ -137,11 +137,11 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       	
       data.setWorkingCounterFault(cdr.read_type_7());
       	
-      data.setWorkingCounterMismatchCount(cdr.read_type_6());
+      data.setWorkingCounterMismatchCount(cdr.read_type_4());
       	
-      data.setMissedDeadlines(cdr.read_type_6());
+      data.setMissedDeadlines(cdr.read_type_4());
       	
-      cdr.read_type_e(data.getDeviceStatusHolders());	
+      cdr.read_type_e(data.getDeviceStatusProviders());	
 
    }
 
@@ -152,9 +152,9 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       ser.write_type_7("motor_fault", data.getMotorFault());
       ser.write_type_7("missed_deadline_fault", data.getMissedDeadlineFault());
       ser.write_type_7("working_counter_fault", data.getWorkingCounterFault());
-      ser.write_type_6("working_counter_mismatch_count", data.getWorkingCounterMismatchCount());
-      ser.write_type_6("missed_deadlines", data.getMissedDeadlines());
-      ser.write_type_e("device_status_holders", data.getDeviceStatusHolders());
+      ser.write_type_4("working_counter_mismatch_count", data.getWorkingCounterMismatchCount());
+      ser.write_type_4("missed_deadlines", data.getMissedDeadlines());
+      ser.write_type_e("device_status_providers", data.getDeviceStatusProviders());
    }
 
    @Override
@@ -164,9 +164,9 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       data.setMotorFault(ser.read_type_7("motor_fault"));
       data.setMissedDeadlineFault(ser.read_type_7("missed_deadline_fault"));
       data.setWorkingCounterFault(ser.read_type_7("working_counter_fault"));
-      data.setWorkingCounterMismatchCount(ser.read_type_6("working_counter_mismatch_count"));
-      data.setMissedDeadlines(ser.read_type_6("missed_deadlines"));
-      ser.read_type_e("device_status_holders", data.getDeviceStatusHolders());
+      data.setWorkingCounterMismatchCount(ser.read_type_4("working_counter_mismatch_count"));
+      data.setMissedDeadlines(ser.read_type_4("missed_deadlines"));
+      ser.read_type_e("device_status_providers", data.getDeviceStatusProviders());
    }
 
    public static void staticCopy(alexander_msgs.msg.dds.HardwareStatus src, alexander_msgs.msg.dds.HardwareStatus dest)
