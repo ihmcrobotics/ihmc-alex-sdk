@@ -1,0 +1,29 @@
+#ifndef __alexander_msgs__msg__AlexanderStartupCommands__idl__
+#define __alexander_msgs__msg__AlexanderStartupCommands__idl__
+
+module alexander_msgs
+{
+  module msg
+  {
+    module dds
+    {
+
+      /**
+       * High Level Commands for Starting Up/Shutting Down Alexander
+       */
+      @TypeCode(type="alexander_msgs::msg::dds_::AlexanderStartupCommands_")
+      struct AlexanderStartupCommands
+      {
+        boolean enable_publishing_to_robot;
+        boolean clear_faults;
+        boolean enable_user_control_mode;
+        boolean enable_actuators;
+        boolean servo_robot;
+        boolean unservo_quickly;
+        double master_gain;
+      };
+    };
+  };
+};
+
+#endif
