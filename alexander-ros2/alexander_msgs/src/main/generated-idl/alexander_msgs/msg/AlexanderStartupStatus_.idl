@@ -1,0 +1,28 @@
+#ifndef __alexander_msgs__msg__AlexanderStartupStatus__idl__
+#define __alexander_msgs__msg__AlexanderStartupStatus__idl__
+
+module alexander_msgs
+{
+  module msg
+  {
+    module dds
+    {
+
+      /**
+       * High Level Commands for Starting Up/Shutting Down Alexander
+       */
+      @TypeCode(type="alexander_msgs::msg::dds_::AlexanderStartupStatus_")
+      struct AlexanderStartupStatus
+      {
+        boolean robot_is_faulted;
+        boolean robot_is_servod;
+        boolean robot_is_calibrated;
+        boolean publishing_to_robot_is_enabled;
+        boolean actuators_are_enabled;
+        double current_master_gain;
+      };
+    };
+  };
+};
+
+#endif
