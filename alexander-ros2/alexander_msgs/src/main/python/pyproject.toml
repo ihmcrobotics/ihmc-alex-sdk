@@ -1,0 +1,14 @@
+
+[project]
+name = "alexander-msgs"
+version = "0.3.1"
+description = "Alexander ROS2 messages in python for mujoco"
+requires-python = "<3.11"
+dependencies = ["cyclonedds", "setuptools"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["alexander_msgs*"]
+
+[tool.setuptools.package-data]
+"alexander_msgs" = ["resources/**/*"]
