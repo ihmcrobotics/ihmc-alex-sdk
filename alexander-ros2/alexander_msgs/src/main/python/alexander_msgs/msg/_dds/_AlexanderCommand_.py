@@ -19,7 +19,7 @@ class AlexanderCommand_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.Alexand
     enable_actuators: bool
     clear_faults: bool
     calibrate: bool
-    robot_control_state: types.byte
+    robot_control_state: types.uint8
     number_of_joints: types.uint32
     joint_commands: types.array[OneDOFJointCommand_, 50]
     low_level_master_gain: types.float64

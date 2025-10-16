@@ -24,4 +24,4 @@ class OneDOFJointCommand_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.OneDO
     max_velocity_error: types.float64
     max_torque: types.float64
     enable: bool
-    joint_control_type: types.byte
+    joint_control_type: types.uint8

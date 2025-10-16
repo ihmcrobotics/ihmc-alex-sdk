@@ -1,2 +1,2 @@
-from . import dds_
-__all__ = ["dds_", ]
+from . import _dds
+__all__ = ["_dds", ]
