@@ -68,6 +68,8 @@
 **/rebel.xml
 **/*.pyc
 **/generatedTestSuites/*TestSuite.java
+**/alexander_msgs.egg-info
+**/dist
 
 !gradle/wrapper/gradle-wrapper.jar
 
