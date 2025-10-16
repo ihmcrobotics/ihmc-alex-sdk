@@ -13,10 +13,10 @@ import cyclonedds.idl.types as types
 @dataclass
 @annotate.final
 @annotate.autoid("sequential")
-class IMUState_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.OneDOFJointState_"):
-    joint_name: types.array[types.string, 35]
+class OneDOFJointState_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.OneDOFJointState_"):
+    joint_name: types.bounded_str(35)
     q: types.float64
     qd: types.float64
     tau: types.float64
     act_temp: types.float64
-    is_operational: types.bool
+    is_operational: bool

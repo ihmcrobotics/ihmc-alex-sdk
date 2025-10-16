@@ -15,10 +15,10 @@ from ._OneDOFJointCommand_ import OneDOFJointCommand_
 @dataclass
 @annotate.final
 @annotate.autoid("sequential")
-class IMUState_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.AlexanderCommand_"):
-    enable_actuators: types.bool
-    clear_faults: types.bool
-    calibrate: types.bool
+class AlexanderCommand_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.AlexanderCommand_"):
+    enable_actuators: bool
+    clear_faults: bool
+    calibrate: bool
     robot_control_state: types.byte
     number_of_joints: types.uint32
     joint_commands: types.array[OneDOFJointCommand_, 50]

@@ -13,8 +13,8 @@ import cyclonedds.idl.types as types
 @dataclass
 @annotate.final
 @annotate.autoid("sequential")
-class IMUState_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.OneDOFJointCommand_"):
-    joint_name: types.array[types.string, 35]
+class OneDOFJointCommand_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.OneDOFJointCommand_"):
+    joint_name: types.bounded_str(35)
     q_des: types.float64
     qd_des: types.float64
     tau_des: types.float64
@@ -23,5 +23,5 @@ class IMUState_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.OneDOFJointComm
     max_position_error: types.float64
     max_velocity_error: types.float64
     max_torque: types.float64
-    enable: types.bool
+    enable: bool
     joint_control_type: types.byte

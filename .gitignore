@@ -66,6 +66,7 @@
 **/Temporary Items
 **/.apdisk
 **/rebel.xml
+**/*.pyc
 **/generatedTestSuites/*TestSuite.java
 
 !gradle/wrapper/gradle-wrapper.jar

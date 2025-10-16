@@ -17,10 +17,10 @@ from ._ForceTorqueState_ import ForceTorqueState_
 @dataclass
 @annotate.final
 @annotate.autoid("sequential")
-class IMUState_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.AlexanderState_"):
+class AlexanderState_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.AlexanderState_"):
     time: types.float64
-    is_faulted: types.bool
-    is_calibrated: types.bool
+    is_faulted: bool
+    is_calibrated: bool
     number_of_joints: types.uint32
     number_of_imus: types.uint32
     number_of_fts: types.uint32

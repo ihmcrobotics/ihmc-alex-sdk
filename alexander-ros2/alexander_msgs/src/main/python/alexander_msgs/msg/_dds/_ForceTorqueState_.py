@@ -13,10 +13,10 @@ import cyclonedds.idl.types as types
 @dataclass
 @annotate.final
 @annotate.autoid("sequential")
-class IMUState_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.ForceTorqueState_"):
-    sensor_name: types.array[types.string, 32]
+class ForceTorqueState_(idl.IdlStruct, typename="alexander_msgs.msg.dds_.ForceTorqueState_"):
+    sensor_name: types.bounded_str(32)
     force: types.array[types.float64, 3]
     torque: types.array[types.float32, 3]
-    is_operational: types.bool
+    is_operational: bool
 
 
