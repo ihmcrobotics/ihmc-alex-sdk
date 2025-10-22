@@ -369,8 +369,8 @@
 
     <link name="LEFT_HIP_Z_LINK">
          <inertial>
-             <mass value="0.74972192 "/>
-             <origin rpy="0 0 0" xyz="0.04549595	-0.00525571	-0.00937454"/>
+             <mass value="0.74972192"/>
+             <origin rpy="0 0 0" xyz="0.04549595 -0.00525571 -0.00937454"/>
              <inertia ixx="0.00301724" ixy="-0.00015575" ixz="0.00074098" iyy="0.00328402" iyz="-0.00040842" izz="0.00292463"/>
          </inertial>
          <visual>
@@ -383,7 +383,7 @@
      <link name="LEFT_THIGH">
          <inertial>
              <mass value="8.286"/>
-             <origin rpy="0 0 0" xyz="0.01417302	0.03268781	-0.10548314"/>
+             <origin rpy="0 0 0" xyz="0.01417302 0.03268781 -0.10548314"/>
              <inertia ixx="0.09293216" ixy="0.00035382" ixz="0.00924622" iyy="0.09767341" iyz="-0.0043387" izz="0.02812998"/>
          </inertial>
          <visual>
@@ -401,7 +401,7 @@
      </link>
     <link name="LEFT_SHIN">
         <inertial>
-            <mass value="6.3405718 "/>
+            <mass value="6.3405718"/>
             <origin rpy="0 0 0" xyz="0.03807965	-0.00108105	-0.12410027"/>
             <inertia ixx="0.08822008" ixy="-0.00053613" ixz="-0.00634659" iyy="0.091628" iyz="0.00004183" izz="0.01569249"/>
         </inertial>
@@ -496,7 +496,7 @@
     <link name="LEFT_ANKLE_Y_LINK">
         <inertial>
             <mass value="0.05045632"/>
-            <origin rpy="0 0 0" xyz="2.94E-07	2.22E-07	-0.00462997"/>
+            <origin rpy="0 0 0" xyz="2.94E-07 2.22E-07 -0.00462997"/>
             <inertia ixx="0.00001733" ixy="2.12E-10" ixz="-1.26E-10" iyy="0.00000714" iyz="-2.02E-11" izz="0.00001851"/>
         </inertial>
         <visual>
@@ -508,7 +508,7 @@
     </link>
     <link name="LEFT_FOOT">
         <inertial>
-            <mass value="1.28831268 "/>
+            <mass value="1.28831268"/>
             <origin rpy="0 0 0" xyz="0.03793372	-0.00000219	-0.0443663"/>
             <inertia ixx="0.0013169" ixy="0.00001054" ixz="0.00036437" iyy="0.00385838" iyz="-0.00000573" izz="0.00406674"/>
         </inertial>
@@ -566,7 +566,7 @@
     <!-- RIGHT LEG LINKS -->
     <link name="RIGHT_HIP_X_LINK">
         <inertial>
-            <mass value="2.33123426 "/>
+            <mass value="2.33123426"/>
             <origin rpy="0 0 0" xyz="0.04351957	-0.08688935	-0.03525357"/>
             <inertia ixx="0.00468506" ixy="0.00061027" ixz="0.0001309" iyy="0.00517303" iyz="-0.00047425" izz="0.00553045"/>
         </inertial>
@@ -623,7 +623,7 @@
 
     <link name="RIGHT_HIP_Z_LINK">
         <inertial>
-            <mass value="0.77280715 "/>
+            <mass value="0.77280715"/>
             <origin rpy="0 0 0" xyz="0.04549274	0.00525784	-0.00937505"/>
             <inertia ixx="0.00317639" ixy="0.00005807" ixz="0.00080598" iyy="0.0034518" iyz="0.00047441" izz="0.00313243"/>
         </inertial>
@@ -636,7 +636,7 @@
     </link>
     <link name="RIGHT_THIGH">
         <inertial>
-            <mass value="8.27617423 "/>
+            <mass value="8.27617423"/>
             <origin rpy="0 0 0" xyz="0.01411846	-0.03282392	-0.10542795"/>
             <inertia ixx="0.09281503" ixy="-0.00024328" ixz="0.00917054" iyy="0.09743827" iyz="0.00423839" izz="0.02800443"/>
         </inertial>
@@ -693,7 +693,7 @@
 
     <link name="RIGHT_SHIN">
         <inertial>
-            <mass value="6.33633928 "/>
+            <mass value="6.33633928"/>
             <origin rpy="0 0 0" xyz="0.03807648	0.00113375	-0.12408765"/>
             <inertia ixx="0.08730216" ixy="0.00053892" ixz="-0.0066006" iyy="0.090578" iyz="0.00029428" izz="0.01566017"/>
         </inertial>
@@ -751,7 +751,7 @@
     <link name="RIGHT_ANKLE_Y_LINK">
         <inertial>
             <mass value="0.05045632"/>
-            <origin rpy="0 0 0" xyz="2.94E-07	2.22E-07	-0.00462997"/>
+            <origin rpy="0 0 0" xyz="2.94E-07 2.22E-07 -0.00462997"/>
             <inertia ixx="0.00001733" ixy="2.12E-10" ixz="-1.26E-10" iyy="0.00000714" iyz="-2.02E-11" izz="0.00001851"/>
         </inertial>
         <visual>
@@ -957,7 +957,7 @@
     <!-- Left Arm -->
     <link name="LEFT_SHOULDER_Y_LINK">
         <inertial>
-            <mass value="3.0331992 "/>
+            <mass value="3.0331992"/>
             <origin rpy="0 0 0" xyz="-0.00264 0.12135 -0.006824"/>
             <inertia ixx="0.01114656" ixy="0.00024166" ixz="0.0001507" iyy="0.00699715" iyz="0.00308767" izz="0.0099942"/>
         </inertial>
@@ -970,7 +970,7 @@
     </link>
     <link name="LEFT_SHOULDER_X_LINK"> <!-- Using long biceps to match current physical robot -->
         <inertial>
-            <mass value="1.16160776 "/>
+            <mass value="1.16160776"/>
             <origin rpy="0 0 0" xyz="0.01053 0.02124 -0.1052690"/>
             <inertia ixx="0.00786831" ixy="0.00016417" ixz="-0.00075696" iyy="0.00727049" iyz="0.00099239" izz="0.0018045" />
         </inertial>
@@ -983,7 +983,7 @@
     </link>
     <link name="LEFT_SHOULDER_Z_LINK">
         <inertial>
-            <mass value="3.134 "/>
+            <mass value="3.134"/>
             <origin rpy="0 0 0" xyz="0.00510403 0.00274 -0.21745"/>
             <inertia ixx="0.02661157" ixy="0.00000297" ixz="0.00147256" iyy="0.02633278" iyz="0.00039997" izz="0.00308445"/>
         </inertial>
@@ -1054,9 +1054,7 @@
     <link name="LEFT_GRIPPER_Z_LINK">
         <inertial>
             <mass value="0.251"/>
-            <origin
-                    rpy="0 0 0"
-                    xyz="-0.000217 -0.000349 0.009761"/>
+            <origin rpy="0 0 0" xyz="-0.000217 -0.000349 0.009761"/>
             <inertia ixx="0.0000722" ixy="-0.0000016" ixz="-0.0000037" iyy="0.0000747" iyz="0.0000004" izz="0.0000324"/>
         </inertial>
         <visual>
@@ -1152,7 +1150,7 @@
     <!-- Right Arm -->
     <link name="RIGHT_SHOULDER_Y_LINK">
         <inertial>
-            <mass value="3.00752318 "/>
+            <mass value="3.00752318"/>
             <origin rpy="0 0 0" xyz="-0.00264 -0.12135 -0.006824"/>
             <inertia ixx="0.01107924" ixy="-0.00026479" ixz="-0.00015595" iyy="0.00695098" iyz="-0.00308767" izz="0.00991808"/>
         </inertial>
@@ -1165,7 +1163,7 @@
     </link>
     <link name="RIGHT_SHOULDER_X_LINK"> <!-- Using long biceps to match current physical robot -->
         <inertial>
-            <mass value="1.1615873 "/>
+            <mass value="1.1615873"/>
             <origin rpy="0 0 0" xyz="0.01053 -0.02124 -0.1052690"/>
             <inertia ixx="0.00786905" ixy="-0.00016408" ixz="-0.00075601" iyy="0.00727111" iyz="-0.00099114" izz="0.00180465" />
         </inertial>
@@ -1178,7 +1176,7 @@
     </link>
     <link name="RIGHT_SHOULDER_Z_LINK">
         <inertial>
-            <mass value="3.10111287 "/>
+            <mass value="3.10111287"/>
             <origin rpy="0 0 0" xyz="0.00524 -0.00274 -0.21745"/>
             <inertia ixx="0.0262817" ixy="0.00000996" ixz="0.0015423" iyy="0.02606342" iyz="-0.0004047" izz="0.00304834"/>
         </inertial>
