@@ -27,8 +27,8 @@
             <address>0</address>
             <actuatorPackage>A009</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>3.601761992239073</motorOffset>
-            <outputOffset>3.554040694981393</outputOffset>
+            <motorOffset>7.571177894657861</motorOffset>
+            <outputOffset>3.55234</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -57,7 +57,7 @@
             </daughterDevices>
         </XmlEtherSnacksBoard>
     </devices>
-    
+
     <transmissions>
         <XmlCycloidMechanism>
             <jointName>SPINE_Z</jointName>
