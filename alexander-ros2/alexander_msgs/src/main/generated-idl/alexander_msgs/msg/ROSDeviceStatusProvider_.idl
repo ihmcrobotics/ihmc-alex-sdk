@@ -1,0 +1,40 @@
+#ifndef __alexander_msgs__msg__ROSDeviceStatusProvider__idl__
+#define __alexander_msgs__msg__ROSDeviceStatusProvider__idl__
+
+module alexander_msgs
+{
+  module msg
+  {
+    module dds
+    {
+
+      /**
+       * Data holder containing status info for a given device
+       */
+      @TypeCode(type="alexander_msgs::msg::dds_::ROSDeviceStatusProvider_")
+      struct ROSDeviceStatusProvider
+      {
+        /**
+         * The device name
+         */
+        string<70> name;
+        /**
+         * Primary device status info
+         */
+        boolean is_responding;
+        boolean is_faulted;
+        octet ethercat_state;
+        /**
+         * More specific device status info related to isFaulted (elmo twitter fault)
+         */
+        boolean under_voltage;
+        boolean over_voltage;
+        boolean sto_disabled;
+        boolean current_short;
+        boolean over_temp;
+      };
+    };
+  };
+};
+
+#endif
