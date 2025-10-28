@@ -30,7 +30,7 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
    public HardwareStatus()
    {
-      device_status_providers_ = new us.ihmc.idl.IDLSequence.Object<alexander_msgs.msg.dds.ROSDeviceStatusProvider> (50, new alexander_msgs.msg.dds.ROSDeviceStatusProviderPubSubType());
+      device_status_providers_ = new us.ihmc.idl.IDLSequence.Object<alexander_msgs.msg.dds.ROSDeviceStatusProvider> (65, new alexander_msgs.msg.dds.ROSDeviceStatusProviderPubSubType());
 
    }
 

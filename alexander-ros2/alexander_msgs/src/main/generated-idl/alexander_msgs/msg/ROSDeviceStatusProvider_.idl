@@ -17,12 +17,13 @@ module alexander_msgs
         /**
          * The device name
          */
-        string<32> name;
+        string<70> name;
         /**
          * Primary device status info
          */
         boolean is_responding;
         boolean is_faulted;
+        octet ethercat_state;
         /**
          * More specific device status info related to isFaulted (elmo twitter fault)
          */

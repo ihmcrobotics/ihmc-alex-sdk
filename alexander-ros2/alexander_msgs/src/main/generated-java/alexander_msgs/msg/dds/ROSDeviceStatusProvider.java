@@ -20,6 +20,7 @@ public class ROSDeviceStatusProvider extends Packet<ROSDeviceStatusProvider> imp
             */
    public boolean is_responding_;
    public boolean is_faulted_;
+   public byte ethercat_state_;
    /**
             * More specific device status info related to isFaulted (elmo twitter fault)
             */
@@ -31,7 +32,7 @@ public class ROSDeviceStatusProvider extends Packet<ROSDeviceStatusProvider> imp
 
    public ROSDeviceStatusProvider()
    {
-      name_ = new java.lang.StringBuilder(32);
+      name_ = new java.lang.StringBuilder(70);
    }
 
    public ROSDeviceStatusProvider(ROSDeviceStatusProvider other)
@@ -48,6 +49,8 @@ public class ROSDeviceStatusProvider extends Packet<ROSDeviceStatusProvider> imp
       is_responding_ = other.is_responding_;
 
       is_faulted_ = other.is_faulted_;
+
+      ethercat_state_ = other.ethercat_state_;
 
       under_voltage_ = other.under_voltage_;
 
@@ -107,6 +110,15 @@ public class ROSDeviceStatusProvider extends Packet<ROSDeviceStatusProvider> imp
    public boolean getIsFaulted()
    {
       return is_faulted_;
+   }
+
+   public void setEthercatState(byte ethercat_state)
+   {
+      ethercat_state_ = ethercat_state;
+   }
+   public byte getEthercatState()
+   {
+      return ethercat_state_;
    }
 
    /**
@@ -184,6 +196,8 @@ public class ROSDeviceStatusProvider extends Packet<ROSDeviceStatusProvider> imp
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.is_faulted_, other.is_faulted_, epsilon)) return false;
 
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.ethercat_state_, other.ethercat_state_, epsilon)) return false;
+
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.under_voltage_, other.under_voltage_, epsilon)) return false;
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.over_voltage_, other.over_voltage_, epsilon)) return false;
@@ -213,6 +227,8 @@ public class ROSDeviceStatusProvider extends Packet<ROSDeviceStatusProvider> imp
 
       if(this.is_faulted_ != otherMyClass.is_faulted_) return false;
 
+      if(this.ethercat_state_ != otherMyClass.ethercat_state_) return false;
+
       if(this.under_voltage_ != otherMyClass.under_voltage_) return false;
 
       if(this.over_voltage_ != otherMyClass.over_voltage_) return false;
@@ -239,6 +255,8 @@ public class ROSDeviceStatusProvider extends Packet<ROSDeviceStatusProvider> imp
       builder.append(this.is_responding_);      builder.append(", ");
       builder.append("is_faulted=");
       builder.append(this.is_faulted_);      builder.append(", ");
+      builder.append("ethercat_state=");
+      builder.append(this.ethercat_state_);      builder.append(", ");
       builder.append("under_voltage=");
       builder.append(this.under_voltage_);      builder.append(", ");
       builder.append("over_voltage=");

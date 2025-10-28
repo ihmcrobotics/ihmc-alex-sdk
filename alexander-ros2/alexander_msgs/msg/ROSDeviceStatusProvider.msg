@@ -1,11 +1,12 @@
 # Data holder containing status info for a given device
 
 # The device name
-string<=32 name
+string<=70 name
 
 # Primary device status info
 bool is_responding
 bool is_faulted
+byte ethercat_state
 
 # More specific device status info related to isFaulted (elmo twitter fault)
 bool under_voltage

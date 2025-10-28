@@ -15,7 +15,7 @@ public class ROSDeviceStatusProviderPubSubType implements us.ihmc.pubsub.TopicDa
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "56bb7c6bf6e5f3444f829994cff5655c675d291d5991cfdc1f0a280cab60ada4";
+   		return "89de73091af9cb1cc2253ae56278013ca03871928f876244e673f39dc1bf901e";
    }
    
    @Override
@@ -52,7 +52,9 @@ public class ROSDeviceStatusProviderPubSubType implements us.ihmc.pubsub.TopicDa
    {
       int initial_alignment = current_alignment;
 
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 32 + 1;
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 70 + 1;
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
@@ -103,19 +105,24 @@ public class ROSDeviceStatusProviderPubSubType implements us.ihmc.pubsub.TopicDa
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
 
       return current_alignment - initial_alignment;
    }
 
    public static void write(alexander_msgs.msg.dds.ROSDeviceStatusProvider data, us.ihmc.idl.CDR cdr)
    {
-      if(data.getName().length() <= 32)
+      if(data.getName().length() <= 70)
       cdr.write_type_d(data.getName());else
-          throw new RuntimeException("name field exceeds the maximum length: %d > %d".formatted(data.getName().length(), 32));
+          throw new RuntimeException("name field exceeds the maximum length: %d > %d".formatted(data.getName().length(), 70));
 
       cdr.write_type_7(data.getIsResponding());
 
       cdr.write_type_7(data.getIsFaulted());
+
+      cdr.write_type_9(data.getEthercatState());
 
       cdr.write_type_7(data.getUnderVoltage());
 
@@ -136,6 +143,8 @@ public class ROSDeviceStatusProviderPubSubType implements us.ihmc.pubsub.TopicDa
       	
       data.setIsFaulted(cdr.read_type_7());
       	
+      data.setEthercatState(cdr.read_type_9());
+      	
       data.setUnderVoltage(cdr.read_type_7());
       	
       data.setOverVoltage(cdr.read_type_7());
@@ -155,6 +164,7 @@ public class ROSDeviceStatusProviderPubSubType implements us.ihmc.pubsub.TopicDa
       ser.write_type_d("name", data.getName());
       ser.write_type_7("is_responding", data.getIsResponding());
       ser.write_type_7("is_faulted", data.getIsFaulted());
+      ser.write_type_9("ethercat_state", data.getEthercatState());
       ser.write_type_7("under_voltage", data.getUnderVoltage());
       ser.write_type_7("over_voltage", data.getOverVoltage());
       ser.write_type_7("sto_disabled", data.getStoDisabled());
@@ -168,6 +178,7 @@ public class ROSDeviceStatusProviderPubSubType implements us.ihmc.pubsub.TopicDa
       ser.read_type_d("name", data.getName());
       data.setIsResponding(ser.read_type_7("is_responding"));
       data.setIsFaulted(ser.read_type_7("is_faulted"));
+      data.setEthercatState(ser.read_type_9("ethercat_state"));
       data.setUnderVoltage(ser.read_type_7("under_voltage"));
       data.setOverVoltage(ser.read_type_7("over_voltage"));
       data.setStoDisabled(ser.read_type_7("sto_disabled"));
