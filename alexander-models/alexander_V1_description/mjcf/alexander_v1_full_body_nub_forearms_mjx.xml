@@ -351,7 +351,7 @@
                         />
                         <joint name="left_shoulder_x" class="alexander/shoulder/x/left"/>
                         <geom mesh="left_shoulder_x" material="gray" class="alexander/visual"/>
-                        <body name="left_shoulder_z" pos="0.0 0.035 -0.08" euler="0.0 0.0 0.0">
+                        <body name="left_shoulder_z" pos="0.0 0.035 0.0" euler="0.0 0.0 0.0">
                             <inertial 
                                 pos="0.00510403 0.00314332 -0.21695413"
                                 mass="2.91"
@@ -408,7 +408,7 @@
                         />
                         <joint name="right_shoulder_x" class="alexander/shoulder/x/right"/>
                         <geom mesh="right_shoulder_x" material="gray" class="alexander/visual"/>
-                        <body name="right_shoulder_z" pos="0.0 -0.035 -0.08" euler="0.0 0.0 0.0">
+                        <body name="right_shoulder_z" pos="0.0 -0.035 -0.0" euler="0.0 0.0 0.0">
                             <inertial 
                                 pos="0.00524 -0.00274 -0.21745"
                                 mass="2.91"
