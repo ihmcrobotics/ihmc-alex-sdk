@@ -127,7 +127,7 @@
             <alias>7109</alias>
             <address>0</address>
             <imuType>H4</imuType>
-            <present>true</present>
+            <present>false</present>
             <angularVelocityBiasX>0.0011671421093480262</angularVelocityBiasX>
             <angularVelocityBiasY>0.0030392159135175013</angularVelocityBiasY>
             <angularVelocityBiasZ>-0.0009495023986011424</angularVelocityBiasZ>
@@ -136,7 +136,7 @@
             <name>RightFootFTSensor</name>
             <alias>7110</alias>
             <address>0</address>
-            <present>true</present>
+            <present>false</present>
             <fxScalar>1.0</fxScalar>
             <fyScalar>1.0</fyScalar>
             <fzScalar>-1.0</fzScalar>
