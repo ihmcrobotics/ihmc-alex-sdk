@@ -194,53 +194,53 @@
     </asset>
 
     <worldbody>
-         <body name="pelvis_link" pos="0.0 0.0 1.0" childclass="alexander">
-            <inertial 
-                pos="-0.08354287 0.00005291 -0.03484828"
-                mass="9.50083635"
-                fullinertia="0.03428688 0.05178848 0.06001929 0.00001151 0.00015935 0.00004514"
+        <body name="pelvis_link" pos="0.0 0.0 1.0" childclass="alexander">
+            <inertial
+                pos="-0.08256965 0.00003644 -0.03242784"
+                mass="7.161"
+                fullinertia="0.02977256988 0.00000354246 0.00058151866 0.03911256674 0.00002715104 0.04671200364"
             />
             <freejoint/>
             <geom mesh="pelvis" material="gray" class="alexander/visual"/>
             <site name="imu_pelvis" class="alexander/imu/pelvis"/>
             <body name="left_hip_x" pos="-0.162 0.0595 -0.015">
-                <inertial 
+                <inertial
                     pos="0.04350911	0.08708606 -0.03525761"
-                    mass="2.32977961"
-                    fullinertia="0.00467452 0.00516613 0.00553124 -0.00058626 0.00013124 0.00048141"
+                    mass="2.332078"
+                    fullinertia="0.00469288 -0.00059599 0.00013313 0.00517742 0.00048434 0.00554081"
                 />
                 <joint name="left_hip_x" class="alexander/hip/x/left"/>
                 <geom mesh="left_hip_x" material="gray" class="alexander/visual"/>
                 <site name="imu_left_hip" class="alexander/imu/hip/left"/>
                 <body name="left_hip_z" pos="0.06	0.1	-0.08">
-                    <inertial 
+                    <inertial
                         pos="0.04549595	-0.00525571	-0.00937454"
-                        mass="0.77281362"
-                        fullinertia="0.00317639 0.00345182 0.00313245 0.00005807 0.00080598 0.00047441"
+                        mass="0.74972192"
+                        fullinertia="0.00301724 -0.00015575 0.00074098 0.00328402 -0.00040842 0.00292463"
                     />
                     <joint name="left_hip_z" class="alexander/hip/z/left"/>
                     <geom mesh="left_hip_z" material="gray" class="alexander/visual"/>
                     <body name="left_thigh" pos="0.1045	-0.0573	-0.0525">
-                        <inertial 
+                        <inertial
                             pos="0.01417302 0.03268781 -0.10548314"
-                            mass="7.75"
-                            fullinertia="0.09264028 0.09733033 0.02803877 0.00038532 0.00916409 -0.0043516"
+                            mass="8.286"
+                            fullinertia="0.09293216 0.00035382 0.00924622 0.09767341 -0.0043387 0.02812998"
                         />
                         <joint name="left_hip_y" class="alexander/hip/y"/>
                         <geom mesh="left_thigh" material="gray" class="alexander/visual"/>
                         <geom name="left_thigh_collision" pos="0.015 0.025 -0.125" class="alexander/collision/thigh"/>
                         <site name="imu_left_thigh" class="alexander/imu/thigh/left"/>
                         <body name="left_shin" pos="0 0.018 -0.32">
-                            <inertial 
+                            <inertial
                                 pos="0.03807965	-0.00108105	-0.12410027"
-                                mass="6.31087157"
-                                fullinertia="0.08823148 0.09163264 0.01569601 -0.00054706 -0.00634132 0.00002714"
+                                mass="6.3405718"
+                                fullinertia="0.08822008 -0.00053613 -0.00634659 0.091628 0.00004183 0.01569249"
                             />
                             <joint name="left_knee_y" class="alexander/knee"/>
                             <geom mesh="left_shin" material="gray" class="alexander/visual"/>
                             <site name="imu_left_shin" class="alexander/imu/shin/left"/>
                             <body name="left_ankle" pos="0 0 -0.41">
-                                <inertial 
+                                <inertial
                                     pos="2.94E-07 2.22E-07 -0.00462997"
                                     mass="0.05045632"
                                     fullinertia="0.00001733 0.00000714 0.00001851 2.12E-10 -1.26E-10 -2.02E-11"
@@ -248,10 +248,10 @@
                                 <joint name="left_ankle_y" class="alexander/ankle/y"/>
                                 <geom mesh="left_ankle" material="gray" class="alexander/visual"/>
                                 <body name="left_foot" pos="0 0 -0.012">
-                                    <inertial 
+                                    <inertial
                                         pos="0.03793372	-0.00000219	-0.0443663"
-                                        mass="1.28288609"
-                                        fullinertia="0.00131328 0.00385286 0.00406301 0.00001057 0.00036242 -0.0000069"
+                                        mass="1.28831268"
+                                        fullinertia="0.0013169 0.00001054 0.00036437 0.00385838 -0.00000573 0.00406674"
                                     />
                                     <joint name="left_ankle_x" class="alexander/ankle/x"/>
                                     <geom mesh="left_foot" material="gray" class="alexander/visual"/>
@@ -265,43 +265,43 @@
                 </body>
             </body>
             <body name="right_hip_x" pos="-0.162	-0.0595	-0.015">
-                <inertial 
+                <inertial
                     pos="0.04351957	-0.08688935	-0.03525357"
-                    mass="2.32977248"
-                    fullinertia="0.00467576 0.00516385 0.00552901 0.00061004 0.00013038 -0.00047381"
+                    mass="2.33123426"
+                    fullinertia="0.00468506 0.00061027 0.0001309 0.00517303 -0.00047425 0.00553045"/>
                 />
                 <joint name="right_hip_x" class="alexander/hip/x/right"/>
                 <geom mesh="right_hip_x" material="gray" class="alexander/visual"/>
                 <site name="imu_right_hip" class="alexander/imu/hip/right"/>
                 <body name="right_hip_z" pos="0.06 -0.1 -0.08">
-                    <inertial 
+                    <inertial
                         pos="0.04549274 0.00525784 -0.00937505"
-                        mass="0.77281055"
-                        fullinertia="0.00317639 0.00345166 0.00313223 -0.00005765 0.00080587 -0.00047466"
+                        mass="0.77280715"
+                        fullinertia="0.00317639 0.00005807 0.00080598 0.0034518 0.00047441 0.00313243"
                     />
                     <joint name="right_hip_z" class="alexander/hip/z/right"/>
                     <geom mesh="right_hip_z" material="gray" class="alexander/visual"/>
                     <body name="right_thigh" pos="0.1045 0.0573 -0.0525">
-                        <inertial 
+                        <inertial
                             pos="0.01411846 -0.03282392 -0.10542795"
-                            mass="7.75"
-                            fullinertia="0.09273162 0.09738701 0.02802165 -0.00026689 0.00921343 0.00422485"
+                            mass="8.27617423"
+                            fullinertia="0.09281503 -0.00024328 0.00917054 0.09743827 0.00423839 0.02800443"
                         />
                         <joint name="right_hip_y" class="alexander/hip/y"/>
                         <geom mesh="right_thigh" material="gray" class="alexander/visual"/>
                         <geom name="right_thigh_collision" pos="0.015 -0.025 -0.125" class="alexander/collision/thigh"/>
                         <site name="imu_right_thigh" class="alexander/imu/thigh/right"/>
                         <body name="right_shin" pos="0 -0.018 -0.32">
-                            <inertial 
+                            <inertial
                                 pos="0.03807648	0.00113375 -0.12408765"
-                                mass="6.31087157"
-                                fullinertia="0.08705693 0.090231 0.01554032 0.00057277 -0.00674654 0.00028332"
+                                mass="6.33633928"
+                                fullinertia="0.08730216 0.00053892 -0.0066006 0.090578 0.00029428 0.01566017"
                             />
                             <joint name="right_knee_y" class="alexander/knee"/>
                             <geom mesh="right_shin" material="gray" class="alexander/visual"/>
                             <site name="imu_right_shin" class="alexander/imu/shin/right"/>
                             <body name="right_ankle" pos="0 0 -0.41">
-                                <inertial 
+                                <inertial
                                     pos="2.94E-07 2.22E-07 -0.00462997"
                                     mass="0.05045632"
                                     fullinertia="0.00001733 0.00000714 0.00001851 2.12E-10 -1.26E-10 -2.02E-11"
@@ -309,10 +309,10 @@
                                 <joint name="right_ankle_y" class="alexander/ankle/y"/>
                                 <geom mesh="right_ankle" material="gray" class="alexander/visual"/>
                                 <body name="right_foot" pos="0 0 -0.012">
-                                    <inertial 
+                                    <inertial
                                         pos="0.03793372	-0.00000219	-0.0443663"
-                                        mass="1.28288609"
-                                        fullinertia="0.00131328 0.00385286 0.00406301 0.00001057 0.00036242 -0.0000069"
+                                        mass="1.28831268"
+                                        fullinertia="0.0013169 0.00001054 0.00036437 0.00385838 -0.00000573 0.00406674"
                                     />
                                     <joint name="right_ankle_x" class="alexander/ankle/x"/>
                                     <geom mesh="right_foot" material="gray" class="alexander/visual"/>
@@ -326,42 +326,42 @@
                 </body>
             </body>
             <body name="torso" pos="0.0 0 0.018">
-                <inertial 
-                    pos="-0.034 0.0 0.297"
-                    mass="7.0081"
-                    fullinertia="0.077 0.068 0.033 9.64E-06 0.008 7.24E-06"
+                <inertial
+                    pos="-0.014 0.001 0.326"
+                    mass="11.478322779"
+                    fullinertia="0.1764967124 0.00002329659 0.00830355822 0.1237602 0.00072436338 0.1109598365"
                 />
                 <joint name="spine_z" class="alexander/spine"/>
                 <geom mesh="torso" pos="0.0 0.0 0.105063" material="gray" class="alexander/visual"/>
                 <site name="imu_torso" class="alexander/imu/torso"/>
                 <body name="left_shoulder_y" pos="-0.015 0.115474 0.352984" euler="0.698132 0.0 0.0">
-                    <inertial 
+                    <inertial
                         pos="-0.00264 0.12135 -0.006824"
-                        mass="2.99"
-                        fullinertia="0.0111046 0.0051699 0.01176 0.0002882 0.000054 0.0009318"
+                        mass="3.0331992"
+                        fullinertia="0.01114656 0.00024166 0.0001507 0.00699715 0.00308767 0.0099942"
                     />
                     <joint name="left_shoulder_y" class="alexander/shoulder/y"/>
                     <geom mesh="left_shoulder_y" material="gray" class="alexander/visual"/>
                     <site name="imu_left_shoulder_y" class="alexander/imu/shoulder_y/left"/>
                     <body name="left_shoulder_x" pos="0.0 0.15676000 -0.01300000" euler="-0.698132 0.0 0.0">
-                        <inertial 
+                        <inertial
                             pos="0.01053 0.02124 -0.1052690"
-                            mass="1.17068"
-                            fullinertia="0.00787035 0.00727481 0.00182144 1.667E-4 -0.00075945 0.000988837"
+                            mass="1.16160776"
+                            fullinertia="0.00786831 0.00016417 -0.00075696 0.00727049 0.00099239 0.0018045"
                         />
                         <joint name="left_shoulder_x" class="alexander/shoulder/x/left"/>
                         <geom mesh="left_shoulder_x" material="gray" class="alexander/visual"/>
                         <body name="left_shoulder_z" pos="0.0 0.035 0.0" euler="0.0 0.0 0.0">
-                            <inertial 
-                                pos="0.00510403 0.00314332 -0.21695413"
-                                mass="2.91"
-                                fullinertia="0.0267829 0.0265514 0.003052 -0.000011 0.0015998 0.0004426"
+                            <inertial
+                                pos="0.00510403 0.00274 -0.21745"
+                                mass="3.134"
+                                fullinertia="0.02661157 0.00000297 0.00147256 0.02633278 0.00039997 0.00308445"
                             />
                             <joint name="left_shoulder_z" class="alexander/shoulder/z/left"/>
                             <geom mesh="left_shoulder_z" pos="0.0 0.0 0.0867" material="gray" class="alexander/visual"/>
                             <site name="imu_left_shoulder_z" class="alexander/imu/shoulder_z/left"/>
                             <body name="left_elbow_y" pos="0.015 0.0 -0.3127" euler="0.0 0.0 0.0">
-                                <inertial 
+                                <inertial
                                     pos="-0.01090935 -0.01147189 -0.10388715"
                                     mass="0.616"
                                     fullinertia="0.00760733 0.00767556 4.554E-4 2.242E-5 -2.583E-4 0.00061995"
@@ -373,18 +373,18 @@
                     </body>
                 </body>
                 <body name="neck_z" pos="-0.015 0 0.450403" euler="0.0 0.0 0.0">
-                    <inertial 
-                        pos="0.007143 0.006943 0.109823"
-                        mass="1.141"
-                        fullinertia="0.007475898 0.007407578 0.00109269 -0.000075723 -0.000745362 -0.000436948"
+                    <inertial
+                        pos="0.00626571 0.0059834 0.15148116"
+                        mass="1.03172573"
+                        fullinertia="0.00611354 -0.00005224 -0.00058532 0.00602503 -0.00028073 0.0009799"
                     />
                     <joint name="neck_z" class="alexander/neck/z"/>
                     <geom type="cylinder" size="0.05 0.05" material="gray" class="alexander/visual"/>
                     <body name="head" pos="0.025 0.01 0.189597" euler="0.0 0.0 0.0">
-                        <inertial 
-                            pos="0.03237 -0.013568 0.007163"
-                            mass="1.677"
-                            fullinertia="0.006026191 0.008182071 0.00644909 -0.000197484 0.001813659 -0.000042529"
+                        <inertial
+                            pos="0.0407664 -0.00396678 0.007163"
+                            mass="1.27065932"
+                            fullinertia="0.00424227 -0.00008839 0.00054485 0.00501825 -0.00010863 0.00451978"
                         />
                         <joint name="neck_y" class="alexander/neck/y"/>
                         <geom mesh="head" material="gray" class="alexander/visual"/>
@@ -392,33 +392,33 @@
                     </body>
                 </body>
                 <body name="right_shoulder_y" pos="-0.015 -0.115474 0.352984" euler="-0.698132 0.0 0.0">
-                    <inertial 
+                    <inertial
                         pos="-0.00264 -0.12135 -0.006824"
-                        mass="2.99"
-                        fullinertia="0.0110394 0.0051097 0.0116925 -0.0003041 -0.0000594 -0.0009183"
+                        mass="3.00752318"
+                        fullinertia="0.01107924 -0.00026479 -0.00015595 0.00695098 -0.00308767 0.00991808"
                     />
                     <joint name="right_shoulder_y" class="alexander/shoulder/y"/>
                     <geom mesh="right_shoulder_y" material="gray" class="alexander/visual"/>
                     <site name="imu_right_shoulder_y" class="alexander/imu/shoulder_y/right"/>
                     <body name="right_shoulder_x" pos="0.0 -0.15676000 -0.01300000" euler="0.698132 0.0 0.0">
-                        <inertial 
+                        <inertial
                             pos="0.01053 -0.02124 -0.1052690"
-                            mass="1.17068"
-                            fullinertia="0.00787035 0.00727481 0.00182144 -1.667E-4 -0.00075945 -0.000988837"
+                            mass="1.1615873"
+                            fullinertia="0.00786905 -0.00016408 -0.00075601 0.00727111 -0.00099114 0.00180465"
                         />
                         <joint name="right_shoulder_x" class="alexander/shoulder/x/right"/>
                         <geom mesh="right_shoulder_x" material="gray" class="alexander/visual"/>
-                        <body name="right_shoulder_z" pos="0.0 -0.035 -0.0" euler="0.0 0.0 0.0">
-                            <inertial 
+                        <body name="right_shoulder_z" pos="0.0 -0.035 0.0" euler="0.0 0.0 0.0">
+                            <inertial
                                 pos="0.00524 -0.00274 -0.21745"
-                                mass="2.91"
-                                fullinertia="0.0248699 0.0245973 0.0029883 0.0000211 0.0000211 -0.0004444"
+                                mass="3.10111287"
+                                fullinertia="0.0262817 0.00000996 0.0015423 0.02606342 -0.0004047 0.00304834"
                             />
                             <joint name="right_shoulder_z" class="alexander/shoulder/z/right"/>
                             <geom mesh="right_shoulder_z" pos="0.0 0.0 0.0867" material="gray" class="alexander/visual"/>
                             <site name="imu_right_shoulder_z" class="alexander/imu/shoulder_z/right"/>
                             <body name="right_elbow_y" pos="0.015 0.0 -0.3127" euler="0.0 0.0 0.0">
-                                <inertial 
+                                <inertial
                                     pos="-0.01090935 0.01147189 -0.10388715"
                                     mass="0.616"
                                     fullinertia="0.00760733 0.00767556 4.554E-4 -2.242E-5 -2.583E-4 -0.00061995"
