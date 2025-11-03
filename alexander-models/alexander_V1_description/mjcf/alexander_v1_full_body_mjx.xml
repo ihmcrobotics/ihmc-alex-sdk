@@ -18,10 +18,10 @@
                     <joint axis="1 0 0" armature="0.004085"/>
                     <position forcerange="-150 150" kp="112"/>
                     <default class="alexander/hip/x/left">
-                        <joint range="-0.3490658504 0.872664626"/>
+                        <joint range="-0.368 0.872664626"/>
                     </default>
                     <default class="alexander/hip/x/right">
-                        <joint range="-0.872664626 0.3490658504"/>
+                        <joint range="-0.872664626 0.368"/>
                     </default>
                 </default>
                 <default class="alexander/hip/y">
