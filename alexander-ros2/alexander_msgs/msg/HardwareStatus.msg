@@ -11,4 +11,4 @@ uint32 working_counter_mismatch_count
 uint32 missed_deadlines
 
 # Joint States
-ROSDeviceStatusProvider[<=65] device_status_providers
+ROSDeviceStatusProvider[<=75] device_status_providers

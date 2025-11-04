@@ -15,7 +15,7 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "3a00f6218fbfc6d822c0ae8b57e5229f3235fdc24cc0f32a05ff301909e968e4";
+   		return "901bf4223799bf675bf435723f49969291706da66febdf709062fcca587c63a1";
    }
    
    @Override
@@ -64,7 +64,7 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 65; ++i0)
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 75; ++i0)
       {
           current_alignment += alexander_msgs.msg.dds.ROSDeviceStatusProviderPubSubType.getMaxCdrSerializedSize(current_alignment);}
 
@@ -121,9 +121,9 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
 
       cdr.write_type_4(data.getMissedDeadlines());
 
-      if(data.getDeviceStatusProviders().size() <= 65)
+      if(data.getDeviceStatusProviders().size() <= 75)
       cdr.write_type_e(data.getDeviceStatusProviders());else
-          throw new RuntimeException("device_status_providers field exceeds the maximum length: %d > %d".formatted(data.getDeviceStatusProviders().size(), 65));
+          throw new RuntimeException("device_status_providers field exceeds the maximum length: %d > %d".formatted(data.getDeviceStatusProviders().size(), 75));
 
    }
 

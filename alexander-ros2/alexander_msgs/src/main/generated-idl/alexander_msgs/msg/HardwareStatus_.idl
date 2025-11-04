@@ -30,7 +30,7 @@ module alexander_msgs
         /**
          * Joint States
          */
-        sequence<alexander_msgs::msg::dds::ROSDeviceStatusProvider, 65> device_status_providers;
+        sequence<alexander_msgs::msg::dds::ROSDeviceStatusProvider, 75> device_status_providers;
       };
     };
   };

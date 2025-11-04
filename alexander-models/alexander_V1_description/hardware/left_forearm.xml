@@ -40,14 +40,14 @@
             <alias>2107</alias>
             <address>0</address>
             <boardType>ALEXANDER_HAND_CONTROL</boardType>
-            <present>true</present>
+            <present>false</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>left_wrist_z_imu</name>
                     <alias>0</alias>
                     <address>1</address>
                     <imuType>TDK</imuType>
-                    <present>true</present>
+                    <present>false</present>
                     <angularVelocityBiasX>0.0</angularVelocityBiasX>
                     <angularVelocityBiasY>0.0</angularVelocityBiasY>
                     <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
