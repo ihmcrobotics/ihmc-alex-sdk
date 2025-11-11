@@ -126,6 +126,8 @@
             <name>right_foot_imu</name>
             <alias>7109</alias>
             <address>0</address>
+            <vendorID>0x1011</vendorID>
+            <productCode>0x00000201</productCode>
             <imuType>H4</imuType>
             <present>false</present>
             <angularVelocityBiasX>0.0011671421093480262</angularVelocityBiasX>
