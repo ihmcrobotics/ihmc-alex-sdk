@@ -66,6 +66,8 @@
             <lowerJointLimit>-2.61799</lowerJointLimit>
             <upperJointLimit>2.61799</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
+            <useFilteredStates>true</useFilteredStates>
+            <publishFilteredStates>true</publishFilteredStates>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -74,6 +76,8 @@
             <lowerJointLimit>-0.610865</lowerJointLimit>
             <upperJointLimit>1.8326</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
+            <useFilteredStates>true</useFilteredStates>
+            <publishFilteredStates>true</publishFilteredStates>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -82,6 +86,8 @@
             <lowerJointLimit>-2.61799</lowerJointLimit>
             <upperJointLimit>2.61799</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
+            <useFilteredStates>true</useFilteredStates>
+            <publishFilteredStates>true</publishFilteredStates>
             <present>true</present>
         </XmlCycloidMechanism>
     </transmissions>
