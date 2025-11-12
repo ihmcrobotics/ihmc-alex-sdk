@@ -127,7 +127,7 @@
             <alias>6109</alias>
             <address>0</address>
             <imuType>H4</imuType>
-            <present>true</present>
+            <present>false</present>
             <angularVelocityBiasX>0.0011881794274969087</angularVelocityBiasX>
             <angularVelocityBiasY>0.005216176597711319</angularVelocityBiasY>
             <angularVelocityBiasZ>-0.0004778292656720103</angularVelocityBiasZ>
@@ -136,7 +136,7 @@
             <name>LeftFootFTSensor</name>
             <alias>6110</alias>
             <address>0</address>
-            <present>true</present>
+            <present>false</present>
             <fxScalar>1.0</fxScalar>
             <fyScalar>1.0</fyScalar>
             <fzScalar>-1.0</fzScalar>
