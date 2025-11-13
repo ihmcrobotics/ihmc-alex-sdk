@@ -66,6 +66,8 @@
             <lowerJointLimit>-0.5235987756</lowerJointLimit>
             <upperJointLimit>0.5235987756</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
+            <useFilteredStates>true</useFilteredStates>
+            <publishFilteredStates>true</publishFilteredStates>
             <doPDControlOnTwitter>true</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
