@@ -31,7 +31,7 @@
         <axis xyz="0 1 0"/>
         <parent link="LEFT_THIGH"/>
         <child link="LEFT_SHIN"/>
-        <limit effort="200" lower="0.15" upper="2.445206282" velocity="8"/>
+        <limit effort="200" lower="0" upper="2.445206282" velocity="8"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_ANKLE_Y" type="revolute">
@@ -81,7 +81,7 @@
         <axis xyz="0 1 0"/>
         <parent link="RIGHT_THIGH"/>
         <child link="RIGHT_SHIN"/>
-        <limit effort="200" lower="0.15" upper="2.445206282" velocity="8"/>
+        <limit effort="200" lower="0" upper="2.445206282" velocity="8"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_ANKLE_Y" type="revolute">
@@ -129,7 +129,7 @@
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_SHOULDER_Z" type="revolute">
-        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.035 0.0"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.035 -0.08" /> <!-- Z translation for elongated upper arm -->
         <axis xyz="0.0 0.0 1.0" />
         <parent link="LEFT_SHOULDER_X_LINK" />
         <child link="LEFT_SHOULDER_Z_LINK" />
@@ -181,7 +181,7 @@
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_SHOULDER_Z" type="revolute">
-        <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.035 -0.0"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.035 -0.08" /> <!-- Z translation for elongated upper arm -->
         <axis xyz="0.0 0.0 1.0" />
         <parent link="RIGHT_SHOULDER_X_LINK" />
         <child link="RIGHT_SHOULDER_Z_LINK" />
@@ -212,9 +212,8 @@
         </visual>
         <collision name="pelvis_collision">
             <geometry>
-                    <box size="0.20 0.10 0.14"/>
+                    <mesh filename="package://alexander_V1_description/meshes/legs/Pelvis.obj"/>
             </geometry>
-            <origin xyz="-0.08 0.0 -0.05" rpy="0.0 0.0 0.0"/>
         </collision> 
     </link>
     <!-- pelvis_stim_imu -->
@@ -450,9 +449,8 @@
         </visual>
         <collision name="left_foot_collision">
             <geometry>
-                <box size="0.22 0.1 0.02"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/Foot.obj"/>
             </geometry>
-            <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
         </collision>
     </link>
 
@@ -687,9 +685,9 @@
         </visual>
         <collision name="right_foot_collision">
             <geometry>
-                    <box size="0.22 0.1 0.02"/>
+                <mesh filename="package://alexander_V1_description/meshes/legs/Foot.obj"/>
             </geometry>
-            <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
+
         </collision>
     </link>
 

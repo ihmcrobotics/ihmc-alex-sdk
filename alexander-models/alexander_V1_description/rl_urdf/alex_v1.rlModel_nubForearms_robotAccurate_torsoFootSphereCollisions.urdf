@@ -31,7 +31,7 @@
         <axis xyz="0 1 0"/>
         <parent link="LEFT_THIGH"/>
         <child link="LEFT_SHIN"/>
-        <limit effort="200" lower="0.15" upper="2.445206282" velocity="8"/>
+        <limit effort="200" lower="0" upper="2.445206282" velocity="8"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_ANKLE_Y" type="revolute">
@@ -81,7 +81,7 @@
         <axis xyz="0 1 0"/>
         <parent link="RIGHT_THIGH"/>
         <child link="RIGHT_SHIN"/>
-        <limit effort="200" lower="0.15" upper="2.445206282" velocity="8"/>
+        <limit effort="200" lower="0" upper="2.445206282" velocity="8"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_ANKLE_Y" type="revolute">
@@ -448,12 +448,6 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
-        <collision name="left_foot_collision">
-            <geometry>
-                <box size="0.22 0.1 0.02"/>
-            </geometry>
-            <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
-        </collision>
     </link>
 
     <!-- LeftFootIMU-->
@@ -492,6 +486,91 @@
 			</imu>
 		</sensor>
 	</gazebo>
+
+    <link name="LEFT_FOOT_CONTACT_1">
+        <inertial>
+            <mass value="0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <collision name="left_foot_contact_1">
+            <geometry>
+                <sphere radius="0.013"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.145 0.036 -0.06"/>
+        </collision>
+    </link>
+    <joint name="LEFT_FOOT_C1_JOINT" type="fixed">
+		<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+		<axis xyz="0 0 1"/>
+		<parent link="LEFT_FOOT"/>
+		<child link="LEFT_FOOT_CONTACT_1"/>
+	</joint>
+
+    <link name="LEFT_FOOT_CONTACT_2">
+        <inertial>
+            <mass value="0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <collision name="left_foot_contact_2">
+            <geometry>
+                <sphere radius="0.013"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.043 0.036 -0.06"/>
+        </collision>
+    </link>
+    <joint name="LEFT_FOOT_C2_JOINT" type="fixed">
+		<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+		<axis xyz="0 0 1"/>
+		<parent link="LEFT_FOOT"/>
+		<child link="LEFT_FOOT_CONTACT_2"/>
+	</joint>
+
+
+    <link name="LEFT_FOOT_CONTACT_3">
+        <inertial>
+            <mass value="0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <collision name="left_foot_contact_3">
+            <geometry>
+                <sphere radius="0.013"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.145 -0.036 -0.06"/>
+        </collision>
+    </link>
+    <joint name="LEFT_FOOT_C3_JOINT" type="fixed">
+		<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+		<axis xyz="0 0 1"/>
+		<parent link="LEFT_FOOT"/>
+		<child link="LEFT_FOOT_CONTACT_3"/>
+	</joint>
+
+    <link name="LEFT_FOOT_CONTACT_4">
+        <inertial>
+            <mass value="0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <collision name="left_foot_contact_4">
+            <geometry>
+                <sphere radius="0.013"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.043 -0.036 -0.06"/>
+        </collision>
+    </link>
+    <joint name="LEFT_FOOT_C4_JOINT" type="fixed">
+		<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+		<axis xyz="0 0 1"/>
+		<parent link="LEFT_FOOT"/>
+		<child link="LEFT_FOOT_CONTACT_4"/>
+	</joint>
+
+
+
+
 
     <!-- RIGHT LEG LINKS -->
     <link name="RIGHT_HIP_X_LINK">
@@ -685,12 +764,6 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
-        <collision name="right_foot_collision">
-            <geometry>
-                    <box size="0.22 0.1 0.02"/>
-            </geometry>
-            <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
-        </collision>
     </link>
 
     <!-- RightFootIMU-->
@@ -729,6 +802,88 @@
 			</imu>
 		</sensor>
 	</gazebo>
+
+
+    <link name="RIGHT_FOOT_CONTACT_1">
+        <inertial>
+            <mass value="0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <collision name="right_foot_contact_1">
+            <geometry>
+                <sphere radius="0.013"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.145 0.036 -0.06"/>
+        </collision>
+    </link>
+    <joint name="RIGHT_FOOT_C1_JOINT" type="fixed">
+		<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+		<axis xyz="0 0 1"/>
+		<parent link="RIGHT_FOOT"/>
+		<child link="RIGHT_FOOT_CONTACT_1"/>
+	</joint>
+
+    <link name="RIGHT_FOOT_CONTACT_2">
+        <inertial>
+            <mass value="0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <collision name="right_foot_contact_2">
+            <geometry>
+                <sphere radius="0.013"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.043 0.036 -0.06"/>
+        </collision>
+    </link>
+    <joint name="RIGHT_FOOT_C2_JOINT" type="fixed">
+		<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+		<axis xyz="0 0 1"/>
+		<parent link="RIGHT_FOOT"/>
+		<child link="RIGHT_FOOT_CONTACT_2"/>
+	</joint>
+
+
+    <link name="RIGHT_FOOT_CONTACT_3">
+        <inertial>
+            <mass value="0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <collision name="right_foot_contact_3">
+            <geometry>
+                <sphere radius="0.013"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.145 -0.036 -0.06"/>
+        </collision>
+    </link>
+    <joint name="RIGHT_FOOT_C3_JOINT" type="fixed">
+		<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+		<axis xyz="0 0 1"/>
+		<parent link="RIGHT_FOOT"/>
+		<child link="RIGHT_FOOT_CONTACT_3"/>
+	</joint>
+
+    <link name="RIGHT_FOOT_CONTACT_4">
+        <inertial>
+            <mass value="0.00"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <collision name="right_foot_contact_4">
+            <geometry>
+                <sphere radius="0.013"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.043 -0.036 -0.06"/>
+        </collision>
+    </link>
+    <joint name="RIGHT_FOOT_C4_JOINT" type="fixed">
+		<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+		<axis xyz="0 0 1"/>
+		<parent link="RIGHT_FOOT"/>
+		<child link="RIGHT_FOOT_CONTACT_4"/>
+	</joint>
 
    <!-- SPINE LINKS -->
     <link name="TORSO_LINK">
