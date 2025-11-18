@@ -31,7 +31,7 @@
         <axis xyz="0 1 0"/>
         <parent link="LEFT_THIGH"/>
         <child link="LEFT_SHIN"/>
-        <limit effort="200" lower="0.15" upper="2.445206282" velocity="8"/>
+        <limit effort="200" lower="0.00" upper="2.445206282" velocity="8"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_ANKLE_Y" type="revolute">
@@ -81,7 +81,7 @@
         <axis xyz="0 1 0"/>
         <parent link="RIGHT_THIGH"/>
         <child link="RIGHT_SHIN"/>
-        <limit effort="200" lower="0.15" upper="2.445206282" velocity="8"/>
+        <limit effort="200" lower="0.00" upper="2.445206282" velocity="8"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_ANKLE_Y" type="revolute">
