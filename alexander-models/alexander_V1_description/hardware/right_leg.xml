@@ -5,10 +5,10 @@
             <name>RightHipYawMotor</name>
             <alias>7002</alias>
             <address>0</address>
-            <actuatorPackage>A012</actuatorPackage>
+            <actuatorPackage>A015</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>5.742820620458881</motorOffset>
-            <outputOffset>3.876952910158193</outputOffset>
+            <motorOffset>16.913814499045106</motorOffset>
+            <outputOffset>4.592491</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
