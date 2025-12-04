@@ -26,8 +26,9 @@
             <alias>2004</alias>
             <address>0</address>
             <actuatorPackage>A026</actuatorPackage> <!-- Use J3L_Nadia for Nadia arms -->
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>130.60703672620366</motorOffset> <!-- Use 1156066 for Nadia arms -->
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <outputEncoderInverted>true</outputEncoderInverted>
+            <motorOffset>444.8906</motorOffset> <!-- Use 1156066 for Nadia arms -->
             <outputOffset>6.002143171300014</outputOffset> <!-- Use 1208760 for Nadia arms -->
             <present>true</present>
         </XmlPlatinumTwitter>
@@ -98,6 +99,8 @@
             <lowerJointLimit>-3.141592</lowerJointLimit>
             <upperJointLimit>1.22173</upperJointLimit>
             <torqueBreakFrequency>50.0</torqueBreakFrequency>
+            <useFilteredStates>true</useFilteredStates>
+            <publishFilteredStates>true</publishFilteredStates>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -107,6 +110,8 @@
             <lowerJointLimit>-0.349066</lowerJointLimit> <!-- Nadia arm Lower limit reads a -0.360 when moved manually, upper limit as 2.790 -->
             <upperJointLimit>2.79253</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
+            <useFilteredStates>true</useFilteredStates>
+            <publishFilteredStates>true</publishFilteredStates>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -116,6 +121,8 @@
             <lowerJointLimit>-1.91986</lowerJointLimit>
             <upperJointLimit>1.22173</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
+            <useFilteredStates>true</useFilteredStates>
+            <publishFilteredStates>true</publishFilteredStates>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -125,6 +132,8 @@
             <lowerJointLimit>-2.35619</lowerJointLimit>
             <upperJointLimit>0.174532925</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
+            <useFilteredStates>true</useFilteredStates>
+            <publishFilteredStates>true</publishFilteredStates>
             <present>true</present>
         </XmlCycloidMechanism>
     </transmissions>
