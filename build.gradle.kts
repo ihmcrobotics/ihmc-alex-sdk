@@ -10,7 +10,7 @@ ihmc {
 
    // Include SDK content as classpath resources
    configureDependencyResolution()
-   resourceDirectory("main", "../../alexander-models")
+   resourceDirectory("main", "../../alex-models")
    resourceDirectory("main", "../../alexander-ros2")
    ihmc.sourceSet("main").resources.exclude("/ihmc_hands_ros2")
    resourceDirectory("main", "../../alexander-ros2/alexander_msgs/src/main/generated-idl")
