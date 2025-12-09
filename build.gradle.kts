@@ -11,10 +11,10 @@ ihmc {
    // Include SDK content as classpath resources
    configureDependencyResolution()
    resourceDirectory("main", "../../alex-models")
-   resourceDirectory("main", "../../alexander-ros2")
+   resourceDirectory("main", "../../alex-ros2")
    ihmc.sourceSet("main").resources.exclude("/ihmc_hands_ros2")
-   resourceDirectory("main", "../../alexander-ros2/alex_msgs/src/main/generated-idl")
-   javaDirectory("main", "../../alexander-ros2/alex_msgs/src/main/generated-java")
+   resourceDirectory("main", "../../alex-ros2/alex_msgs/src/main/generated-idl")
+   javaDirectory("main", "../../alex-ros2/alex_msgs/src/main/generated-java")
    configurePublications()
 }
 
@@ -33,8 +33,8 @@ val msg_packages = listOf("alex_msgs")
 
 tasks.register("generateMessages") {
    doFirst {
-      delete("alexander-ros2/alex_msgs/src/main/generated-idl")
-      delete("alexander-ros2/alex_msgs/src/main/generated-java")
+      delete("alex-ros2/alex_msgs/src/main/generated-idl")
+      delete("alex-ros2/alex_msgs/src/main/generated-java")
       delete("build/tmp/generateMessages")
 
       var foundDependency = false
@@ -58,7 +58,7 @@ tasks.register("generateMessages") {
 
       generator.addPackageRootToIDLGenerator(file("build/tmp/generateMessages/ros2-common-interfaces/rcl_interfaces").toPath())
       generator.addPackageRootToIDLGenerator(file("build/tmp/generateMessages/ros2-common-interfaces/common_interfaces").toPath())
-      generator.addPackageRootToIDLGenerator(file("alexander-ros2").toPath())
+      generator.addPackageRootToIDLGenerator(file("alex-ros2").toPath())
 
       generator.addCustomIDLFiles(file("build/tmp/generateMessages/ros2-common-interfaces/").toPath())
 
@@ -69,16 +69,16 @@ tasks.register("generateMessages") {
       for (packag in msg_packages) {
          copy {
             from("build/tmp/generateMessages/generated-idl/$packag")
-            into("alexander-ros2/alex_msgs/src/main/generated-idl/$packag")
+            into("alex-ros2/alex_msgs/src/main/generated-idl/$packag")
          }
 
          copy {
             from("build/tmp/generateMessages/generated-java/$packag")
-            into("alexander-ros2/alex_msgs/src/main/generated-java/$packag")
+            into("alex-ros2/alex_msgs/src/main/generated-java/$packag")
          }
       }
 
-      us.ihmc.ros2.rosidl.ROS2InterfaceGenerator.convertDirectoryToUnixEOL(file("alexander-ros2/alex_msgs/src/main/generated-idl").toPath())
-      us.ihmc.ros2.rosidl.ROS2InterfaceGenerator.convertDirectoryToUnixEOL(file("alexander-ros2/alex_msgs/src/main/generated-java").toPath())
+      us.ihmc.ros2.rosidl.ROS2InterfaceGenerator.convertDirectoryToUnixEOL(file("alex-ros2/alex_msgs/src/main/generated-idl").toPath())
+      us.ihmc.ros2.rosidl.ROS2InterfaceGenerator.convertDirectoryToUnixEOL(file("alex-ros2/alex_msgs/src/main/generated-java").toPath())
    }
 }
