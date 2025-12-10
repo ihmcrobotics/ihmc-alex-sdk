@@ -3,11 +3,11 @@
   <a href="https://robots.ihmc.us/">IHMC Robotics</a>
 </p>
 
-# ihmc-alexander-sdk
+# ihmc-alex-sdk
 Light SDK with resources for visualizing/simulating Alex, properly initializing hardware, and communicating between low and high-level processes.
 
 ## SDK Structure
-### alexander-models
+### alex-models
 This directory contains all files specific to describing Alex. The files in the directories are as follows:
 - `hardware`: Contains XML files describing the hardware on the robot, including parameters for all sensors and actuators
   - For simplicity when switching robot configurations, each body segment is split into its own file to be selected if that segment is included
@@ -16,9 +16,9 @@ This directory contains all files specific to describing Alex. The files in the 
 - `rl_urdf`: URDF files describing Alex for use in reinforcement learning applications.
 - `urdf`: URDF files describing Alex for use in visualization/simulation within the IHMC Java Framework
   - For simplicity when switching robot configurations, each body segment is split into its own file to be selected if that segment is included
-### alexander-ros2
+### alex-ros2
 This directory contains all files specific to ROS communication between the low-level and high-level communication of Alex
-- `alexander_msgs`: Contains all Alex-specific messages used for communication
+- `alex_msgs`: Contains all Alex-specific messages used for communication
   - The generated Java code for using these messages is contained within `src/main/generated-java`
 - `ihmc-hands-ros2`: Git submodule of [`ihmc-hands-ros2`](https://github.com/ihmcrobotics/ihmc_hands_ros2)
   - This contains URDF and OBJ files for hands used on Alex and ROS messages for communication with hands

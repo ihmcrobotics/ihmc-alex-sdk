@@ -46,7 +46,7 @@
             <name>RightShoulderEtherSnacksBoard</name>
             <alias>3103</alias>
             <address>0</address>
-            <boardType>ALEXANDER</boardType>
+            <boardType>ALEX</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -69,7 +69,7 @@
             <name>RightUpperArmEtherSnacksBoard</name>
             <alias>3105</alias>
             <address>0</address>
-            <boardType>ALEXANDER</boardType>
+            <boardType>ALEX</boardType>
             <present>false</present>
             <daughterDevices>
                 <XmlIMU>

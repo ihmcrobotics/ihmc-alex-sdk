@@ -36,7 +36,7 @@
             <name>PelvisEtherSnacksBoard</name>
             <alias>5102</alias>
             <address>0</address>
-            <boardType>ALEXANDER</boardType>
+            <boardType>ALEX</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>

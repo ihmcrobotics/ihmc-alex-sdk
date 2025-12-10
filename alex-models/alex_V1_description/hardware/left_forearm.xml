@@ -39,7 +39,7 @@
             <name>LeftForearmEtherSnacksBoard</name>
             <alias>2107</alias>
             <address>0</address>
-            <boardType>ALEXANDER_HAND_CONTROL</boardType>
+            <boardType>ALEX_HAND_CONTROL</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>

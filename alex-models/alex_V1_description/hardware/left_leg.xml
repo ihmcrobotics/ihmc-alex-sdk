@@ -56,7 +56,7 @@
             <name>LeftHipEtherSnacksBoard</name>
             <alias>6101</alias>
             <address>0</address>
-            <boardType>ALEXANDER</boardType>
+            <boardType>ALEX</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -79,7 +79,7 @@
             <name>LeftThighEtherSnacksBoard</name>
             <alias>6103</alias>
             <address>0</address>
-            <boardType>ALEXANDER</boardType>
+            <boardType>ALEX</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -102,7 +102,7 @@
             <name>LeftShinEtherSnacksBoard</name>
             <alias>6106</alias>
             <address>0</address>
-            <boardType>ALEXANDER</boardType>
+            <boardType>ALEX</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
