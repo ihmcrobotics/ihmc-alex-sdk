@@ -1,5 +1,5 @@
 <?xml version = "1.0" ?>
-<robot name="Alexander">
+<robot name="Alex">
     <joint name="LEFT_NUB_ATTACHMENT" type="fixed">
         <parent link="LEFT_GRIPPER_Z_LINK"/>
         <child link="LEFT_NUB"/>

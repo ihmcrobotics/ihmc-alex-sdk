@@ -1,5 +1,5 @@
 <?xml version = "1.0" ?>
-<robot name="Alexander">
+<robot name="Alex">
     <joint name="RIGHT_ABILITY_HAND_ADAPTER" type="fixed">
         <!-- TODO: Figure out correct origin -->
         <origin xyz="-0.0175 0 -0.02" rpy="3.141592 0 -1.570796"/>

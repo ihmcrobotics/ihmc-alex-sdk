@@ -1,5 +1,5 @@
 <?xml version = "1.0" ?>
-<robot name="Alexander">
+<robot name="Alex">
 
     <!-- Left Arm -->
     <joint name="LEFT_SHOULDER_Y" type="revolute">
