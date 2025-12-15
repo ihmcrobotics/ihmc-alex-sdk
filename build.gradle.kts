@@ -5,7 +5,7 @@ plugins {
 ihmc {
    group = "us.ihmc"
    version = "0.3.6"
-   vcsUrl = "https://github.com/ihmcrobotics/ihmc-alexander-sdk"
+   vcsUrl = "https://github.com/ihmcrobotics/ihmc-alex-sdk"
    openSource = true
 
    // Include SDK content as classpath resources
