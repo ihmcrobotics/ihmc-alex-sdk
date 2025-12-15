@@ -1,0 +1,39 @@
+#ifndef __alex_msgs__msg__HardwareStatus__idl__
+#define __alex_msgs__msg__HardwareStatus__idl__
+
+#include "alex_msgs/msg/./ROSDeviceStatusProvider_.idl"
+module alex_msgs
+{
+  module msg
+  {
+    module dds
+    {
+
+      /**
+       * Holds hardware status info of Alexander
+       */
+      @TypeCode(type="alex_msgs::msg::dds_::HardwareStatus_")
+      struct HardwareStatus
+      {
+        /**
+         * Various fault info
+         */
+        boolean robot_fault;
+        boolean motor_fault;
+        boolean missed_deadline_fault;
+        boolean working_counter_fault;
+        /**
+         * Important EtherCAT Stuff
+         */
+        unsigned long working_counter_mismatch_count;
+        unsigned long missed_deadlines;
+        /**
+         * Joint States
+         */
+        sequence<alex_msgs::msg::dds::ROSDeviceStatusProvider, 75> device_status_providers;
+      };
+    };
+  };
+};
+
+#endif
