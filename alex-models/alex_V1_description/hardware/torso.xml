@@ -5,7 +5,7 @@
             <name>NeckYawEtherSnacksBoard</name>
             <alias>4102</alias>
             <address>0</address>
-            <boardType>ALEX</boardType>
+            <boardType>ALEX_PDO_LIGHT</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>

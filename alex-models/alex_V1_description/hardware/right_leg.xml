@@ -56,7 +56,7 @@
             <name>RightHipEtherSnacksBoard</name>
             <alias>7101</alias>
             <address>0</address>
-            <boardType>ALEX</boardType>
+            <boardType>ALEX_PDO_LIGHT</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -79,7 +79,7 @@
             <name>RightThighEtherSnacksBoard</name>
             <alias>7103</alias>
             <address>0</address>
-            <boardType>ALEX</boardType>
+            <boardType>ALEX_PDO_LIGHT</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -102,7 +102,7 @@
             <name>RightShinEtherSnacksBoard</name>
             <alias>7106</alias>
             <address>0</address>
-            <boardType>ALEX</boardType>
+            <boardType>ALEX_PDO_LIGHT</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
