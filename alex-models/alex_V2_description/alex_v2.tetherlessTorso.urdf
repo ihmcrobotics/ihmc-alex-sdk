@@ -1,0 +1,91 @@
+<?xml version = "1.0" ?>
+<robot name="Alex">
+
+    <!-- SPINE JOINTS -->
+    <joint name="SPINE_Z" type="revolute">
+        <origin rpy="0 0 0" xyz="0.0 0 0.018"/> <!-- check with CAD -->
+        <axis xyz="0 0 1"/>
+        <parent link="PELVIS_LINK"/>
+        <child link="TORSO_LINK"/>
+        <limit effort="150" lower="-0.5235987756" upper="0.5235987756" velocity="9.0"/>
+        <dynamics damping="0.05" friction="0.0"/>
+    </joint>
+	
+	<!-- UPDATED SHOULDER JOINTS (shoulders are translated 2mm backward)-->
+    <joint name="LEFT_SHOULDER_Y" type="revolute">
+        <origin xyz="-0.017 0.115474 0.352984" rpy="0.698132 0.0 0.0"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <parent link="TORSO_LINK"/>
+        <child link="LEFT_SHOULDER_Y_LINK"/>
+        <limit effort="150.0" lower="-3.141592" upper="1.22173" velocity="9.0"/>
+        <dynamics damping="0.05" friction="0.0"/>
+    </joint>
+    <joint name="RIGHT_SHOULDER_Y" type="revolute">
+        <origin xyz="-0.017 -0.115474 0.352984" rpy="-0.698132 0.0 0.0"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <parent link="TORSO_LINK"/>
+        <child link="RIGHT_SHOULDER_Y_LINK"/>
+        <limit effort="1000" lower="-3.141592" upper="1.22173" velocity="100"/>
+        <dynamics damping="0.05" friction="0.0"/>
+    </joint>
+	
+	<!-- SPINE LINKS -->
+    <link name="TORSO_LINK">
+        <inertial>
+            <mass value="18.534"/> 
+            <origin rpy="0 0 0" xyz="-0.045 0.679 0.280"/>
+            <inertia ixx="1.742" ixy="0.000196314" ixz="0.287774271" iyy="1.823" iyz="-0.002551308" izz="0.261308291"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alexander_V1_description/meshes/torso.obj"/>
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.105063"/>
+        </visual>
+        <collision name="torso_collision">
+            <geometry>
+                <box size="0.275 0.33 0.43"/>
+            </geometry>
+            <origin xyz="-0.01 0.00 0.3" rpy="0 0 0"/>
+        </collision>
+    </link>
+
+    <!-- TORSO IMU -->
+    <joint name="TORSO_IMU_JOINT" type="fixed">
+        <origin rpy="0.0 0.0 -1.5708" xyz="-0.009753 -0.01075 0.373405"/>
+        <axis xyz="0 0 1"/>
+        <parent link="TORSO_LINK"/>
+        <child link="TORSO_IMU_LINK"/>
+    </joint>
+
+    <link name="TORSO_IMU_LINK">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="TORSO_IMU_LINK">
+        <sensor name="torso_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+</robot>
