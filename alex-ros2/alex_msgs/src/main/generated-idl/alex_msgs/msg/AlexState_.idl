@@ -1,0 +1,43 @@
+#ifndef __alex_msgs__msg__AlexState__idl__
+#define __alex_msgs__msg__AlexState__idl__
+
+#include "alex_msgs/msg/./ForceTorqueState_.idl"
+#include "alex_msgs/msg/./IMUState_.idl"
+#include "alex_msgs/msg/./OneDOFJointState_.idl"
+module alex_msgs
+{
+  module msg
+  {
+    module dds
+    {
+
+      /**
+       * Holds the current state of Alexander
+       */
+      @TypeCode(type="alex_msgs::msg::dds_::AlexState_")
+      struct AlexState
+      {
+        /**
+         * General Status
+         */
+        double time;
+        boolean is_faulted;
+        boolean is_calibrated;
+        unsigned long number_of_joints;
+        unsigned long number_of_imus;
+        unsigned long number_of_fts;
+        /**
+         * Joint States
+         */
+        sequence<alex_msgs::msg::dds::OneDOFJointState, 50> joint_states;
+        /**
+         * Sensor States
+         */
+        sequence<alex_msgs::msg::dds::IMUState, 50> imu_states;
+        sequence<alex_msgs::msg::dds::ForceTorqueState, 50> ft_states;
+      };
+    };
+  };
+};
+
+#endif

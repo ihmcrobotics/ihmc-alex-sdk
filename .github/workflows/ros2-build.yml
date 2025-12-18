@@ -21,4 +21,4 @@ jobs:
         
       - name: Colcon build
         run: |
-          /bin/bash -c "source /opt/ros/jazzy/setup.bash && cd alexander_msgs && colcon build"
+          /bin/bash -c "source /opt/ros/jazzy/setup.bash && cd alex_msgs && colcon build"
