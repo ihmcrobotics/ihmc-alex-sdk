@@ -687,14 +687,15 @@
     <link name="TORSO_LINK">
         <inertial>
             <mass value="18.534"/>
-            <origin rpy="0 0 0" xyz="-0.045 0.679 0.280"/>
-            <inertia ixx="1.742" ixy="0.000196314" ixz="0.287774271" iyy="1.823" iyz="-0.002551308" izz="0.261308291"/>
+            <origin rpy="0 0 0" xyz="-0.045 0.000679 0.280"/>
+            <inertia ixx="0.284" ixy="-0.000308" ixz="0.054" iyy="0.326" iyz="0.001" izz="0.223"/>
+            <!--<inertia ixx="1.742" ixy="0.000196314" ixz="0.287774271" iyy="1.823" iyz="-0.002551308" izz="0.261308291"/>-->
         </inertial>
         <visual>
             <geometry>
                 <mesh filename="package://alex_V2_description/meshes/torso.obj"/>
             </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.105063"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="torso_collision">
             <geometry>
