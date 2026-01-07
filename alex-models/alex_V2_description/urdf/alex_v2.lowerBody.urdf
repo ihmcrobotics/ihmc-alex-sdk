@@ -695,7 +695,7 @@
             <geometry>
                 <mesh filename="package://alex_V2_description/meshes/torso.obj"/>
             </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.018"/>
         </visual>
         <collision name="torso_collision">
             <geometry>
