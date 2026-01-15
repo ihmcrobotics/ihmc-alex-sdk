@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XmlHardware>
+    <devices>
+        <XmlPlatinumTwitter>
+            <name>LeftJ1Motor</name>
+            <alias>2001</alias>
+            <address>0</address>
+            <actuatorPackage>A024</actuatorPackage> <!-- Use J1L_Nadia for Nadia arms -->
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <motorOffset>421.5613009363129</motorOffset> <!-- Use 445770 for Nadia arms -->
+            <outputOffset>3.37227</outputOffset> <!-- Use 389428 for Nadia arms -->
+            <present>true</present>
+        </XmlPlatinumTwitter>
+        <XmlPlatinumTwitter>
+            <name>LeftJ2Motor</name>
+            <alias>2002</alias>
+            <address>0</address>
+            <actuatorPackage>A025</actuatorPackage> <!-- Use J2L_Nadia for Nadia arms -->
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <motorOffset>514.6153803983825</motorOffset> <!-- Use 302116 for Nadia arms -->
+            <outputOffset>2.582398</outputOffset> <!-- Use 255870 for Nadia arms -->
+            <present>true</present>
+        </XmlPlatinumTwitter>
+        <XmlPlatinumTwitter>
+            <name>LeftJ3Motor</name>
+            <alias>2004</alias>
+            <address>0</address>
+            <actuatorPackage>A026</actuatorPackage> <!-- Use J3L_Nadia for Nadia arms -->
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <outputEncoderInverted>true</outputEncoderInverted>
+            <motorOffset>532.7796063399244</motorOffset> <!-- Use 1156066 for Nadia arms -->
+            <outputOffset>3.483998</outputOffset> <!-- Use 1208760 for Nadia arms -->
+            <present>true</present>
+        </XmlPlatinumTwitter>
+        <XmlPlatinumTwitter>
+            <name>LeftJ4Motor</name>
+            <alias>2006</alias>
+            <address>0</address>
+            <actuatorPackage>A027</actuatorPackage> <!-- Use J4L_Nadia for Nadia arms -->
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <motorOffset>-411607.6932023022</motorOffset> <!-- Use 405162 for Nadia arms -->
+            <outputOffset>3.03154</outputOffset> <!-- Use 67542 for Nadia arms -->
+            <present>true</present>
+        </XmlPlatinumTwitter>
+
+        <XmlEtherSnacksBoard>
+            <name>LeftShoulderEtherSnacksBoard</name>
+            <alias>2103</alias>
+            <address>0</address>
+            <boardType>ALEX</boardType>
+            <present>true</present>
+            <daughterDevices>
+                <XmlIMU>
+                    <name>left_shoulder_y_imu</name>
+                    <alias>0</alias>
+                    <address>1</address>
+                    <imuType>TDK</imuType>
+                    <present>true</present>
+                    <angularVelocityBiasX>0.0</angularVelocityBiasX> <!-- Use -0.0021944782233056037 for Nadia arms -->
+                    <angularVelocityBiasY>0.0</angularVelocityBiasY> <!-- Use -0.01763039543480957 for Nadia arms -->
+                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ> <!-- Use 0.020911459962858755 for Nadia arms -->
+                </XmlIMU>
+                <XmlTemperatureSensor>
+                    <name>left_shoulder_pitch_temp_sensor</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+            </daughterDevices>
+        </XmlEtherSnacksBoard>
+        <XmlEtherSnacksBoard>
+            <name>LeftUpperArmEtherSnacksBoard</name>
+            <alias>2105</alias>
+            <address>0</address>
+            <boardType>ALEX</boardType>
+            <present>false</present>
+            <daughterDevices>
+                <XmlIMU>
+                    <name>left_shoulder_z_imu</name>
+                    <alias>0</alias>
+                    <address>1</address>
+                    <imuType>TDK</imuType>
+                    <present>true</present>
+                    <angularVelocityBiasX>0.0</angularVelocityBiasX> <!-- Use 0.032885214928856314 for Nadia arms -->
+                    <angularVelocityBiasY>0.0</angularVelocityBiasY> <!-- Use -0.01019473621215273 for Nadia arms -->
+                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ> <!-- Use -0.008692690437948404 for Nadia arms -->
+                </XmlIMU>
+                <XmlTemperatureSensor>
+                    <name>left_shoulder_yaw_temp_sensor</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+            </daughterDevices>
+        </XmlEtherSnacksBoard>
+    </devices>
+
+    <transmissions>
+        <XmlCycloidMechanism>
+            <jointName>LEFT_SHOULDER_Y</jointName>
+            <motorName>LeftJ1Motor</motorName>
+            <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-3.141592</lowerJointLimit>
+            <upperJointLimit>1.22173</upperJointLimit>
+            <torqueBreakFrequency>50.0</torqueBreakFrequency>
+            <useFilteredStates>true</useFilteredStates>
+            <publishFilteredStates>true</publishFilteredStates>
+            <present>true</present>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
+            <jointName>LEFT_SHOULDER_X</jointName>
+            <motorName>LeftJ2Motor</motorName>
+            <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-0.349066</lowerJointLimit> <!-- Nadia arm Lower limit reads a -0.360 when moved manually, upper limit as 2.790 -->
+            <upperJointLimit>2.79253</upperJointLimit>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
+            <useFilteredStates>true</useFilteredStates>
+            <publishFilteredStates>true</publishFilteredStates>
+            <present>true</present>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
+            <jointName>LEFT_SHOULDER_Z</jointName>
+            <motorName>LeftJ3Motor</motorName>
+            <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-1.91986</lowerJointLimit>
+            <upperJointLimit>1.22173</upperJointLimit>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
+            <useFilteredStates>true</useFilteredStates>
+            <publishFilteredStates>true</publishFilteredStates>
+            <present>true</present>
+        </XmlCycloidMechanism>
+        <XmlCycloidMechanism>
+            <jointName>LEFT_ELBOW_Y</jointName>
+            <motorName>LeftJ4Motor</motorName>
+            <jointPositionOffset>0.0</jointPositionOffset>
+            <lowerJointLimit>-2.35619</lowerJointLimit>
+            <upperJointLimit>0.174532925</upperJointLimit>
+            <torqueBreakFrequency>100.0</torqueBreakFrequency>
+            <useFilteredStates>true</useFilteredStates>
+            <publishFilteredStates>true</publishFilteredStates>
+            <present>true</present>
+        </XmlCycloidMechanism>
+    </transmissions>
+</XmlHardware>
