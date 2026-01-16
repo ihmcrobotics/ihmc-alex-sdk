@@ -4,7 +4,7 @@
         <XmlPlatinumTwitter>
             <name>LeftHipRollMotor</name>
             <alias>5001</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A029</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>0.0</motorOffset>
@@ -14,7 +14,7 @@
         <XmlPlatinumTwitter>
             <name>PelvisYawMotor</name>
             <alias>5003</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A028</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>0.0</motorOffset>
@@ -24,7 +24,7 @@
         <XmlPlatinumTwitter>
             <name>RightHipRollMotor</name>
             <alias>5004</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A030</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>0.0</motorOffset>
@@ -35,14 +35,14 @@
         <XmlEtherSnacksBoard>
             <name>PelvisEtherSnacksBoard</name>
             <alias>5102</alias>
-            <address>0</address>
+            <position>0</position>
             <boardType>ALEX</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>pelvis_imu</name>
                     <alias>0</alias>
-                    <address>1</address>
+                    <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
                     <angularVelocityBiasX>0.0</angularVelocityBiasX>

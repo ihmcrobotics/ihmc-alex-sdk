@@ -4,7 +4,7 @@
         <XmlPlatinumTwitter>
             <name>LeftHipYawMotor</name>
             <alias>6002</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A008</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>1.737393161363939</motorOffset>
@@ -14,7 +14,7 @@
         <XmlPlatinumTwitter>
             <name>LeftHipPitchMotor</name>
             <alias>6005</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A004</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>9.933543529667986</motorOffset>
@@ -24,7 +24,7 @@
         <XmlPlatinumTwitter>
             <name>LeftKneePitchMotor</name>
             <alias>6004</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A003</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>5.323194139717714</motorOffset>
@@ -34,7 +34,7 @@
         <XmlPlatinumTwitter>
             <name>LeftAnkleTopMotor</name>
             <alias>6008</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A006</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>3.46066110610157</motorOffset>
@@ -44,7 +44,7 @@
         <XmlPlatinumTwitter>
             <name>LeftAnkleBottomMotor</name>
             <alias>6007</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A007</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>5.231881161582086</motorOffset>
@@ -55,14 +55,14 @@
         <XmlEtherSnacksBoard>
             <name>LeftHipEtherSnacksBoard</name>
             <alias>6101</alias>
-            <address>0</address>
-            <boardType>ALEX</boardType>
+            <position>0</position>
+            <boardType>ALEX_PDO_LIGHT</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>left_hip_x_imu</name>
                     <alias>0</alias>
-                    <address>1</address>
+                    <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
                     <angularVelocityBiasX>-0.005001057382112406</angularVelocityBiasX>
@@ -78,14 +78,14 @@
         <XmlEtherSnacksBoard>
             <name>LeftThighEtherSnacksBoard</name>
             <alias>6103</alias>
-            <address>0</address>
-            <boardType>ALEX</boardType>
+            <position>0</position>
+            <boardType>ALEX_PDO_LIGHT</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>left_thigh_imu</name>
                     <alias>0</alias>
-                    <address>1</address>
+                    <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
                     <angularVelocityBiasX>-0.020732574386992393</angularVelocityBiasX>
@@ -101,14 +101,14 @@
         <XmlEtherSnacksBoard>
             <name>LeftShinEtherSnacksBoard</name>
             <alias>6106</alias>
-            <address>0</address>
-            <boardType>ALEX</boardType>
+            <position>0</position>
+            <boardType>ALEX_PDO_LIGHT</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>left_shin_imu</name>
                     <alias>0</alias>
-                    <address>1</address>
+                    <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
                     <angularVelocityBiasX>-0.006934528609168481</angularVelocityBiasX>
@@ -125,7 +125,7 @@
         <XmlIMU>
             <name>left_foot_imu</name>
             <alias>6109</alias>
-            <address>0</address>
+            <position>0</position>
             <imuType>H4</imuType>
             <present>false</present>
             <angularVelocityBiasX>0.0011881794274969087</angularVelocityBiasX>
@@ -135,7 +135,7 @@
         <XmlAtiForceTorqueSensor>
             <name>LeftFootFTSensor</name>
             <alias>6110</alias>
-            <address>0</address>
+            <position>0</position>
             <present>false</present>
             <fxScalar>1.0</fxScalar>
             <fyScalar>1.0</fyScalar>

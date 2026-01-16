@@ -4,7 +4,7 @@
         <XmlPlatinumTwitter>
             <name>RightJ5Motor</name>
             <alias>3008</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>J5R_Nadia</actuatorPackage>
             <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
@@ -15,7 +15,7 @@
         <XmlPlatinumTwitter>
             <name>RightJ6Motor</name>
             <alias>3009</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>J6R_Nadia</actuatorPackage>
             <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
@@ -26,7 +26,7 @@
         <XmlPlatinumTwitter>
             <name>RightJ7Motor</name>
             <alias>3010</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>J7R_Nadia</actuatorPackage>
             <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
@@ -38,14 +38,14 @@
         <XmlEtherSnacksBoard>
             <name>RightForearmEtherSnacksBoard</name>
             <alias>3107</alias>
-            <address>0</address>
+            <position>0</position>
             <boardType>ALEX_HAND_CONTROL</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>right_wrist_z_imu</name>
                     <alias>0</alias>
-                    <address>1</address>
+                    <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
                     <angularVelocityBiasX>0.0</angularVelocityBiasX>

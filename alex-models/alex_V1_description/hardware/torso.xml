@@ -4,14 +4,14 @@
         <XmlEtherSnacksBoard>
             <name>NeckYawEtherSnacksBoard</name>
             <alias>4102</alias>
-            <address>0</address>
-            <boardType>ALEX</boardType>
+            <position>0</position>
+            <boardType>ALEX_PDO_LIGHT</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>torso_imu</name>
                     <alias>0</alias>
-                    <address>1</address>
+                    <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
                     <angularVelocityBiasX>-0.014839360024585942</angularVelocityBiasX>
@@ -29,28 +29,28 @@
         <XmlH4EtherCATJunctionPort>
             <name>EtherCATJunctionA</name>
             <alias>1101</alias>
-            <address>0</address>
+            <position>0</position>
             <junctionPort>0</junctionPort>
             <present>true</present>
         </XmlH4EtherCATJunctionPort>
         <XmlH4EtherCATJunctionPort>
             <name>EtherCATJunctionB</name>
             <alias>1102</alias>
-            <address>0</address>
+            <position>0</position>
             <junctionPort>1</junctionPort>
             <present>true</present>
         </XmlH4EtherCATJunctionPort>
         <XmlH4EtherCATJunctionPort>
             <name>EtherCATJunctionC</name>
             <alias>1103</alias>
-            <address>2</address>
+            <position>0</position>
             <junctionPort>2</junctionPort>
             <present>true</present>
         </XmlH4EtherCATJunctionPort>
         <XmlH4EtherCATJunctionPort>
             <name>EtherCATJunctionD</name>
             <alias>1104</alias>
-            <address>0</address>
+            <position>0</position>
             <junctionPort>3</junctionPort>
             <present>true</present>
         </XmlH4EtherCATJunctionPort>
