@@ -4,7 +4,7 @@
         <XmlPlatinumTwitter>
             <name>NeckYawMotor</name>
             <alias>4001</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A019</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>6.913761661923452</motorOffset>
@@ -14,7 +14,7 @@
         <XmlPlatinumTwitter>
             <name>NeckPitchMotor</name>
             <alias>4003</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A018</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>8.944199429202655</motorOffset>
@@ -25,14 +25,14 @@
         <XmlEtherSnacksBoard>
             <name>HeadEtherSnacksBoard</name>
             <alias>4104</alias>
-            <address>0</address>
-            <boardType>ALEX</boardType>
+            <position>0</position>
+            <boardType>ALEX_PDO_LIGHT</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>head_imu</name>
                     <alias>0</alias>
-                    <address>1</address>
+                    <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
                     <angularVelocityBiasX>0.0038882745218764324</angularVelocityBiasX>

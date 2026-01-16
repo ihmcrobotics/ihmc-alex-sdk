@@ -4,7 +4,7 @@
         <XmlPlatinumTwitter>
             <name>LeftJ1Motor</name>
             <alias>2001</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A024</actuatorPackage> <!-- Use J1L_Nadia for Nadia arms -->
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>421.5613009363129</motorOffset> <!-- Use 445770 for Nadia arms -->
@@ -14,7 +14,7 @@
         <XmlPlatinumTwitter>
             <name>LeftJ2Motor</name>
             <alias>2002</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A025</actuatorPackage> <!-- Use J2L_Nadia for Nadia arms -->
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>514.6153803983825</motorOffset> <!-- Use 302116 for Nadia arms -->
@@ -24,7 +24,7 @@
         <XmlPlatinumTwitter>
             <name>LeftJ3Motor</name>
             <alias>2004</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A026</actuatorPackage> <!-- Use J3L_Nadia for Nadia arms -->
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <outputEncoderInverted>true</outputEncoderInverted>
@@ -35,7 +35,7 @@
         <XmlPlatinumTwitter>
             <name>LeftJ4Motor</name>
             <alias>2006</alias>
-            <address>0</address>
+            <position>0</position>
             <actuatorPackage>A027</actuatorPackage> <!-- Use J4L_Nadia for Nadia arms -->
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>-411607.6932023022</motorOffset> <!-- Use 405162 for Nadia arms -->
@@ -46,14 +46,14 @@
         <XmlEtherSnacksBoard>
             <name>LeftShoulderEtherSnacksBoard</name>
             <alias>2103</alias>
-            <address>0</address>
+            <position>0</position>
             <boardType>ALEX</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>left_shoulder_y_imu</name>
                     <alias>0</alias>
-                    <address>1</address>
+                    <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
                     <angularVelocityBiasX>0.0</angularVelocityBiasX> <!-- Use -0.0021944782233056037 for Nadia arms -->
@@ -69,14 +69,14 @@
         <XmlEtherSnacksBoard>
             <name>LeftUpperArmEtherSnacksBoard</name>
             <alias>2105</alias>
-            <address>0</address>
+            <position>0</position>
             <boardType>ALEX</boardType>
             <present>false</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>left_shoulder_z_imu</name>
                     <alias>0</alias>
-                    <address>1</address>
+                    <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
                     <angularVelocityBiasX>0.0</angularVelocityBiasX> <!-- Use 0.032885214928856314 for Nadia arms -->
