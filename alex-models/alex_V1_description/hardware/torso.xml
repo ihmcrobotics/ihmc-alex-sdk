@@ -43,7 +43,7 @@
         <XmlH4EtherCATJunctionPort>
             <name>EtherCATJunctionC</name>
             <alias>1103</alias>
-            <position>2</position>
+            <position>0</position>
             <junctionPort>2</junctionPort>
             <present>true</present>
         </XmlH4EtherCATJunctionPort>

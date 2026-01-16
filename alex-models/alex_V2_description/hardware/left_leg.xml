@@ -126,8 +126,8 @@
             <name>left_foot_imu</name>
             <alias>6109</alias>
             <position>0</position>
-            <vendorID>4113</vendorID>
-            <productCode>513</productCode>
+            <vendorID>4113</vendorID> <!-- = 0x1011 in hex-->
+            <productCode>513</productCode> <!-- = 0x00000201 in hex-->
             <imuType>H4</imuType>
             <present>true</present>
             <angularVelocityBiasX>0.0</angularVelocityBiasX>
