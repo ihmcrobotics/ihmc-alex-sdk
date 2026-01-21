@@ -1,4 +1,4 @@
-# Holds desired control commands for Alexander
+# Holds desired control commands for Alex
 
 # Operational commands of the robot
 bool enable_actuators

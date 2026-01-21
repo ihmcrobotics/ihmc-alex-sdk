@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 import us.ihmc.pubsub.TopicDataType;
 
 /**
-       * Holds hardware status info of Alexander
+       * Holds hardware status info of Alex
        */
 public class HardwareStatus extends Packet<HardwareStatus> implements Settable<HardwareStatus>, EpsilonComparable<HardwareStatus>
 {

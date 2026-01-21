@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 import us.ihmc.pubsub.TopicDataType;
 
 /**
-       * Holds desired control commands for Alexander
+       * Holds desired control commands for Alex
        */
 public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCommand>, EpsilonComparable<AlexCommand>
 {

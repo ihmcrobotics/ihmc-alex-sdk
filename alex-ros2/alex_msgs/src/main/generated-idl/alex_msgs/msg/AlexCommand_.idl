@@ -10,7 +10,7 @@ module alex_msgs
     {
 
       /**
-       * Holds desired control commands for Alexander
+       * Holds desired control commands for Alex
        */
       @TypeCode(type="alex_msgs::msg::dds_::AlexCommand_")
       struct AlexCommand

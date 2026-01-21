@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 import us.ihmc.pubsub.TopicDataType;
 
 /**
-       * Holds the current state of Alexander
+       * Holds the current state of Alex
        */
 public class AlexState extends Packet<AlexState> implements Settable<AlexState>, EpsilonComparable<AlexState>
 {
