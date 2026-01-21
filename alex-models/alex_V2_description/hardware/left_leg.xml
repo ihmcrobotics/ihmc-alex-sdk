@@ -7,8 +7,8 @@
             <position>0</position>
             <actuatorPackage>A032</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>23.604285316595416</motorOffset>
+            <outputOffset>6.804469249773541</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -17,8 +17,8 @@
             <position>0</position>
             <actuatorPackage>A031</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>7.705544837389041</motorOffset>
+            <outputOffset>2.882143002605659</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -27,8 +27,8 @@
             <position>0</position>
             <actuatorPackage>A035</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>2.29864913781336</motorOffset>
+            <outputOffset>1.20513461677338</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -37,8 +37,8 @@
             <position>0</position>
             <actuatorPackage>A033</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>-16.393575939906746</motorOffset>
+            <outputOffset>3.0716517570449287</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -47,8 +47,8 @@
             <position>0</position>
             <actuatorPackage>A034</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>27.62869851147685</motorOffset>
+            <outputOffset>6.434221419522658</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
