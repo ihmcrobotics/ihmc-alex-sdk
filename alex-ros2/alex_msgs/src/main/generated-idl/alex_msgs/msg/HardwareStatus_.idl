@@ -10,7 +10,7 @@ module alex_msgs
     {
 
       /**
-       * Holds hardware status info of Alexander
+       * Holds hardware status info of Alex
        */
       @TypeCode(type="alex_msgs::msg::dds_::HardwareStatus_")
       struct HardwareStatus

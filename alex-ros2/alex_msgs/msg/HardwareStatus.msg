@@ -1,4 +1,4 @@
-# Holds hardware status info of Alexander
+# Holds hardware status info of Alex
 
 # Various fault info
 bool robot_fault

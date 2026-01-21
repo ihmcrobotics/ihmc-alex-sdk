@@ -1,4 +1,4 @@
-# Holds the current state of Alexander
+# Holds the current state of Alex
 
 # General Status
 float64 time

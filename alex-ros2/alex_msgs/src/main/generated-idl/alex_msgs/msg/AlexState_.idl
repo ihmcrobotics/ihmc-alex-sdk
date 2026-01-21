@@ -12,7 +12,7 @@ module alex_msgs
     {
 
       /**
-       * Holds the current state of Alexander
+       * Holds the current state of Alex
        */
       @TypeCode(type="alex_msgs::msg::dds_::AlexState_")
       struct AlexState
