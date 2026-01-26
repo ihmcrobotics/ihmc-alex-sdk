@@ -21,9 +21,9 @@
     <!-- NECK & HEAD LINKS -->
     <link name="NECK_Z_LINK">
         <inertial>
-            <mass value="1.141"/>
-            <origin rpy="0 0 0" xyz="0.007143 0.006943 0.109823"/>
-            <inertia ixx="0.007475898" ixy="-0.000075723" ixz="-0.000745362" iyy="0.007407578" iyz="-0.000436948" izz="0.00109269"/>
+            <mass value="1.03172573"/>
+            <origin rpy="0 0 0" xyz="0.00626571 0.0059834 0.15148116"/>
+            <inertia ixx="0.00611354" ixy="-0.00005224" ixz="-0.00058532" iyy="0.00602503" iyz="-0.00028073" izz="0.0009799"/>
         </inertial>
         <visual>
             <geometry>
@@ -37,9 +37,9 @@
     </link>
     <link name="HEAD_LINK">
         <inertial>
-            <mass value="1.677"/>
-            <origin rpy="0 0 0" xyz="0.03237 -0.013568 0.007163"/>
-            <inertia ixx="0.006026191" ixy="-0.000197484" ixz="0.001813659" iyy="0.008182071" iyz="-0.000042529" izz="0.00644909"/>
+            <mass value="1.27065932"/>
+            <origin rpy="0 0 0" xyz="0.0407664 -0.00396678 0.007163"/>
+            <inertia ixx="0.00424227" ixy="-0.00008839" ixz="0.00054485" iyy="0.00501825" iyz="-0.00010863" izz="0.00451978"/>
         </inertial>
         <visual>
             <geometry>
