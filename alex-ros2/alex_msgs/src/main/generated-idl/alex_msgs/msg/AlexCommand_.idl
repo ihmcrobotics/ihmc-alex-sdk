@@ -21,6 +21,7 @@ module alex_msgs
         boolean enable_actuators;
         boolean clear_faults;
         boolean calibrate;
+        boolean servo_actuators;
         /**
          * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
          */

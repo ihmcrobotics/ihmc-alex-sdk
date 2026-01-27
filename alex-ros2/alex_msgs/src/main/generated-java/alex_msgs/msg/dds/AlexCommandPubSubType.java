@@ -15,7 +15,7 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "4740eb9d7ca032fbff88fcbb901c50dbbb7a69d7b7cb229ddb68870b5658c4a0";
+   		return "966c10083961295842240b58e6434f0bf93b8702255315c30174d5c8461c8f8e";
    }
    
    @Override
@@ -60,6 +60,8 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 50; ++i0)
@@ -79,6 +81,9 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    public final static int getCdrSerializedSize(alex_msgs.msg.dds.AlexCommand data, int current_alignment)
    {
       int initial_alignment = current_alignment;
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
@@ -115,6 +120,8 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
 
       cdr.write_type_7(data.getCalibrate());
 
+      cdr.write_type_7(data.getServoActuators());
+
       cdr.write_type_9(data.getRobotControlState());
 
       cdr.write_type_4(data.getNumberOfJoints());
@@ -135,6 +142,8 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       	
       data.setCalibrate(cdr.read_type_7());
       	
+      data.setServoActuators(cdr.read_type_7());
+      	
       data.setRobotControlState(cdr.read_type_9());
       	
       data.setNumberOfJoints(cdr.read_type_4());
@@ -151,6 +160,7 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       ser.write_type_7("enable_actuators", data.getEnableActuators());
       ser.write_type_7("clear_faults", data.getClearFaults());
       ser.write_type_7("calibrate", data.getCalibrate());
+      ser.write_type_7("servo_actuators", data.getServoActuators());
       ser.write_type_9("robot_control_state", data.getRobotControlState());
       ser.write_type_4("number_of_joints", data.getNumberOfJoints());
       ser.write_type_e("joint_commands", data.getJointCommands());
@@ -163,6 +173,7 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       data.setEnableActuators(ser.read_type_7("enable_actuators"));
       data.setClearFaults(ser.read_type_7("clear_faults"));
       data.setCalibrate(ser.read_type_7("calibrate"));
+      data.setServoActuators(ser.read_type_7("servo_actuators"));
       data.setRobotControlState(ser.read_type_9("robot_control_state"));
       data.setNumberOfJoints(ser.read_type_4("number_of_joints"));
       ser.read_type_e("joint_commands", data.getJointCommands());
