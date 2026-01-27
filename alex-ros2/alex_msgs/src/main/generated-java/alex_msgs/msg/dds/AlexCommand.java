@@ -18,6 +18,7 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
    public boolean clear_faults_;
    public boolean calibrate_;
    public boolean servo_actuators_;
+   public boolean unservo_quickly_;
    /**
             * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
             */
@@ -49,6 +50,8 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       calibrate_ = other.calibrate_;
 
       servo_actuators_ = other.servo_actuators_;
+
+      unservo_quickly_ = other.unservo_quickly_;
 
       robot_control_state_ = other.robot_control_state_;
 
@@ -97,6 +100,15 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
    public boolean getServoActuators()
    {
       return servo_actuators_;
+   }
+
+   public void setUnservoQuickly(boolean unservo_quickly)
+   {
+      unservo_quickly_ = unservo_quickly;
+   }
+   public boolean getUnservoQuickly()
+   {
+      return unservo_quickly_;
    }
 
    /**
@@ -158,6 +170,8 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.servo_actuators_, other.servo_actuators_, epsilon)) return false;
 
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.unservo_quickly_, other.unservo_quickly_, epsilon)) return false;
+
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.robot_control_state_, other.robot_control_state_, epsilon)) return false;
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.number_of_joints_, other.number_of_joints_, epsilon)) return false;
@@ -190,6 +204,8 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if(this.servo_actuators_ != otherMyClass.servo_actuators_) return false;
 
+      if(this.unservo_quickly_ != otherMyClass.unservo_quickly_) return false;
+
       if(this.robot_control_state_ != otherMyClass.robot_control_state_) return false;
 
       if(this.number_of_joints_ != otherMyClass.number_of_joints_) return false;
@@ -213,6 +229,8 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       builder.append(this.calibrate_);      builder.append(", ");
       builder.append("servo_actuators=");
       builder.append(this.servo_actuators_);      builder.append(", ");
+      builder.append("unservo_quickly=");
+      builder.append(this.unservo_quickly_);      builder.append(", ");
       builder.append("robot_control_state=");
       builder.append(this.robot_control_state_);      builder.append(", ");
       builder.append("number_of_joints=");

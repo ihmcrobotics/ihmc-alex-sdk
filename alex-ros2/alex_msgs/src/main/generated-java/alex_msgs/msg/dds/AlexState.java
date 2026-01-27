@@ -17,6 +17,9 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
    public double time_;
    public boolean is_faulted_;
    public boolean is_calibrated_;
+   public boolean is_servoing_;
+   public boolean is_unservoing_;
+   public boolean is_servoed_;
    public long number_of_joints_;
    public long number_of_imus_;
    public long number_of_fts_;
@@ -51,6 +54,12 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
       is_faulted_ = other.is_faulted_;
 
       is_calibrated_ = other.is_calibrated_;
+
+      is_servoing_ = other.is_servoing_;
+
+      is_unservoing_ = other.is_unservoing_;
+
+      is_servoed_ = other.is_servoed_;
 
       number_of_joints_ = other.number_of_joints_;
 
@@ -94,6 +103,33 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
    public boolean getIsCalibrated()
    {
       return is_calibrated_;
+   }
+
+   public void setIsServoing(boolean is_servoing)
+   {
+      is_servoing_ = is_servoing;
+   }
+   public boolean getIsServoing()
+   {
+      return is_servoing_;
+   }
+
+   public void setIsUnservoing(boolean is_unservoing)
+   {
+      is_unservoing_ = is_unservoing;
+   }
+   public boolean getIsUnservoing()
+   {
+      return is_unservoing_;
+   }
+
+   public void setIsServoed(boolean is_servoed)
+   {
+      is_servoed_ = is_servoed;
+   }
+   public boolean getIsServoed()
+   {
+      return is_servoed_;
    }
 
    public void setNumberOfJoints(long number_of_joints)
@@ -171,6 +207,12 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.is_calibrated_, other.is_calibrated_, epsilon)) return false;
 
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.is_servoing_, other.is_servoing_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.is_unservoing_, other.is_unservoing_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.is_servoed_, other.is_servoed_, epsilon)) return false;
+
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.number_of_joints_, other.number_of_joints_, epsilon)) return false;
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.number_of_imus_, other.number_of_imus_, epsilon)) return false;
@@ -217,6 +259,12 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
 
       if(this.is_calibrated_ != otherMyClass.is_calibrated_) return false;
 
+      if(this.is_servoing_ != otherMyClass.is_servoing_) return false;
+
+      if(this.is_unservoing_ != otherMyClass.is_unservoing_) return false;
+
+      if(this.is_servoed_ != otherMyClass.is_servoed_) return false;
+
       if(this.number_of_joints_ != otherMyClass.number_of_joints_) return false;
 
       if(this.number_of_imus_ != otherMyClass.number_of_imus_) return false;
@@ -242,6 +290,12 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
       builder.append(this.is_faulted_);      builder.append(", ");
       builder.append("is_calibrated=");
       builder.append(this.is_calibrated_);      builder.append(", ");
+      builder.append("is_servoing=");
+      builder.append(this.is_servoing_);      builder.append(", ");
+      builder.append("is_unservoing=");
+      builder.append(this.is_unservoing_);      builder.append(", ");
+      builder.append("is_servoed=");
+      builder.append(this.is_servoed_);      builder.append(", ");
       builder.append("number_of_joints=");
       builder.append(this.number_of_joints_);      builder.append(", ");
       builder.append("number_of_imus=");

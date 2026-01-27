@@ -4,6 +4,9 @@
 float64 time
 bool is_faulted
 bool is_calibrated
+bool is_servoing
+bool is_unservoing
+bool is_servoed
 uint32 number_of_joints
 uint32 number_of_imus
 uint32 number_of_fts

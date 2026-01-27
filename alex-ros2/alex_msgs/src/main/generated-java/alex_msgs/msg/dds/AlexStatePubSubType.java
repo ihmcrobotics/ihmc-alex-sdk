@@ -15,7 +15,7 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "8caaaed95aa98aea9c7594532e814bac84b0e931e60cafd47ccd66cddf05f376";
+   		return "3667661f798dfeb72b461569967ebc961e4f686517a890df468ec8067eb14f08";
    }
    
    @Override
@@ -58,6 +58,12 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
@@ -87,6 +93,15 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       int initial_alignment = current_alignment;
 
       current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
@@ -131,6 +146,12 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
 
       cdr.write_type_7(data.getIsCalibrated());
 
+      cdr.write_type_7(data.getIsServoing());
+
+      cdr.write_type_7(data.getIsUnservoing());
+
+      cdr.write_type_7(data.getIsServoed());
+
       cdr.write_type_4(data.getNumberOfJoints());
 
       cdr.write_type_4(data.getNumberOfImus());
@@ -159,6 +180,12 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       	
       data.setIsCalibrated(cdr.read_type_7());
       	
+      data.setIsServoing(cdr.read_type_7());
+      	
+      data.setIsUnservoing(cdr.read_type_7());
+      	
+      data.setIsServoed(cdr.read_type_7());
+      	
       data.setNumberOfJoints(cdr.read_type_4());
       	
       data.setNumberOfImus(cdr.read_type_4());
@@ -177,6 +204,9 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       ser.write_type_6("time", data.getTime());
       ser.write_type_7("is_faulted", data.getIsFaulted());
       ser.write_type_7("is_calibrated", data.getIsCalibrated());
+      ser.write_type_7("is_servoing", data.getIsServoing());
+      ser.write_type_7("is_unservoing", data.getIsUnservoing());
+      ser.write_type_7("is_servoed", data.getIsServoed());
       ser.write_type_4("number_of_joints", data.getNumberOfJoints());
       ser.write_type_4("number_of_imus", data.getNumberOfImus());
       ser.write_type_4("number_of_fts", data.getNumberOfFts());
@@ -191,6 +221,9 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       data.setTime(ser.read_type_6("time"));
       data.setIsFaulted(ser.read_type_7("is_faulted"));
       data.setIsCalibrated(ser.read_type_7("is_calibrated"));
+      data.setIsServoing(ser.read_type_7("is_servoing"));
+      data.setIsUnservoing(ser.read_type_7("is_unservoing"));
+      data.setIsServoed(ser.read_type_7("is_servoed"));
       data.setNumberOfJoints(ser.read_type_4("number_of_joints"));
       data.setNumberOfImus(ser.read_type_4("number_of_imus"));
       data.setNumberOfFts(ser.read_type_4("number_of_fts"));

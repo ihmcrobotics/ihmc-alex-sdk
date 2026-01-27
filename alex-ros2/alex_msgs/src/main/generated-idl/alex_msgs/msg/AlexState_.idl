@@ -23,6 +23,9 @@ module alex_msgs
         double time;
         boolean is_faulted;
         boolean is_calibrated;
+        boolean is_servoing;
+        boolean is_unservoing;
+        boolean is_servoed;
         unsigned long number_of_joints;
         unsigned long number_of_imus;
         unsigned long number_of_fts;
