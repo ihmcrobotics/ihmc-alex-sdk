@@ -15,7 +15,7 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "966c10083961295842240b58e6434f0bf93b8702255315c30174d5c8461c8f8e";
+   		return "072667cb5195f7e2f8048fe3d8941d81753d013ce715dc4ed38e4f28c8e6ec24";
    }
    
    @Override
@@ -67,8 +67,6 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 50; ++i0)
       {
           current_alignment += alex_msgs.msg.dds.OneDOFJointCommandPubSubType.getMaxCdrSerializedSize(current_alignment);}
-      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
-
 
       return current_alignment - initial_alignment;
    }
@@ -105,9 +103,6 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       {
           current_alignment += alex_msgs.msg.dds.OneDOFJointCommandPubSubType.getCdrSerializedSize(data.getJointCommands().get(i0), current_alignment);}
 
-      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
-
-
 
       return current_alignment - initial_alignment;
    }
@@ -130,8 +125,6 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       cdr.write_type_e(data.getJointCommands());else
           throw new RuntimeException("joint_commands field exceeds the maximum length: %d > %d".formatted(data.getJointCommands().size(), 50));
 
-      cdr.write_type_6(data.getLowLevelMasterGain());
-
    }
 
    public static void read(alex_msgs.msg.dds.AlexCommand data, us.ihmc.idl.CDR cdr)
@@ -149,8 +142,6 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       data.setNumberOfJoints(cdr.read_type_4());
       	
       cdr.read_type_e(data.getJointCommands());	
-      data.setLowLevelMasterGain(cdr.read_type_6());
-      	
 
    }
 
@@ -164,7 +155,6 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       ser.write_type_9("robot_control_state", data.getRobotControlState());
       ser.write_type_4("number_of_joints", data.getNumberOfJoints());
       ser.write_type_e("joint_commands", data.getJointCommands());
-      ser.write_type_6("low_level_master_gain", data.getLowLevelMasterGain());
    }
 
    @Override
@@ -177,7 +167,6 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       data.setRobotControlState(ser.read_type_9("robot_control_state"));
       data.setNumberOfJoints(ser.read_type_4("number_of_joints"));
       ser.read_type_e("joint_commands", data.getJointCommands());
-      data.setLowLevelMasterGain(ser.read_type_6("low_level_master_gain"));
    }
 
    public static void staticCopy(alex_msgs.msg.dds.AlexCommand src, alex_msgs.msg.dds.AlexCommand dest)

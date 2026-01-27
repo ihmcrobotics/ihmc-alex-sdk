@@ -11,4 +11,3 @@ uint32 number_of_joints
 
 # Joint Commands for the robot
 OneDOFJointCommand[<=50] joint_commands
-float64 low_level_master_gain

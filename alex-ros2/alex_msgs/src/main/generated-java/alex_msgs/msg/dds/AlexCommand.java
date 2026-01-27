@@ -27,7 +27,6 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
             * Joint Commands for the robot
             */
    public us.ihmc.idl.IDLSequence.Object<alex_msgs.msg.dds.OneDOFJointCommand>  joint_commands_;
-   public double low_level_master_gain_;
 
    public AlexCommand()
    {
@@ -56,8 +55,6 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       number_of_joints_ = other.number_of_joints_;
 
       joint_commands_.set(other.joint_commands_);
-      low_level_master_gain_ = other.low_level_master_gain_;
-
    }
 
    /**
@@ -135,15 +132,6 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       return joint_commands_;
    }
 
-   public void setLowLevelMasterGain(double low_level_master_gain)
-   {
-      low_level_master_gain_ = low_level_master_gain;
-   }
-   public double getLowLevelMasterGain()
-   {
-      return low_level_master_gain_;
-   }
-
 
    public static Supplier<AlexCommandPubSubType> getPubSubType()
    {
@@ -181,8 +169,6 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
          {  if (!this.joint_commands_.get(i).epsilonEquals(other.joint_commands_.get(i), epsilon)) return false; }
       }
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.low_level_master_gain_, other.low_level_master_gain_, epsilon)) return false;
-
 
       return true;
    }
@@ -209,8 +195,6 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       if(this.number_of_joints_ != otherMyClass.number_of_joints_) return false;
 
       if (!this.joint_commands_.equals(otherMyClass.joint_commands_)) return false;
-      if(this.low_level_master_gain_ != otherMyClass.low_level_master_gain_) return false;
-
 
       return true;
    }
@@ -234,9 +218,7 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       builder.append("number_of_joints=");
       builder.append(this.number_of_joints_);      builder.append(", ");
       builder.append("joint_commands=");
-      builder.append(this.joint_commands_);      builder.append(", ");
-      builder.append("low_level_master_gain=");
-      builder.append(this.low_level_master_gain_);
+      builder.append(this.joint_commands_);
       builder.append("}");
       return builder.toString();
    }

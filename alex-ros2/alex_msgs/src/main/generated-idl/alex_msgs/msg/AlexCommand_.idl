@@ -31,7 +31,6 @@ module alex_msgs
          * Joint Commands for the robot
          */
         sequence<alex_msgs::msg::dds::OneDOFJointCommand, 50> joint_commands;
-        double low_level_master_gain;
       };
     };
   };
