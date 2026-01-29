@@ -1,0 +1,20 @@
+#ifndef __alex_msgs__msg__SimCmd__idl__
+#define __alex_msgs__msg__SimCmd__idl__
+
+module alex_msgs
+{
+  module msg
+  {
+    module dds
+    {
+
+      @TypeCode(type="alex_msgs::msg::dds_::SimCmd_")
+      struct SimCmd
+      {
+        float control_dt;
+      };
+    };
+  };
+};
+
+#endif
