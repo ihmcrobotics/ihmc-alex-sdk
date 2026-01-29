@@ -1,0 +1,3 @@
+float32 sim_realtime_rate
+float32 physics_realtime_rate
+float32 dwell_duration
