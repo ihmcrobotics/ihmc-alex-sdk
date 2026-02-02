@@ -13,6 +13,7 @@ uint32 number_of_fts
 
 # Joint States
 OneDOFJointState[<=50] joint_states
+float64 low_level_master_gain
 
 # Sensor States
 IMUState[<=50] imu_states

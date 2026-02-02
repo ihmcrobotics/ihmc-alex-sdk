@@ -33,6 +33,7 @@ module alex_msgs
          * Joint States
          */
         sequence<alex_msgs::msg::dds::OneDOFJointState, 50> joint_states;
+        double low_level_master_gain;
         /**
          * Sensor States
          */

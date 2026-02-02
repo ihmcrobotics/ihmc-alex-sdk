@@ -19,6 +19,7 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
    public boolean calibrate_;
    public boolean servo_actuators_;
    public boolean unservo_quickly_;
+   public boolean use_high_level_servo_;
    /**
             * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
             */
@@ -28,6 +29,7 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
             * Joint Commands for the robot
             */
    public us.ihmc.idl.IDLSequence.Object<alex_msgs.msg.dds.OneDOFJointCommand>  joint_commands_;
+   public double low_level_master_gain_;
 
    public AlexCommand()
    {
@@ -53,11 +55,15 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       unservo_quickly_ = other.unservo_quickly_;
 
+      use_high_level_servo_ = other.use_high_level_servo_;
+
       robot_control_state_ = other.robot_control_state_;
 
       number_of_joints_ = other.number_of_joints_;
 
       joint_commands_.set(other.joint_commands_);
+      low_level_master_gain_ = other.low_level_master_gain_;
+
    }
 
    /**
@@ -111,6 +117,15 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       return unservo_quickly_;
    }
 
+   public void setUseHighLevelServo(boolean use_high_level_servo)
+   {
+      use_high_level_servo_ = use_high_level_servo;
+   }
+   public boolean getUseHighLevelServo()
+   {
+      return use_high_level_servo_;
+   }
+
    /**
             * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
             */
@@ -144,6 +159,15 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       return joint_commands_;
    }
 
+   public void setLowLevelMasterGain(double low_level_master_gain)
+   {
+      low_level_master_gain_ = low_level_master_gain;
+   }
+   public double getLowLevelMasterGain()
+   {
+      return low_level_master_gain_;
+   }
+
 
    public static Supplier<AlexCommandPubSubType> getPubSubType()
    {
@@ -172,6 +196,8 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.unservo_quickly_, other.unservo_quickly_, epsilon)) return false;
 
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.use_high_level_servo_, other.use_high_level_servo_, epsilon)) return false;
+
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.robot_control_state_, other.robot_control_state_, epsilon)) return false;
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.number_of_joints_, other.number_of_joints_, epsilon)) return false;
@@ -182,6 +208,8 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
          for (int i = 0; i < this.joint_commands_.size(); i++)
          {  if (!this.joint_commands_.get(i).epsilonEquals(other.joint_commands_.get(i), epsilon)) return false; }
       }
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.low_level_master_gain_, other.low_level_master_gain_, epsilon)) return false;
 
 
       return true;
@@ -206,11 +234,15 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if(this.unservo_quickly_ != otherMyClass.unservo_quickly_) return false;
 
+      if(this.use_high_level_servo_ != otherMyClass.use_high_level_servo_) return false;
+
       if(this.robot_control_state_ != otherMyClass.robot_control_state_) return false;
 
       if(this.number_of_joints_ != otherMyClass.number_of_joints_) return false;
 
       if (!this.joint_commands_.equals(otherMyClass.joint_commands_)) return false;
+      if(this.low_level_master_gain_ != otherMyClass.low_level_master_gain_) return false;
+
 
       return true;
    }
@@ -231,12 +263,16 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       builder.append(this.servo_actuators_);      builder.append(", ");
       builder.append("unservo_quickly=");
       builder.append(this.unservo_quickly_);      builder.append(", ");
+      builder.append("use_high_level_servo=");
+      builder.append(this.use_high_level_servo_);      builder.append(", ");
       builder.append("robot_control_state=");
       builder.append(this.robot_control_state_);      builder.append(", ");
       builder.append("number_of_joints=");
       builder.append(this.number_of_joints_);      builder.append(", ");
       builder.append("joint_commands=");
-      builder.append(this.joint_commands_);
+      builder.append(this.joint_commands_);      builder.append(", ");
+      builder.append("low_level_master_gain=");
+      builder.append(this.low_level_master_gain_);
       builder.append("}");
       return builder.toString();
    }

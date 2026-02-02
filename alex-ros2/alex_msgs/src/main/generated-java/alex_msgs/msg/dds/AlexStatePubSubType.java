@@ -15,7 +15,7 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "3667661f798dfeb72b461569967ebc961e4f686517a890df468ec8067eb14f08";
+   		return "78e98fd5c956128963a9ee5c28e12b9436716708317258bd0af1e511273f5da8";
    }
    
    @Override
@@ -73,6 +73,8 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 50; ++i0)
       {
           current_alignment += alex_msgs.msg.dds.OneDOFJointStatePubSubType.getMaxCdrSerializedSize(current_alignment);}
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 50; ++i0)
       {
           current_alignment += alex_msgs.msg.dds.IMUStatePubSubType.getMaxCdrSerializedSize(current_alignment);}
@@ -124,6 +126,9 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       {
           current_alignment += alex_msgs.msg.dds.OneDOFJointStatePubSubType.getCdrSerializedSize(data.getJointStates().get(i0), current_alignment);}
 
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
       for(int i0 = 0; i0 < data.getImuStates().size(); ++i0)
       {
@@ -162,6 +167,8 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       cdr.write_type_e(data.getJointStates());else
           throw new RuntimeException("joint_states field exceeds the maximum length: %d > %d".formatted(data.getJointStates().size(), 50));
 
+      cdr.write_type_6(data.getLowLevelMasterGain());
+
       if(data.getImuStates().size() <= 50)
       cdr.write_type_e(data.getImuStates());else
           throw new RuntimeException("imu_states field exceeds the maximum length: %d > %d".formatted(data.getImuStates().size(), 50));
@@ -193,6 +200,8 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       data.setNumberOfFts(cdr.read_type_4());
       	
       cdr.read_type_e(data.getJointStates());	
+      data.setLowLevelMasterGain(cdr.read_type_6());
+      	
       cdr.read_type_e(data.getImuStates());	
       cdr.read_type_e(data.getFtStates());	
 
@@ -211,6 +220,7 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       ser.write_type_4("number_of_imus", data.getNumberOfImus());
       ser.write_type_4("number_of_fts", data.getNumberOfFts());
       ser.write_type_e("joint_states", data.getJointStates());
+      ser.write_type_6("low_level_master_gain", data.getLowLevelMasterGain());
       ser.write_type_e("imu_states", data.getImuStates());
       ser.write_type_e("ft_states", data.getFtStates());
    }
@@ -228,6 +238,7 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       data.setNumberOfImus(ser.read_type_4("number_of_imus"));
       data.setNumberOfFts(ser.read_type_4("number_of_fts"));
       ser.read_type_e("joint_states", data.getJointStates());
+      data.setLowLevelMasterGain(ser.read_type_6("low_level_master_gain"));
       ser.read_type_e("imu_states", data.getImuStates());
       ser.read_type_e("ft_states", data.getFtStates());
    }

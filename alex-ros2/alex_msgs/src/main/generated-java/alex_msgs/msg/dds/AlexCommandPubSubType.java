@@ -15,7 +15,7 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "e19576563b9a09a2d516cf1d57b1acfe6561b9c952de39d48279595ddff73e8a";
+   		return "ec9ee6ecbfa4058cca915c9fc03c702a6494e4e914747bb5e35bc4bf97457e0a";
    }
    
    @Override
@@ -64,11 +64,15 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 50; ++i0)
       {
           current_alignment += alex_msgs.msg.dds.OneDOFJointCommandPubSubType.getMaxCdrSerializedSize(current_alignment);}
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
 
       return current_alignment - initial_alignment;
    }
@@ -100,6 +104,9 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
 
@@ -107,6 +114,9 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       for(int i0 = 0; i0 < data.getJointCommands().size(); ++i0)
       {
           current_alignment += alex_msgs.msg.dds.OneDOFJointCommandPubSubType.getCdrSerializedSize(data.getJointCommands().get(i0), current_alignment);}
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
 
 
       return current_alignment - initial_alignment;
@@ -124,6 +134,8 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
 
       cdr.write_type_7(data.getUnservoQuickly());
 
+      cdr.write_type_7(data.getUseHighLevelServo());
+
       cdr.write_type_9(data.getRobotControlState());
 
       cdr.write_type_4(data.getNumberOfJoints());
@@ -131,6 +143,8 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       if(data.getJointCommands().size() <= 50)
       cdr.write_type_e(data.getJointCommands());else
           throw new RuntimeException("joint_commands field exceeds the maximum length: %d > %d".formatted(data.getJointCommands().size(), 50));
+
+      cdr.write_type_6(data.getLowLevelMasterGain());
 
    }
 
@@ -146,11 +160,15 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       	
       data.setUnservoQuickly(cdr.read_type_7());
       	
+      data.setUseHighLevelServo(cdr.read_type_7());
+      	
       data.setRobotControlState(cdr.read_type_9());
       	
       data.setNumberOfJoints(cdr.read_type_4());
       	
       cdr.read_type_e(data.getJointCommands());	
+      data.setLowLevelMasterGain(cdr.read_type_6());
+      	
 
    }
 
@@ -162,9 +180,11 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       ser.write_type_7("calibrate", data.getCalibrate());
       ser.write_type_7("servo_actuators", data.getServoActuators());
       ser.write_type_7("unservo_quickly", data.getUnservoQuickly());
+      ser.write_type_7("use_high_level_servo", data.getUseHighLevelServo());
       ser.write_type_9("robot_control_state", data.getRobotControlState());
       ser.write_type_4("number_of_joints", data.getNumberOfJoints());
       ser.write_type_e("joint_commands", data.getJointCommands());
+      ser.write_type_6("low_level_master_gain", data.getLowLevelMasterGain());
    }
 
    @Override
@@ -175,9 +195,11 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       data.setCalibrate(ser.read_type_7("calibrate"));
       data.setServoActuators(ser.read_type_7("servo_actuators"));
       data.setUnservoQuickly(ser.read_type_7("unservo_quickly"));
+      data.setUseHighLevelServo(ser.read_type_7("use_high_level_servo"));
       data.setRobotControlState(ser.read_type_9("robot_control_state"));
       data.setNumberOfJoints(ser.read_type_4("number_of_joints"));
       ser.read_type_e("joint_commands", data.getJointCommands());
+      data.setLowLevelMasterGain(ser.read_type_6("low_level_master_gain"));
    }
 
    public static void staticCopy(alex_msgs.msg.dds.AlexCommand src, alex_msgs.msg.dds.AlexCommand dest)

@@ -27,6 +27,7 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
             * Joint States
             */
    public us.ihmc.idl.IDLSequence.Object<alex_msgs.msg.dds.OneDOFJointState>  joint_states_;
+   public double low_level_master_gain_;
    /**
             * Sensor States
             */
@@ -68,6 +69,8 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
       number_of_fts_ = other.number_of_fts_;
 
       joint_states_.set(other.joint_states_);
+      low_level_master_gain_ = other.low_level_master_gain_;
+
       imu_states_.set(other.imu_states_);
       ft_states_.set(other.ft_states_);
    }
@@ -168,6 +171,15 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
       return joint_states_;
    }
 
+   public void setLowLevelMasterGain(double low_level_master_gain)
+   {
+      low_level_master_gain_ = low_level_master_gain;
+   }
+   public double getLowLevelMasterGain()
+   {
+      return low_level_master_gain_;
+   }
+
 
    /**
             * Sensor States
@@ -226,6 +238,8 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
          {  if (!this.joint_states_.get(i).epsilonEquals(other.joint_states_.get(i), epsilon)) return false; }
       }
 
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.low_level_master_gain_, other.low_level_master_gain_, epsilon)) return false;
+
       if (this.imu_states_.size() != other.imu_states_.size()) { return false; }
       else
       {
@@ -272,6 +286,8 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
       if(this.number_of_fts_ != otherMyClass.number_of_fts_) return false;
 
       if (!this.joint_states_.equals(otherMyClass.joint_states_)) return false;
+      if(this.low_level_master_gain_ != otherMyClass.low_level_master_gain_) return false;
+
       if (!this.imu_states_.equals(otherMyClass.imu_states_)) return false;
       if (!this.ft_states_.equals(otherMyClass.ft_states_)) return false;
 
@@ -304,6 +320,8 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
       builder.append(this.number_of_fts_);      builder.append(", ");
       builder.append("joint_states=");
       builder.append(this.joint_states_);      builder.append(", ");
+      builder.append("low_level_master_gain=");
+      builder.append(this.low_level_master_gain_);      builder.append(", ");
       builder.append("imu_states=");
       builder.append(this.imu_states_);      builder.append(", ");
       builder.append("ft_states=");
