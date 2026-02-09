@@ -37,8 +37,8 @@
             <position>0</position>
             <actuatorPackage>A002</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>5.247987974021597</motorOffset>
-            <outputOffset>4.852556177975117</outputOffset>
+            <motorOffset>4.613595037762139</motorOffset>
+            <outputOffset>4.820627886522253</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -47,8 +47,8 @@
             <position>0</position>
             <actuatorPackage>A001</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>1.3214487355267897</motorOffset>
-            <outputOffset>2.1016015267647443</outputOffset>
+            <motorOffset>3.836471512841001</motorOffset>
+            <outputOffset>6.181784520680528</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
