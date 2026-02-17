@@ -9,6 +9,7 @@
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>0.0</motorOffset>
             <outputOffset>0.0</outputOffset>
+            <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>false</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -19,6 +20,7 @@
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>0.0</motorOffset>
             <outputOffset>0.0</outputOffset>
+            <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -29,6 +31,7 @@
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>0.0</motorOffset>
             <outputOffset>0.0</outputOffset>
+            <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -39,6 +42,7 @@
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>0.0</motorOffset>
             <outputOffset>0.0</outputOffset>
+            <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
 
