@@ -5,41 +5,41 @@
             <name>LeftJ1Motor</name>
             <alias>2001</alias>
             <position>0</position>
-            <actuatorPackage>A024</actuatorPackage> <!-- Use J1L_Nadia for Nadia arms -->
+            <actuatorPackage>A045</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>421.5613009363129</motorOffset> <!-- Use 445770 for Nadia arms -->
-            <outputOffset>3.37227</outputOffset> <!-- Use 389428 for Nadia arms -->
-            <present>true</present>
+            <motorOffset>0.0</motorOffset>
+            <outputOffset>0.0</outputOffset>
+            <present>false</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>LeftJ2Motor</name>
             <alias>2002</alias>
             <position>0</position>
-            <actuatorPackage>A025</actuatorPackage> <!-- Use J2L_Nadia for Nadia arms -->
+            <actuatorPackage>A046</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>514.6153803983825</motorOffset> <!-- Use 302116 for Nadia arms -->
-            <outputOffset>2.582398</outputOffset> <!-- Use 255870 for Nadia arms -->
+            <motorOffset>0.0</motorOffset>
+            <outputOffset>0.0</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>LeftJ3Motor</name>
             <alias>2004</alias>
             <position>0</position>
-            <actuatorPackage>A026</actuatorPackage> <!-- Use J3L_Nadia for Nadia arms -->
+            <actuatorPackage>A047</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <outputEncoderInverted>true</outputEncoderInverted>
-            <motorOffset>532.7796063399244</motorOffset> <!-- Use 1156066 for Nadia arms -->
-            <outputOffset>3.483998</outputOffset> <!-- Use 1208760 for Nadia arms -->
+            <outputEncoderInverted>false</outputEncoderInverted> <!-- Only true for Nadia arms on V1-->
+            <motorOffset>0.0</motorOffset>
+            <outputOffset>0.0</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>LeftJ4Motor</name>
             <alias>2006</alias>
             <position>0</position>
-            <actuatorPackage>A027</actuatorPackage> <!-- Use J4L_Nadia for Nadia arms -->
+            <actuatorPackage>A048</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>-411607.6932023022</motorOffset> <!-- Use 405162 for Nadia arms -->
-            <outputOffset>3.03154</outputOffset> <!-- Use 67542 for Nadia arms -->
+            <motorOffset>0.0</motorOffset>
+            <outputOffset>0.0</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -71,7 +71,7 @@
             <alias>2105</alias>
             <position>0</position>
             <boardType>ALEX</boardType>
-            <present>false</present>
+            <present>true</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>left_shoulder_z_imu</name>
@@ -101,7 +101,7 @@
             <torqueBreakFrequency>50.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
-            <present>true</present>
+            <present>false</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
             <jointName>LEFT_SHOULDER_X</jointName>
@@ -112,6 +112,7 @@
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
+            <doPDControlOnTwitter>true</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -134,6 +135,7 @@
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
+            <doPDControlOnTwitter>true</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
     </transmissions>
