@@ -28,6 +28,12 @@ module alex_msgs
         unsigned long working_counter_mismatch_count;
         unsigned long missed_deadlines;
         /**
+         * Power Management Board Information
+         */
+        double battery_charge_percetage;
+        double estimated_runtime_minutes;
+        boolean enabled_24_v;
+        /**
          * Joint States
          */
         sequence<alex_msgs::msg::dds::ROSDeviceStatusProvider, 75> device_status_providers;

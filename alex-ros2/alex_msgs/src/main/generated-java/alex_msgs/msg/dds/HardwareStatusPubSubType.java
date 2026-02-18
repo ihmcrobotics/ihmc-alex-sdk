@@ -15,7 +15,7 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "885ad33bc51971bea00ccfe3a0b8623e2e7add606721ae00d81abbb43de450cc";
+   		return "30402f23a14805d3c8bb2981f5087eda6b9c34dcc390f28b2f85d6e4d1a17081";
    }
    
    @Override
@@ -64,6 +64,12 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 75; ++i0)
       {
           current_alignment += alex_msgs.msg.dds.ROSDeviceStatusProviderPubSubType.getMaxCdrSerializedSize(current_alignment);}
@@ -98,6 +104,15 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
 
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
       for(int i0 = 0; i0 < data.getDeviceStatusProviders().size(); ++i0)
       {
@@ -121,6 +136,12 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
 
       cdr.write_type_4(data.getMissedDeadlines());
 
+      cdr.write_type_6(data.getBatteryChargePercetage());
+
+      cdr.write_type_6(data.getEstimatedRuntimeMinutes());
+
+      cdr.write_type_7(data.getEnabled24V());
+
       if(data.getDeviceStatusProviders().size() <= 75)
       cdr.write_type_e(data.getDeviceStatusProviders());else
           throw new RuntimeException("device_status_providers field exceeds the maximum length: %d > %d".formatted(data.getDeviceStatusProviders().size(), 75));
@@ -141,6 +162,12 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       	
       data.setMissedDeadlines(cdr.read_type_4());
       	
+      data.setBatteryChargePercetage(cdr.read_type_6());
+      	
+      data.setEstimatedRuntimeMinutes(cdr.read_type_6());
+      	
+      data.setEnabled24V(cdr.read_type_7());
+      	
       cdr.read_type_e(data.getDeviceStatusProviders());	
 
    }
@@ -154,6 +181,9 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       ser.write_type_7("working_counter_fault", data.getWorkingCounterFault());
       ser.write_type_4("working_counter_mismatch_count", data.getWorkingCounterMismatchCount());
       ser.write_type_4("missed_deadlines", data.getMissedDeadlines());
+      ser.write_type_6("battery_charge_percetage", data.getBatteryChargePercetage());
+      ser.write_type_6("estimated_runtime_minutes", data.getEstimatedRuntimeMinutes());
+      ser.write_type_7("enabled_24_v", data.getEnabled24V());
       ser.write_type_e("device_status_providers", data.getDeviceStatusProviders());
    }
 
@@ -166,6 +196,9 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       data.setWorkingCounterFault(ser.read_type_7("working_counter_fault"));
       data.setWorkingCounterMismatchCount(ser.read_type_4("working_counter_mismatch_count"));
       data.setMissedDeadlines(ser.read_type_4("missed_deadlines"));
+      data.setBatteryChargePercetage(ser.read_type_6("battery_charge_percetage"));
+      data.setEstimatedRuntimeMinutes(ser.read_type_6("estimated_runtime_minutes"));
+      data.setEnabled24V(ser.read_type_7("enabled_24_v"));
       ser.read_type_e("device_status_providers", data.getDeviceStatusProviders());
    }
 

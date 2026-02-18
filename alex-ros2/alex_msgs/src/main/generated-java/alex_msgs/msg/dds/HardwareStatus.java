@@ -24,6 +24,12 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
    public long working_counter_mismatch_count_;
    public long missed_deadlines_;
    /**
+            * Power Management Board Information
+            */
+   public double battery_charge_percetage_;
+   public double estimated_runtime_minutes_;
+   public boolean enabled_24_v_;
+   /**
             * Joint States
             */
    public us.ihmc.idl.IDLSequence.Object<alex_msgs.msg.dds.ROSDeviceStatusProvider>  device_status_providers_;
@@ -53,6 +59,12 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
       working_counter_mismatch_count_ = other.working_counter_mismatch_count_;
 
       missed_deadlines_ = other.missed_deadlines_;
+
+      battery_charge_percetage_ = other.battery_charge_percetage_;
+
+      estimated_runtime_minutes_ = other.estimated_runtime_minutes_;
+
+      enabled_24_v_ = other.enabled_24_v_;
 
       device_status_providers_.set(other.device_status_providers_);
    }
@@ -123,6 +135,39 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
       return missed_deadlines_;
    }
 
+   /**
+            * Power Management Board Information
+            */
+   public void setBatteryChargePercetage(double battery_charge_percetage)
+   {
+      battery_charge_percetage_ = battery_charge_percetage;
+   }
+   /**
+            * Power Management Board Information
+            */
+   public double getBatteryChargePercetage()
+   {
+      return battery_charge_percetage_;
+   }
+
+   public void setEstimatedRuntimeMinutes(double estimated_runtime_minutes)
+   {
+      estimated_runtime_minutes_ = estimated_runtime_minutes;
+   }
+   public double getEstimatedRuntimeMinutes()
+   {
+      return estimated_runtime_minutes_;
+   }
+
+   public void setEnabled24V(boolean enabled_24_v)
+   {
+      enabled_24_v_ = enabled_24_v;
+   }
+   public boolean getEnabled24V()
+   {
+      return enabled_24_v_;
+   }
+
 
    /**
             * Joint States
@@ -162,6 +207,12 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.missed_deadlines_, other.missed_deadlines_, epsilon)) return false;
 
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.battery_charge_percetage_, other.battery_charge_percetage_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.estimated_runtime_minutes_, other.estimated_runtime_minutes_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.enabled_24_v_, other.enabled_24_v_, epsilon)) return false;
+
       if (this.device_status_providers_.size() != other.device_status_providers_.size()) { return false; }
       else
       {
@@ -194,6 +245,12 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       if(this.missed_deadlines_ != otherMyClass.missed_deadlines_) return false;
 
+      if(this.battery_charge_percetage_ != otherMyClass.battery_charge_percetage_) return false;
+
+      if(this.estimated_runtime_minutes_ != otherMyClass.estimated_runtime_minutes_) return false;
+
+      if(this.enabled_24_v_ != otherMyClass.enabled_24_v_) return false;
+
       if (!this.device_status_providers_.equals(otherMyClass.device_status_providers_)) return false;
 
       return true;
@@ -217,6 +274,12 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
       builder.append(this.working_counter_mismatch_count_);      builder.append(", ");
       builder.append("missed_deadlines=");
       builder.append(this.missed_deadlines_);      builder.append(", ");
+      builder.append("battery_charge_percetage=");
+      builder.append(this.battery_charge_percetage_);      builder.append(", ");
+      builder.append("estimated_runtime_minutes=");
+      builder.append(this.estimated_runtime_minutes_);      builder.append(", ");
+      builder.append("enabled_24_v=");
+      builder.append(this.enabled_24_v_);      builder.append(", ");
       builder.append("device_status_providers=");
       builder.append(this.device_status_providers_);
       builder.append("}");
