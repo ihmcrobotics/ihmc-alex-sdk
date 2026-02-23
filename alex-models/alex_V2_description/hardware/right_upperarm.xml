@@ -10,7 +10,7 @@
             <motorOffset>0.0</motorOffset>
             <outputOffset>0.0</outputOffset>
             <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
-            <present>false</present>
+            <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>RightJ2Motor</name>
@@ -104,7 +104,7 @@
             <torqueBreakFrequency>50.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
-            <present>false</present>
+            <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
             <jointName>RIGHT_SHOULDER_X</jointName>
