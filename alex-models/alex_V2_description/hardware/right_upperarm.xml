@@ -7,9 +7,9 @@
             <position>0</position>
             <actuatorPackage>A041</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
-            <present>false</present>
+            <motorOffset>-17.630081737765728</motorOffset>
+            <outputOffset>-0.7895133269257686</outputOffset>
+            <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>RightJ2Motor</name>
@@ -17,8 +17,8 @@
             <position>0</position>
             <actuatorPackage>A042</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>-21.848624711251574</motorOffset>
+            <outputOffset>-1.227421503475604</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -27,8 +27,8 @@
             <position>0</position>
             <actuatorPackage>A043</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>56.17366255589614</motorOffset>
+            <outputOffset>2.912126837783423</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -37,8 +37,8 @@
             <position>0</position>
             <actuatorPackage>A044</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>30.342619729308936</motorOffset>
+            <outputOffset>1.4348315873446802</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -100,7 +100,7 @@
             <torqueBreakFrequency>50.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
-            <present>false</present>
+            <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
             <jointName>RIGHT_SHOULDER_X</jointName>
