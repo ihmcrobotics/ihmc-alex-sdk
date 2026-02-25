@@ -134,7 +134,7 @@
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
-            <doPDControlOnTwitter>true</doPDControlOnTwitter>
+            <doPDControlOnTwitter>false</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
     </transmissions>
