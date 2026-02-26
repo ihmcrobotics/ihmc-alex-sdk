@@ -53,29 +53,29 @@
 
         <XmlH4EtherCATJunctionPort>
             <name>EtherCATJunctionA</name>
-            <alias>0</alias>
+            <alias>1101</alias>
             <position>0</position>
             <junctionPort>0</junctionPort>
             <present>true</present>
         </XmlH4EtherCATJunctionPort>
         <XmlH4EtherCATJunctionPort>
             <name>EtherCATJunctionB</name>
-            <alias>2006</alias>
-            <position>1</position>
+            <alias>1102</alias>
+            <position>0</position>
             <junctionPort>1</junctionPort>
             <present>true</present>
         </XmlH4EtherCATJunctionPort>
         <XmlH4EtherCATJunctionPort>
             <name>EtherCATJunctionC</name>
-            <alias>3006</alias>
-            <position>1</position>
+            <alias>1103</alias>
+            <position>0</position>
             <junctionPort>2</junctionPort>
             <present>true</present>
         </XmlH4EtherCATJunctionPort>
         <XmlH4EtherCATJunctionPort>
             <name>EtherCATJunctionD</name>
-            <alias>7109</alias>
-            <position>1</position>
+            <alias>1104</alias>
+            <position>0</position>
             <junctionPort>3</junctionPort>
             <present>true</present>
         </XmlH4EtherCATJunctionPort>
