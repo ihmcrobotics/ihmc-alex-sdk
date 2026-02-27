@@ -15,7 +15,7 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "8caaaed95aa98aea9c7594532e814bac84b0e931e60cafd47ccd66cddf05f376";
+   		return "1e7e6fb9aa0a086942d37fd70c10212b847d94891b5d0ea047a391f8edf1545e";
    }
    
    @Override
@@ -58,21 +58,29 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 50; ++i0)
       {
           current_alignment += alex_msgs.msg.dds.OneDOFJointStatePubSubType.getMaxCdrSerializedSize(current_alignment);}
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 50; ++i0)
       {
           current_alignment += alex_msgs.msg.dds.IMUStatePubSubType.getMaxCdrSerializedSize(current_alignment);}
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 50; ++i0)
       {
           current_alignment += alex_msgs.msg.dds.ForceTorqueStatePubSubType.getMaxCdrSerializedSize(current_alignment);}
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
 
       return current_alignment - initial_alignment;
    }
@@ -95,13 +103,16 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
 
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
@@ -110,14 +121,23 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
           current_alignment += alex_msgs.msg.dds.OneDOFJointStatePubSubType.getCdrSerializedSize(data.getJointStates().get(i0), current_alignment);}
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
       for(int i0 = 0; i0 < data.getImuStates().size(); ++i0)
       {
           current_alignment += alex_msgs.msg.dds.IMUStatePubSubType.getCdrSerializedSize(data.getImuStates().get(i0), current_alignment);}
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
       for(int i0 = 0; i0 < data.getFtStates().size(); ++i0)
       {
           current_alignment += alex_msgs.msg.dds.ForceTorqueStatePubSubType.getCdrSerializedSize(data.getFtStates().get(i0), current_alignment);}
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
 
 
       return current_alignment - initial_alignment;
@@ -131,23 +151,31 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
 
       cdr.write_type_7(data.getIsCalibrated());
 
-      cdr.write_type_4(data.getNumberOfJoints());
+      cdr.write_type_7(data.getAreActuatorsEnabled());
 
-      cdr.write_type_4(data.getNumberOfImus());
+      cdr.write_type_7(data.getSafePowerUpComplete());
 
-      cdr.write_type_4(data.getNumberOfFts());
+      cdr.write_type_7(data.getSafePowerDownComplete());
+
+      cdr.write_type_6(data.getCurrentLowLevelMasterGain());
 
       if(data.getJointStates().size() <= 50)
       cdr.write_type_e(data.getJointStates());else
           throw new RuntimeException("joint_states field exceeds the maximum length: %d > %d".formatted(data.getJointStates().size(), 50));
 
+      cdr.write_type_4(data.getNumberOfJoints());
+
       if(data.getImuStates().size() <= 50)
       cdr.write_type_e(data.getImuStates());else
           throw new RuntimeException("imu_states field exceeds the maximum length: %d > %d".formatted(data.getImuStates().size(), 50));
 
+      cdr.write_type_4(data.getNumberOfImus());
+
       if(data.getFtStates().size() <= 50)
       cdr.write_type_e(data.getFtStates());else
           throw new RuntimeException("ft_states field exceeds the maximum length: %d > %d".formatted(data.getFtStates().size(), 50));
+
+      cdr.write_type_4(data.getNumberOfFts());
 
    }
 
@@ -159,15 +187,23 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       	
       data.setIsCalibrated(cdr.read_type_7());
       	
-      data.setNumberOfJoints(cdr.read_type_4());
+      data.setAreActuatorsEnabled(cdr.read_type_7());
       	
-      data.setNumberOfImus(cdr.read_type_4());
+      data.setSafePowerUpComplete(cdr.read_type_7());
       	
-      data.setNumberOfFts(cdr.read_type_4());
+      data.setSafePowerDownComplete(cdr.read_type_7());
+      	
+      data.setCurrentLowLevelMasterGain(cdr.read_type_6());
       	
       cdr.read_type_e(data.getJointStates());	
+      data.setNumberOfJoints(cdr.read_type_4());
+      	
       cdr.read_type_e(data.getImuStates());	
+      data.setNumberOfImus(cdr.read_type_4());
+      	
       cdr.read_type_e(data.getFtStates());	
+      data.setNumberOfFts(cdr.read_type_4());
+      	
 
    }
 
@@ -177,12 +213,16 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       ser.write_type_6("time", data.getTime());
       ser.write_type_7("is_faulted", data.getIsFaulted());
       ser.write_type_7("is_calibrated", data.getIsCalibrated());
-      ser.write_type_4("number_of_joints", data.getNumberOfJoints());
-      ser.write_type_4("number_of_imus", data.getNumberOfImus());
-      ser.write_type_4("number_of_fts", data.getNumberOfFts());
+      ser.write_type_7("are_actuators_enabled", data.getAreActuatorsEnabled());
+      ser.write_type_7("safe_power_up_complete", data.getSafePowerUpComplete());
+      ser.write_type_7("safe_power_down_complete", data.getSafePowerDownComplete());
+      ser.write_type_6("current_low_level_master_gain", data.getCurrentLowLevelMasterGain());
       ser.write_type_e("joint_states", data.getJointStates());
+      ser.write_type_4("number_of_joints", data.getNumberOfJoints());
       ser.write_type_e("imu_states", data.getImuStates());
+      ser.write_type_4("number_of_imus", data.getNumberOfImus());
       ser.write_type_e("ft_states", data.getFtStates());
+      ser.write_type_4("number_of_fts", data.getNumberOfFts());
    }
 
    @Override
@@ -191,12 +231,16 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       data.setTime(ser.read_type_6("time"));
       data.setIsFaulted(ser.read_type_7("is_faulted"));
       data.setIsCalibrated(ser.read_type_7("is_calibrated"));
-      data.setNumberOfJoints(ser.read_type_4("number_of_joints"));
-      data.setNumberOfImus(ser.read_type_4("number_of_imus"));
-      data.setNumberOfFts(ser.read_type_4("number_of_fts"));
+      data.setAreActuatorsEnabled(ser.read_type_7("are_actuators_enabled"));
+      data.setSafePowerUpComplete(ser.read_type_7("safe_power_up_complete"));
+      data.setSafePowerDownComplete(ser.read_type_7("safe_power_down_complete"));
+      data.setCurrentLowLevelMasterGain(ser.read_type_6("current_low_level_master_gain"));
       ser.read_type_e("joint_states", data.getJointStates());
+      data.setNumberOfJoints(ser.read_type_4("number_of_joints"));
       ser.read_type_e("imu_states", data.getImuStates());
+      data.setNumberOfImus(ser.read_type_4("number_of_imus"));
       ser.read_type_e("ft_states", data.getFtStates());
+      data.setNumberOfFts(ser.read_type_4("number_of_fts"));
    }
 
    public static void staticCopy(alex_msgs.msg.dds.AlexState src, alex_msgs.msg.dds.AlexState dest)
