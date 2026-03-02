@@ -4,7 +4,7 @@ plugins {
 
 ihmc {
    group = "us.ihmc"
-   version = "0.3.8"
+   version = "0.3.9"
    vcsUrl = "https://github.com/ihmcrobotics/ihmc-alex-sdk"
    openSource = true
 
@@ -20,7 +20,7 @@ ihmc {
 
 mainDependencies {
    api("us.ihmc:ihmc_hands_ros2:source")
-   api("us.ihmc:ros2-common-interfaces:1.2.4") {
+   api("us.ihmc:ros2-common-interfaces:1.2.5") {
       exclude(group = "org.junit.jupiter", module = "junit-jupiter-api")
       exclude(group = "org.junit.jupiter", module = "junit-jupiter-engine")
       exclude(group = "org.junit.platform", module = "junit-platform-commons")

@@ -8,7 +8,8 @@ Light SDK with resources for visualizing/simulating Alex, properly initializing 
 
 ## SDK Structure
 ### alex-models
-This directory contains all files specific to describing Alex. The files in the directories are as follows:
+This directory contains all files specific to describing Alex V1 (`alex_V1_description`) and Alex V2 (`alex_V2_description`). The subdirectories in the version 
+directories are as follows:
 - `hardware`: Contains XML files describing the hardware on the robot, including parameters for all sensors and actuators
   - For simplicity when switching robot configurations, each body segment is split into its own file to be selected if that segment is included
 - `meshes`: Contains the OBJ and MTL files to describe each link on Alex

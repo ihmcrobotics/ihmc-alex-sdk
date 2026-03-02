@@ -13,9 +13,9 @@
 
     <link name="LEFT_SHOULDER_Y_LINK">
         <inertial>
-            <mass value="3.0331992"/>
+            <mass value="2.99"/>
             <origin rpy="0 0 0" xyz="-0.00264 0.12135 -0.006824"/>
-            <inertia ixx="0.01114656" ixy="0.00024166" ixz="0.0001507" iyy="0.00699715" iyz="0.00308767" izz="0.0099942"/>
+            <inertia ixx="0.0111046" ixy="0.0002882" ixz="-0.000054" iyy="0.0051699" iyz="0.0009318" izz="0.01176"/>
         </inertial>
         <visual>
             <geometry>
@@ -74,9 +74,9 @@
 
     <link name="LEFT_SHOULDER_X_LINK">
         <inertial>
-            <mass value="1.16160776 "/>
-            <origin rpy="0 0 0" xyz="0.01053 0.02124 -0.1052690"/>
-            <inertia ixx="0.00786831" ixy="0.00016417" ixz="-0.00075696" iyy="0.00727049" iyz="0.00099239" izz="0.0018045" />
+            <mass value="0.972"/>
+            <origin rpy="0 0 0" xyz="0.01251711 0.0188309 -0.03849849"/>
+            <inertia ixx="0.0029485" ixy="0.0001386" ixz="-0.0003345" iyy="0.0023587" iyz="0.0005255" izz="0.0014366"/>
         </inertial>
         <visual>
             <geometry>
@@ -97,9 +97,9 @@
 
     <link name="LEFT_SHOULDER_Z_LINK">
         <inertial>
-            <mass value="3.134 "/>
-            <origin rpy="0 0 0" xyz="0.00510403 0.00274 -0.21745"/>
-            <inertia ixx="0.02661157" ixy="0.00000297" ixz="0.00147256" iyy="0.02633278" iyz="0.00039997" izz="0.00308445"/>
+            <mass value="2.91"/>
+            <origin rpy="0 0 0" xyz="0.00510403 0.00314332 -0.21695413"/>
+            <inertia ixx="0.0267829" ixy="-0.000011" ixz="0.0015998" iyy="0.0265514" iyz="0.0004426" izz="0.003052"/>
         </inertial>
         <visual>
             <geometry>
