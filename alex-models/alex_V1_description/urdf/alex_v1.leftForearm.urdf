@@ -6,8 +6,8 @@
         <axis xyz="0.0 1.0 0.0"/>
         <parent link="LEFT_SHOULDER_Z_LINK"/>
         <child link="LEFT_ELBOW_Y_LINK"/>
-        <limit effort="80.0" lower="-2.35619" upper="0.174532925" velocity="11.5"/>
-        <dynamics damping="0.02" friction="0.0"/>
+        <limit effort="71.28" lower="-2.35619" upper="0.174533" velocity="4.47"/>
+        <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
     <link name="LEFT_ELBOW_Y_LINK">
@@ -22,6 +22,18 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="left_wrist_z_box_collision">
+            <origin xyz="-0.06 0 -0.15" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.01 0.06 0.1"/>
+            </geometry>
+        </collision>
+        <collision name="left_wrist_z_cylinder_collision">
+            <origin xyz="0 0 -0.15" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.044" length="0.12"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="LEFT_WRIST_Z" type="revolute">
@@ -29,8 +41,8 @@
         <axis xyz="0.0 0.0 1.0"/>
         <parent link="LEFT_ELBOW_Y_LINK"/>
         <child link="LEFT_WRIST_Z_LINK"/>
-        <limit effort="20.0" lower="-2.61799" upper="2.61799" velocity="25.0"/>
-        <dynamics damping="0.02" friction="0.0"/>
+        <limit effort="20.86" lower="-2.61799" upper="2.61799" velocity="17.3"/>
+        <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
     <link name="LEFT_WRIST_Z_LINK">
@@ -45,6 +57,18 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="left_wrist_z_box_collision">
+            <origin xyz="-0.06 0 -0.15" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.01 0.06 0.1"/>
+            </geometry>
+        </collision>
+        <collision name="left_wrist_z_cylinder_collision">
+            <origin xyz="0 0 -0.15" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.044" length="0.12"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="LEFT_WRIST_X" type="revolute">
@@ -52,8 +76,8 @@
         <axis xyz="1 0 0"/>
         <parent link="LEFT_WRIST_Z_LINK"/>
         <child link="LEFT_WRIST_X_LINK"/>
-        <limit effort="20.0" lower="-1.8326" upper="0.610865" velocity="25.0"/>
-        <dynamics damping="0.02" friction="0.0"/>
+        <limit effort="20.86" lower="-1.8326" upper="0.610865" velocity="17.3"/>
+        <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
     <link name="LEFT_WRIST_X_LINK">
@@ -75,8 +99,8 @@
         <axis xyz="0.0 0.0 1.0"/>
         <parent link="LEFT_WRIST_X_LINK"/>
         <child link="LEFT_GRIPPER_Z_LINK"/>
-        <limit effort="20.0" lower="-2.61799" upper="2.61799" velocity="25.0"/>
-        <dynamics damping="0.02" friction="0.0"/>
+        <limit effort="20.86" lower="-2.61799" upper="2.61799" velocity="17.3"/>
+        <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
     <link name="LEFT_GRIPPER_Z_LINK">
@@ -91,6 +115,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="left_gripper_z_collision">
+            <origin xyz="0 0 -0.02" rpy="0 0 0"/>
+            <geometry>
+                <sphere radius="0.05"/>
+            </geometry>
+        </collision>
     </link>
 
     <!-- Left Forearm IMUs -->
