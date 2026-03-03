@@ -210,7 +210,7 @@
         <axis xyz="0.0 0.0 1.0" />
         <parent link="LEFT_SHOULDER_X_LINK" />
         <child link="LEFT_SHOULDER_Z_LINK" />
-        <limit effort="67.72" lower="-1.91986" upper="1.22173" velocity = "5.29" />
+        <limit effort="71.28" lower="-1.91986" upper="1.22173" velocity="4.47"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_ELBOW_Y" type="revolute">
@@ -218,7 +218,7 @@
         <axis xyz="0.0 1.0 0.0"/>
         <parent link="LEFT_SHOULDER_Z_LINK"/>
         <child link="LEFT_ELBOW_Y_LINK"/>
-        <limit effort="67.72" lower="-2.35619" upper="0.174532925" velocity="5.29"/>
+        <limit effort="71.28" lower="-2.35619" upper="0.174533" velocity="4.47"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
