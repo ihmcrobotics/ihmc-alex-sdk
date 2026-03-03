@@ -7,7 +7,7 @@
         <axis xyz="1 0 0"/>
         <parent link="PELVIS_LINK"/>
         <child link="LEFT_HIP_X_LINK"/>
-        <limit effort="160.7" lower="-0.3490658504" upper="0.872664626" velocity="10.38"/>
+        <limit effort="160.7" lower="-0.349066" upper="0.872664626" velocity="10.38"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_HIP_Z" type="revolute">
@@ -15,7 +15,7 @@
         <axis xyz="0 0 1"/>
         <parent link="LEFT_HIP_X_LINK"/>
         <child link="LEFT_HIP_Z_LINK"/>
-        <limit effort="70.5" lower="-0.3490658504" upper="1.0472" velocity="10.59"/>
+        <limit effort="70.5" lower="-0.349066" upper="1.0472" velocity="10.59"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_HIP_Y" type="revolute">
@@ -31,7 +31,7 @@
         <axis xyz="0 1 0"/>
         <parent link="LEFT_THIGH"/>
         <child link="LEFT_SHIN"/>
-        <limit effort="217.2" lower="0" upper="2.445206282" velocity="9.3"/>
+        <limit effort="217.2" lower="0" upper="2.44346" velocity="9.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_ANKLE_Y" type="revolute">
@@ -57,7 +57,7 @@
         <axis xyz="1 0 0"/>
         <parent link="PELVIS_LINK"/>
         <child link="RIGHT_HIP_X_LINK"/>
-        <limit effort="160.7" lower="-0.3490658504" upper="0.872664626" velocity="10.38"/>
+        <limit effort="70.5" lower="-1.0472" upper="0.349066" velocity="10.59"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_HIP_Z" type="revolute">
@@ -65,7 +65,7 @@
         <axis xyz="0 0 1"/>
         <parent link="RIGHT_HIP_X_LINK"/>
         <child link="RIGHT_HIP_Z_LINK"/>
-        <limit effort="70.5" lower="-0.3490658504" upper="1.0472" velocity="10.59"/>
+        <limit effort="217.2" lower="-2.61799" upper="0.785398" velocity="9.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_HIP_Y" type="revolute">
@@ -81,7 +81,7 @@
         <axis xyz="0 1 0"/>
         <parent link="RIGHT_THIGH"/>
         <child link="RIGHT_SHIN"/>
-        <limit effort="217.2" lower="0" upper="2.445206282" velocity="9.3"/>
+        <limit effort="217.2" lower="0" upper="2.44346" velocity="9.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_ANKLE_Y" type="revolute">
@@ -107,7 +107,7 @@
         <axis xyz="0 0 1"/>
         <parent link="PELVIS_LINK"/>
         <child link="TORSO_LINK"/>
-        <limit effort="160.7" lower="-0.5235987756" upper="0.5235987756" velocity="10.38"/>
+        <limit effort="160.7" lower="-0.523599" upper="0.523599" velocity="10.38"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
@@ -141,7 +141,7 @@
         <axis xyz="0.0 1.0 0.0"/>
         <parent link="LEFT_SHOULDER_Z_LINK"/>
         <child link="LEFT_ELBOW_Y_LINK"/>
-        <limit effort="71.28" lower="-2.35619" upper="0.174532925" velocity="4.47"/>
+        <limit effort="71.28" lower="-2.35619" upper="0.174533" velocity="4.47"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_WRIST_Z" type="revolute">
@@ -185,7 +185,7 @@
         <axis xyz="0 1 0"/>
         <parent link="NECK_Z_LINK"/>
         <child link="HEAD_LINK"/>
-        <limit effort="20.86" lower="-0.49" upper="0.49" velocity="17.3"/>
+        <limit effort="20.86" lower="-0.488692" upper="0.488692" velocity="17.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
@@ -269,14 +269,14 @@
             <origin xyz="-0.08 0.0 -0.05" rpy="0.0 0.0 0.0"/>
         </collision>
     </link>
-    <!-- pelvis_stim_imu -->
-    <joint name="PELVIS_STIM_IMU_JOINT" type="fixed">
+    <!-- Pelvis IMU -->
+    <joint name="PELVIS_IMU_JOINT" type="fixed">
         <parent link="PELVIS_LINK"/>
-        <child link="PELVIS_STIM_IMU_LINK"/>
+        <child link="PELVIS_IMU_LINK"/>
         <origin xyz="-0.08687724 0.01225028 -0.08051472" rpy="-0.01399 -0.013054 1.570796"/>
     </joint>
 
-    <link name="PELVIS_STIM_IMU_LINK">
+    <link name="PELVIS_IMU_LINK">
         <inertial>
             <mass value="0.0"/>
             <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -284,8 +284,8 @@
         </inertial>
     </link>
 
-    <gazebo reference="PELVIS_STIM_IMU_LINK">
-        <sensor name="pelvis_stim_imu" type="imu">
+    <gazebo reference="PELVIS_IMU_LINK">
+        <sensor name="pelvis_imu" type="imu">
             <always_on>1</always_on>
             <update_rate>1000.0</update_rate>
             <imu>
@@ -509,7 +509,7 @@
     </link>
 
     <!-- LeftFootIMU-->
-	<link name="LEFT_FOOT_IMU_LINK">
+	<!-- <link name="LEFT_FOOT_IMU_LINK">
 		<inertial>
 			<mass value="0"/>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
@@ -543,7 +543,7 @@
 				</noise>
 			</imu>
 		</sensor>
-	</gazebo>
+	</gazebo> -->
 
     <!-- RIGHT LEG LINKS -->
     <link name="RIGHT_HIP_X_LINK">
@@ -746,7 +746,7 @@
     </link>
 
     <!-- RightFootIMU-->
-	<link name="RIGHT_FOOT_IMU_LINK">
+	<!-- <link name="RIGHT_FOOT_IMU_LINK">
 		<inertial>
 			<mass value="0"/>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
@@ -780,7 +780,7 @@
 				</noise>
 			</imu>
 		</sensor>
-	</gazebo>
+	</gazebo> -->
 
    <!-- SPINE LINKS -->
     <link name="TORSO_LINK">
@@ -987,11 +987,9 @@
     </link>
     <link name="LEFT_GRIPPER_Z_LINK">
         <inertial>
-            <mass value="0.251"/>
-            <origin
-                    rpy="0 0 0"
-                    xyz="-0.000217 -0.000349 0.009761"/>
-            <inertia ixx="0.0000722" ixy="-0.0000016" ixz="-0.0000037" iyy="0.0000747" iyz="0.0000004" izz="0.0000324"/>
+            <mass value="0.144"/>
+            <origin rpy="0 0 0" xyz="-0.000217 -0.000349 0.009761"/>
+            <inertia ixx="0.0027811496" ixy="0.0000041163" ixz="0.00005966873" iyy="0.00256136809" iyz="0.00002023868" izz="0.000642711"/>
         </inertial>
         <visual>
             <geometry>
@@ -1059,6 +1057,82 @@
             <always_on>true</always_on>
                 <pose>0 0 0 0 0 0 </pose>
                 <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    <joint name="LEFT_WRIST_Z_IMU_JOINT" type="fixed">
+        <origin rpy="1.571 0.0 1.571" xyz="-0.033554 0.010450 -0.148527"/>
+        <axis xyz="0 0 1"/>
+        <parent link="LEFT_WRIST_Z_LINK"/>
+        <child link="LEFT_WRIST_Z_IMU_LINK"/>
+    </joint>
+
+    <link name="LEFT_WRIST_Z_IMU_LINK">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="LEFT_WRIST_Z_IMU_LINK">
+        <sensor name="left_wrist_z_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    <joint name="LEFT_GRIPPER_Z_IMU_JOINT" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <parent link="LEFT_GRIPPER_Z_LINK"/>
+        <child link="LEFT_GRIPPER_Z_IMU_LINK"/>
+    </joint>
+
+    <link name="LEFT_GRIPPER_Z_IMU_LINK">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="LEFT_GRIPPER_Z_IMU_LINK">
+        <sensor name="left_gripper_z_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
                 <noise>
                     <type>gaussian</type>
                     <rate>
@@ -1159,9 +1233,9 @@
     </link>
     <link name="RIGHT_GRIPPER_Z_LINK">
         <inertial>
-            <mass value="0.251"/>
+            <mass value="0.144"/>
             <origin rpy="0 0 0" xyz="-0.000217 -0.000349 0.009761"/>
-            <inertia ixx="0.0000722" ixy="-0.0000016" ixz="-0.0000037" iyy="0.0000747" iyz="0.0000004" izz="0.0000324"/>
+            <inertia ixx="0.0027811496" ixy="0.0000041163" ixz="0.00005966873" iyy="0.00256136809" iyz="0.00002023868" izz="0.000642711"/>
         </inertial>
         <visual>
             <geometry>
@@ -1228,6 +1302,82 @@
 
     <gazebo reference="RIGHT_SHOULDER_Z_IMU_LINK">
         <sensor name="right_shoulder_yaw_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+     <joint name="RIGHT_WRIST_Z_IMU_JOINT" type="fixed">
+        <origin rpy="1.571  0.0 1.571" xyz="-0.033554 0.010450 -0.148527"/>
+        <axis xyz="0 0 1"/>
+        <parent link="RIGHT_WRIST_Z_LINK"/>
+        <child link="RIGHT_WRIST_Z_IMU_LINK"/>
+    </joint>
+
+    <link name="RIGHT_WRIST_Z_IMU_LINK">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="RIGHT_WRIST_Z_IMU_LINK">
+        <sensor name="right_wrist_z_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    <joint name="RIGHT_GRIPPER_Z_IMU_JOINT" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <parent link="RIGHT_GRIPPER_Z_LINK"/>
+        <child link="RIGHT_GRIPPER_Z_IMU_LINK"/>
+    </joint>
+
+    <link name="RIGHT_GRIPPER_Z_IMU_LINK">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="RIGHT_GRIPPER_Z_IMU_LINK">
+        <sensor name="right_gripper_z_imu" type="imu">
             <always_on>true</always_on>
             <imu>
                 <noise>

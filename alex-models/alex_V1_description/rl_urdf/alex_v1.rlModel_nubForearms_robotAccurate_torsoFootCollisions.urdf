@@ -7,7 +7,7 @@
         <axis xyz="1 0 0"/>
         <parent link="PELVIS_LINK"/>
         <child link="LEFT_HIP_X_LINK"/>
-        <limit effort="160.7" lower="-0.3490658504" upper="0.872664626" velocity="10.38"/>
+        <limit effort="160.7" lower="-0.349066" upper="0.872664626" velocity="10.38"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_HIP_Z" type="revolute">
@@ -15,7 +15,7 @@
         <axis xyz="0 0 1"/>
         <parent link="LEFT_HIP_X_LINK"/>
         <child link="LEFT_HIP_Z_LINK"/>
-        <limit effort="70.5" lower="-0.3490658504" upper="1.0472" velocity="10.59"/>
+        <limit effort="70.5" lower="-0.349066" upper="1.0472" velocity="10.59"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_HIP_Y" type="revolute">
@@ -31,7 +31,7 @@
         <axis xyz="0 1 0"/>
         <parent link="LEFT_THIGH"/>
         <child link="LEFT_SHIN"/>
-        <limit effort="217.2" lower="0" upper="2.445206282" velocity="9.3"/>
+        <limit effort="217.2" lower="0" upper="2.44346" velocity="9.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_ANKLE_Y" type="revolute">
@@ -57,7 +57,7 @@
         <axis xyz="1 0 0"/>
         <parent link="PELVIS_LINK"/>
         <child link="RIGHT_HIP_X_LINK"/>
-        <limit effort="160.7" lower="-0.3490658504" upper="0.872664626" velocity="10.38"/>
+        <limit effort="70.5" lower="-1.0472" upper="0.349066" velocity="10.59"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_HIP_Z" type="revolute">
@@ -65,7 +65,7 @@
         <axis xyz="0 0 1"/>
         <parent link="RIGHT_HIP_X_LINK"/>
         <child link="RIGHT_HIP_Z_LINK"/>
-        <limit effort="70.5" lower="-0.3490658504" upper="1.0472" velocity="10.59"/>
+        <limit effort="217.2" lower="-2.61799" upper="0.785398" velocity="9.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_HIP_Y" type="revolute">
@@ -107,7 +107,7 @@
         <axis xyz="0 0 1"/>
         <parent link="PELVIS_LINK"/>
         <child link="TORSO_LINK"/>
-        <limit effort="160.7" lower="-0.5235987756" upper="0.5235987756" velocity="10.38"/>
+        <limit effort="160.7" lower="-0.523599" upper="0.523599" velocity="10.38"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
@@ -133,7 +133,7 @@
         <axis xyz="0.0 0.0 1.0" />
         <parent link="LEFT_SHOULDER_X_LINK" />
         <child link="LEFT_SHOULDER_Z_LINK" />
-        <limit effort="67.72" lower="-1.91986" upper="1.22173" velocity = "5.29" />
+        <limit effort="71.28" lower="-1.91986" upper="1.22173" velocity = "4.47" />
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_ELBOW_Y" type="revolute">
@@ -141,7 +141,7 @@
         <axis xyz="0.0 1.0 0.0"/>
         <parent link="LEFT_SHOULDER_Z_LINK"/>
         <child link="LEFT_ELBOW_Y_LINK"/>
-        <limit effort="67.72" lower="-2.35619" upper="0.174532925" velocity="5.29"/>
+        <limit effort="71.28" lower="-2.35619" upper="0.174533" velocity="4.47"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
@@ -159,7 +159,7 @@
         <axis xyz="0 1 0"/>
         <parent link="NECK_Z_LINK"/>
         <child link="HEAD_LINK"/>
-        <limit effort="20.86" lower="-1.0472" upper="1.0472" velocity="17.3"/>
+        <limit effort="20.86" lower="-0.488692" upper="0.488692" velocity="17.3"/>
         <dynamics damping="0.05" friction="0.0"/> 
     </joint>
 
@@ -185,7 +185,7 @@
         <axis xyz="0.0 0.0 1.0" />
         <parent link="RIGHT_SHOULDER_X_LINK" />
         <child link="RIGHT_SHOULDER_Z_LINK" />
-         <limit effort="67.72" lower="-1.22173" upper="1.91986" velocity = "5.29" />
+         <limit effort="71.28" lower="-1.22173" upper="1.91986" velocity = "4.47" />
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_ELBOW_Y" type="revolute">
@@ -193,7 +193,7 @@
         <axis xyz="0.0 1.0 0.0"/>
         <parent link="RIGHT_SHOULDER_Z_LINK"/>
         <child link="RIGHT_ELBOW_Y_LINK"/>
-        <limit effort="67.72" lower="-2.35619" upper="0.174532925" velocity="5.29"/>
+        <limit effort="71.28" lower="-2.35619" upper="0.174532925" velocity="4.47"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
@@ -217,14 +217,14 @@
             <origin xyz="-0.08 0.0 -0.05" rpy="0.0 0.0 0.0"/>
         </collision> 
     </link>
-    <!-- pelvis_stim_imu -->
-    <joint name="PELVIS_STIM_IMU_JOINT" type="fixed">
+    <!-- pelvis imu -->
+    <joint name="PELVIS_IMU_JOINT" type="fixed">
         <parent link="PELVIS_LINK"/>
-        <child link="PELVIS_STIM_IMU_LINK"/>
+        <child link="PELVIS_IMU_LINK"/>
         <origin xyz="-0.08687724 0.01225028 -0.08051472" rpy="-0.01399 -0.013054 1.570796"/>
     </joint>
 
-    <link name="PELVIS_STIM_IMU_LINK">
+    <link name="PELVIS_IMU_LINK">
         <inertial>
             <mass value="0.0"/>
             <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -232,8 +232,8 @@
         </inertial>
     </link>
 
-    <gazebo reference="PELVIS_STIM_IMU_LINK">
-        <sensor name="pelvis_stim_imu" type="imu">
+    <gazebo reference="PELVIS_IMU_LINK">
+        <sensor name="pelvis_imu" type="imu">
             <always_on>1</always_on>
             <update_rate>1000.0</update_rate>
             <imu>
@@ -457,7 +457,7 @@
     </link>
 
     <!-- LeftFootIMU-->
-	<link name="LEFT_FOOT_IMU_LINK">
+	<!-- <link name="LEFT_FOOT_IMU_LINK">
 		<inertial>
 			<mass value="0"/>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
@@ -491,7 +491,7 @@
 				</noise>
 			</imu>
 		</sensor>
-	</gazebo>
+	</gazebo> -->
 
     <!-- RIGHT LEG LINKS -->
     <link name="RIGHT_HIP_X_LINK">
@@ -694,7 +694,7 @@
     </link>
 
     <!-- RightFootIMU-->
-	<link name="RIGHT_FOOT_IMU_LINK">
+	<!-- <link name="RIGHT_FOOT_IMU_LINK">
 		<inertial>
 			<mass value="0"/>
 			<origin rpy="0 0 0" xyz="0 0 0"/>
@@ -728,12 +728,12 @@
 				</noise>
 			</imu>
 		</sensor>
-	</gazebo>
+	</gazebo> -->
 
    <!-- SPINE LINKS -->
     <link name="TORSO_LINK">
         <inertial>
-            <mass value="10.878322779"/> 
+            <mass value="11.478322779"/>
             <origin rpy="0 0 0" xyz="-0.014 0.001 0.326"/>
             <inertia ixx="0.1764967124" ixy="0.00002329659" ixz="0.00830355822" iyy="0.1237602" iyz="0.00072436338" izz="0.1109598365"/>
         </inertial>
@@ -897,9 +897,9 @@
     <link name="LEFT_ELBOW_Y_LINK"> <!-- Using nub forearm to match current physical robot -->
         <inertial>
             <!-- Normal forearm nub -->
-            <mass value="0.69372585"/>
+            <mass value="0.616"/>
             <origin rpy="0 0 0" xyz="-0.01090935 -0.01147189 -0.10388715"/>
-            <inertia ixx="0.01372685" ixy="0.00003396" ixz="-0.00030471" iyy="0.01377862" iyz="0.00081527" izz="0.00055769" />
+            <inertia ixx="0.00760733" ixy="2.242e-5" ixz="-2.583e-4" iyy="0.00767556" iyz="0.00061995" izz="4.554e-4"/>
 
             <!-- 12lbs dumbbell -->
             <!--<mass value="5.9"/>-->
@@ -1035,9 +1035,9 @@
     <link name="RIGHT_ELBOW_Y_LINK"> <!-- Using nub forearm to match current physical robot -->
         <inertial>
             <!-- Normal forearm nub -->
-            <mass value="0.69372166 "/>
+            <mass value="0.616"/>
             <origin rpy="0 0 0" xyz="-0.01090935 0.01147189 -0.10388715"/>
-            <inertia ixx="0.01372655" ixy="-0.00003374" ixz="-0.00030454" iyy="0.01377871" iyz="-0.00081329" izz="0.0005573" />
+            <inertia ixx="0.00760733" ixy="-2.242e-5" ixz="-2.583e-4" iyy="0.00767556" iyz="-0.00061995" izz="4.554e-4"/>
 
             <!-- 12lbs dumbbell -->
             <!--<mass value="5.9"/>-->

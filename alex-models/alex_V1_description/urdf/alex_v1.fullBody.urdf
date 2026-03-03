@@ -1377,6 +1377,44 @@
         </sensor>
     </gazebo>
 
+     <joint name="RIGHT_SHOULDER_Z_IMU_JOINT" type="fixed">
+        <origin rpy="1.570796 0 0.314159" xyz="0.002 0.016 -0.318"/>
+        <axis xyz="0 0 1"/>
+        <parent link="RIGHT_SHOULDER_Z_LINK"/>
+        <child link="RIGHT_SHOULDER_Z_IMU_LINK"/>
+    </joint>
+
+    <link name="RIGHT_SHOULDER_Z_IMU_LINK">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="RIGHT_SHOULDER_Z_IMU_LINK">
+        <sensor name="right_shoulder_z_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
     <joint name="RIGHT_WRIST_Z_IMU_JOINT" type="fixed">
         <origin rpy="1.571  0.0 1.571" xyz="-0.033554 0.010450 -0.148527"/>
         <axis xyz="0 0 1"/>
