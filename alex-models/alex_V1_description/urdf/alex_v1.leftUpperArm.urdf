@@ -7,7 +7,7 @@
         <axis xyz="0.0 1.0 0.0"/>
         <parent link="TORSO_LINK"/>
         <child link="LEFT_SHOULDER_Y_LINK"/>
-        <limit effort="150.0" lower="-3.141592" upper="1.22173" velocity="9.0"/>
+        <limit effort="160.7" lower="-3.141592" upper="1.22173" velocity="10.38"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
@@ -68,7 +68,7 @@
         <axis xyz="1 0 0"/>
         <parent link="LEFT_SHOULDER_Y_LINK"/>
         <child link="LEFT_SHOULDER_X_LINK"/>
-        <limit effort="150.0" lower="-0.349066" upper="2.79253" velocity="9.0"/>
+        <limit effort="160.7" lower="-0.349066" upper="2.79253" velocity="10.38"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
@@ -91,7 +91,7 @@
         <axis xyz="0.0 0.0 1.0"/>
         <parent link="LEFT_SHOULDER_X_LINK"/>
         <child link="LEFT_SHOULDER_Z_LINK"/>
-        <limit effort="80.0" lower="-1.91986" upper="1.22173" velocity="11.5"/>
+        <limit effort="71.28" lower="-1.91986" upper="1.22173" velocity="4.47"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
@@ -107,9 +107,15 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0867"/>
         </visual>
+        <collision name="left_shoulder_z_collision">
+            <origin xyz="0 0 -0.17" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.15"/>
+            </geometry>
+        </collision>
     </link>
 
-    <!-- RIGHT SHOULDER YAW IMU -->
+    <!-- LEFT SHOULDER YAW IMU -->
     <link name="LEFT_SHOULDER_Z_IMU_LINK">
         <inertial>
             <mass value="0"/>
