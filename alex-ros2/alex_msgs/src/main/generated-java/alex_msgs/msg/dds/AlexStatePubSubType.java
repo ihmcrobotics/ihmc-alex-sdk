@@ -15,7 +15,7 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "1e7e6fb9aa0a086942d37fd70c10212b847d94891b5d0ea047a391f8edf1545e";
+   		return "21afbee18a5b15b9596c00d3462e17a9833500942e8ef88271734515a5c9bd9c";
    }
    
    @Override
@@ -64,6 +64,10 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
       current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 50; ++i0)
@@ -95,6 +99,12 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       int initial_alignment = current_alignment;
 
       current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
@@ -157,6 +167,10 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
 
       cdr.write_type_7(data.getSafePowerDownComplete());
 
+      cdr.write_type_7(data.getAutoStartupComplete());
+
+      cdr.write_type_7(data.getAutoShutdownComplete());
+
       cdr.write_type_6(data.getCurrentLowLevelMasterGain());
 
       if(data.getJointStates().size() <= 50)
@@ -193,6 +207,10 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       	
       data.setSafePowerDownComplete(cdr.read_type_7());
       	
+      data.setAutoStartupComplete(cdr.read_type_7());
+      	
+      data.setAutoShutdownComplete(cdr.read_type_7());
+      	
       data.setCurrentLowLevelMasterGain(cdr.read_type_6());
       	
       cdr.read_type_e(data.getJointStates());	
@@ -216,6 +234,8 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       ser.write_type_7("are_actuators_enabled", data.getAreActuatorsEnabled());
       ser.write_type_7("safe_power_up_complete", data.getSafePowerUpComplete());
       ser.write_type_7("safe_power_down_complete", data.getSafePowerDownComplete());
+      ser.write_type_7("auto_startup_complete", data.getAutoStartupComplete());
+      ser.write_type_7("auto_shutdown_complete", data.getAutoShutdownComplete());
       ser.write_type_6("current_low_level_master_gain", data.getCurrentLowLevelMasterGain());
       ser.write_type_e("joint_states", data.getJointStates());
       ser.write_type_4("number_of_joints", data.getNumberOfJoints());
@@ -234,6 +254,8 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       data.setAreActuatorsEnabled(ser.read_type_7("are_actuators_enabled"));
       data.setSafePowerUpComplete(ser.read_type_7("safe_power_up_complete"));
       data.setSafePowerDownComplete(ser.read_type_7("safe_power_down_complete"));
+      data.setAutoStartupComplete(ser.read_type_7("auto_startup_complete"));
+      data.setAutoShutdownComplete(ser.read_type_7("auto_shutdown_complete"));
       data.setCurrentLowLevelMasterGain(ser.read_type_6("current_low_level_master_gain"));
       ser.read_type_e("joint_states", data.getJointStates());
       data.setNumberOfJoints(ser.read_type_4("number_of_joints"));

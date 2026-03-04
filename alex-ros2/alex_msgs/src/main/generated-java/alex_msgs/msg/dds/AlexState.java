@@ -20,6 +20,8 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
    public boolean are_actuators_enabled_;
    public boolean safe_power_up_complete_;
    public boolean safe_power_down_complete_;
+   public boolean auto_startup_complete_;
+   public boolean auto_shutdown_complete_;
    public double current_low_level_master_gain_;
    /**
             * Joint States
@@ -64,6 +66,10 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
       safe_power_up_complete_ = other.safe_power_up_complete_;
 
       safe_power_down_complete_ = other.safe_power_down_complete_;
+
+      auto_startup_complete_ = other.auto_startup_complete_;
+
+      auto_shutdown_complete_ = other.auto_shutdown_complete_;
 
       current_low_level_master_gain_ = other.current_low_level_master_gain_;
 
@@ -136,6 +142,24 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
    public boolean getSafePowerDownComplete()
    {
       return safe_power_down_complete_;
+   }
+
+   public void setAutoStartupComplete(boolean auto_startup_complete)
+   {
+      auto_startup_complete_ = auto_startup_complete;
+   }
+   public boolean getAutoStartupComplete()
+   {
+      return auto_startup_complete_;
+   }
+
+   public void setAutoShutdownComplete(boolean auto_shutdown_complete)
+   {
+      auto_shutdown_complete_ = auto_shutdown_complete;
+   }
+   public boolean getAutoShutdownComplete()
+   {
+      return auto_shutdown_complete_;
    }
 
    public void setCurrentLowLevelMasterGain(double current_low_level_master_gain)
@@ -231,6 +255,10 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.safe_power_down_complete_, other.safe_power_down_complete_, epsilon)) return false;
 
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.auto_startup_complete_, other.auto_startup_complete_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.auto_shutdown_complete_, other.auto_shutdown_complete_, epsilon)) return false;
+
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.current_low_level_master_gain_, other.current_low_level_master_gain_, epsilon)) return false;
 
       if (this.joint_states_.size() != other.joint_states_.size()) { return false; }
@@ -285,6 +313,10 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
 
       if(this.safe_power_down_complete_ != otherMyClass.safe_power_down_complete_) return false;
 
+      if(this.auto_startup_complete_ != otherMyClass.auto_startup_complete_) return false;
+
+      if(this.auto_shutdown_complete_ != otherMyClass.auto_shutdown_complete_) return false;
+
       if(this.current_low_level_master_gain_ != otherMyClass.current_low_level_master_gain_) return false;
 
       if (!this.joint_states_.equals(otherMyClass.joint_states_)) return false;
@@ -318,6 +350,10 @@ public class AlexState extends Packet<AlexState> implements Settable<AlexState>,
       builder.append(this.safe_power_up_complete_);      builder.append(", ");
       builder.append("safe_power_down_complete=");
       builder.append(this.safe_power_down_complete_);      builder.append(", ");
+      builder.append("auto_startup_complete=");
+      builder.append(this.auto_startup_complete_);      builder.append(", ");
+      builder.append("auto_shutdown_complete=");
+      builder.append(this.auto_shutdown_complete_);      builder.append(", ");
       builder.append("current_low_level_master_gain=");
       builder.append(this.current_low_level_master_gain_);      builder.append(", ");
       builder.append("joint_states=");

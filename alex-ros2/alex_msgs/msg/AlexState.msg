@@ -7,6 +7,8 @@ bool is_calibrated
 bool are_actuators_enabled
 bool safe_power_up_complete
 bool safe_power_down_complete
+bool auto_startup_complete
+bool auto_shutdown_complete
 float64 current_low_level_master_gain
 
 # Joint States

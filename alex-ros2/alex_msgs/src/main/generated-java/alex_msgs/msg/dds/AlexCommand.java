@@ -12,10 +12,21 @@ import us.ihmc.pubsub.TopicDataType;
 public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCommand>, EpsilonComparable<AlexCommand>
 {
    /**
-            * Operational commands of the robot
+            * Requests auto startup, which: requests safe power up, clears faults, enables actuators, and sets robot_control_state to user
+            */
+   public boolean request_auto_startup_;
+   /**
+            * Requests auto shutdown, which: disables actuators and requests safe power down
+            */
+   public boolean request_auto_shutdown_;
+   /**
+            * Requests for safe power up and power down procedures for PMB
             */
    public boolean request_safe_power_up_;
    public boolean request_safe_power_down_;
+   /**
+            * Other individual controls for robot startup procedure
+            */
    public boolean enable_actuators_;
    public boolean clear_faults_;
    public boolean calibrate_;
@@ -44,6 +55,10 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
    public void set(AlexCommand other)
    {
+      request_auto_startup_ = other.request_auto_startup_;
+
+      request_auto_shutdown_ = other.request_auto_shutdown_;
+
       request_safe_power_up_ = other.request_safe_power_up_;
 
       request_safe_power_down_ = other.request_safe_power_down_;
@@ -64,14 +79,44 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
    }
 
    /**
-            * Operational commands of the robot
+            * Requests auto startup, which: requests safe power up, clears faults, enables actuators, and sets robot_control_state to user
+            */
+   public void setRequestAutoStartup(boolean request_auto_startup)
+   {
+      request_auto_startup_ = request_auto_startup;
+   }
+   /**
+            * Requests auto startup, which: requests safe power up, clears faults, enables actuators, and sets robot_control_state to user
+            */
+   public boolean getRequestAutoStartup()
+   {
+      return request_auto_startup_;
+   }
+
+   /**
+            * Requests auto shutdown, which: disables actuators and requests safe power down
+            */
+   public void setRequestAutoShutdown(boolean request_auto_shutdown)
+   {
+      request_auto_shutdown_ = request_auto_shutdown;
+   }
+   /**
+            * Requests auto shutdown, which: disables actuators and requests safe power down
+            */
+   public boolean getRequestAutoShutdown()
+   {
+      return request_auto_shutdown_;
+   }
+
+   /**
+            * Requests for safe power up and power down procedures for PMB
             */
    public void setRequestSafePowerUp(boolean request_safe_power_up)
    {
       request_safe_power_up_ = request_safe_power_up;
    }
    /**
-            * Operational commands of the robot
+            * Requests for safe power up and power down procedures for PMB
             */
    public boolean getRequestSafePowerUp()
    {
@@ -87,10 +132,16 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       return request_safe_power_down_;
    }
 
+   /**
+            * Other individual controls for robot startup procedure
+            */
    public void setEnableActuators(boolean enable_actuators)
    {
       enable_actuators_ = enable_actuators;
    }
+   /**
+            * Other individual controls for robot startup procedure
+            */
    public boolean getEnableActuators()
    {
       return enable_actuators_;
@@ -174,6 +225,10 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       if(other == null) return false;
       if(other == this) return true;
 
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_auto_startup_, other.request_auto_startup_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_auto_shutdown_, other.request_auto_shutdown_, epsilon)) return false;
+
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_safe_power_up_, other.request_safe_power_up_, epsilon)) return false;
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_safe_power_down_, other.request_safe_power_down_, epsilon)) return false;
@@ -210,6 +265,10 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       AlexCommand otherMyClass = (AlexCommand) other;
 
+      if(this.request_auto_startup_ != otherMyClass.request_auto_startup_) return false;
+
+      if(this.request_auto_shutdown_ != otherMyClass.request_auto_shutdown_) return false;
+
       if(this.request_safe_power_up_ != otherMyClass.request_safe_power_up_) return false;
 
       if(this.request_safe_power_down_ != otherMyClass.request_safe_power_down_) return false;
@@ -237,6 +296,10 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       StringBuilder builder = new StringBuilder();
 
       builder.append("AlexCommand {");
+      builder.append("request_auto_startup=");
+      builder.append(this.request_auto_startup_);      builder.append(", ");
+      builder.append("request_auto_shutdown=");
+      builder.append(this.request_auto_shutdown_);      builder.append(", ");
       builder.append("request_safe_power_up=");
       builder.append(this.request_safe_power_up_);      builder.append(", ");
       builder.append("request_safe_power_down=");

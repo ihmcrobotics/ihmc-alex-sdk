@@ -16,10 +16,21 @@ module alex_msgs
       struct AlexCommand
       {
         /**
-         * Operational commands of the robot
+         * Requests auto startup, which: requests safe power up, clears faults, enables actuators, and sets robot_control_state to user
+         */
+        boolean request_auto_startup;
+        /**
+         * Requests auto shutdown, which: disables actuators and requests safe power down
+         */
+        boolean request_auto_shutdown;
+        /**
+         * Requests for safe power up and power down procedures for PMB
          */
         boolean request_safe_power_up;
         boolean request_safe_power_down;
+        /**
+         * Other individual controls for robot startup procedure
+         */
         boolean enable_actuators;
         boolean clear_faults;
         boolean calibrate;

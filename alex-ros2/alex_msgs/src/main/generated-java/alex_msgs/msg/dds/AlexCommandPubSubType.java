@@ -15,7 +15,7 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "4eda191a6526c6fd11bcb98107c024f83f3f013083604e69a8534851a5afd9f2";
+   		return "98abef8837b84802424b70f09ffb254f593d126e1d1c8091c46884745b7c4167";
    }
    
    @Override
@@ -51,6 +51,10 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    public static int getMaxCdrSerializedSize(int current_alignment)
    {
       int initial_alignment = current_alignment;
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
@@ -99,6 +103,12 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
       current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
 
 
@@ -119,6 +129,10 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
 
    public static void write(alex_msgs.msg.dds.AlexCommand data, us.ihmc.idl.CDR cdr)
    {
+      cdr.write_type_7(data.getRequestAutoStartup());
+
+      cdr.write_type_7(data.getRequestAutoShutdown());
+
       cdr.write_type_7(data.getRequestSafePowerUp());
 
       cdr.write_type_7(data.getRequestSafePowerDown());
@@ -143,6 +157,10 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
 
    public static void read(alex_msgs.msg.dds.AlexCommand data, us.ihmc.idl.CDR cdr)
    {
+      data.setRequestAutoStartup(cdr.read_type_7());
+      	
+      data.setRequestAutoShutdown(cdr.read_type_7());
+      	
       data.setRequestSafePowerUp(cdr.read_type_7());
       	
       data.setRequestSafePowerDown(cdr.read_type_7());
@@ -166,6 +184,8 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    @Override
    public final void serialize(alex_msgs.msg.dds.AlexCommand data, us.ihmc.idl.InterchangeSerializer ser)
    {
+      ser.write_type_7("request_auto_startup", data.getRequestAutoStartup());
+      ser.write_type_7("request_auto_shutdown", data.getRequestAutoShutdown());
       ser.write_type_7("request_safe_power_up", data.getRequestSafePowerUp());
       ser.write_type_7("request_safe_power_down", data.getRequestSafePowerDown());
       ser.write_type_7("enable_actuators", data.getEnableActuators());
@@ -180,6 +200,8 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, alex_msgs.msg.dds.AlexCommand data)
    {
+      data.setRequestAutoStartup(ser.read_type_7("request_auto_startup"));
+      data.setRequestAutoShutdown(ser.read_type_7("request_auto_shutdown"));
       data.setRequestSafePowerUp(ser.read_type_7("request_safe_power_up"));
       data.setRequestSafePowerDown(ser.read_type_7("request_safe_power_down"));
       data.setEnableActuators(ser.read_type_7("enable_actuators"));

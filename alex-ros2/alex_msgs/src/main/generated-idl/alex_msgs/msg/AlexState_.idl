@@ -26,6 +26,8 @@ module alex_msgs
         boolean are_actuators_enabled;
         boolean safe_power_up_complete;
         boolean safe_power_down_complete;
+        boolean auto_startup_complete;
+        boolean auto_shutdown_complete;
         double current_low_level_master_gain;
         /**
          * Joint States

@@ -1,8 +1,16 @@
 # Holds desired control commands for Alex
 
-# Operational commands of the robot
+# Requests auto startup, which: requests safe power up, clears faults, enables actuators, and sets robot_control_state to user
+bool request_auto_startup
+
+# Requests auto shutdown, which: disables actuators and requests safe power down
+bool request_auto_shutdown
+
+# Requests for safe power up and power down procedures for PMB
 bool request_safe_power_up
 bool request_safe_power_down
+
+# Other individual controls for robot startup procedure
 bool enable_actuators
 bool clear_faults
 bool calibrate
