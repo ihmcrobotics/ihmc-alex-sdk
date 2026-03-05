@@ -38,6 +38,10 @@ public class FortRoboticsRCHandheldState extends Packet<FortRoboticsRCHandheldSt
             * E-stop
             */
    public boolean e_stop_pressed_;
+   /**
+            * Battery
+            */
+   public int battery_level_;
 
    public FortRoboticsRCHandheldState()
    {
@@ -80,6 +84,8 @@ public class FortRoboticsRCHandheldState extends Packet<FortRoboticsRCHandheldSt
       button_right_pressed_ = other.button_right_pressed_;
 
       e_stop_pressed_ = other.e_stop_pressed_;
+
+      battery_level_ = other.battery_level_;
 
    }
 
@@ -248,6 +254,21 @@ public class FortRoboticsRCHandheldState extends Packet<FortRoboticsRCHandheldSt
       return e_stop_pressed_;
    }
 
+   /**
+            * Battery
+            */
+   public void setBatteryLevel(int battery_level)
+   {
+      battery_level_ = battery_level;
+   }
+   /**
+            * Battery
+            */
+   public int getBatteryLevel()
+   {
+      return battery_level_;
+   }
+
 
    public static Supplier<FortRoboticsRCHandheldStatePubSubType> getPubSubType()
    {
@@ -296,6 +317,8 @@ public class FortRoboticsRCHandheldState extends Packet<FortRoboticsRCHandheldSt
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.e_stop_pressed_, other.e_stop_pressed_, epsilon)) return false;
 
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.battery_level_, other.battery_level_, epsilon)) return false;
+
 
       return true;
    }
@@ -339,6 +362,8 @@ public class FortRoboticsRCHandheldState extends Packet<FortRoboticsRCHandheldSt
 
       if(this.e_stop_pressed_ != otherMyClass.e_stop_pressed_) return false;
 
+      if(this.battery_level_ != otherMyClass.battery_level_) return false;
+
 
       return true;
    }
@@ -378,7 +403,9 @@ public class FortRoboticsRCHandheldState extends Packet<FortRoboticsRCHandheldSt
       builder.append("button_right_pressed=");
       builder.append(this.button_right_pressed_);      builder.append(", ");
       builder.append("e_stop_pressed=");
-      builder.append(this.e_stop_pressed_);
+      builder.append(this.e_stop_pressed_);      builder.append(", ");
+      builder.append("battery_level=");
+      builder.append(this.battery_level_);
       builder.append("}");
       return builder.toString();
    }

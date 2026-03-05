@@ -41,6 +41,10 @@ module alex_msgs
          * E-stop
          */
         boolean e_stop_pressed;
+        /**
+         * Battery
+         */
+        unsigned short battery_level;
       };
     };
   };

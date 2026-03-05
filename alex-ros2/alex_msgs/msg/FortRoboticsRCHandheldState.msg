@@ -22,3 +22,6 @@ bool button_right_pressed
 
 # E-stop
 bool e_stop_pressed
+
+# Battery
+uint16 battery_level

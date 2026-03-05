@@ -15,7 +15,7 @@ public class FortRoboticsRCHandheldStatePubSubType implements us.ihmc.pubsub.Top
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "eee51b5736c52f4d5483a7a5dd761e4e74667b9caba7e60e5a1092268d973c27";
+   		return "29fa1df8f11adb61f1de159420be0853a3074f59d30b18f1bc22e437956cec4b";
    }
    
    @Override
@@ -82,6 +82,8 @@ public class FortRoboticsRCHandheldStatePubSubType implements us.ihmc.pubsub.Top
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
+      current_alignment += 2 + us.ihmc.idl.CDR.alignment(current_alignment, 2);
+
 
       return current_alignment - initial_alignment;
    }
@@ -140,6 +142,9 @@ public class FortRoboticsRCHandheldStatePubSubType implements us.ihmc.pubsub.Top
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
+      current_alignment += 2 + us.ihmc.idl.CDR.alignment(current_alignment, 2);
+
+
 
       return current_alignment - initial_alignment;
    }
@@ -176,6 +181,8 @@ public class FortRoboticsRCHandheldStatePubSubType implements us.ihmc.pubsub.Top
 
       cdr.write_type_7(data.getEStopPressed());
 
+      cdr.write_type_3(data.getBatteryLevel());
+
    }
 
    public static void read(alex_msgs.msg.dds.FortRoboticsRCHandheldState data, us.ihmc.idl.CDR cdr)
@@ -210,6 +217,8 @@ public class FortRoboticsRCHandheldStatePubSubType implements us.ihmc.pubsub.Top
       	
       data.setEStopPressed(cdr.read_type_7());
       	
+      data.setBatteryLevel(cdr.read_type_3());
+      	
 
    }
 
@@ -231,6 +240,7 @@ public class FortRoboticsRCHandheldStatePubSubType implements us.ihmc.pubsub.Top
       ser.write_type_7("button_left_pressed", data.getButtonLeftPressed());
       ser.write_type_7("button_right_pressed", data.getButtonRightPressed());
       ser.write_type_7("e_stop_pressed", data.getEStopPressed());
+      ser.write_type_3("battery_level", data.getBatteryLevel());
    }
 
    @Override
@@ -251,6 +261,7 @@ public class FortRoboticsRCHandheldStatePubSubType implements us.ihmc.pubsub.Top
       data.setButtonLeftPressed(ser.read_type_7("button_left_pressed"));
       data.setButtonRightPressed(ser.read_type_7("button_right_pressed"));
       data.setEStopPressed(ser.read_type_7("e_stop_pressed"));
+      data.setBatteryLevel(ser.read_type_3("battery_level"));
    }
 
    public static void staticCopy(alex_msgs.msg.dds.FortRoboticsRCHandheldState src, alex_msgs.msg.dds.FortRoboticsRCHandheldState dest)
