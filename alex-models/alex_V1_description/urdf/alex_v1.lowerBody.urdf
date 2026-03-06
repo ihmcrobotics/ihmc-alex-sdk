@@ -394,7 +394,6 @@
     <!-- RIGHT LEG LINKS -->
     <link name="RIGHT_HIP_X_LINK">
         <inertial>
-        <inertial>
             <!-- Mass is measured by Sean as 1.933 on June 9 -->
             <mass value="2.33165613"/>
             <origin rpy="0 0 0" xyz="0.04351434	-0.086987705 -0.03525559"/>
