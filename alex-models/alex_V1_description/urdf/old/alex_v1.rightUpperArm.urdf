@@ -7,7 +7,7 @@
         <axis xyz="0.0 1.0 0.0"/>
         <parent link="TORSO_LINK"/>
         <child link="RIGHT_SHOULDER_Y_LINK"/>
-        <limit effort="1000" lower="-3.141592" upper="1.22173" velocity="100"/>
+        <limit effort="150.0" lower="-3.141592" upper="1.22173" velocity="9.0"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
@@ -67,7 +67,7 @@
         <axis xyz="1 0 0"/>
         <parent link="RIGHT_SHOULDER_Y_LINK"/>
         <child link="RIGHT_SHOULDER_X_LINK"/>
-        <limit effort="1000" lower="-2.79253" upper="0.349066" velocity="100"/>
+        <limit effort="150.0" lower="-2.79253" upper="0.349066" velocity="9.0"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
@@ -90,7 +90,7 @@
         <axis xyz="0.0 0.0 1.0"/>
         <parent link="RIGHT_SHOULDER_X_LINK"/>
         <child link="RIGHT_SHOULDER_Z_LINK"/>
-        <limit effort="1000" lower="-1.22173" upper="1.91986" velocity="100"/>
+        <limit effort="80.0" lower="-1.22173" upper="1.91986" velocity="11.5"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
