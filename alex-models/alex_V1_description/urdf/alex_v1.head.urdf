@@ -47,6 +47,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="head_collision">
+            <origin xyz="0.03237 -0.013568 0.007163" rpy="0 0 0"/>
+            <geometry>
+                <sphere radius="0.14"/>
+            </geometry>
+        </collision>
     </link>
 
     <!-- HEAD IMU -->
