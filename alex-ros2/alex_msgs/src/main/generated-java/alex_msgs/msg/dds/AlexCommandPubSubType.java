@@ -15,7 +15,7 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "98abef8837b84802424b70f09ffb254f593d126e1d1c8091c46884745b7c4167";
+   		return "8619eb5fb4b5b5dc661edf76f4e8c63ca0e4536e188d95153be43614b8837f0f";
    }
    
    @Override
@@ -51,6 +51,8 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    public static int getMaxCdrSerializedSize(int current_alignment)
    {
       int initial_alignment = current_alignment;
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
@@ -109,6 +111,9 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
       current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
 
 
@@ -137,7 +142,9 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
 
       cdr.write_type_7(data.getRequestSafePowerDown());
 
-      cdr.write_type_7(data.getEnableActuators());
+      cdr.write_type_7(data.getRequestEnableActuators());
+
+      cdr.write_type_7(data.getRequestDisableActuators());
 
       cdr.write_type_7(data.getClearFaults());
 
@@ -165,7 +172,9 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       	
       data.setRequestSafePowerDown(cdr.read_type_7());
       	
-      data.setEnableActuators(cdr.read_type_7());
+      data.setRequestEnableActuators(cdr.read_type_7());
+      	
+      data.setRequestDisableActuators(cdr.read_type_7());
       	
       data.setClearFaults(cdr.read_type_7());
       	
@@ -188,7 +197,8 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       ser.write_type_7("request_auto_shutdown", data.getRequestAutoShutdown());
       ser.write_type_7("request_safe_power_up", data.getRequestSafePowerUp());
       ser.write_type_7("request_safe_power_down", data.getRequestSafePowerDown());
-      ser.write_type_7("enable_actuators", data.getEnableActuators());
+      ser.write_type_7("request_enable_actuators", data.getRequestEnableActuators());
+      ser.write_type_7("request_disable_actuators", data.getRequestDisableActuators());
       ser.write_type_7("clear_faults", data.getClearFaults());
       ser.write_type_7("calibrate", data.getCalibrate());
       ser.write_type_6("low_level_master_gain", data.getLowLevelMasterGain());
@@ -204,7 +214,8 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       data.setRequestAutoShutdown(ser.read_type_7("request_auto_shutdown"));
       data.setRequestSafePowerUp(ser.read_type_7("request_safe_power_up"));
       data.setRequestSafePowerDown(ser.read_type_7("request_safe_power_down"));
-      data.setEnableActuators(ser.read_type_7("enable_actuators"));
+      data.setRequestEnableActuators(ser.read_type_7("request_enable_actuators"));
+      data.setRequestDisableActuators(ser.read_type_7("request_disable_actuators"));
       data.setClearFaults(ser.read_type_7("clear_faults"));
       data.setCalibrate(ser.read_type_7("calibrate"));
       data.setLowLevelMasterGain(ser.read_type_6("low_level_master_gain"));

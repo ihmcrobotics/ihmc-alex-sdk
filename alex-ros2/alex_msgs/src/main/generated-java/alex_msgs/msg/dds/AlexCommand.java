@@ -27,7 +27,8 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
    /**
             * Other individual controls for robot startup procedure
             */
-   public boolean enable_actuators_;
+   public boolean request_enable_actuators_;
+   public boolean request_disable_actuators_;
    public boolean clear_faults_;
    public boolean calibrate_;
    public double low_level_master_gain_;
@@ -63,7 +64,9 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       request_safe_power_down_ = other.request_safe_power_down_;
 
-      enable_actuators_ = other.enable_actuators_;
+      request_enable_actuators_ = other.request_enable_actuators_;
+
+      request_disable_actuators_ = other.request_disable_actuators_;
 
       clear_faults_ = other.clear_faults_;
 
@@ -135,16 +138,25 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
    /**
             * Other individual controls for robot startup procedure
             */
-   public void setEnableActuators(boolean enable_actuators)
+   public void setRequestEnableActuators(boolean request_enable_actuators)
    {
-      enable_actuators_ = enable_actuators;
+      request_enable_actuators_ = request_enable_actuators;
    }
    /**
             * Other individual controls for robot startup procedure
             */
-   public boolean getEnableActuators()
+   public boolean getRequestEnableActuators()
    {
-      return enable_actuators_;
+      return request_enable_actuators_;
+   }
+
+   public void setRequestDisableActuators(boolean request_disable_actuators)
+   {
+      request_disable_actuators_ = request_disable_actuators;
+   }
+   public boolean getRequestDisableActuators()
+   {
+      return request_disable_actuators_;
    }
 
    public void setClearFaults(boolean clear_faults)
@@ -233,7 +245,9 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_safe_power_down_, other.request_safe_power_down_, epsilon)) return false;
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.enable_actuators_, other.enable_actuators_, epsilon)) return false;
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_enable_actuators_, other.request_enable_actuators_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_disable_actuators_, other.request_disable_actuators_, epsilon)) return false;
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.clear_faults_, other.clear_faults_, epsilon)) return false;
 
@@ -273,7 +287,9 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if(this.request_safe_power_down_ != otherMyClass.request_safe_power_down_) return false;
 
-      if(this.enable_actuators_ != otherMyClass.enable_actuators_) return false;
+      if(this.request_enable_actuators_ != otherMyClass.request_enable_actuators_) return false;
+
+      if(this.request_disable_actuators_ != otherMyClass.request_disable_actuators_) return false;
 
       if(this.clear_faults_ != otherMyClass.clear_faults_) return false;
 
@@ -304,8 +320,10 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       builder.append(this.request_safe_power_up_);      builder.append(", ");
       builder.append("request_safe_power_down=");
       builder.append(this.request_safe_power_down_);      builder.append(", ");
-      builder.append("enable_actuators=");
-      builder.append(this.enable_actuators_);      builder.append(", ");
+      builder.append("request_enable_actuators=");
+      builder.append(this.request_enable_actuators_);      builder.append(", ");
+      builder.append("request_disable_actuators=");
+      builder.append(this.request_disable_actuators_);      builder.append(", ");
       builder.append("clear_faults=");
       builder.append(this.clear_faults_);      builder.append(", ");
       builder.append("calibrate=");

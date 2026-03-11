@@ -19,7 +19,7 @@
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>4.364440056865215</motorOffset>
             <outputOffset>3.0865645357203206</outputOffset>
-            <present>true</present>
+            <present>false</present>
         </XmlPlatinumTwitter>
 
         <XmlEtherSnacksBoard>
@@ -27,7 +27,7 @@
             <alias>4104</alias>
             <position>0</position>
             <boardType>ALEX</boardType>
-            <present>true</present>
+            <present>false</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>head_imu</name>
@@ -70,7 +70,7 @@
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
             <doPDControlOnTwitter>true</doPDControlOnTwitter>
-            <present>true</present>
+            <present>false</present>
         </XmlCycloidMechanism>
     </transmissions>
 </XmlHardware>

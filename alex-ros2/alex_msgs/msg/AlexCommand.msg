@@ -11,7 +11,8 @@ bool request_safe_power_up
 bool request_safe_power_down
 
 # Other individual controls for robot startup procedure
-bool enable_actuators
+bool request_enable_actuators
+bool request_disable_actuators
 bool clear_faults
 bool calibrate
 float64 low_level_master_gain
