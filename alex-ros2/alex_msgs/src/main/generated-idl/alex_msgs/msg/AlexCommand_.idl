@@ -16,21 +16,35 @@ module alex_msgs
       struct AlexCommand
       {
         /**
-         * Operational commands of the robot
+         * Requests auto startup, which: requests safe power up, clears faults, enables actuators, and sets robot_control_state to user
          */
-        boolean enable_actuators;
+        boolean request_auto_startup;
+        /**
+         * Requests auto shutdown, which: disables actuators and requests safe power down
+         */
+        boolean request_auto_shutdown;
+        /**
+         * Requests for safe power up and power down procedures for PMB
+         */
+        boolean request_safe_power_up;
+        boolean request_safe_power_down;
+        /**
+         * Other individual controls for robot startup procedure
+         */
+        boolean request_enable_actuators;
+        boolean request_disable_actuators;
         boolean clear_faults;
         boolean calibrate;
+        double low_level_master_gain;
         /**
          * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
          */
         octet robot_control_state;
-        unsigned long number_of_joints;
         /**
          * Joint Commands for the robot
          */
         sequence<alex_msgs::msg::dds::OneDOFJointCommand, 50> joint_commands;
-        double low_level_master_gain;
+        unsigned long number_of_joints;
       };
     };
   };

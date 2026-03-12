@@ -7,9 +7,9 @@
             <position>0</position>
             <actuatorPackage>A045</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
-            <present>false</present>
+            <motorOffset>-37.25937544507925</motorOffset>
+            <outputOffset>-1.835619455863723</outputOffset>
+            <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>LeftJ2Motor</name>
@@ -17,8 +17,8 @@
             <position>0</position>
             <actuatorPackage>A046</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>54.452303288448256</motorOffset>
+            <outputOffset>2.6186988249317933</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -28,8 +28,8 @@
             <actuatorPackage>A047</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <outputEncoderInverted>false</outputEncoderInverted> <!-- Only true for Nadia arms on V1-->
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>48.2806283154893</motorOffset>
+            <outputOffset>2.346754284998407</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -38,8 +38,8 @@
             <position>0</position>
             <actuatorPackage>A048</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>-9.959136789203633</motorOffset>
+            <outputOffset>-0.41452680147309984</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -101,7 +101,7 @@
             <torqueBreakFrequency>50.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
-            <present>false</present>
+            <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
             <jointName>LEFT_SHOULDER_X</jointName>

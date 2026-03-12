@@ -15,7 +15,7 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "4740eb9d7ca032fbff88fcbb901c50dbbb7a69d7b7cb229ddb68870b5658c4a0";
+   		return "8619eb5fb4b5b5dc661edf76f4e8c63ca0e4536e188d95153be43614b8837f0f";
    }
    
    @Override
@@ -60,12 +60,22 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 50; ++i0)
       {
           current_alignment += alex_msgs.msg.dds.OneDOFJointCommandPubSubType.getMaxCdrSerializedSize(current_alignment);}
-      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
 
       return current_alignment - initial_alignment;
@@ -92,7 +102,22 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
@@ -100,7 +125,7 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       {
           current_alignment += alex_msgs.msg.dds.OneDOFJointCommandPubSubType.getCdrSerializedSize(data.getJointCommands().get(i0), current_alignment);}
 
-      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
 
 
@@ -109,38 +134,58 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
 
    public static void write(alex_msgs.msg.dds.AlexCommand data, us.ihmc.idl.CDR cdr)
    {
-      cdr.write_type_7(data.getEnableActuators());
+      cdr.write_type_7(data.getRequestAutoStartup());
+
+      cdr.write_type_7(data.getRequestAutoShutdown());
+
+      cdr.write_type_7(data.getRequestSafePowerUp());
+
+      cdr.write_type_7(data.getRequestSafePowerDown());
+
+      cdr.write_type_7(data.getRequestEnableActuators());
+
+      cdr.write_type_7(data.getRequestDisableActuators());
 
       cdr.write_type_7(data.getClearFaults());
 
       cdr.write_type_7(data.getCalibrate());
 
-      cdr.write_type_9(data.getRobotControlState());
+      cdr.write_type_6(data.getLowLevelMasterGain());
 
-      cdr.write_type_4(data.getNumberOfJoints());
+      cdr.write_type_9(data.getRobotControlState());
 
       if(data.getJointCommands().size() <= 50)
       cdr.write_type_e(data.getJointCommands());else
           throw new RuntimeException("joint_commands field exceeds the maximum length: %d > %d".formatted(data.getJointCommands().size(), 50));
 
-      cdr.write_type_6(data.getLowLevelMasterGain());
+      cdr.write_type_4(data.getNumberOfJoints());
 
    }
 
    public static void read(alex_msgs.msg.dds.AlexCommand data, us.ihmc.idl.CDR cdr)
    {
-      data.setEnableActuators(cdr.read_type_7());
+      data.setRequestAutoStartup(cdr.read_type_7());
+      	
+      data.setRequestAutoShutdown(cdr.read_type_7());
+      	
+      data.setRequestSafePowerUp(cdr.read_type_7());
+      	
+      data.setRequestSafePowerDown(cdr.read_type_7());
+      	
+      data.setRequestEnableActuators(cdr.read_type_7());
+      	
+      data.setRequestDisableActuators(cdr.read_type_7());
       	
       data.setClearFaults(cdr.read_type_7());
       	
       data.setCalibrate(cdr.read_type_7());
       	
+      data.setLowLevelMasterGain(cdr.read_type_6());
+      	
       data.setRobotControlState(cdr.read_type_9());
       	
-      data.setNumberOfJoints(cdr.read_type_4());
-      	
       cdr.read_type_e(data.getJointCommands());	
-      data.setLowLevelMasterGain(cdr.read_type_6());
+      data.setNumberOfJoints(cdr.read_type_4());
       	
 
    }
@@ -148,25 +193,35 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    @Override
    public final void serialize(alex_msgs.msg.dds.AlexCommand data, us.ihmc.idl.InterchangeSerializer ser)
    {
-      ser.write_type_7("enable_actuators", data.getEnableActuators());
+      ser.write_type_7("request_auto_startup", data.getRequestAutoStartup());
+      ser.write_type_7("request_auto_shutdown", data.getRequestAutoShutdown());
+      ser.write_type_7("request_safe_power_up", data.getRequestSafePowerUp());
+      ser.write_type_7("request_safe_power_down", data.getRequestSafePowerDown());
+      ser.write_type_7("request_enable_actuators", data.getRequestEnableActuators());
+      ser.write_type_7("request_disable_actuators", data.getRequestDisableActuators());
       ser.write_type_7("clear_faults", data.getClearFaults());
       ser.write_type_7("calibrate", data.getCalibrate());
-      ser.write_type_9("robot_control_state", data.getRobotControlState());
-      ser.write_type_4("number_of_joints", data.getNumberOfJoints());
-      ser.write_type_e("joint_commands", data.getJointCommands());
       ser.write_type_6("low_level_master_gain", data.getLowLevelMasterGain());
+      ser.write_type_9("robot_control_state", data.getRobotControlState());
+      ser.write_type_e("joint_commands", data.getJointCommands());
+      ser.write_type_4("number_of_joints", data.getNumberOfJoints());
    }
 
    @Override
    public final void deserialize(us.ihmc.idl.InterchangeSerializer ser, alex_msgs.msg.dds.AlexCommand data)
    {
-      data.setEnableActuators(ser.read_type_7("enable_actuators"));
+      data.setRequestAutoStartup(ser.read_type_7("request_auto_startup"));
+      data.setRequestAutoShutdown(ser.read_type_7("request_auto_shutdown"));
+      data.setRequestSafePowerUp(ser.read_type_7("request_safe_power_up"));
+      data.setRequestSafePowerDown(ser.read_type_7("request_safe_power_down"));
+      data.setRequestEnableActuators(ser.read_type_7("request_enable_actuators"));
+      data.setRequestDisableActuators(ser.read_type_7("request_disable_actuators"));
       data.setClearFaults(ser.read_type_7("clear_faults"));
       data.setCalibrate(ser.read_type_7("calibrate"));
-      data.setRobotControlState(ser.read_type_9("robot_control_state"));
-      data.setNumberOfJoints(ser.read_type_4("number_of_joints"));
-      ser.read_type_e("joint_commands", data.getJointCommands());
       data.setLowLevelMasterGain(ser.read_type_6("low_level_master_gain"));
+      data.setRobotControlState(ser.read_type_9("robot_control_state"));
+      ser.read_type_e("joint_commands", data.getJointCommands());
+      data.setNumberOfJoints(ser.read_type_4("number_of_joints"));
    }
 
    public static void staticCopy(alex_msgs.msg.dds.AlexCommand src, alex_msgs.msg.dds.AlexCommand dest)

@@ -129,7 +129,7 @@
             <vendorID>4113</vendorID> <!-- = 0x1011 in hex-->
             <productCode>513</productCode> <!-- = 0x00000201 in hex-->
             <imuType>H4</imuType>
-            <present>true</present>
+            <present>false</present>
             <angularVelocityBiasX>0.0</angularVelocityBiasX>
             <angularVelocityBiasY>0.0</angularVelocityBiasY>
             <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
