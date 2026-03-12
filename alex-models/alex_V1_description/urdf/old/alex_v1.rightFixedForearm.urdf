@@ -7,7 +7,7 @@
         <axis xyz="0.0 1.0 0.0"/>
         <parent link="RIGHT_SHOULDER_Z_LINK"/>
         <child link="RIGHT_ELBOW_Y_LINK"/>
-        <limit effort="1000" lower="-2.35619" upper="0.174532925" velocity="100"/>
+        <limit effort="80.0" lower="-2.35619" upper="0.174532925" velocity="11.5"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 

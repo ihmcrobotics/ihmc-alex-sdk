@@ -6,7 +6,7 @@
         <axis xyz="0 0 1"/>
         <parent link="TORSO_LINK"/>
         <child link="NECK_Z_LINK"/>
-        <limit effort="20" lower="-1.5708" upper="1.5708" velocity="20"/>
+        <limit effort="20.86" lower="-1.5708" upper="1.5708" velocity="17.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="NECK_Y" type="revolute">
@@ -14,7 +14,7 @@
         <axis xyz="0 1 0"/>
         <parent link="NECK_Z_LINK"/>
         <child link="HEAD_LINK"/>
-        <limit effort="20" lower="-0.488692" upper="0.488692" velocity="20"/>
+        <limit effort="20.86" lower="-0.488692" upper="0.488692" velocity="17.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
@@ -47,6 +47,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="head_collision">
+            <origin xyz="0.03237 -0.013568 0.007163" rpy="0 0 0"/>
+            <geometry>
+                <sphere radius="0.14"/>
+            </geometry>
+        </collision>
     </link>
 
     <!-- HEAD IMU -->
