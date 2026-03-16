@@ -12,24 +12,38 @@ import us.ihmc.pubsub.TopicDataType;
 public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCommand>, EpsilonComparable<AlexCommand>
 {
    /**
-            * Operational commands of the robot
+            * Requests auto startup, which: requests safe power up, clears faults, enables actuators, and sets robot_control_state to user
             */
-   public boolean enable_actuators_;
+   public boolean request_auto_startup_;
+   /**
+            * Requests auto shutdown, which: disables actuators and requests safe power down
+            */
+   public boolean request_auto_shutdown_;
+   /**
+            * Requests for safe power up and power down procedures for PMB
+            */
+   public boolean request_safe_power_up_;
+   public boolean request_safe_power_down_;
+   /**
+            * Other individual controls for robot startup procedure
+            */
+   public boolean request_enable_actuators_;
+   public boolean request_disable_actuators_;
    public boolean clear_faults_;
    public boolean calibrate_;
    public boolean servo_actuators_;
    public boolean unservo_quickly_;
    public boolean use_high_level_servo_;
+   public double low_level_master_gain_;
    /**
             * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
             */
    public byte robot_control_state_;
-   public long number_of_joints_;
    /**
             * Joint Commands for the robot
             */
    public us.ihmc.idl.IDLSequence.Object<alex_msgs.msg.dds.OneDOFJointCommand>  joint_commands_;
-   public double low_level_master_gain_;
+   public long number_of_joints_;
 
    public AlexCommand()
    {
@@ -45,7 +59,17 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
    public void set(AlexCommand other)
    {
-      enable_actuators_ = other.enable_actuators_;
+      request_auto_startup_ = other.request_auto_startup_;
+
+      request_auto_shutdown_ = other.request_auto_shutdown_;
+
+      request_safe_power_up_ = other.request_safe_power_up_;
+
+      request_safe_power_down_ = other.request_safe_power_down_;
+
+      request_enable_actuators_ = other.request_enable_actuators_;
+
+      request_disable_actuators_ = other.request_disable_actuators_;
 
       clear_faults_ = other.clear_faults_;
 
@@ -57,28 +81,91 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       use_high_level_servo_ = other.use_high_level_servo_;
 
-      robot_control_state_ = other.robot_control_state_;
-
-      number_of_joints_ = other.number_of_joints_;
-
-      joint_commands_.set(other.joint_commands_);
       low_level_master_gain_ = other.low_level_master_gain_;
 
+      robot_control_state_ = other.robot_control_state_;
+
+      joint_commands_.set(other.joint_commands_);
+      number_of_joints_ = other.number_of_joints_;
+
    }
 
    /**
-            * Operational commands of the robot
+            * Requests auto startup, which: requests safe power up, clears faults, enables actuators, and sets robot_control_state to user
             */
-   public void setEnableActuators(boolean enable_actuators)
+   public void setRequestAutoStartup(boolean request_auto_startup)
    {
-      enable_actuators_ = enable_actuators;
+      request_auto_startup_ = request_auto_startup;
    }
    /**
-            * Operational commands of the robot
+            * Requests auto startup, which: requests safe power up, clears faults, enables actuators, and sets robot_control_state to user
             */
-   public boolean getEnableActuators()
+   public boolean getRequestAutoStartup()
    {
-      return enable_actuators_;
+      return request_auto_startup_;
+   }
+
+   /**
+            * Requests auto shutdown, which: disables actuators and requests safe power down
+            */
+   public void setRequestAutoShutdown(boolean request_auto_shutdown)
+   {
+      request_auto_shutdown_ = request_auto_shutdown;
+   }
+   /**
+            * Requests auto shutdown, which: disables actuators and requests safe power down
+            */
+   public boolean getRequestAutoShutdown()
+   {
+      return request_auto_shutdown_;
+   }
+
+   /**
+            * Requests for safe power up and power down procedures for PMB
+            */
+   public void setRequestSafePowerUp(boolean request_safe_power_up)
+   {
+      request_safe_power_up_ = request_safe_power_up;
+   }
+   /**
+            * Requests for safe power up and power down procedures for PMB
+            */
+   public boolean getRequestSafePowerUp()
+   {
+      return request_safe_power_up_;
+   }
+
+   public void setRequestSafePowerDown(boolean request_safe_power_down)
+   {
+      request_safe_power_down_ = request_safe_power_down;
+   }
+   public boolean getRequestSafePowerDown()
+   {
+      return request_safe_power_down_;
+   }
+
+   /**
+            * Other individual controls for robot startup procedure
+            */
+   public void setRequestEnableActuators(boolean request_enable_actuators)
+   {
+      request_enable_actuators_ = request_enable_actuators;
+   }
+   /**
+            * Other individual controls for robot startup procedure
+            */
+   public boolean getRequestEnableActuators()
+   {
+      return request_enable_actuators_;
+   }
+
+   public void setRequestDisableActuators(boolean request_disable_actuators)
+   {
+      request_disable_actuators_ = request_disable_actuators;
+   }
+   public boolean getRequestDisableActuators()
+   {
+      return request_disable_actuators_;
    }
 
    public void setClearFaults(boolean clear_faults)
@@ -126,6 +213,15 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       return use_high_level_servo_;
    }
 
+   public void setLowLevelMasterGain(double low_level_master_gain)
+   {
+      low_level_master_gain_ = low_level_master_gain;
+   }
+   public double getLowLevelMasterGain()
+   {
+      return low_level_master_gain_;
+   }
+
    /**
             * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
             */
@@ -141,15 +237,6 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       return robot_control_state_;
    }
 
-   public void setNumberOfJoints(long number_of_joints)
-   {
-      number_of_joints_ = number_of_joints;
-   }
-   public long getNumberOfJoints()
-   {
-      return number_of_joints_;
-   }
-
 
    /**
             * Joint Commands for the robot
@@ -159,13 +246,13 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       return joint_commands_;
    }
 
-   public void setLowLevelMasterGain(double low_level_master_gain)
+   public void setNumberOfJoints(long number_of_joints)
    {
-      low_level_master_gain_ = low_level_master_gain;
+      number_of_joints_ = number_of_joints;
    }
-   public double getLowLevelMasterGain()
+   public long getNumberOfJoints()
    {
-      return low_level_master_gain_;
+      return number_of_joints_;
    }
 
 
@@ -186,7 +273,17 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       if(other == null) return false;
       if(other == this) return true;
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.enable_actuators_, other.enable_actuators_, epsilon)) return false;
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_auto_startup_, other.request_auto_startup_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_auto_shutdown_, other.request_auto_shutdown_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_safe_power_up_, other.request_safe_power_up_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_safe_power_down_, other.request_safe_power_down_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_enable_actuators_, other.request_enable_actuators_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.request_disable_actuators_, other.request_disable_actuators_, epsilon)) return false;
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.clear_faults_, other.clear_faults_, epsilon)) return false;
 
@@ -198,9 +295,9 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.use_high_level_servo_, other.use_high_level_servo_, epsilon)) return false;
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.robot_control_state_, other.robot_control_state_, epsilon)) return false;
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.low_level_master_gain_, other.low_level_master_gain_, epsilon)) return false;
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.number_of_joints_, other.number_of_joints_, epsilon)) return false;
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.robot_control_state_, other.robot_control_state_, epsilon)) return false;
 
       if (this.joint_commands_.size() != other.joint_commands_.size()) { return false; }
       else
@@ -209,7 +306,7 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
          {  if (!this.joint_commands_.get(i).epsilonEquals(other.joint_commands_.get(i), epsilon)) return false; }
       }
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.low_level_master_gain_, other.low_level_master_gain_, epsilon)) return false;
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.number_of_joints_, other.number_of_joints_, epsilon)) return false;
 
 
       return true;
@@ -224,7 +321,17 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       AlexCommand otherMyClass = (AlexCommand) other;
 
-      if(this.enable_actuators_ != otherMyClass.enable_actuators_) return false;
+      if(this.request_auto_startup_ != otherMyClass.request_auto_startup_) return false;
+
+      if(this.request_auto_shutdown_ != otherMyClass.request_auto_shutdown_) return false;
+
+      if(this.request_safe_power_up_ != otherMyClass.request_safe_power_up_) return false;
+
+      if(this.request_safe_power_down_ != otherMyClass.request_safe_power_down_) return false;
+
+      if(this.request_enable_actuators_ != otherMyClass.request_enable_actuators_) return false;
+
+      if(this.request_disable_actuators_ != otherMyClass.request_disable_actuators_) return false;
 
       if(this.clear_faults_ != otherMyClass.clear_faults_) return false;
 
@@ -236,12 +343,12 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if(this.use_high_level_servo_ != otherMyClass.use_high_level_servo_) return false;
 
+      if(this.low_level_master_gain_ != otherMyClass.low_level_master_gain_) return false;
+
       if(this.robot_control_state_ != otherMyClass.robot_control_state_) return false;
 
-      if(this.number_of_joints_ != otherMyClass.number_of_joints_) return false;
-
       if (!this.joint_commands_.equals(otherMyClass.joint_commands_)) return false;
-      if(this.low_level_master_gain_ != otherMyClass.low_level_master_gain_) return false;
+      if(this.number_of_joints_ != otherMyClass.number_of_joints_) return false;
 
 
       return true;
@@ -253,8 +360,18 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       StringBuilder builder = new StringBuilder();
 
       builder.append("AlexCommand {");
-      builder.append("enable_actuators=");
-      builder.append(this.enable_actuators_);      builder.append(", ");
+      builder.append("request_auto_startup=");
+      builder.append(this.request_auto_startup_);      builder.append(", ");
+      builder.append("request_auto_shutdown=");
+      builder.append(this.request_auto_shutdown_);      builder.append(", ");
+      builder.append("request_safe_power_up=");
+      builder.append(this.request_safe_power_up_);      builder.append(", ");
+      builder.append("request_safe_power_down=");
+      builder.append(this.request_safe_power_down_);      builder.append(", ");
+      builder.append("request_enable_actuators=");
+      builder.append(this.request_enable_actuators_);      builder.append(", ");
+      builder.append("request_disable_actuators=");
+      builder.append(this.request_disable_actuators_);      builder.append(", ");
       builder.append("clear_faults=");
       builder.append(this.clear_faults_);      builder.append(", ");
       builder.append("calibrate=");
@@ -265,14 +382,14 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       builder.append(this.unservo_quickly_);      builder.append(", ");
       builder.append("use_high_level_servo=");
       builder.append(this.use_high_level_servo_);      builder.append(", ");
+      builder.append("low_level_master_gain=");
+      builder.append(this.low_level_master_gain_);      builder.append(", ");
       builder.append("robot_control_state=");
       builder.append(this.robot_control_state_);      builder.append(", ");
-      builder.append("number_of_joints=");
-      builder.append(this.number_of_joints_);      builder.append(", ");
       builder.append("joint_commands=");
       builder.append(this.joint_commands_);      builder.append(", ");
-      builder.append("low_level_master_gain=");
-      builder.append(this.low_level_master_gain_);
+      builder.append("number_of_joints=");
+      builder.append(this.number_of_joints_);
       builder.append("}");
       return builder.toString();
    }

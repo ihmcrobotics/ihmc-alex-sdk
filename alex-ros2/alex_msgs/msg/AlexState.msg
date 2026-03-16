@@ -7,14 +7,22 @@ bool is_calibrated
 bool is_servoing
 bool is_unservoing
 bool is_servoed
-uint32 number_of_joints
-uint32 number_of_imus
-uint32 number_of_fts
+
+bool are_actuators_enabled
+bool safe_power_up_complete
+bool safe_power_down_complete
+bool auto_startup_complete
+bool auto_shutdown_complete
+float64 current_low_level_master_gain
 
 # Joint States
 OneDOFJointState[<=50] joint_states
-float64 low_level_master_gain
+uint32 number_of_joints
 
-# Sensor States
+# IMU States
 IMUState[<=50] imu_states
+uint32 number_of_imus
+
+# FT States
 ForceTorqueState[<=50] ft_states
+uint32 number_of_fts

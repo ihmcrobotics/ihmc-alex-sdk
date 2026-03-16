@@ -15,7 +15,7 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "885ad33bc51971bea00ccfe3a0b8623e2e7add606721ae00d81abbb43de450cc";
+   		return "e1e40f5a0f4edd96a06b6e1913c385bafb43549a0395e8523d458e8ccfa86f77";
    }
    
    @Override
@@ -60,9 +60,21 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 75; ++i0)
       {
@@ -92,10 +104,28 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
 
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
@@ -117,9 +147,21 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
 
       cdr.write_type_7(data.getWorkingCounterFault());
 
+      cdr.write_type_7(data.getBusOverVoltageFault());
+
+      cdr.write_type_7(data.getBusOverCurrentFault());
+
       cdr.write_type_4(data.getWorkingCounterMismatchCount());
 
       cdr.write_type_4(data.getMissedDeadlines());
+
+      cdr.write_type_6(data.getBatteryChargePercetage());
+
+      cdr.write_type_6(data.getEstimatedRuntimeMinutes());
+
+      cdr.write_type_7(data.getBusOverVoltageWarning());
+
+      cdr.write_type_7(data.getBusOverCurrentWarning());
 
       if(data.getDeviceStatusProviders().size() <= 75)
       cdr.write_type_e(data.getDeviceStatusProviders());else
@@ -137,9 +179,21 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       	
       data.setWorkingCounterFault(cdr.read_type_7());
       	
+      data.setBusOverVoltageFault(cdr.read_type_7());
+      	
+      data.setBusOverCurrentFault(cdr.read_type_7());
+      	
       data.setWorkingCounterMismatchCount(cdr.read_type_4());
       	
       data.setMissedDeadlines(cdr.read_type_4());
+      	
+      data.setBatteryChargePercetage(cdr.read_type_6());
+      	
+      data.setEstimatedRuntimeMinutes(cdr.read_type_6());
+      	
+      data.setBusOverVoltageWarning(cdr.read_type_7());
+      	
+      data.setBusOverCurrentWarning(cdr.read_type_7());
       	
       cdr.read_type_e(data.getDeviceStatusProviders());	
 
@@ -152,8 +206,14 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       ser.write_type_7("motor_fault", data.getMotorFault());
       ser.write_type_7("missed_deadline_fault", data.getMissedDeadlineFault());
       ser.write_type_7("working_counter_fault", data.getWorkingCounterFault());
+      ser.write_type_7("bus_over_voltage_fault", data.getBusOverVoltageFault());
+      ser.write_type_7("bus_over_current_fault", data.getBusOverCurrentFault());
       ser.write_type_4("working_counter_mismatch_count", data.getWorkingCounterMismatchCount());
       ser.write_type_4("missed_deadlines", data.getMissedDeadlines());
+      ser.write_type_6("battery_charge_percetage", data.getBatteryChargePercetage());
+      ser.write_type_6("estimated_runtime_minutes", data.getEstimatedRuntimeMinutes());
+      ser.write_type_7("bus_over_voltage_warning", data.getBusOverVoltageWarning());
+      ser.write_type_7("bus_over_current_warning", data.getBusOverCurrentWarning());
       ser.write_type_e("device_status_providers", data.getDeviceStatusProviders());
    }
 
@@ -164,8 +224,14 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       data.setMotorFault(ser.read_type_7("motor_fault"));
       data.setMissedDeadlineFault(ser.read_type_7("missed_deadline_fault"));
       data.setWorkingCounterFault(ser.read_type_7("working_counter_fault"));
+      data.setBusOverVoltageFault(ser.read_type_7("bus_over_voltage_fault"));
+      data.setBusOverCurrentFault(ser.read_type_7("bus_over_current_fault"));
       data.setWorkingCounterMismatchCount(ser.read_type_4("working_counter_mismatch_count"));
       data.setMissedDeadlines(ser.read_type_4("missed_deadlines"));
+      data.setBatteryChargePercetage(ser.read_type_6("battery_charge_percetage"));
+      data.setEstimatedRuntimeMinutes(ser.read_type_6("estimated_runtime_minutes"));
+      data.setBusOverVoltageWarning(ser.read_type_7("bus_over_voltage_warning"));
+      data.setBusOverCurrentWarning(ser.read_type_7("bus_over_current_warning"));
       ser.read_type_e("device_status_providers", data.getDeviceStatusProviders());
    }
 

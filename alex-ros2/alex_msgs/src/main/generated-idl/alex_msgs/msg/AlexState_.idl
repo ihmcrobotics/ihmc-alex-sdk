@@ -26,19 +26,27 @@ module alex_msgs
         boolean is_servoing;
         boolean is_unservoing;
         boolean is_servoed;
-        unsigned long number_of_joints;
-        unsigned long number_of_imus;
-        unsigned long number_of_fts;
+        boolean are_actuators_enabled;
+        boolean safe_power_up_complete;
+        boolean safe_power_down_complete;
+        boolean auto_startup_complete;
+        boolean auto_shutdown_complete;
+        double current_low_level_master_gain;
         /**
          * Joint States
          */
         sequence<alex_msgs::msg::dds::OneDOFJointState, 50> joint_states;
-        double low_level_master_gain;
+        unsigned long number_of_joints;
         /**
-         * Sensor States
+         * IMU States
          */
         sequence<alex_msgs::msg::dds::IMUState, 50> imu_states;
+        unsigned long number_of_imus;
+        /**
+         * FT States
+         */
         sequence<alex_msgs::msg::dds::ForceTorqueState, 50> ft_states;
+        unsigned long number_of_fts;
       };
     };
   };

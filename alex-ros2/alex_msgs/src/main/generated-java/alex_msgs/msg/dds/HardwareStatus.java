@@ -18,11 +18,20 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
    public boolean motor_fault_;
    public boolean missed_deadline_fault_;
    public boolean working_counter_fault_;
+   public boolean bus_over_voltage_fault_;
+   public boolean bus_over_current_fault_;
    /**
             * Important EtherCAT Stuff
             */
    public long working_counter_mismatch_count_;
    public long missed_deadlines_;
+   /**
+            * Power Management Board Information
+            */
+   public double battery_charge_percetage_;
+   public double estimated_runtime_minutes_;
+   public boolean bus_over_voltage_warning_;
+   public boolean bus_over_current_warning_;
    /**
             * Joint States
             */
@@ -50,9 +59,21 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       working_counter_fault_ = other.working_counter_fault_;
 
+      bus_over_voltage_fault_ = other.bus_over_voltage_fault_;
+
+      bus_over_current_fault_ = other.bus_over_current_fault_;
+
       working_counter_mismatch_count_ = other.working_counter_mismatch_count_;
 
       missed_deadlines_ = other.missed_deadlines_;
+
+      battery_charge_percetage_ = other.battery_charge_percetage_;
+
+      estimated_runtime_minutes_ = other.estimated_runtime_minutes_;
+
+      bus_over_voltage_warning_ = other.bus_over_voltage_warning_;
+
+      bus_over_current_warning_ = other.bus_over_current_warning_;
 
       device_status_providers_.set(other.device_status_providers_);
    }
@@ -99,6 +120,24 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
       return working_counter_fault_;
    }
 
+   public void setBusOverVoltageFault(boolean bus_over_voltage_fault)
+   {
+      bus_over_voltage_fault_ = bus_over_voltage_fault;
+   }
+   public boolean getBusOverVoltageFault()
+   {
+      return bus_over_voltage_fault_;
+   }
+
+   public void setBusOverCurrentFault(boolean bus_over_current_fault)
+   {
+      bus_over_current_fault_ = bus_over_current_fault;
+   }
+   public boolean getBusOverCurrentFault()
+   {
+      return bus_over_current_fault_;
+   }
+
    /**
             * Important EtherCAT Stuff
             */
@@ -121,6 +160,48 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
    public long getMissedDeadlines()
    {
       return missed_deadlines_;
+   }
+
+   /**
+            * Power Management Board Information
+            */
+   public void setBatteryChargePercetage(double battery_charge_percetage)
+   {
+      battery_charge_percetage_ = battery_charge_percetage;
+   }
+   /**
+            * Power Management Board Information
+            */
+   public double getBatteryChargePercetage()
+   {
+      return battery_charge_percetage_;
+   }
+
+   public void setEstimatedRuntimeMinutes(double estimated_runtime_minutes)
+   {
+      estimated_runtime_minutes_ = estimated_runtime_minutes;
+   }
+   public double getEstimatedRuntimeMinutes()
+   {
+      return estimated_runtime_minutes_;
+   }
+
+   public void setBusOverVoltageWarning(boolean bus_over_voltage_warning)
+   {
+      bus_over_voltage_warning_ = bus_over_voltage_warning;
+   }
+   public boolean getBusOverVoltageWarning()
+   {
+      return bus_over_voltage_warning_;
+   }
+
+   public void setBusOverCurrentWarning(boolean bus_over_current_warning)
+   {
+      bus_over_current_warning_ = bus_over_current_warning;
+   }
+   public boolean getBusOverCurrentWarning()
+   {
+      return bus_over_current_warning_;
    }
 
 
@@ -158,9 +239,21 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.working_counter_fault_, other.working_counter_fault_, epsilon)) return false;
 
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.bus_over_voltage_fault_, other.bus_over_voltage_fault_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.bus_over_current_fault_, other.bus_over_current_fault_, epsilon)) return false;
+
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.working_counter_mismatch_count_, other.working_counter_mismatch_count_, epsilon)) return false;
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.missed_deadlines_, other.missed_deadlines_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.battery_charge_percetage_, other.battery_charge_percetage_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.estimated_runtime_minutes_, other.estimated_runtime_minutes_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.bus_over_voltage_warning_, other.bus_over_voltage_warning_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.bus_over_current_warning_, other.bus_over_current_warning_, epsilon)) return false;
 
       if (this.device_status_providers_.size() != other.device_status_providers_.size()) { return false; }
       else
@@ -190,9 +283,21 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       if(this.working_counter_fault_ != otherMyClass.working_counter_fault_) return false;
 
+      if(this.bus_over_voltage_fault_ != otherMyClass.bus_over_voltage_fault_) return false;
+
+      if(this.bus_over_current_fault_ != otherMyClass.bus_over_current_fault_) return false;
+
       if(this.working_counter_mismatch_count_ != otherMyClass.working_counter_mismatch_count_) return false;
 
       if(this.missed_deadlines_ != otherMyClass.missed_deadlines_) return false;
+
+      if(this.battery_charge_percetage_ != otherMyClass.battery_charge_percetage_) return false;
+
+      if(this.estimated_runtime_minutes_ != otherMyClass.estimated_runtime_minutes_) return false;
+
+      if(this.bus_over_voltage_warning_ != otherMyClass.bus_over_voltage_warning_) return false;
+
+      if(this.bus_over_current_warning_ != otherMyClass.bus_over_current_warning_) return false;
 
       if (!this.device_status_providers_.equals(otherMyClass.device_status_providers_)) return false;
 
@@ -213,10 +318,22 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
       builder.append(this.missed_deadline_fault_);      builder.append(", ");
       builder.append("working_counter_fault=");
       builder.append(this.working_counter_fault_);      builder.append(", ");
+      builder.append("bus_over_voltage_fault=");
+      builder.append(this.bus_over_voltage_fault_);      builder.append(", ");
+      builder.append("bus_over_current_fault=");
+      builder.append(this.bus_over_current_fault_);      builder.append(", ");
       builder.append("working_counter_mismatch_count=");
       builder.append(this.working_counter_mismatch_count_);      builder.append(", ");
       builder.append("missed_deadlines=");
       builder.append(this.missed_deadlines_);      builder.append(", ");
+      builder.append("battery_charge_percetage=");
+      builder.append(this.battery_charge_percetage_);      builder.append(", ");
+      builder.append("estimated_runtime_minutes=");
+      builder.append(this.estimated_runtime_minutes_);      builder.append(", ");
+      builder.append("bus_over_voltage_warning=");
+      builder.append(this.bus_over_voltage_warning_);      builder.append(", ");
+      builder.append("bus_over_current_warning=");
+      builder.append(this.bus_over_current_warning_);      builder.append(", ");
       builder.append("device_status_providers=");
       builder.append(this.device_status_providers_);
       builder.append("}");

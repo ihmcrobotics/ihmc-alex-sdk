@@ -1,0 +1,53 @@
+#ifndef __alex_msgs__msg__FortRoboticsRCHandheldState__idl__
+#define __alex_msgs__msg__FortRoboticsRCHandheldState__idl__
+
+module alex_msgs
+{
+  module msg
+  {
+    module dds
+    {
+
+      @TypeCode(type="alex_msgs::msg::dds_::FortRoboticsRCHandheldState_")
+      struct FortRoboticsRCHandheldState
+      {
+        /**
+         * Normalized joystick values [-1.0 1.0]
+         */
+        double left_joystick_x_normalized;
+        double left_joystick_y_normalized;
+        double right_joystick_x_normalized;
+        double right_joystick_y_normalized;
+        /**
+         * Normalized trigger values [-1.0 1.0]
+         */
+        double left_trigger_normalized;
+        double right_trigger_normalized;
+        /**
+         * Button 1-4 (right side of controller)
+         */
+        boolean button1_pressed;
+        boolean button2_pressed;
+        boolean button3_pressed;
+        boolean button4_pressed;
+        /**
+         * DPad (left side of controller)
+         */
+        boolean button_up_pressed;
+        boolean button_down_pressed;
+        boolean button_left_pressed;
+        boolean button_right_pressed;
+        /**
+         * E-stop
+         */
+        boolean e_stop_pressed;
+        /**
+         * Battery
+         */
+        unsigned short battery_level;
+      };
+    };
+  };
+};
+
+#endif

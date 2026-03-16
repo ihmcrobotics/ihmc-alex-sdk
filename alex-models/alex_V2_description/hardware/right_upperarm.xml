@@ -7,8 +7,8 @@
             <position>0</position>
             <actuatorPackage>A041</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>-17.630081737765728</motorOffset>
+            <outputOffset>-0.7895133269257686</outputOffset>
             <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
@@ -18,8 +18,8 @@
             <position>0</position>
             <actuatorPackage>A042</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>-21.848624711251574</motorOffset>
+            <outputOffset>-1.227421503475604</outputOffset>
             <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
@@ -29,8 +29,8 @@
             <position>0</position>
             <actuatorPackage>A043</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>56.17366255589614</motorOffset>
+            <outputOffset>2.912126837783423</outputOffset>
             <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
@@ -40,8 +40,8 @@
             <position>0</position>
             <actuatorPackage>A044</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>0.0</motorOffset>
-            <outputOffset>0.0</outputOffset>
+            <motorOffset>30.342619729308936</motorOffset>
+            <outputOffset>1.4348315873446802</outputOffset>
             <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
@@ -115,7 +115,7 @@
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
-            <doPDControlOnTwitter>true</doPDControlOnTwitter>
+            <doPDControlOnTwitter>false</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -138,7 +138,7 @@
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
-            <doPDControlOnTwitter>true</doPDControlOnTwitter>
+            <doPDControlOnTwitter>false</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
     </transmissions>
