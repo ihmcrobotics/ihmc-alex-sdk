@@ -1,7 +1,6 @@
 <?xml version = "1.0" ?>
 <robot name="Alex">
 
-
     <joint name="RIGHT_ELBOW_Y" type="revolute">
         <origin rpy="0.0 0.0 0.0" xyz="0.015 0.0 -0.3127"/>
         <axis xyz="0.0 1.0 0.0"/>
@@ -36,5 +35,4 @@
             </geometry>
         </collision>
     </link>
-
 </robot>
