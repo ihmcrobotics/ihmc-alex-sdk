@@ -13,9 +13,9 @@
 
     <link name="RIGHT_SHOULDER_Y_LINK">
         <inertial>
-            <mass value="3.02036119"/>
+            <mass value="3.00752318"/>
             <origin rpy="0 0 0" xyz="-0.00264 -0.12135 -0.006824"/>
-            <inertia ixx="0.0111129" ixy="-0.000253225" ixz="0.000153325" iyy="0.006974065" iyz="-0.00308767" izz="0.00995614"/>
+            <inertia ixx="0.01107924" ixy="-0.00026479" ixz="-0.00015595" iyy="0.00695098" iyz="-0.00308767" izz="0.00991808"/>
         </inertial>
         <visual>
             <geometry>
@@ -36,9 +36,9 @@
 
     <link name="RIGHT_SHOULDER_X_LINK">
         <inertial>
-            <mass value="1.16159753"/>
+            <mass value="1.1615873 "/>
             <origin rpy="0 0 0" xyz="0.01053 -0.02124 -0.1052690"/>
-            <inertia ixx="0.00786868" ixy="-0.00016417" ixz="-0.000756485" iyy="0.0072708" iyz="-0.000991765" izz="0.001804575" />
+            <inertia ixx="0.00786905" ixy="-0.00016408" ixz="-0.00075601" iyy="0.00727111" iyz="-0.00099114" izz="0.00180465" />
         </inertial>
         <visual>
             <geometry>
@@ -59,9 +59,9 @@
 
     <link name="RIGHT_SHOULDER_Z_LINK">
         <inertial>
-            <mass value="3.117556435"/>
-            <origin rpy="0 0 0" xyz="0.00510403 -0.00274 -0.21745"/>
-            <inertia ixx="0.026446635" ixy="-0.000006465" ixz="0.00150743" iyy="0.0261981" iyz="-0.000402335" izz="0.003066395"/>
+            <mass value="3.10111287"/>
+            <origin rpy="0 0 0" xyz="0.00524 -0.00274 -0.21745"/>
+            <inertia ixx="0.0262817" ixy="0.00000996" ixz="0.0015423" iyy="0.02606342" iyz="-0.0004047" izz="0.00304834"/>
         </inertial>
         <visual>
             <geometry>
@@ -121,6 +121,7 @@
         <parent link="RIGHT_SHOULDER_Z_LINK"/>
         <child link="RIGHT_SHOULDER_Z_IMU_LINK"/>
     </joint>
+
     <link name="RIGHT_SHOULDER_Z_IMU_LINK">
         <inertial>
             <mass value="0"/>
@@ -128,6 +129,7 @@
             <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
+
     <gazebo reference="RIGHT_SHOULDER_Z_IMU_LINK">
         <sensor name="right_shoulder_z_imu" type="imu">
             <always_on>true</always_on>
@@ -150,4 +152,5 @@
             </imu>
         </sensor>
     </gazebo>
+
 </robot>
