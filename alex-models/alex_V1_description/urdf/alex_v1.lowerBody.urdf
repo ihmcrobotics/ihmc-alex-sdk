@@ -371,10 +371,10 @@
     </link>
     <link name="LEFT_FOOT">
         <inertial>
-            <!-- Mass is measured by Sean as 1.26 June 9 -->
-            <mass value="1.28831268"/>
+            <!-- Mass is measured by Robert as 0.810 Feb 6 -->
+            <mass value="0.810"/>
             <origin rpy="0 0 0" xyz="0.03793372	-0.00000219	-0.0443663"/>
-            <inertia ixx="0.0013169" ixy="0.00001054" ixz="0.00036437" iyy="0.00385838" iyz="-0.00000573" izz="0.00406674"/>
+            <inertia ixx="0.00082919" ixy="0.000006674" ixz="0.00022883" iyy="0.0024327" iyz="-0.0000044" izz="0.0025653"/>
         </inertial>
         <visual>
             <geometry>
@@ -389,42 +389,6 @@
             <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
         </collision>
     </link>
-    <!-- LeftFootIMU-->
-<!--    <link name="LEFT_FOOT_IMU_LINK">-->
-<!--        <inertial>-->
-<!--            <mass value="0"/>-->
-<!--            <origin rpy="0 0 0" xyz="0 0 0"/>-->
-<!--            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>-->
-<!--        </inertial>-->
-<!--    </link>-->
-<!--    <joint name="LEFT_FOOT_IMU_JOINT" type="fixed">-->
-<!--        <origin rpy="0 0 1.570796" xyz="-0.03575526 0.01180178 -0.04979705"/>-->
-<!--        <axis xyz="0 0 1"/>-->
-<!--        <parent link="LEFT_FOOT"/>-->
-<!--        <child link="LEFT_FOOT_IMU_LINK"/>-->
-<!--    </joint>-->
-<!--    <gazebo reference="LEFT_FOOT_IMU_LINK">-->
-<!--        <sensor name="left_foot_imu" type="imu">-->
-<!--            <always_on>true</always_on>-->
-<!--            <imu>-->
-<!--                <noise>-->
-<!--                    <type>gaussian</type>-->
-<!--                    <rate>-->
-<!--                        <mean>0</mean>-->
-<!--                        <stddev>0.0002</stddev>-->
-<!--                        <bias_mean>7.5e-06</bias_mean>-->
-<!--                        <bias_stddev>8e-07</bias_stddev>-->
-<!--                    </rate>-->
-<!--                    <accel>-->
-<!--                        <mean>0</mean>-->
-<!--                        <stddev>0.017</stddev>-->
-<!--                        <bias_mean>0.1</bias_mean>-->
-<!--                        <bias_stddev>0.001</bias_stddev>-->
-<!--                    </accel>-->
-<!--                </noise>-->
-<!--            </imu>-->
-<!--        </sensor>-->
-<!--    </gazebo>-->
 
 
     <!-- RIGHT LEG LINKS -->
@@ -628,10 +592,10 @@
     </link>
     <link name="RIGHT_FOOT">
         <inertial>
-            <!-- Mass is measured by Sean as 1.264275635 June 9 -->
-            <mass value="1.28831268"/>
+            <!-- Mass is measured by Robert as 0.810 Feb 6 -->
+            <mass value="0.810"/>
             <origin rpy="0 0 0" xyz="0.03793372	-0.00000219	-0.0443663"/>
-            <inertia ixx="0.0013169" ixy="-0.00001054" ixz="0.00036437" iyy="0.00385838" iyz="0.00000573" izz="0.00406674"/>
+            <inertia ixx="0.00082919" ixy="0.000006674" ixz="0.00022883" iyy="0.0024327" iyz="-0.0000044" izz="0.0025653"/>
         </inertial>
         <visual>
             <geometry>
@@ -646,42 +610,6 @@
             <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
         </collision>
     </link>
-    <!-- RightFootIMU-->
-<!--    <link name="RIGHT_FOOT_IMU_LINK">-->
-<!--        <inertial>-->
-<!--            <mass value="0"/>-->
-<!--            <origin rpy="0 0 0" xyz="0 0 0"/>-->
-<!--            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>-->
-<!--        </inertial>-->
-<!--    </link>-->
-<!--    <joint name="RIGHT_FOOT_IMU_JOINT" type="fixed">-->
-<!--        <origin rpy="0 0 1.570796" xyz="-0.03575526 0.01180178 -0.04979705"/>-->
-<!--        <axis xyz="0 0 1"/>-->
-<!--        <parent link="RIGHT_FOOT"/>-->
-<!--        <child link="RIGHT_FOOT_IMU_LINK"/>-->
-<!--    </joint>-->
-<!--    <gazebo reference="RIGHT_FOOT_IMU_LINK">-->
-<!--        <sensor name="right_foot_imu" type="imu">-->
-<!--            <always_on>true</always_on>-->
-<!--            <imu>-->
-<!--                <noise>-->
-<!--                    <type>gaussian</type>-->
-<!--                    <rate>-->
-<!--                        <mean>0</mean>-->
-<!--                        <stddev>0.0002</stddev>-->
-<!--                        <bias_mean>7.5e-06</bias_mean>-->
-<!--                        <bias_stddev>8e-07</bias_stddev>-->
-<!--                    </rate>-->
-<!--                    <accel>-->
-<!--                        <mean>0</mean>-->
-<!--                        <stddev>0.017</stddev>-->
-<!--                        <bias_mean>0.1</bias_mean>-->
-<!--                        <bias_stddev>0.001</bias_stddev>-->
-<!--                    </accel>-->
-<!--                </noise>-->
-<!--            </imu>-->
-<!--        </sensor>-->
-<!--    </gazebo>-->
 
     <!-- SPINE LINKS -->
     <link name="TORSO_LINK">
