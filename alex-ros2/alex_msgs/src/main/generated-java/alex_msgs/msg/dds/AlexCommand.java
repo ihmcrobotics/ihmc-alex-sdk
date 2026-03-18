@@ -33,8 +33,8 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
    public boolean calibrate_;
    public boolean servo_actuators_;
    public boolean unservo_quickly_;
-   public boolean use_high_level_servo_;
-   public double low_level_master_gain_;
+   public boolean use_requested_master_gain_;
+   public double requested_master_gain_;
    /**
             * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
             */
@@ -79,9 +79,9 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       unservo_quickly_ = other.unservo_quickly_;
 
-      use_high_level_servo_ = other.use_high_level_servo_;
+      use_requested_master_gain_ = other.use_requested_master_gain_;
 
-      low_level_master_gain_ = other.low_level_master_gain_;
+      requested_master_gain_ = other.requested_master_gain_;
 
       robot_control_state_ = other.robot_control_state_;
 
@@ -204,22 +204,22 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       return unservo_quickly_;
    }
 
-   public void setUseHighLevelServo(boolean use_high_level_servo)
+   public void setUseRequestedMasterGain(boolean use_requested_master_gain)
    {
-      use_high_level_servo_ = use_high_level_servo;
+      use_requested_master_gain_ = use_requested_master_gain;
    }
-   public boolean getUseHighLevelServo()
+   public boolean getUseRequestedMasterGain()
    {
-      return use_high_level_servo_;
+      return use_requested_master_gain_;
    }
 
-   public void setLowLevelMasterGain(double low_level_master_gain)
+   public void setRequestedMasterGain(double requested_master_gain)
    {
-      low_level_master_gain_ = low_level_master_gain;
+      requested_master_gain_ = requested_master_gain;
    }
-   public double getLowLevelMasterGain()
+   public double getRequestedMasterGain()
    {
-      return low_level_master_gain_;
+      return requested_master_gain_;
    }
 
    /**
@@ -293,9 +293,9 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.unservo_quickly_, other.unservo_quickly_, epsilon)) return false;
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.use_high_level_servo_, other.use_high_level_servo_, epsilon)) return false;
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.use_requested_master_gain_, other.use_requested_master_gain_, epsilon)) return false;
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.low_level_master_gain_, other.low_level_master_gain_, epsilon)) return false;
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.requested_master_gain_, other.requested_master_gain_, epsilon)) return false;
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.robot_control_state_, other.robot_control_state_, epsilon)) return false;
 
@@ -341,9 +341,9 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if(this.unservo_quickly_ != otherMyClass.unservo_quickly_) return false;
 
-      if(this.use_high_level_servo_ != otherMyClass.use_high_level_servo_) return false;
+      if(this.use_requested_master_gain_ != otherMyClass.use_requested_master_gain_) return false;
 
-      if(this.low_level_master_gain_ != otherMyClass.low_level_master_gain_) return false;
+      if(this.requested_master_gain_ != otherMyClass.requested_master_gain_) return false;
 
       if(this.robot_control_state_ != otherMyClass.robot_control_state_) return false;
 
@@ -380,10 +380,10 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       builder.append(this.servo_actuators_);      builder.append(", ");
       builder.append("unservo_quickly=");
       builder.append(this.unservo_quickly_);      builder.append(", ");
-      builder.append("use_high_level_servo=");
-      builder.append(this.use_high_level_servo_);      builder.append(", ");
-      builder.append("low_level_master_gain=");
-      builder.append(this.low_level_master_gain_);      builder.append(", ");
+      builder.append("use_requested_master_gain=");
+      builder.append(this.use_requested_master_gain_);      builder.append(", ");
+      builder.append("requested_master_gain=");
+      builder.append(this.requested_master_gain_);      builder.append(", ");
       builder.append("robot_control_state=");
       builder.append(this.robot_control_state_);      builder.append(", ");
       builder.append("joint_commands=");

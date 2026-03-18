@@ -15,7 +15,7 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "1ded6de8a17dfc44849fb0c42e6f5786c30da1f4d0219dcd356639172037a51c";
+   		return "cb9e18c8fb50874ed3678aa5922b747c41e73d350a0bc695900a6bf83eb54798";
    }
    
    @Override
@@ -169,9 +169,9 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
 
       cdr.write_type_7(data.getUnservoQuickly());
 
-      cdr.write_type_7(data.getUseHighLevelServo());
+      cdr.write_type_7(data.getUseRequestedMasterGain());
 
-      cdr.write_type_6(data.getLowLevelMasterGain());
+      cdr.write_type_6(data.getRequestedMasterGain());
 
       cdr.write_type_9(data.getRobotControlState());
 
@@ -205,9 +205,9 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       	
       data.setUnservoQuickly(cdr.read_type_7());
       	
-      data.setUseHighLevelServo(cdr.read_type_7());
+      data.setUseRequestedMasterGain(cdr.read_type_7());
       	
-      data.setLowLevelMasterGain(cdr.read_type_6());
+      data.setRequestedMasterGain(cdr.read_type_6());
       	
       data.setRobotControlState(cdr.read_type_9());
       	
@@ -230,8 +230,8 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       ser.write_type_7("calibrate", data.getCalibrate());
       ser.write_type_7("servo_actuators", data.getServoActuators());
       ser.write_type_7("unservo_quickly", data.getUnservoQuickly());
-      ser.write_type_7("use_high_level_servo", data.getUseHighLevelServo());
-      ser.write_type_6("low_level_master_gain", data.getLowLevelMasterGain());
+      ser.write_type_7("use_requested_master_gain", data.getUseRequestedMasterGain());
+      ser.write_type_6("requested_master_gain", data.getRequestedMasterGain());
       ser.write_type_9("robot_control_state", data.getRobotControlState());
       ser.write_type_e("joint_commands", data.getJointCommands());
       ser.write_type_4("number_of_joints", data.getNumberOfJoints());
@@ -250,8 +250,8 @@ public class AlexCommandPubSubType implements us.ihmc.pubsub.TopicDataType<alex_
       data.setCalibrate(ser.read_type_7("calibrate"));
       data.setServoActuators(ser.read_type_7("servo_actuators"));
       data.setUnservoQuickly(ser.read_type_7("unservo_quickly"));
-      data.setUseHighLevelServo(ser.read_type_7("use_high_level_servo"));
-      data.setLowLevelMasterGain(ser.read_type_6("low_level_master_gain"));
+      data.setUseRequestedMasterGain(ser.read_type_7("use_requested_master_gain"));
+      data.setRequestedMasterGain(ser.read_type_6("requested_master_gain"));
       data.setRobotControlState(ser.read_type_9("robot_control_state"));
       ser.read_type_e("joint_commands", data.getJointCommands());
       data.setNumberOfJoints(ser.read_type_4("number_of_joints"));

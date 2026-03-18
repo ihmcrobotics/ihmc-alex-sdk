@@ -37,8 +37,8 @@ module alex_msgs
         boolean calibrate;
         boolean servo_actuators;
         boolean unservo_quickly;
-        boolean use_high_level_servo;
-        double low_level_master_gain;
+        boolean use_requested_master_gain;
+        double requested_master_gain;
         /**
          * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
          */
