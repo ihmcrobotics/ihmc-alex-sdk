@@ -1,6 +1,6 @@
 # This file uses centimeters as units for non-parametric coordinates.
 
-mtllib torso_v02.mtl
+mtllib torso.mtl
 g default
 v 0.123503 0.061277 0.408809
 v 0.118291 0.091094 0.408842
