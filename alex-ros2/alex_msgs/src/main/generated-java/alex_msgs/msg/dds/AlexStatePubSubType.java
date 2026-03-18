@@ -15,7 +15,7 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "21afbee18a5b15b9596c00d3462e17a9833500942e8ef88271734515a5c9bd9c";
+   		return "1478e9d293e35d5b513f97b31d0cb5d711470bfe2a32ad5f5bac459762657571";
    }
    
    @Override
@@ -53,6 +53,12 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       int initial_alignment = current_alignment;
 
       current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
@@ -122,6 +128,15 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
+      current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
+
+
       current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
 
 
@@ -160,6 +175,12 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       cdr.write_type_7(data.getIsFaulted());
 
       cdr.write_type_7(data.getIsCalibrated());
+
+      cdr.write_type_7(data.getIsServoing());
+
+      cdr.write_type_7(data.getIsUnservoing());
+
+      cdr.write_type_7(data.getIsServoed());
 
       cdr.write_type_7(data.getAreActuatorsEnabled());
 
@@ -201,6 +222,12 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       	
       data.setIsCalibrated(cdr.read_type_7());
       	
+      data.setIsServoing(cdr.read_type_7());
+      	
+      data.setIsUnservoing(cdr.read_type_7());
+      	
+      data.setIsServoed(cdr.read_type_7());
+      	
       data.setAreActuatorsEnabled(cdr.read_type_7());
       	
       data.setSafePowerUpComplete(cdr.read_type_7());
@@ -231,6 +258,9 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       ser.write_type_6("time", data.getTime());
       ser.write_type_7("is_faulted", data.getIsFaulted());
       ser.write_type_7("is_calibrated", data.getIsCalibrated());
+      ser.write_type_7("is_servoing", data.getIsServoing());
+      ser.write_type_7("is_unservoing", data.getIsUnservoing());
+      ser.write_type_7("is_servoed", data.getIsServoed());
       ser.write_type_7("are_actuators_enabled", data.getAreActuatorsEnabled());
       ser.write_type_7("safe_power_up_complete", data.getSafePowerUpComplete());
       ser.write_type_7("safe_power_down_complete", data.getSafePowerDownComplete());
@@ -251,6 +281,9 @@ public class AlexStatePubSubType implements us.ihmc.pubsub.TopicDataType<alex_ms
       data.setTime(ser.read_type_6("time"));
       data.setIsFaulted(ser.read_type_7("is_faulted"));
       data.setIsCalibrated(ser.read_type_7("is_calibrated"));
+      data.setIsServoing(ser.read_type_7("is_servoing"));
+      data.setIsUnservoing(ser.read_type_7("is_unservoing"));
+      data.setIsServoed(ser.read_type_7("is_servoed"));
       data.setAreActuatorsEnabled(ser.read_type_7("are_actuators_enabled"));
       data.setSafePowerUpComplete(ser.read_type_7("safe_power_up_complete"));
       data.setSafePowerDownComplete(ser.read_type_7("safe_power_down_complete"));

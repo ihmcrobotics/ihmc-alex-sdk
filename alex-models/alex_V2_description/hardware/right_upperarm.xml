@@ -9,6 +9,7 @@
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>-17.630081737765728</motorOffset>
             <outputOffset>-0.7895133269257686</outputOffset>
+            <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -19,6 +20,7 @@
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>-21.848624711251574</motorOffset>
             <outputOffset>-1.227421503475604</outputOffset>
+            <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -29,6 +31,7 @@
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>56.17366255589614</motorOffset>
             <outputOffset>2.912126837783423</outputOffset>
+            <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -39,6 +42,7 @@
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>30.342619729308936</motorOffset>
             <outputOffset>1.4348315873446802</outputOffset>
+            <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
 

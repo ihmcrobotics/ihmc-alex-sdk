@@ -15,7 +15,10 @@ bool request_enable_actuators
 bool request_disable_actuators
 bool clear_faults
 bool calibrate
-float64 low_level_master_gain
+bool servo_actuators
+bool unservo_quickly
+bool use_requested_master_gain
+float64 requested_master_gain
 
 # Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
 byte robot_control_state

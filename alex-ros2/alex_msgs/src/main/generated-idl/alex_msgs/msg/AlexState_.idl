@@ -23,6 +23,9 @@ module alex_msgs
         double time;
         boolean is_faulted;
         boolean is_calibrated;
+        boolean is_servoing;
+        boolean is_unservoing;
+        boolean is_servoed;
         boolean are_actuators_enabled;
         boolean safe_power_up_complete;
         boolean safe_power_down_complete;

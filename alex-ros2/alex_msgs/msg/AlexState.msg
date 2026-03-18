@@ -4,6 +4,10 @@
 float64 time
 bool is_faulted
 bool is_calibrated
+bool is_servoing
+bool is_unservoing
+bool is_servoed
+
 bool are_actuators_enabled
 bool safe_power_up_complete
 bool safe_power_down_complete

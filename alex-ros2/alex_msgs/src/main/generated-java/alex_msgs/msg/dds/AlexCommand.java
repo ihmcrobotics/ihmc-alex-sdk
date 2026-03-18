@@ -31,7 +31,10 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
    public boolean request_disable_actuators_;
    public boolean clear_faults_;
    public boolean calibrate_;
-   public double low_level_master_gain_;
+   public boolean servo_actuators_;
+   public boolean unservo_quickly_;
+   public boolean use_requested_master_gain_;
+   public double requested_master_gain_;
    /**
             * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
             */
@@ -72,7 +75,13 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       calibrate_ = other.calibrate_;
 
-      low_level_master_gain_ = other.low_level_master_gain_;
+      servo_actuators_ = other.servo_actuators_;
+
+      unservo_quickly_ = other.unservo_quickly_;
+
+      use_requested_master_gain_ = other.use_requested_master_gain_;
+
+      requested_master_gain_ = other.requested_master_gain_;
 
       robot_control_state_ = other.robot_control_state_;
 
@@ -177,13 +186,40 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       return calibrate_;
    }
 
-   public void setLowLevelMasterGain(double low_level_master_gain)
+   public void setServoActuators(boolean servo_actuators)
    {
-      low_level_master_gain_ = low_level_master_gain;
+      servo_actuators_ = servo_actuators;
    }
-   public double getLowLevelMasterGain()
+   public boolean getServoActuators()
    {
-      return low_level_master_gain_;
+      return servo_actuators_;
+   }
+
+   public void setUnservoQuickly(boolean unservo_quickly)
+   {
+      unservo_quickly_ = unservo_quickly;
+   }
+   public boolean getUnservoQuickly()
+   {
+      return unservo_quickly_;
+   }
+
+   public void setUseRequestedMasterGain(boolean use_requested_master_gain)
+   {
+      use_requested_master_gain_ = use_requested_master_gain;
+   }
+   public boolean getUseRequestedMasterGain()
+   {
+      return use_requested_master_gain_;
+   }
+
+   public void setRequestedMasterGain(double requested_master_gain)
+   {
+      requested_master_gain_ = requested_master_gain;
+   }
+   public double getRequestedMasterGain()
+   {
+      return requested_master_gain_;
    }
 
    /**
@@ -253,7 +289,13 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.calibrate_, other.calibrate_, epsilon)) return false;
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.low_level_master_gain_, other.low_level_master_gain_, epsilon)) return false;
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.servo_actuators_, other.servo_actuators_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.unservo_quickly_, other.unservo_quickly_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.use_requested_master_gain_, other.use_requested_master_gain_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.requested_master_gain_, other.requested_master_gain_, epsilon)) return false;
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.robot_control_state_, other.robot_control_state_, epsilon)) return false;
 
@@ -295,7 +337,13 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if(this.calibrate_ != otherMyClass.calibrate_) return false;
 
-      if(this.low_level_master_gain_ != otherMyClass.low_level_master_gain_) return false;
+      if(this.servo_actuators_ != otherMyClass.servo_actuators_) return false;
+
+      if(this.unservo_quickly_ != otherMyClass.unservo_quickly_) return false;
+
+      if(this.use_requested_master_gain_ != otherMyClass.use_requested_master_gain_) return false;
+
+      if(this.requested_master_gain_ != otherMyClass.requested_master_gain_) return false;
 
       if(this.robot_control_state_ != otherMyClass.robot_control_state_) return false;
 
@@ -328,8 +376,14 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       builder.append(this.clear_faults_);      builder.append(", ");
       builder.append("calibrate=");
       builder.append(this.calibrate_);      builder.append(", ");
-      builder.append("low_level_master_gain=");
-      builder.append(this.low_level_master_gain_);      builder.append(", ");
+      builder.append("servo_actuators=");
+      builder.append(this.servo_actuators_);      builder.append(", ");
+      builder.append("unservo_quickly=");
+      builder.append(this.unservo_quickly_);      builder.append(", ");
+      builder.append("use_requested_master_gain=");
+      builder.append(this.use_requested_master_gain_);      builder.append(", ");
+      builder.append("requested_master_gain=");
+      builder.append(this.requested_master_gain_);      builder.append(", ");
       builder.append("robot_control_state=");
       builder.append(this.robot_control_state_);      builder.append(", ");
       builder.append("joint_commands=");
