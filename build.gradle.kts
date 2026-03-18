@@ -4,7 +4,7 @@ plugins {
 
 ihmc {
    group = "us.ihmc"
-   version = "0.3.9"
+   version = "0.3.10"
    vcsUrl = "https://github.com/ihmcrobotics/ihmc-alex-sdk"
    openSource = true
 
