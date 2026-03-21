@@ -5,6 +5,7 @@
         <gearRatio>19.02319731</gearRatio>
         <inputResolution>17</inputResolution>
         <outputResolution>17</outputResolution>
+        <torqueLimit>20.86</torqueLimit>
     </physicalParameters>
     <silParameters>
         <frictionGain>0.05</frictionGain>
