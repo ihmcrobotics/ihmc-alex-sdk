@@ -371,10 +371,10 @@
     </link>
     <link name="LEFT_FOOT">
         <inertial>
-            <!-- Mass is measured by Robert as 0.810 Feb 6 -->
-            <mass value="0.810"/>
-            <origin rpy="0 0 0" xyz="0.03793372	-0.00000219	-0.0443663"/>
-            <inertia ixx="0.00082919" ixy="0.000006674" ixz="0.00022883" iyy="0.0024327" iyz="-0.0000044" izz="0.0025653"/>
+            <!-- Mass is measured by Jared on CAD as 0.799 Mar 23 -->
+            <mass value="0.799"/>
+            <origin rpy="0 0 0" xyz="0.036	-0.0002014	-0.039"/>
+            <inertia ixx="0.001" ixy="-0.0000003106" ixz="0.0002444" iyy="0.003" iyz="0.000001811" izz="0.003"/>
         </inertial>
         <visual>
             <geometry>
@@ -592,10 +592,10 @@
     </link>
     <link name="RIGHT_FOOT">
         <inertial>
-            <!-- Mass is measured by Robert as 0.810 Feb 6 -->
-            <mass value="0.810"/>
-            <origin rpy="0 0 0" xyz="0.03793372	-0.00000219	-0.0443663"/>
-            <inertia ixx="0.00082919" ixy="0.000006674" ixz="0.00022883" iyy="0.0024327" iyz="-0.0000044" izz="0.0025653"/>
+            <!-- Mass is measured by Jared on CAD as 0.799 Mar 23 -->
+            <mass value="0.799"/>
+            <origin rpy="0 0 0" xyz="0.036	-0.0002014	-0.039"/>
+            <inertia ixx="0.001" ixy="-0.0000003106" ixz="0.0002444" iyy="0.003" iyz="0.000001811" izz="0.003"/>
         </inertial>
         <visual>
             <geometry>
