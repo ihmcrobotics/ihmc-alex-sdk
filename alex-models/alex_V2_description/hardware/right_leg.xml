@@ -65,9 +65,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.0</angularVelocityBiasX>
-                    <angularVelocityBiasY>0.0</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+                    <angularVelocityBiasX>-0.004234490746427077</angularVelocityBiasX>
+                    <angularVelocityBiasY>-0.021172453732135377</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.018519904811731994</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>RightHipTempSensor</name>
@@ -88,9 +88,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.0</angularVelocityBiasX>
-                    <angularVelocityBiasY>0.0</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+                    <angularVelocityBiasX>0.012154852683454821</angularVelocityBiasX>
+                    <angularVelocityBiasY>-0.0071320542257432154</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.008144070882122023</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>RightThighTempSensor</name>
@@ -111,9 +111,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.0</angularVelocityBiasX>
-                    <angularVelocityBiasY>0.0</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+                    <angularVelocityBiasX>-0.008708669648312297</angularVelocityBiasX>
+                    <angularVelocityBiasY>-0.03228865774193827</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.011116204009802906</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>RightAnkleTempSensor</name>

@@ -60,9 +60,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.0</angularVelocityBiasX> <!-- Use -0.0021944782233056037 for Nadia arms -->
-                    <angularVelocityBiasY>0.0</angularVelocityBiasY> <!-- Use -0.01763039543480957 for Nadia arms -->
-                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ> <!-- Use 0.020911459962858755 for Nadia arms -->
+                    <angularVelocityBiasX>-0.01060486927815888</angularVelocityBiasX> <!-- Use -0.0021944782233056037 for Nadia arms -->
+                    <angularVelocityBiasY>0.004841700740254355</angularVelocityBiasY> <!-- Use -0.01763039543480957 for Nadia arms -->
+                    <angularVelocityBiasZ>0.013134910919105867</angularVelocityBiasZ> <!-- Use 0.020911459962858755 for Nadia arms -->
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>left_shoulder_pitch_temp_sensor</name>
@@ -83,9 +83,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.0</angularVelocityBiasX> <!-- Use 0.032885214928856314 for Nadia arms -->
-                    <angularVelocityBiasY>0.0</angularVelocityBiasY> <!-- Use -0.01019473621215273 for Nadia arms -->
-                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ> <!-- Use -0.008692690437948404 for Nadia arms -->
+                    <angularVelocityBiasX>0.016224224922788515</angularVelocityBiasX> <!-- Use 0.032885214928856314 for Nadia arms -->
+                    <angularVelocityBiasY>-0.004916270388619109</angularVelocityBiasY> <!-- Use -0.01019473621215273 for Nadia arms -->
+                    <angularVelocityBiasZ>0.016591746761157662</angularVelocityBiasZ> <!-- Use -0.008692690437948404 for Nadia arms -->
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>left_shoulder_yaw_temp_sensor</name>

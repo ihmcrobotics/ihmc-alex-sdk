@@ -136,7 +136,7 @@
     <joint name="PELVIS_IMU_JOINT" type="fixed">
         <parent link="PELVIS_LINK"/>
         <child link="PELVIS_IMU_LINK"/>
-        <origin xyz="-0.08687724 0.01225028 -0.08051472" rpy="-0.01399 -0.013054 1.570796"/>
+        <origin xyz="-0.08687724 0.01225028 -0.08051472" rpy="0.005114 -0.0001262 1.570796"/> <!-- Added 0.005114 roll, -0.0001262 pitch bias -->
     </joint>
     <link name="PELVIS_IMU_LINK">
         <inertial>
@@ -200,7 +200,7 @@
         </inertial>
     </link>
     <joint name="LEFT_HIP_X_IMU_JOINT" type="fixed">
-        <origin rpy="-1.570796 0 1.570796" xyz="-0.01922309 0.10145013 -0.01488788"/>
+        <origin rpy="-1.5803397 -0.0019308 1.570796" xyz="-0.01922309 0.10145013 -0.01488788"/> <!-- Added -0.0095437 roll, -0.0019308 pitch bias -->
         <axis xyz="0 0 1"/>
         <parent link="LEFT_HIP_X_LINK"/>
         <child link="LEFT_HIP_X_IMU_LINK"/>
@@ -290,8 +290,8 @@
             <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
-    <joint name="LEFT_THIGH_IMU_JOINT" type="fixed">
-        <origin rpy="1.437982 0 1.570796" xyz="0.10004 0.03746 -0.21194"/>
+    <joint name="LEFT_THIGH_IMU_JOINT" type="fixed"> <!-- Added 0.1266934 roll, -0.006992 pitch bias -->
+        <origin rpy="1.6974894 -0.006992 1.570796" xyz="0.10004 0.03746 -0.21194"/>
         <axis xyz="0 0 1"/>
         <parent link="LEFT_THIGH"/>
         <child link="LEFT_THIGH_IMU_LINK"/>
@@ -328,7 +328,7 @@
         </inertial>
     </link>
     <joint name="LEFT_SHIN_IMU_JOINT" type="fixed">
-        <origin rpy="1.403695170631842 0 -1.570796" xyz="0.05655120 0.00084826 -0.15664831"/>
+        <origin rpy="1.396297 0.005288 -1.570796" xyz="0.05655120 0.00084826 -0.15664831"/> <!-- Added -0.174499 roll, 0.005288 pitch bias -->
         <axis xyz="0 0 1"/>
         <parent link="LEFT_SHIN"/>
         <child link="LEFT_SHIN_IMU_LINK"/>
@@ -420,7 +420,7 @@
         </inertial>
     </link>
     <joint name="RIGHT_HIP_X_IMU_JOINT" type="fixed">
-        <origin rpy="-1.570796 0 1.570796" xyz="-0.01922309 -0.07694987 -0.01488788"/>
+        <origin rpy="-1.582622 0.00171 1.570796" xyz="-0.01922309 -0.07694987 -0.01488788"/> <!-- Added -0.011826 roll, 0.00171 pitch bias -->
         <axis xyz="0 0 1"/>
         <parent link="RIGHT_HIP_X_LINK"/>
         <child link="RIGHT_HIP_X_IMU_LINK"/>
@@ -491,7 +491,7 @@
         </inertial>
     </link>
     <joint name="RIGHT_THIGH_IMU_JOINT" type="fixed">
-        <origin rpy="1.6947717585 0 1.570796" xyz="0.10003618 -0.033541826 -0.21194191"/>
+        <origin rpy="1.69207 -0.005085 1.570796" xyz="0.10003618 -0.033541826 -0.21194191"/> <!-- Added 0.121274 roll, -0.005085 pitch bias -->
         <axis xyz="0 0 1"/>
         <parent link="RIGHT_THIGH"/>
         <child link="RIGHT_THIGH_IMU_LINK"/>
@@ -548,7 +548,7 @@
         </inertial>
     </link>
     <joint name="RIGHT_SHIN_IMU_JOINT" type="fixed">
-        <origin rpy="1.403695170631842 0 -1.570796" xyz="0.05673025 -0.00875818 -0.15674961"/>
+        <origin rpy="1.4114646 0.00076419 -1.570796" xyz="0.05673025 -0.00875818 -0.15674961"/> <!-- Added -0.1593314 roll, 0.00076419 pitch bias -->
         <axis xyz="0 0 1"/>
         <parent link="RIGHT_SHIN"/>
         <child link="RIGHT_SHIN_IMU_LINK"/>
@@ -639,41 +639,41 @@
     </link>
 
     <!-- TORSO IMU -->
-<!--    <joint name="TORSO_IMU_JOINT" type="fixed">-->
-<!--        <origin rpy="0.0 0.0 -1.5708" xyz="-0.009753 -0.01075 0.373405"/>-->
-<!--        <axis xyz="0 0 1"/>-->
-<!--        <parent link="TORSO_LINK"/>-->
-<!--        <child link="TORSO_IMU_LINK"/>-->
-<!--    </joint>-->
+    <joint name="TORSO_IMU_JOINT" type="fixed">
+        <origin rpy="-1.561264 -0.329453 -1.570796" xyz="0.094766 0.018319 0.255014"/> <!-- Added 0.009536 roll, 0.002147 pitch bias -->
+        <axis xyz="0 0 1"/>
+        <parent link="TORSO_LINK"/>
+        <child link="TORSO_IMU_LINK"/>
+    </joint>
 
-<!--    <link name="TORSO_IMU_LINK">-->
-<!--        <inertial>-->
-<!--            <mass value="0"/>-->
-<!--            <origin rpy="0 0 0" xyz="0 0 0"/>-->
-<!--            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>-->
-<!--        </inertial>-->
-<!--    </link>-->
+    <link name="TORSO_IMU_LINK">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
 
-<!--    <gazebo reference="TORSO_IMU_LINK">-->
-<!--        <sensor name="torso_imu" type="imu">-->
-<!--            <always_on>true</always_on>-->
-<!--            <imu>-->
-<!--                <noise>-->
-<!--                    <type>gaussian</type>-->
-<!--                    <rate>-->
-<!--                        <mean>0</mean>-->
-<!--                        <stddev>0.0002</stddev>-->
-<!--                        <bias_mean>7.5e-06</bias_mean>-->
-<!--                        <bias_stddev>8e-07</bias_stddev>-->
-<!--                    </rate>-->
-<!--                    <accel>-->
-<!--                        <mean>0</mean>-->
-<!--                        <stddev>0.017</stddev>-->
-<!--                        <bias_mean>0.1</bias_mean>-->
-<!--                        <bias_stddev>0.001</bias_stddev>-->
-<!--                    </accel>-->
-<!--                </noise>-->
-<!--            </imu>-->
-<!--        </sensor>-->
-<!--    </gazebo>-->
+    <gazebo reference="TORSO_IMU_LINK">
+        <sensor name="torso_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
 </robot>

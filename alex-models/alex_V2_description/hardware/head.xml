@@ -35,9 +35,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.0038882745218764324</angularVelocityBiasX>
-                    <angularVelocityBiasY>0.005124000123349491</angularVelocityBiasY>
-                    <angularVelocityBiasZ>-0.013401231091837131</angularVelocityBiasZ>
+                    <angularVelocityBiasX>0.01668762202334092</angularVelocityBiasX>
+                    <angularVelocityBiasY>-0.005092041702621745</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.008996295434862061</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>HeadTempSensor</name>
