@@ -50,6 +50,12 @@
         <limit effort="145.2" lower="-0.436332" upper="0.436332" velocity="9.72"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
+    <joint name="LEFT_TOE_FIXED" type="fixed">
+        <parent link="LEFT_FOOT"/>
+        <!-- position of toe center in LEFT_FOOT frame -->
+        <child link="LEFT_TOE_LINK"/>
+        <origin xyz="0.11 0 -0.06" rpy="0 0 0"/>
+    </joint>
 
     <!-- RIGHT LEG JOINTS -->
     <joint name="RIGHT_HIP_X" type="revolute">
@@ -99,6 +105,11 @@
         <child link="RIGHT_FOOT"/>
         <limit effort="145.2" lower="-0.436332" upper="0.436332" velocity="9.72"/>
         <dynamics damping="0.05" friction="0.0"/>
+    </joint>
+    <joint name="RIGHT_TOE_FIXED" type="fixed">
+        <parent link="RIGHT_FOOT"/>
+        <child link="RIGHT_TOE_LINK"/>
+        <origin xyz="0.11 0 -0.06" rpy="0 0 0"/>
     </joint>
 
     <!-- SPINE JOINTS -->
@@ -389,6 +400,19 @@
             <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
         </collision>
     </link>
+    <link name="LEFT_TOE_LINK">
+        <inertial>
+            <mass value="0.0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+        <visual>
+            <geometry>
+            <sphere radius="0.001"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </visual>
+    </link>
 
 
     <!-- RIGHT LEG LINKS -->
@@ -609,6 +633,19 @@
             </geometry>
             <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
         </collision>
+    </link>
+    <link name="RIGHT_TOE_LINK">
+        <inertial>
+            <mass value="0.0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+        <visual>
+            <geometry>
+            <sphere radius="0.001"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </visual>
     </link>
 
     <!-- SPINE LINKS -->

@@ -18,4 +18,24 @@
             <origin rpy="0.0 1.57 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
     </link>
+
+    <joint name="LEFT_NUB_TIP_FIXED" type="fixed">
+        <parent link="LEFT_NUB"/>
+        <child link="LEFT_NUB_TIP"/>
+        <origin xyz="-0.01 0.0 -0.4" rpy="0 0 0"/>
+    </joint>
+
+    <link name="LEFT_NUB_TIP">
+        <inertial>
+            <mass value="0.0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <sphere radius="0.001"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </visual>
+    </link>
 </robot>
