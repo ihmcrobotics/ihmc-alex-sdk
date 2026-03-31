@@ -7,7 +7,7 @@
         <axis xyz="1 0 0"/>
         <parent link="PELVIS_LINK"/>
         <child link="LEFT_HIP_X_LINK"/>
-        <limit effort="160.7" lower="-0.488692" upper="0.872665" velocity="10.38"/>
+        <limit effort="160.7" lower="-0.36792" upper="0.872665" velocity="10.38"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_HIP_Z" type="revolute">
@@ -57,7 +57,7 @@
         <axis xyz="1 0 0"/>
         <parent link="PELVIS_LINK"/>
         <child link="RIGHT_HIP_X_LINK"/>
-        <limit effort="160.7" lower="-0.872665" upper="0.488692" velocity="10.38"/>
+        <limit effort="160.7" lower="-0.872665" upper="0.36792" velocity="10.38"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_HIP_Z" type="revolute">
