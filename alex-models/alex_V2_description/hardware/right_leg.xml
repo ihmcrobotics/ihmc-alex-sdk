@@ -7,8 +7,8 @@
             <position>0</position>
             <actuatorPackage>A038</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>-17.19568727233903</motorOffset>
-            <outputOffset>3.6058430976446907</outputOffset>
+            <motorOffset>-17.12413810228235</motorOffset>
+            <outputOffset>3.6116908873777254</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -17,8 +17,8 @@
             <position>0</position>
             <actuatorPackage>A036</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>-3.9995947457162657</motorOffset>
-            <outputOffset>0.25885009917707746</outputOffset>
+            <motorOffset>-3.9967380597865745</motorOffset>
+            <outputOffset>0.2588101008381488</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -27,8 +27,8 @@
             <position>0</position>
             <actuatorPackage>A037</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>1.2806591396992817</motorOffset>
-            <outputOffset>6.113584476186289</outputOffset>
+            <motorOffset>1.2673384330808084</motorOffset>
+            <outputOffset>-0.17056130694562271</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -160,7 +160,7 @@
             <motorName>RightHipYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>-1.0472</lowerJointLimit>
-            <upperJointLimit>0.3490658504</upperJointLimit>
+            <upperJointLimit>0.349066</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
@@ -184,7 +184,7 @@
             <motorName>RightKneePitchMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>0.0</lowerJointLimit>
-            <upperJointLimit>2.445206282</upperJointLimit>
+            <upperJointLimit>2.44346</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
