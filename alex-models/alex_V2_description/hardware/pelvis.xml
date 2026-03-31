@@ -7,8 +7,8 @@
             <position>0</position>
             <actuatorPackage>A029</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>-5.496784296346783</motorOffset>
-            <outputOffset>1.4864902786467185</outputOffset>
+            <motorOffset>-5.45437056624942</motorOffset>
+            <outputOffset>1.4861158210189716</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -27,8 +27,8 @@
             <position>0</position>
             <actuatorPackage>A030</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>10.794728517900174</motorOffset>
-            <outputOffset>3.572764452392374</outputOffset>
+            <motorOffset>10.762360401648316</motorOffset>
+            <outputOffset>3.5672786313596023</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -63,8 +63,8 @@
             <jointName>SPINE_Z</jointName>
             <motorName>PelvisYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-0.5235987756</lowerJointLimit>
-            <upperJointLimit>0.5235987756</upperJointLimit>
+            <lowerJointLimit>-0.523599</lowerJointLimit>
+            <upperJointLimit>0.523599</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
