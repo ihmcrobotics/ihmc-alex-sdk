@@ -17,6 +17,15 @@ float64 battery_charge_percetage
 float64 estimated_runtime_minutes
 bool bus_over_voltage_warning
 bool bus_over_current_warning
+float64 battery_voltage_volts
+float64 battery_current_amps
+float64 battery_power_watts
+float64 power_supply_voltage_volts
+float64 power_supply_current_amps
+float64 power_supply_power_watts
+float64 motor_bus_voltage_volts
+float64 motor_bus_current_amps
+float64 motor_bus_power_watts
 
 # Joint States
 ROSDeviceStatusProvider[<=75] device_status_providers
