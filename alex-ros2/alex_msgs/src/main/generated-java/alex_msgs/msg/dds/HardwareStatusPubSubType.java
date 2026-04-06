@@ -15,7 +15,7 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "e1e40f5a0f4edd96a06b6e1913c385bafb43549a0395e8523d458e8ccfa86f77";
+   		return "47024ba828b19cec71429666718bb7a54e5623fff777e9f3822441900f54f526";
    }
    
    @Override
@@ -76,6 +76,24 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
 
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);for(int i0 = 0; i0 < 75; ++i0)
       {
           current_alignment += alex_msgs.msg.dds.ROSDeviceStatusProviderPubSubType.getMaxCdrSerializedSize(current_alignment);}
@@ -128,6 +146,33 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       current_alignment += 1 + us.ihmc.idl.CDR.alignment(current_alignment, 1);
 
 
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
+      current_alignment += 8 + us.ihmc.idl.CDR.alignment(current_alignment, 8);
+
+
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4);
       for(int i0 = 0; i0 < data.getDeviceStatusProviders().size(); ++i0)
       {
@@ -163,6 +208,24 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
 
       cdr.write_type_7(data.getBusOverCurrentWarning());
 
+      cdr.write_type_6(data.getBatteryVoltageVolts());
+
+      cdr.write_type_6(data.getBatteryCurrentAmps());
+
+      cdr.write_type_6(data.getBatteryPowerWatts());
+
+      cdr.write_type_6(data.getPowerSupplyVoltageVolts());
+
+      cdr.write_type_6(data.getPowerSupplyCurrentAmps());
+
+      cdr.write_type_6(data.getPowerSupplyPowerWatts());
+
+      cdr.write_type_6(data.getMotorBusVoltageVolts());
+
+      cdr.write_type_6(data.getMotorBusCurrentAmps());
+
+      cdr.write_type_6(data.getMotorBusPowerWatts());
+
       if(data.getDeviceStatusProviders().size() <= 75)
       cdr.write_type_e(data.getDeviceStatusProviders());else
           throw new RuntimeException("device_status_providers field exceeds the maximum length: %d > %d".formatted(data.getDeviceStatusProviders().size(), 75));
@@ -195,6 +258,24 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       	
       data.setBusOverCurrentWarning(cdr.read_type_7());
       	
+      data.setBatteryVoltageVolts(cdr.read_type_6());
+      	
+      data.setBatteryCurrentAmps(cdr.read_type_6());
+      	
+      data.setBatteryPowerWatts(cdr.read_type_6());
+      	
+      data.setPowerSupplyVoltageVolts(cdr.read_type_6());
+      	
+      data.setPowerSupplyCurrentAmps(cdr.read_type_6());
+      	
+      data.setPowerSupplyPowerWatts(cdr.read_type_6());
+      	
+      data.setMotorBusVoltageVolts(cdr.read_type_6());
+      	
+      data.setMotorBusCurrentAmps(cdr.read_type_6());
+      	
+      data.setMotorBusPowerWatts(cdr.read_type_6());
+      	
       cdr.read_type_e(data.getDeviceStatusProviders());	
 
    }
@@ -214,6 +295,15 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       ser.write_type_6("estimated_runtime_minutes", data.getEstimatedRuntimeMinutes());
       ser.write_type_7("bus_over_voltage_warning", data.getBusOverVoltageWarning());
       ser.write_type_7("bus_over_current_warning", data.getBusOverCurrentWarning());
+      ser.write_type_6("battery_voltage_volts", data.getBatteryVoltageVolts());
+      ser.write_type_6("battery_current_amps", data.getBatteryCurrentAmps());
+      ser.write_type_6("battery_power_watts", data.getBatteryPowerWatts());
+      ser.write_type_6("power_supply_voltage_volts", data.getPowerSupplyVoltageVolts());
+      ser.write_type_6("power_supply_current_amps", data.getPowerSupplyCurrentAmps());
+      ser.write_type_6("power_supply_power_watts", data.getPowerSupplyPowerWatts());
+      ser.write_type_6("motor_bus_voltage_volts", data.getMotorBusVoltageVolts());
+      ser.write_type_6("motor_bus_current_amps", data.getMotorBusCurrentAmps());
+      ser.write_type_6("motor_bus_power_watts", data.getMotorBusPowerWatts());
       ser.write_type_e("device_status_providers", data.getDeviceStatusProviders());
    }
 
@@ -232,6 +322,15 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       data.setEstimatedRuntimeMinutes(ser.read_type_6("estimated_runtime_minutes"));
       data.setBusOverVoltageWarning(ser.read_type_7("bus_over_voltage_warning"));
       data.setBusOverCurrentWarning(ser.read_type_7("bus_over_current_warning"));
+      data.setBatteryVoltageVolts(ser.read_type_6("battery_voltage_volts"));
+      data.setBatteryCurrentAmps(ser.read_type_6("battery_current_amps"));
+      data.setBatteryPowerWatts(ser.read_type_6("battery_power_watts"));
+      data.setPowerSupplyVoltageVolts(ser.read_type_6("power_supply_voltage_volts"));
+      data.setPowerSupplyCurrentAmps(ser.read_type_6("power_supply_current_amps"));
+      data.setPowerSupplyPowerWatts(ser.read_type_6("power_supply_power_watts"));
+      data.setMotorBusVoltageVolts(ser.read_type_6("motor_bus_voltage_volts"));
+      data.setMotorBusCurrentAmps(ser.read_type_6("motor_bus_current_amps"));
+      data.setMotorBusPowerWatts(ser.read_type_6("motor_bus_power_watts"));
       ser.read_type_e("device_status_providers", data.getDeviceStatusProviders());
    }
 

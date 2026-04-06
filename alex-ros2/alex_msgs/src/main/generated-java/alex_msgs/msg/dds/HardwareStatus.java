@@ -32,6 +32,15 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
    public double estimated_runtime_minutes_;
    public boolean bus_over_voltage_warning_;
    public boolean bus_over_current_warning_;
+   public double battery_voltage_volts_;
+   public double battery_current_amps_;
+   public double battery_power_watts_;
+   public double power_supply_voltage_volts_;
+   public double power_supply_current_amps_;
+   public double power_supply_power_watts_;
+   public double motor_bus_voltage_volts_;
+   public double motor_bus_current_amps_;
+   public double motor_bus_power_watts_;
    /**
             * Joint States
             */
@@ -74,6 +83,24 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
       bus_over_voltage_warning_ = other.bus_over_voltage_warning_;
 
       bus_over_current_warning_ = other.bus_over_current_warning_;
+
+      battery_voltage_volts_ = other.battery_voltage_volts_;
+
+      battery_current_amps_ = other.battery_current_amps_;
+
+      battery_power_watts_ = other.battery_power_watts_;
+
+      power_supply_voltage_volts_ = other.power_supply_voltage_volts_;
+
+      power_supply_current_amps_ = other.power_supply_current_amps_;
+
+      power_supply_power_watts_ = other.power_supply_power_watts_;
+
+      motor_bus_voltage_volts_ = other.motor_bus_voltage_volts_;
+
+      motor_bus_current_amps_ = other.motor_bus_current_amps_;
+
+      motor_bus_power_watts_ = other.motor_bus_power_watts_;
 
       device_status_providers_.set(other.device_status_providers_);
    }
@@ -204,6 +231,87 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
       return bus_over_current_warning_;
    }
 
+   public void setBatteryVoltageVolts(double battery_voltage_volts)
+   {
+      battery_voltage_volts_ = battery_voltage_volts;
+   }
+   public double getBatteryVoltageVolts()
+   {
+      return battery_voltage_volts_;
+   }
+
+   public void setBatteryCurrentAmps(double battery_current_amps)
+   {
+      battery_current_amps_ = battery_current_amps;
+   }
+   public double getBatteryCurrentAmps()
+   {
+      return battery_current_amps_;
+   }
+
+   public void setBatteryPowerWatts(double battery_power_watts)
+   {
+      battery_power_watts_ = battery_power_watts;
+   }
+   public double getBatteryPowerWatts()
+   {
+      return battery_power_watts_;
+   }
+
+   public void setPowerSupplyVoltageVolts(double power_supply_voltage_volts)
+   {
+      power_supply_voltage_volts_ = power_supply_voltage_volts;
+   }
+   public double getPowerSupplyVoltageVolts()
+   {
+      return power_supply_voltage_volts_;
+   }
+
+   public void setPowerSupplyCurrentAmps(double power_supply_current_amps)
+   {
+      power_supply_current_amps_ = power_supply_current_amps;
+   }
+   public double getPowerSupplyCurrentAmps()
+   {
+      return power_supply_current_amps_;
+   }
+
+   public void setPowerSupplyPowerWatts(double power_supply_power_watts)
+   {
+      power_supply_power_watts_ = power_supply_power_watts;
+   }
+   public double getPowerSupplyPowerWatts()
+   {
+      return power_supply_power_watts_;
+   }
+
+   public void setMotorBusVoltageVolts(double motor_bus_voltage_volts)
+   {
+      motor_bus_voltage_volts_ = motor_bus_voltage_volts;
+   }
+   public double getMotorBusVoltageVolts()
+   {
+      return motor_bus_voltage_volts_;
+   }
+
+   public void setMotorBusCurrentAmps(double motor_bus_current_amps)
+   {
+      motor_bus_current_amps_ = motor_bus_current_amps;
+   }
+   public double getMotorBusCurrentAmps()
+   {
+      return motor_bus_current_amps_;
+   }
+
+   public void setMotorBusPowerWatts(double motor_bus_power_watts)
+   {
+      motor_bus_power_watts_ = motor_bus_power_watts;
+   }
+   public double getMotorBusPowerWatts()
+   {
+      return motor_bus_power_watts_;
+   }
+
 
    /**
             * Joint States
@@ -255,6 +363,24 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.bus_over_current_warning_, other.bus_over_current_warning_, epsilon)) return false;
 
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.battery_voltage_volts_, other.battery_voltage_volts_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.battery_current_amps_, other.battery_current_amps_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.battery_power_watts_, other.battery_power_watts_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.power_supply_voltage_volts_, other.power_supply_voltage_volts_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.power_supply_current_amps_, other.power_supply_current_amps_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.power_supply_power_watts_, other.power_supply_power_watts_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.motor_bus_voltage_volts_, other.motor_bus_voltage_volts_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.motor_bus_current_amps_, other.motor_bus_current_amps_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.motor_bus_power_watts_, other.motor_bus_power_watts_, epsilon)) return false;
+
       if (this.device_status_providers_.size() != other.device_status_providers_.size()) { return false; }
       else
       {
@@ -299,6 +425,24 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       if(this.bus_over_current_warning_ != otherMyClass.bus_over_current_warning_) return false;
 
+      if(this.battery_voltage_volts_ != otherMyClass.battery_voltage_volts_) return false;
+
+      if(this.battery_current_amps_ != otherMyClass.battery_current_amps_) return false;
+
+      if(this.battery_power_watts_ != otherMyClass.battery_power_watts_) return false;
+
+      if(this.power_supply_voltage_volts_ != otherMyClass.power_supply_voltage_volts_) return false;
+
+      if(this.power_supply_current_amps_ != otherMyClass.power_supply_current_amps_) return false;
+
+      if(this.power_supply_power_watts_ != otherMyClass.power_supply_power_watts_) return false;
+
+      if(this.motor_bus_voltage_volts_ != otherMyClass.motor_bus_voltage_volts_) return false;
+
+      if(this.motor_bus_current_amps_ != otherMyClass.motor_bus_current_amps_) return false;
+
+      if(this.motor_bus_power_watts_ != otherMyClass.motor_bus_power_watts_) return false;
+
       if (!this.device_status_providers_.equals(otherMyClass.device_status_providers_)) return false;
 
       return true;
@@ -334,6 +478,24 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
       builder.append(this.bus_over_voltage_warning_);      builder.append(", ");
       builder.append("bus_over_current_warning=");
       builder.append(this.bus_over_current_warning_);      builder.append(", ");
+      builder.append("battery_voltage_volts=");
+      builder.append(this.battery_voltage_volts_);      builder.append(", ");
+      builder.append("battery_current_amps=");
+      builder.append(this.battery_current_amps_);      builder.append(", ");
+      builder.append("battery_power_watts=");
+      builder.append(this.battery_power_watts_);      builder.append(", ");
+      builder.append("power_supply_voltage_volts=");
+      builder.append(this.power_supply_voltage_volts_);      builder.append(", ");
+      builder.append("power_supply_current_amps=");
+      builder.append(this.power_supply_current_amps_);      builder.append(", ");
+      builder.append("power_supply_power_watts=");
+      builder.append(this.power_supply_power_watts_);      builder.append(", ");
+      builder.append("motor_bus_voltage_volts=");
+      builder.append(this.motor_bus_voltage_volts_);      builder.append(", ");
+      builder.append("motor_bus_current_amps=");
+      builder.append(this.motor_bus_current_amps_);      builder.append(", ");
+      builder.append("motor_bus_power_watts=");
+      builder.append(this.motor_bus_power_watts_);      builder.append(", ");
       builder.append("device_status_providers=");
       builder.append(this.device_status_providers_);
       builder.append("}");
