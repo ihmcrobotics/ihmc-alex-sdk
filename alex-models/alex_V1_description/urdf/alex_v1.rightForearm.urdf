@@ -103,10 +103,28 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
-        <collision name="right_gripper_z_collision">
-            <origin xyz="0 0 -0.02" rpy="0 0 0"/>
+<!--        <collision name="right_gripper_z_collision">-->
+<!--            <origin xyz="0 0 -0.02" rpy="0 0 0"/>-->
+<!--            <geometry>-->
+<!--                <sphere radius="0.05"/>-->
+<!--            </geometry>-->
+<!--        </collision>-->
+        <collision name="right_fist_collision">
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.012 -0.075"/>
             <geometry>
-                <sphere radius="0.05"/>
+                <cylinder radius="0.047" length="0.06"/>
+            </geometry>
+        </collision>
+        <collision name="right_finger_collision">
+            <origin rpy="0.0 0.0 0.0" xyz="-0.001 -0.013 -0.145"/>
+            <geometry>
+                <box size="0.08 0.025 0.075"/>
+            </geometry>
+        </collision>
+        <collision name="right_thumb_collision">
+            <origin rpy="0.0 -1.1 0.0" xyz="0.08 0.0 -0.06"/>
+            <geometry>
+                <cylinder radius="0.015" length="0.07"/>
             </geometry>
         </collision>
     </link>
