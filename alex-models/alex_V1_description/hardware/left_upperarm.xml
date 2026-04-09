@@ -28,8 +28,8 @@
             <actuatorPackage>A026</actuatorPackage> <!-- Use J3L_Nadia for Nadia arms -->
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <outputEncoderInverted>true</outputEncoderInverted>
-            <motorOffset>532.7796063399244</motorOffset> <!-- Use 1156066 for Nadia arms -->
-            <outputOffset>3.483998</outputOffset> <!-- Use 1208760 for Nadia arms -->
+            <motorOffset>1462.0399974334346</motorOffset> <!-- Use 1156066 for Nadia arms -->
+            <outputOffset>3.481394119367995</outputOffset> <!-- Use 1208760 for Nadia arms -->
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
