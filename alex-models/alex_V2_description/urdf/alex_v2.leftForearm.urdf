@@ -24,7 +24,7 @@
         </visual>
         <collision name="left_elbow_y_collision">
             <geometry>
-                <capsule radius="0.05" length="0.18"/>...
+                <capsule radius="0.05" length="0.18"/>
             </geometry>
             <origin rpy="0 0 0" xyz="-0.02 0 -0.12"/>
         </collision>
