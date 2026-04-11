@@ -109,12 +109,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
-        <collision name="right_gripper_z_collision">-->
-            <origin xyz="0 0 -0.01" rpy="0 0 0"/>-->
-            <geometry>-->
-                <sphere radius="0.06"/>-->
-            </geometry>-->
-        </collision>-->
+        <collision name="right_gripper_z_collision">
+            <origin xyz="0 0 -0.01" rpy="0 0 0"/>
+            <geometry>
+                <sphere radius="0.06"/>
+            </geometry>
+        </collision>
         <collision name="right_fist_collision">
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.012 -0.075"/>
             <geometry>
