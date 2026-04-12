@@ -256,9 +256,9 @@
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
         <collision name="left_thigh_collision">
-            <origin xyz="0.03 0.02 -0.22" rpy="0.0 -0.15 0.0" /> <!-- Centered along thigh -->
+            <origin xyz="0.03 0.02 -0.18" rpy="0.0 -0.15 0.0" /> <!-- Centered along thigh -->
             <geometry>
-                <capsule radius="0.08" length="0.18"/> 
+                <capsule radius="0.08" length="0.26"/>
             </geometry>
         </collision>
     </link>
@@ -483,9 +483,9 @@
         </visual>
         <collision name="right_thigh_collision">
             <geometry>
-                <capsule radius="0.08" length="0.18"/><!-- width (X), depth (Y), height (Z) -->
+                <capsule radius="0.08" length="0.26"/><!-- width (X), depth (Y), height (Z) -->
             </geometry>
-            <origin rpy="0.0 -0.15 0.0" xyz="0.03 -0.02 -0.22"/>
+            <origin rpy="0.0 -0.15 0.0" xyz="0.03 -0.02 -0.18"/>
         </collision>
     </link>
     <!-- RightThighIMU-->
