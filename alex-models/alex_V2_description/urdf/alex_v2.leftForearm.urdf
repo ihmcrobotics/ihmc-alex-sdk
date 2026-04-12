@@ -110,9 +110,9 @@
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="left_gripper_z_collision">
-            <origin xyz="0 0 -0.1" rpy="0 0 0"/>
+            <origin xyz="0 -0.01 -0.1" rpy="0 0 0"/>
             <geometry>
-                <sphere radius="0.06"/>
+                <capsule radius="0.04" length="0.1"/>
             </geometry>
         </collision>
         <collision name="left_fist_collision">
