@@ -256,10 +256,10 @@
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
         <collision name="left_thigh_collision">
+            <origin xyz="0.03 0.02 -0.22" rpy="0.0 -0.15 0.0" /> <!-- Centered along thigh -->
             <geometry>
                 <capsule radius="0.08" length="0.18"/> 
             </geometry>
-            <origin rpy="0.0 -0.15 0.0" xyz="0.03 0.02 -0.22"/> <!-- Centered along thigh -->
         </collision>
     </link>
     <link name="LEFT_SHIN">
