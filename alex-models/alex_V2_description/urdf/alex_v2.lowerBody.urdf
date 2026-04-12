@@ -283,9 +283,9 @@
         </collision>
         <collision name="left_calf_collision">
             <geometry>
-                <capsule radius="0.04" length="0.15"/> 
+                <capsule radius="0.065" length="0.11"/>
             </geometry>
-            <origin rpy="0.0 0.65 0.0" xyz="0.04 -0.04 -0.085"/>
+            <origin rpy="0.0 0.8 0.0" xyz="0.04 -0.02 -0.08"/>
         </collision>
     </link>
     <!-- LeftThighIMU-->
@@ -546,9 +546,9 @@
         </collision>
         <collision name="right_calf_collision">
             <geometry>
-                <capsule radius="0.04" length="0.15"/> 
+                <capsule radius="0.065" length="0.11"/>
             </geometry>
-            <origin rpy="0.0 0.65 0.0" xyz="0.04 0.04 -0.085"/>
+            <origin rpy="0.0 0.8 0.0" xyz="0.04 0.02 -0.08"/>
         </collision>
     </link>
     <!-- RightShinIMU-->
