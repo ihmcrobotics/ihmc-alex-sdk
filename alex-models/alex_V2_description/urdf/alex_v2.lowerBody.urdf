@@ -261,6 +261,12 @@
                 <capsule radius="0.08" length="0.26"/>
             </geometry>
         </collision>
+        <collision name="left_thigh_lower_collision">
+            <geometry>
+                <cylinder radius ="0.03" length="0.155"/><!-- width (X), depth (Y), height (Z) -->
+            </geometry>
+            <origin rpy="1.5708 0.0 0.0" xyz="0.0 0.016 -0.32"/>
+        </collision>
     </link>
     <link name="LEFT_SHIN">
         <inertial>
@@ -277,7 +283,7 @@
         </visual>
         <collision name="left_shin_collision">
             <geometry>
-                <capsule radius="0.065" length="0.3"/>  <!-- Adjust based on shin dimensions -->
+                <capsule radius="0.06" length="0.3"/>  <!-- Adjust based on shin dimensions -->
             </geometry>
             <origin rpy="0.0 0.2 0.0" xyz="0.04 0.0 -0.20"/> <!-- Centered along shin -->
         </collision>
@@ -487,6 +493,12 @@
             </geometry>
             <origin rpy="0.0 -0.15 0.0" xyz="0.03 -0.02 -0.18"/>
         </collision>
+        <collision name="left_thigh_lower_collision">
+            <geometry>
+                <cylinder radius ="0.03" length="0.155"/><!-- width (X), depth (Y), height (Z) -->
+            </geometry>
+            <origin rpy="1.5708 0.0 0.0" xyz="0.0 -0.016 -0.32"/>
+        </collision>
     </link>
     <!-- RightThighIMU-->
     <link name="RIGHT_THIGH_IMU_LINK">
@@ -540,7 +552,7 @@
         </visual>
         <collision name="right_shin_collision">
             <geometry>
-                <capsule radius="0.065" length="0.3"/>
+                <capsule radius="0.06" length="0.3"/>
             </geometry>
             <origin rpy="0 0.2 0" xyz="0.04 0 -0.20"/> <!-- centered along the shin length -->
         </collision>
