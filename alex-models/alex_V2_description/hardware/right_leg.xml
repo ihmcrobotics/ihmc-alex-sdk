@@ -111,9 +111,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>-0.008708669648312297</angularVelocityBiasX>
-                    <angularVelocityBiasY>-0.03228865774193827</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.011116204009802906</angularVelocityBiasZ>
+                    <angularVelocityBiasX>0.022498728192337072</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.005102694509530989</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.01010951375687873</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>RightAnkleTempSensor</name>
@@ -209,7 +209,7 @@
             <pitchSign>-1.0</pitchSign>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
-            <doDampingControlOnTwitters>false</doDampingControlOnTwitters>
+            <doDampingControlOnTwitters>true</doDampingControlOnTwitters>
             <present>true</present>
         </XmlJointPairMechanism>
     </transmissions>

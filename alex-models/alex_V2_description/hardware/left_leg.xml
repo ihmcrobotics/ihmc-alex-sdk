@@ -209,7 +209,7 @@
             <pitchSign>-1.0</pitchSign>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
-            <doDampingControlOnTwitters>false</doDampingControlOnTwitters>
+            <doDampingControlOnTwitters>true</doDampingControlOnTwitters>
             <present>true</present>
         </XmlJointPairMechanism>
     </transmissions>
