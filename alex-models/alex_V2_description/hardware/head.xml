@@ -16,9 +16,9 @@
             <alias>4003</alias>
             <position>0</position>
             <actuatorPackage>A050</actuatorPackage>
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>4.364440056865215</motorOffset>
-            <outputOffset>3.0865645357203206</outputOffset>
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <motorOffset>-8.565625987626039</motorOffset>
+            <outputOffset>3.0670383337326776</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
