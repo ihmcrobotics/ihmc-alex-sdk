@@ -22,6 +22,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="left_elbow_y_collision">
+            <geometry>
+                <capsule radius="0.05" length="0.18"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.02 0 -0.12"/>
+        </collision>
     </link>
 
     <joint name="LEFT_WRIST_Z" type="revolute">
@@ -103,12 +109,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
-<!--        <collision name="left_gripper_z_collision">-->
-<!--            <origin xyz="0 0 -0.02" rpy="0 0 0"/>-->
-<!--            <geometry>-->
-<!--                <sphere radius="0.05"/>-->
-<!--            </geometry>-->
-<!--        </collision>-->
+        <collision name="left_gripper_z_collision">
+            <origin xyz="0 -0.01 -0.1" rpy="0 0 0"/>
+            <geometry>
+                <capsule radius="0.04" length="0.1"/>
+            </geometry>
+        </collision>
         <collision name="left_fist_collision">
             <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.012 -0.075"/>
             <geometry>
