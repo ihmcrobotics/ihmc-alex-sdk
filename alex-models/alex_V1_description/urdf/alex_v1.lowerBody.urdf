@@ -494,7 +494,7 @@
             </geometry>
             <origin rpy="0.0 -0.15 0.0" xyz="0.03 -0.02 -0.18"/>
         </collision>
-        <collision name="left_thigh_lower_collision">
+        <collision name="right_thigh_lower_collision">
             <geometry>
                 <cylinder radius ="0.03" length="0.155"/><!-- width (X), depth (Y), height (Z) -->
             </geometry>
