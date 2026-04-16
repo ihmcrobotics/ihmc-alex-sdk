@@ -2,15 +2,15 @@
 <robot name="Alex">
     <!-- NECK & HEAD LINKS -->
     <joint name="NECK_Z" type="revolute">
-        <origin rpy="0 0 0" xyz="-0.015 0 0.450403"/>
+        <origin rpy="0 0 0" xyz="0.0072 0 0.4669"/>
         <axis xyz="0 0 1"/>
         <parent link="TORSO_LINK"/>
         <child link="NECK_Z_LINK"/>
-        <limit effort="20.86" lower="-1.5708" upper="1.5708" velocity="17.3"/>
+        <limit effort="20.86" lower="-1.22173" upper="1.22173" velocity="17.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="NECK_Y" type="revolute">
-        <origin rpy="0 0 0" xyz="0.025 0.01 0.189597"/>
+        <origin rpy="0 0 0" xyz="0.015 -0.01 0.130"/>
         <axis xyz="0 1 0"/>
         <parent link="NECK_Z_LINK"/>
         <child link="HEAD_LINK"/>
@@ -21,31 +21,31 @@
     <!-- NECK & HEAD LINKS -->
     <link name="NECK_Z_LINK">
         <inertial>
-            <mass value="1.03172573"/>
-            <origin rpy="0 0 0" xyz="0.00626571 0.0059834 0.15148116"/>
-            <inertia ixx="0.00611354" ixy="-0.00005224" ixz="-0.00058532" iyy="0.00602503" iyz="-0.00028073" izz="0.0009799"/>
+            <mass value="0.50522843"/>
+            <origin rpy="0 0 0" xyz="0.00150863 -0.00038635 0.0372219"/>
+            <inertia ixx="0.00165148" ixy="0.00001368" ixz="-0.00006912" iyy="0.00176222" iyz="0.00007727" izz="0.00039986"/>
         </inertial>
         <visual>
             <geometry>
-                <cylinder radius="0.05" length="0.1"/>
+                <mesh filename="package://alex_V2_description/meshes/neck.obj"/>
             </geometry>
-            <material name="gray">
-                <color rgba="0.05 0.05 0.05 1.0"/>
-            </material>
-            <origin rpy="0.0 0.0 0.0" xyz="0 0 0.0"/>
+<!--            <material name="gray">-->
+<!--                <color rgba="0.05 0.05 0.05 1.0"/>-->
+<!--            </material>-->
+            <origin rpy="1.5708 0.0 0.0" xyz="0 0 0.0"/>
         </visual>
     </link>
     <link name="HEAD_LINK">
         <inertial>
-            <mass value="1.27065932"/>
-            <origin rpy="0 0 0" xyz="0.0407664 -0.00396678 0.007163"/>
-            <inertia ixx="0.00424227" ixy="-0.00008839" ixz="0.00054485" iyy="0.00501825" iyz="-0.00010863" izz="0.00451978"/>
+            <mass value="2.53238993"/>
+            <origin rpy="0 0 0" xyz="0.02203239 0.01559991 0.03487138"/>
+            <inertia ixx="0.0099523" ixy="0.00038238" ixz="0.00059895" iyy="0.01235238" iyz="0.00044277" izz="0.01250517"/>
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/ALX02_01_A02_HeadLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/head.obj"/>
             </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <origin rpy="1.5708 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="head_collision">
             <origin xyz="0.03237 -0.013568 0.007163" rpy="0 0 0"/>
@@ -57,7 +57,7 @@
 
     <!-- HEAD IMU -->
     <joint name="HEAD_IMU_JOINT" type="fixed">
-        <origin rpy="0.56723 0.0 1.5708 " xyz="0.040556 -0.014155 0.057016"/>
+        <origin rpy="0.0 0.0 0.0" xyz="-0.02432603 -0.00225290 0.07425800"/>
         <axis xyz="0 0 1"/>
         <parent link="HEAD_LINK"/>
         <child link="HEAD_IMU_LINK"/>
