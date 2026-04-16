@@ -27,6 +27,7 @@
             <position>0</position>
             <actuatorPackage>A011</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <outputFromMotorEncoder>true</outputFromMotorEncoder>
             <motorOffset>4.984881497860406</motorOffset>
             <outputOffset>5.464612985279976</outputOffset>
             <present>true</present>

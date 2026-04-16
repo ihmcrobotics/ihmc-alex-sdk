@@ -6,7 +6,7 @@
         <axis xyz="0 0 1"/>
         <parent link="TORSO_LINK"/>
         <child link="NECK_Z_LINK"/>
-        <limit effort="20.86" lower="-1.5708" upper="1.5708" velocity="17.3"/>
+        <limit effort="20.86" lower="-1.22173" upper="1.22173" velocity="17.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="NECK_Y" type="revolute">
