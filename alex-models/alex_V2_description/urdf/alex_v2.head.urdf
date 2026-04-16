@@ -57,7 +57,7 @@
 
     <!-- HEAD ZED X MINI -->
     <joint name="HEAD_ZED_X_MINI_JOINT" type="fixed">
-        <origin rpy="0.0 0.3633 0.0" xyz="0.13041 -0.01079 0.02381"/>
+        <origin rpy="0.0 0.3633 0.0" xyz="0.11603 0.009965 -0.02983"/>
         <parent link="HEAD_LINK"/>
         <child link="HEAD_ZED_X_MINI_LINK"/>
     </joint>

@@ -664,7 +664,7 @@
 
     <!-- TORSO ZED X MINI -->
     <joint name="TORSO_ZED_X_MINI_JOINT" type="fixed">
-        <origin rpy="0.0 0.907571 0.0" xyz="0.1 0.0 0.05"/>
+        <origin rpy="0.0 0.907571 0.0" xyz="0.108969 0.0 0.035381"/>
         <parent link="TORSO_LINK"/>
         <child link="TORSO_ZED_X_MINI_LINK"/>
     </joint>
