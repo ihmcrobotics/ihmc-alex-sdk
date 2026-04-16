@@ -36,6 +36,10 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
    public boolean use_requested_master_gain_;
    public double requested_master_gain_;
    /**
+            * Option to disable non-critical faults
+            */
+   public boolean disable_noncritical_faults_;
+   /**
             * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
             */
    public byte robot_control_state_;
@@ -82,6 +86,8 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       use_requested_master_gain_ = other.use_requested_master_gain_;
 
       requested_master_gain_ = other.requested_master_gain_;
+
+      disable_noncritical_faults_ = other.disable_noncritical_faults_;
 
       robot_control_state_ = other.robot_control_state_;
 
@@ -223,6 +229,21 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
    }
 
    /**
+            * Option to disable non-critical faults
+            */
+   public void setDisableNoncriticalFaults(boolean disable_noncritical_faults)
+   {
+      disable_noncritical_faults_ = disable_noncritical_faults;
+   }
+   /**
+            * Option to disable non-critical faults
+            */
+   public boolean getDisableNoncriticalFaults()
+   {
+      return disable_noncritical_faults_;
+   }
+
+   /**
             * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
             */
    public void setRobotControlState(byte robot_control_state)
@@ -297,6 +318,8 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.requested_master_gain_, other.requested_master_gain_, epsilon)) return false;
 
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsBoolean(this.disable_noncritical_faults_, other.disable_noncritical_faults_, epsilon)) return false;
+
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.robot_control_state_, other.robot_control_state_, epsilon)) return false;
 
       if (this.joint_commands_.size() != other.joint_commands_.size()) { return false; }
@@ -345,6 +368,8 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
 
       if(this.requested_master_gain_ != otherMyClass.requested_master_gain_) return false;
 
+      if(this.disable_noncritical_faults_ != otherMyClass.disable_noncritical_faults_) return false;
+
       if(this.robot_control_state_ != otherMyClass.robot_control_state_) return false;
 
       if (!this.joint_commands_.equals(otherMyClass.joint_commands_)) return false;
@@ -384,6 +409,8 @@ public class AlexCommand extends Packet<AlexCommand> implements Settable<AlexCom
       builder.append(this.use_requested_master_gain_);      builder.append(", ");
       builder.append("requested_master_gain=");
       builder.append(this.requested_master_gain_);      builder.append(", ");
+      builder.append("disable_noncritical_faults=");
+      builder.append(this.disable_noncritical_faults_);      builder.append(", ");
       builder.append("robot_control_state=");
       builder.append(this.robot_control_state_);      builder.append(", ");
       builder.append("joint_commands=");
