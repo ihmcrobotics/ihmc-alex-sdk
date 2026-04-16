@@ -55,6 +55,27 @@
         </collision>
     </link>
 
+    <!-- HEAD ZED X MINI -->
+    <joint name="HEAD_ZED_X_MINI_JOINT" type="fixed">
+        <origin rpy="0.0 0.3633 0.0" xyz="0.13041 -0.01079 0.02381"/>
+        <parent link="HEAD_LINK"/>
+        <child link="HEAD_ZED_X_MINI_LINK"/>
+    </joint>
+
+    <link name="HEAD_ZED_X_MINI_LINK">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_V1_description/meshes/ZEDXMini.obj"/>
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+        </visual>
+    </link>
+
     <!-- HEAD IMU -->
     <joint name="HEAD_IMU_JOINT" type="fixed">
         <origin rpy="0.0 0.0 0.0" xyz="-0.02432603 -0.00225290 0.07425800"/>

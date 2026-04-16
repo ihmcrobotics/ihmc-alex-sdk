@@ -662,6 +662,27 @@
         </collision>
     </link>
 
+    <!-- TORSO ZED X MINI -->
+    <joint name="TORSO_ZED_X_MINI_JOINT" type="fixed">
+        <origin rpy="0.0 0.907571 0.0" xyz="0.1 0.0 0.05"/>
+        <parent link="TORSO_LINK"/>
+        <child link="TORSO_ZED_X_MINI_LINK"/>
+    </joint>
+
+    <link name="TORSO_ZED_X_MINI_LINK">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_V1_description/meshes/ZEDXMini.obj"/>
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+        </visual>
+    </link>
+
     <!-- TORSO IMU -->
     <joint name="TORSO_IMU_JOINT" type="fixed">
         <origin rpy="-1.561264 -0.329453 -1.570796" xyz="0.094766 0.018319 0.255014"/> <!-- Added 0.009536 roll, 0.002147 pitch bias -->
