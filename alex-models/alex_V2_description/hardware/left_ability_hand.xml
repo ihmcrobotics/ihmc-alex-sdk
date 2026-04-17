@@ -5,7 +5,7 @@
             <name>left_ability_hand</name>
             <side>LEFT</side>
             <type>ABILITY_HAND</type>
-            <parentBoardAlias>2107</parentBoardAlias>
+            <parentBoardAlias>2111</parentBoardAlias>
             <joint>left_ability_hand_index_q1</joint>
             <joint>left_ability_hand_index_q2</joint>
             <joint>left_ability_hand_middle_q1</joint>
