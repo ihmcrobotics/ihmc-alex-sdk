@@ -5,50 +5,50 @@
             <name>LeftHipYawMotor</name>
             <alias>6002</alias>
             <position>0</position>
-            <actuatorPackage>A032</actuatorPackage>
+            <actuatorPackage>A008</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>17.262744363540207</motorOffset>
-            <outputOffset>6.8026479792472685</outputOffset>
+            <motorOffset>1.737393161363939</motorOffset>
+            <outputOffset>6.03121012690502</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>LeftHipPitchMotor</name>
             <alias>6005</alias>
             <position>0</position>
-            <actuatorPackage>A031</actuatorPackage>
+            <actuatorPackage>A004</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>7.658083853226623</motorOffset>
-            <outputOffset>2.8858477463283467</outputOffset>
+            <motorOffset>9.933543529667986</motorOffset>
+            <outputOffset>2.92319048094258</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>LeftKneePitchMotor</name>
             <alias>6004</alias>
             <position>0</position>
-            <actuatorPackage>A035</actuatorPackage>
+            <actuatorPackage>A003</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>2.332893635471164</motorOffset>
-            <outputOffset>1.206715574170162</outputOffset>
+            <motorOffset>5.323194139717714</motorOffset>
+            <outputOffset>1.9029896834916267</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>LeftAnkleTopMotor</name>
             <alias>6008</alias>
             <position>0</position>
-            <actuatorPackage>A033</actuatorPackage>
+            <actuatorPackage>A006</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>-16.393575939906746</motorOffset>
-            <outputOffset>3.0716517570449287</outputOffset>
+            <motorOffset>3.46066110610157</motorOffset>
+            <outputOffset>3.339043805197627</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>LeftAnkleBottomMotor</name>
             <alias>6007</alias>
             <position>0</position>
-            <actuatorPackage>A034</actuatorPackage>
+            <actuatorPackage>A007</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>27.62869851147685</motorOffset>
-            <outputOffset>6.434221419522658</outputOffset>
+            <motorOffset>5.231881161582086</motorOffset>
+            <outputOffset>0.4425534573050075</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -56,7 +56,7 @@
             <name>LeftHipEtherSnacksBoard</name>
             <alias>6101</alias>
             <position>0</position>
-            <boardType>ALEX</boardType>
+            <boardType>ALEX_PDO_LIGHT</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -65,9 +65,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.006833775632284201</angularVelocityBiasX>
-                    <angularVelocityBiasY>-0.017486582541534706</angularVelocityBiasY>
-                    <angularVelocityBiasZ>-0.012112241455817822</angularVelocityBiasZ>
+                    <angularVelocityBiasX>-0.005001057382112406</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.00604280777729136</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.005685206559750579</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftHipTempSensor</name>
@@ -79,7 +79,7 @@
             <name>LeftThighEtherSnacksBoard</name>
             <alias>6103</alias>
             <position>0</position>
-            <boardType>ALEX</boardType>
+            <boardType>ALEX_PDO_LIGHT</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -88,9 +88,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>-0.012692819432371969</angularVelocityBiasX>
-                    <angularVelocityBiasY>-0.009704707094327218</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.005070736088803244</angularVelocityBiasZ>
+                    <angularVelocityBiasX>-0.020732574386992393</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.001774096097402237</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.012235667009482478</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftThighTempSensor</name>
@@ -102,7 +102,7 @@
             <name>LeftShinEtherSnacksBoard</name>
             <alias>6106</alias>
             <position>0</position>
-            <boardType>ALEX</boardType>
+            <boardType>ALEX_PDO_LIGHT</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -111,9 +111,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.012591617766734089</angularVelocityBiasX>
-                    <angularVelocityBiasY>-0.005800453362086898</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.0062159128315476654</angularVelocityBiasZ>
+                    <angularVelocityBiasX>-0.006934528609168481</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.0182477907283269</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.01032483123267395</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftShinTempSensor</name>
@@ -126,13 +126,11 @@
             <name>left_foot_imu</name>
             <alias>6109</alias>
             <position>0</position>
-            <vendorID>4113</vendorID> <!-- = 0x1011 in hex-->
-            <productCode>513</productCode> <!-- = 0x00000201 in hex-->
             <imuType>H4</imuType>
             <present>false</present>
-            <angularVelocityBiasX>0.0</angularVelocityBiasX>
-            <angularVelocityBiasY>0.0</angularVelocityBiasY>
-            <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+            <angularVelocityBiasX>0.0011881794274969087</angularVelocityBiasX>
+            <angularVelocityBiasY>0.005216176597711319</angularVelocityBiasY>
+            <angularVelocityBiasZ>-0.0004778292656720103</angularVelocityBiasZ>
         </XmlIMU>
         <XmlAtiForceTorqueSensor>
             <name>LeftFootFTSensor</name>
@@ -145,12 +143,12 @@
             <txScalar>1.0</txScalar>
             <tyScalar>1.0</tyScalar>
             <tzScalar>-1.0</tzScalar>
-            <fxOffset>0.0</fxOffset>
-            <fyOffset>0.0</fyOffset>
-            <fzOffset>0.0</fzOffset>
-            <txOffset>0.0</txOffset>
-            <tyOffset>0.0</tyOffset>
-            <tzOffset>0.0</tzOffset>
+            <fxOffset>181.2353230100984</fxOffset>
+            <fyOffset>33.26823683108733</fyOffset>
+            <fzOffset>-619.9111257345963</fzOffset>
+            <txOffset>0.9846304855941986</txOffset>
+            <tyOffset>0.5370547108277306</tyOffset>
+            <tzOffset>15.174520115086388</tzOffset>
         </XmlAtiForceTorqueSensor>
     </devices>
 
@@ -159,7 +157,7 @@
             <jointName>LEFT_HIP_Z</jointName>
             <motorName>LeftHipYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-0.349066</lowerJointLimit>
+            <lowerJointLimit>-0.3490658504</lowerJointLimit>
             <upperJointLimit>1.0472</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
@@ -184,7 +182,7 @@
             <motorName>LeftKneePitchMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>0.0</lowerJointLimit>
-            <upperJointLimit>2.44346</upperJointLimit>
+            <upperJointLimit>2.445206282</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
@@ -209,7 +207,7 @@
             <pitchSign>-1.0</pitchSign>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
-            <doDampingControlOnTwitters>false</doDampingControlOnTwitters>
+            <doDampingControlOnTwitters>true</doDampingControlOnTwitters>
             <present>true</present>
         </XmlJointPairMechanism>
     </transmissions>
