@@ -644,7 +644,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V2_description/meshes/torso.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/AlexV2Torso.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.018"/>
         </visual>
