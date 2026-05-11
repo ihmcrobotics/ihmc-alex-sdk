@@ -5,30 +5,30 @@
             <name>LeftHipRollMotor</name>
             <alias>5001</alias>
             <position>0</position>
-            <actuatorPackage>A013</actuatorPackage>
+            <actuatorPackage>A029</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>-4.588683496590644</motorOffset>
-            <outputOffset>3.7214042</outputOffset>
+            <motorOffset>-5.45437056624942</motorOffset>
+            <outputOffset>1.4861158210189716</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>PelvisYawMotor</name>
             <alias>5003</alias>
             <position>0</position>
-            <actuatorPackage>A005</actuatorPackage>
+            <actuatorPackage>A028</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>5.487834676276594</motorOffset>
-            <outputOffset>2.203979631342606</outputOffset>
+            <motorOffset>3.3554072048355916</motorOffset>
+            <outputOffset>1.6044068575594088</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>RightHipRollMotor</name>
             <alias>5004</alias>
             <position>0</position>
-            <actuatorPackage>A009</actuatorPackage>
+            <actuatorPackage>A030</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>7.571177894657861</motorOffset>
-            <outputOffset>3.55234</outputOffset>
+            <motorOffset>10.762360401648316</motorOffset>
+            <outputOffset>3.5672786313596023</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -36,7 +36,7 @@
             <name>PelvisEtherSnacksBoard</name>
             <alias>5102</alias>
             <position>0</position>
-            <boardType>ALEX_PDO_LIGHT</boardType>
+            <boardType>ALEX</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -45,9 +45,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>-0.019942908320279583</angularVelocityBiasX>
-                    <angularVelocityBiasY>-0.01199134942640296</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.0011030842173576823</angularVelocityBiasZ>
+                    <angularVelocityBiasX>-0.024618636767277876</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.0022583950647610987</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.010404596508264953</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>PelvisTempSensor</name>
@@ -63,8 +63,8 @@
             <jointName>SPINE_Z</jointName>
             <motorName>PelvisYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-0.5235987756</lowerJointLimit>
-            <upperJointLimit>0.5235987756</upperJointLimit>
+            <lowerJointLimit>-0.523599</lowerJointLimit>
+            <upperJointLimit>0.523599</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
