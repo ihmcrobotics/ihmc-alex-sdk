@@ -4,17 +4,17 @@
     <joint name="RIGHT_SAKE_GRIPPER" type="fixed">
         <origin xyz="0.0 0.0 -0.07160000" rpy="0 0 0"/>
         <parent link="RIGHT_GRIPPER_Y_LINK"/>
-        <child link="SAKE_GRIPPER"/>
+        <child link="RIGHT_SAKE_GRIPPER_LINK"/>
     </joint>
 
     <joint name="LEFT_SAKE_GRIPPER" type="fixed">
         <origin xyz="0.0 0.0 -0.07160000" rpy="0 0 3.14159"/>
         <parent link="LEFT_GRIPPER_Y_LINK"/>
-        <child link="SAKE_GRIPPER"/>
+        <child link="LEFT_SAKE_GRIPPER_LINK"/>
     </joint>
 
     <!-- Sake Gripper Link -->
-    <link name="SAKE_GRIPPER">
+    <link name="RIGHT_SAKE_GRIPPER_LINK">
         <inertial>
             <mass value="0.43668602"/>
             <origin rpy="0 0 0" xyz="-0.00601996 0.00012403 -0.06221175"/>
@@ -28,8 +28,19 @@
         </visual>
     </link>
 
-
-
+    <link name="LEFT_SAKE_GRIPPER_LINK">
+        <inertial>
+            <mass value="0.43668602"/>
+            <origin rpy="0 0 0" xyz="-0.00601996 0.00012403 -0.06221175"/>
+            <inertia ixx="0.00134032" ixy="0.00000131" ixz="0.0000369" iyy="0.00112287" iyz="-7.367E-7" izz="0.00045278"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_purdue_description/meshes/grippers/sake_gripper.obj"/>
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+        </visual>
+    </link>
 </robot>
 
 

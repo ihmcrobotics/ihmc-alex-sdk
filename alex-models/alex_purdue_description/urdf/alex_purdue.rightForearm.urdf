@@ -83,7 +83,7 @@
         </visual>
     </link>
 
-    <link name="LEFT_GRIPPER_Y_LINK">
+    <link name="RIGHT_GRIPPER_Y_LINK">
         <inertial>
             <mass value="0.184"/> <!-- Needs updated twitter+carrier mass -->
             <origin rpy="0 0 0" xyz="0.00002105 0.00511741 0.0424156"/>

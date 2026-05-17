@@ -59,7 +59,7 @@
         </visual>
     </link>
 
-    <link name="LEFT_SHOULDER_Z_LINK">
+    <link name="RIGHT_SHOULDER_Z_LINK">
         <inertial>
             <mass value="3.67445507"/>
             <origin rpy="0 0 0" xyz="0.0087191 0.00275047 -0.14270206"/>
