@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XmlHardware>
+    <transmissions>
+        <XmlHand>
+            <name>left_ezgripper</name>
+            <side>LEFT</side>
+            <type>EZ_GRIPPER</type>
+            <parentBoardAlias>2107</parentBoardAlias>
+            <joint>left_ezgripper_knuckle_palm_l1_1</joint>
+            <joint>left_ezgripper_knuckle_palm_l1_2</joint>
+            <joint>left_ezgripper_knuckle_l1_l2_1</joint>
+            <joint>left_ezgripper_knuckle_l1_l2_2</joint>
+            <present>true</present>
+        </XmlHand>
+    </transmissions>
+</XmlHardware>

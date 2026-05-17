@@ -1,0 +1,176 @@
+<?xml version = "1.0" ?>
+<robot name="Alex">
+
+    <!-- Left Forearm Joints -->
+    <!-- NEED TO CHECK JOINT LIMITS, EFFORTS, AND BASE ROTATIONS -->
+   	<joint name="LEFT_ELBOW_Y" type="revolute">
+        <origin xyz="0.02000000 0.0 -0.23400000" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <parent link="LEFT_SHOULDER_Z_LINK"/>
+        <child link="LEFT_ELBOW_Y_LINK"/>
+        <limit effort="71.28" lower="-2.35619" upper="0.174533" velocity="4.47"/>
+        <dynamics damping="0.05" friction="0.0"/>
+    </joint>
+
+    <joint name="LEFT_WRIST_Z" type="revolute">
+        <origin xyz="-0.02000000 0.0 -0.08074000" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <parent link="LEFT_ELBOW_Y_LINK"/>
+        <child link="LEFT_WRIST_Z_LINK"/>
+        <limit effort="20.86" lower="-2.61799" upper="2.61799" velocity="17.3"/>
+        <dynamics damping="0.05" friction="0.0"/>
+    </joint>
+
+    <joint name="LEFT_WRIST_X" type="revolute">
+        <origin xyz="0.0 -0.013 -0.19750000" rpy="0.0 0.0 0.0"/>
+        <axis xyz="1 0 0"/>
+        <parent link="LEFT_WRIST_Z_LINK"/>
+        <child link="LEFT_WRIST_X_LINK"/>
+        <limit effort="20.86" lower="-1.8326" upper="0.610865" velocity="17.3"/>
+        <dynamics damping="0.05" friction="0.0"/>
+    </joint>
+
+    <joint name="LEFT_GRIPPER_Y" type="revolute">
+        <origin xyz="0.0 0.013 0.0" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <parent link="LEFT_WRIST_X_LINK"/>
+        <child link="LEFT_GRIPPER_Y_LINK"/>
+        <limit effort="20.86" lower="-2.61799" upper="2.61799" velocity="17.3"/>
+        <dynamics damping="0.05" friction="0.0"/>
+    </joint>
+
+
+   <!-- Left Forearm Links -->
+    <link name="LEFT_ELBOW_Y_LINK">
+        <inertial>
+            <mass value="0.5292201"/>
+            <origin rpy="0 0 0" xyz="-0.01650253 -0.00263815 -0.04773102"/>
+            <inertia ixx="0.00114255" ixy="0.00001759" ixz="-0.00003691" iyy="0.00079366" iyz="0.00015824" izz="0.00087581"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_purdue_description/meshes/left_arm/l_elbow_y_purdue.obj"/>
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+        </visual>
+    </link>
+
+    <link name="LEFT_WRIST_Z_LINK">
+        <inertial>
+            <mass value="2.05080746"/>
+            <origin rpy="0 0 0" xyz="-0.00443865 -0.00006299 -0.07235002"/>
+            <inertia ixx="0.00509284" ixy="0.00004197" ixz="-0.00014021" iyy="0.00581358" iyz="-0.00008813" izz="0.00234961"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_purdue_description/meshes/left_arm/l_wrist_z_purdue.obj"/>
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+        </visual>
+    </link>
+
+    <link name="LEFT_WRIST_X_LINK">
+        <inertial>
+            <mass value="0.87091179"/> <!-- Needs updated twitter+carrier mass -->
+            <origin rpy="0 0 0" xyz="0.00025938 0.01208633 0.00037966"/>
+            <inertia ixx="0.00066164" ixy="-0.00000242" ixz="-0.00000115" iyy="0.00064531" iyz="-0.00000916" izz="0.00065818"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_purdue_description/meshes/left_arm/l_wrist_x_purdue.obj"/>
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+        </visual>
+    </link>
+
+    <link name="LEFT_GRIPPER_Y_LINK">
+        <inertial>
+            <mass value="0.184"/> <!-- Needs updated twitter+carrier mass -->
+            <origin rpy="0 0 0" xyz="-0.00002105 0.00511741 0.0424156"/>
+            <inertia ixx="0.00026321" ixy="-1.429E-7" ixz="1.580E-8" iyy="0.00022394" iyz="0.00003975" izz="0.0002215"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_purdue_description/meshes/left_arm/l_gripper_y_purdue.obj"/>
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+        </visual>
+    </link>
+
+    <!-- Left Forearm IMUs -->
+    <!-- LEFT WRIST Z (YAW) -->
+        <joint name="LEFT_WRIST_Z_IMU_JOINT" type="fixed">
+        <origin rpy="1.571 0.0 1.571" xyz="-0.03355000 0.01162100 -0.09292000"/>
+        <axis xyz="0 0 1"/>
+        <parent link="LEFT_WRIST_Z_LINK"/>
+        <child link="LEFT_WRIST_Z_IMU_LINK"/>
+    </joint>
+    <link name="LEFT_WRIST_Z_IMU_LINK">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+    <gazebo reference="LEFT_WRIST_Z_IMU_LINK">
+        <sensor name="left_wrist_z_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    <!-- LEFT GRIPPER Y (PITCH) -->
+    <joint name="LEFT_GRIPPER_Y_IMU_JOINT" type="fixed">
+        <origin rpy="3.14159 0 -1.571" xyz="0.01060620 -0.01122793 -0.06568644"/>
+        <axis xyz="0 0 1"/>
+        <parent link="LEFT_GRIPPER_Y_LINK"/>
+        <child link="LEFT_GRIPPER_Y_IMU_LINK"/>
+    </joint>
+
+    <link name="LEFT_GRIPPER_Y_IMU_LINK">
+        <inertial>
+            <mass value="0"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+    <gazebo reference="LEFT_GRIPPER_Y_IMU_LINK">
+        <sensor name="left_gripper_Y_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+</robot>
