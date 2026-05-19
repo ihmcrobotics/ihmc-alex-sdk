@@ -5,7 +5,7 @@
     <!-- NEED TO CHECK JOINT LIMITS, EFFORTS, AND BASE ROTATIONS -->
    	<joint name="LEFT_SHOULDER_Y" type="revolute">
         <origin xyz="-0.00050000 0.12989023 0.38214403" rpy="-0.872664626 0.0 0.0"/>
-        <axis xyz="0.0 1.0 0.0"/>
+        <axis xyz="0.0 0.0 1.0"/>
         <parent link="TORSO_LINK"/>
         <child link="LEFT_SHOULDER_Y_LINK"/>
         <limit effort="160.7" lower="-3.141592" upper="1.22173" velocity="10.38"/>
