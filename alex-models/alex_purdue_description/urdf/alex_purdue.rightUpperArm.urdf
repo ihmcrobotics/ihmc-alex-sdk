@@ -4,7 +4,7 @@
     <!-- Right Upper Arm Joints -->
     <!-- NEED TO CHECK JOINT LIMITS, EFFORTS, AND BASE ROTATIONS -->
    	<joint name="RIGHT_SHOULDER_Y" type="revolute">
-        <origin xyz="-0.00050000 -0.12989023 0.38214403" rpy="0.698132 0.0 0.0"/>
+        <origin xyz="-0.00050000 -0.12989023 0.38214403" rpy="0.872664626 0.0 0.0"/>
         <axis xyz="0.0 1.0 0.0"/>
         <parent link="TORSO_LINK"/>
         <child link="RIGHT_SHOULDER_Y_LINK"/>
@@ -13,7 +13,7 @@
     </joint>
 
     <joint name="RIGHT_SHOULDER_X" type="revolute">
-        <origin xyz="0.0 -0.01300000 0.11791000" rpy="-0.698132 0.0 0.0"/>
+        <origin xyz="0.0 -0.01300000 0.11791000" rpy="-0.872664626 0.0 0.0"/>
         <axis xyz="1.0 0.0 0.0"/>
         <parent link="RIGHT_SHOULDER_Y_LINK"/>
         <child link="RIGHT_SHOULDER_X_LINK"/>

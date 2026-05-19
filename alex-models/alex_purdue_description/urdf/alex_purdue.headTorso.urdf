@@ -1,6 +1,14 @@
 <?xml version = "1.0" ?>
 <robot name="Alex">
     <!-- NECK, & HEAD JOINTS -->
+    <joint name="PEDESTAL_F" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="PEDESTAL_LINK"/>
+        <child link="TORSO_LINK"/>
+        <limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
+        <dynamics damping="0.0" friction="0.0"/>
+    </joint>
+
     <joint name="NECK_Z" type="revolute">
         <origin rpy="0 0 0" xyz="0.0072 0 0.4669"/>
         <axis xyz="0 0 1"/>
@@ -20,17 +28,31 @@
     </joint>
 
     <!-- TORSO, NECK, & HEAD LINKS -->
+    <link name="PEDESTAL_LINK">
+        <inertial>
+            <mass value="0.72380912"/>
+            <origin rpy="0 0 0" xyz="0.00000416 -9.214E-7 0.02113924"/>
+            <inertia ixx="0.00176605" ixy="-1.625E-7" ixz="-2.679E-9" iyy="0.00176535" iyz="5.938E-10" izz="0.00351695"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_purdue_description/meshes/torso_head/pedestal_purdue.obj"/>
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0.0"/>
+        </visual>
+    </link>
+
     <link name="TORSO_LINK">
         <inertial>
-            <mass value="15.84880155"/>
-            <origin rpy="0 0 0" xyz="0.00370028 0.00073303 0.28264062"/>
-            <inertia ixx="0.33263586" ixy="0.00038117" ixz="0.01866859" iyy="0.29657817" iyz="0.0008414" izz="0.17525439"/>
+            <mass value="15.12587484"/>
+            <origin rpy="0 0 0" xyz="0.00387685 0.00076817 0.29513974"/>
+            <inertia ixx="0.27907278" ixy="0.00038347" ixz="0.01940091" iyy="0.24300602" iyz="0.00098669" izz="0.17172871"/>
         </inertial>
         <visual>
             <geometry>
                 <mesh filename="package://alex_purdue_description/meshes/torso_head/torso_purdue.obj"/>
             </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="0 0 0.0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
     </link>
 
