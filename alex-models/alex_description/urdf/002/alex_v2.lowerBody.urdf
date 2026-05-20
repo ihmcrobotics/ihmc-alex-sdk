@@ -121,7 +121,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/Pelvis.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/Pelvis.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -180,7 +180,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/LeftHipRollLink.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/LeftHipRollLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -237,7 +237,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/LeftHipYawLink.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/LeftHipYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -251,7 +251,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/LeftThigh.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/LeftThigh.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -277,7 +277,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/LeftShin.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/LeftShin.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -376,7 +376,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/AnklePitchLink.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/AnklePitchLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -390,7 +390,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/Foot.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/Foot.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -412,7 +412,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/RightHipRollLink.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/RightHipRollLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -469,7 +469,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/RightHipYawLink.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/RightHipYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -483,7 +483,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/RightThigh.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/RightThigh.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -546,7 +546,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/RightShin.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/RightShin.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -608,7 +608,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/AnklePitchLink.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/AnklePitchLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -622,7 +622,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/Foot.obj"/>
+                <mesh filename="package://alex_description/meshes/legs/Foot.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -644,7 +644,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V2_description/meshes/AlexV2Torso.obj"/>
+                <mesh filename="package://alex_description/meshes/V2/AlexV2Torso.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.018"/>
         </visual>
@@ -677,7 +677,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/ZEDXMini.obj"/>
+                <mesh filename="package://alex_description/meshes/ZEDXMini.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>

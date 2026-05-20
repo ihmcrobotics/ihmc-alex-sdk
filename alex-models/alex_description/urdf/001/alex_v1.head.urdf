@@ -43,7 +43,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/ALX02_01_A02_HeadLink.obj"/>
+                <mesh filename="package://alex_description/meshes/V1/ALX02_01_A02_HeadLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -70,7 +70,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/ZEDXMini.obj"/>
+                <mesh filename="package://alex_description/meshes/ZEDXMini.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>

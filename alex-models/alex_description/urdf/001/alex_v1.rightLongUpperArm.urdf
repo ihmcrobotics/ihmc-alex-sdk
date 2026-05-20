@@ -19,7 +19,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/RightShoulderPitchLink.obj"/>
+                <mesh filename="package://alex_description/meshes/cycloidal_arm/RightShoulderPitchLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -79,7 +79,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/RightShoulderRollLink_longBicep.obj"/>
+                <mesh filename="package://alex_description/meshes/cycloidal_arm/RightShoulderRollLink_longBicep.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -102,7 +102,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/RightShoulderYawLink.obj"/>
+                <mesh filename="package://alex_description/meshes/cycloidal_arm/RightShoulderYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0867"/>
         </visual>
