@@ -7,7 +7,7 @@
         <parent link="LEFT_SHOULDER_Z_LINK"/>
         <child link="LEFT_ELBOW_Y_LINK"/>
         <limit effort="71.28" lower="-2.35619" upper="0.174533" velocity="4.47"/>
-        <dynamics damping="0.05" friction="0.0"/>
+        <dynamics damping="0.1" friction="0.0"/>
     </joint>
 
     <link name="LEFT_ELBOW_Y_LINK">
@@ -36,7 +36,7 @@
         <parent link="LEFT_ELBOW_Y_LINK"/>
         <child link="LEFT_WRIST_Z_LINK"/>
         <limit effort="20.86" lower="-2.61799" upper="2.61799" velocity="17.3"/>
-        <dynamics damping="0.05" friction="0.0"/>
+        <dynamics damping="0.1" friction="0.0"/>
     </joint>
 
     <link name="LEFT_WRIST_Z_LINK">
@@ -71,7 +71,7 @@
         <parent link="LEFT_WRIST_Z_LINK"/>
         <child link="LEFT_WRIST_X_LINK"/>
         <limit effort="20.86" lower="-1.8326" upper="0.610865" velocity="17.3"/>
-        <dynamics damping="0.05" friction="0.0"/>
+        <dynamics damping="0.1" friction="0.0"/>
     </joint>
 
     <link name="LEFT_WRIST_X_LINK">
@@ -94,7 +94,7 @@
         <parent link="LEFT_WRIST_X_LINK"/>
         <child link="LEFT_GRIPPER_Z_LINK"/>
         <limit effort="20.86" lower="-2.61799" upper="2.61799" velocity="17.3"/>
-        <dynamics damping="0.05" friction="0.0"/>
+        <dynamics damping="0.1" friction="0.0"/>
     </joint>
 
     <link name="LEFT_GRIPPER_Z_LINK">
