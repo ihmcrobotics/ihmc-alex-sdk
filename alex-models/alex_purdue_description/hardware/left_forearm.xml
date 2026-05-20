@@ -36,10 +36,10 @@
         </XmlPlatinumTwitter>
 
         <XmlEtherSnacksBoard>
-            <name>LeftForearmEtherSnacksBoard</name>
+            <name>LeftWristEtherSnacksBoard</name>
             <alias>2107</alias>
             <position>0</position>
-            <boardType>ALEX_HAND_CONTROL</boardType>
+            <boardType>ALEX</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -67,7 +67,7 @@
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
-                    <name>left_gripper_z_imu</name>
+                    <name>left_gripper_Y_imu</name>
                     <alias>0</alias>
                     <position>1</position>
                     <imuType>TDK</imuType>

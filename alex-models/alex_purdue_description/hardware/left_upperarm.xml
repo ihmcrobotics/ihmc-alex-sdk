@@ -47,7 +47,7 @@
             <name>LeftShoulderEtherSnacksBoard</name>
             <alias>2103</alias>
             <position>0</position>
-            <boardType>ALEX_PDO_LIGHT</boardType>
+            <boardType>ALEX</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
@@ -70,8 +70,8 @@
             <name>LeftUpperArmEtherSnacksBoard</name>
             <alias>2105</alias>
             <position>0</position>
-            <boardType>ALEX_PDO_LIGHT</boardType>
-            <present>false</present>
+            <boardType>ALEX</boardType>
+            <present>true</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>left_shoulder_z_imu</name>

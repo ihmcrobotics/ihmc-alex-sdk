@@ -4,6 +4,7 @@
         <XmlEtherSnacksBoard>
             <name>PMBEtherSnacksBoardPrimary</name>
             <alias>1105</alias>
+            <productCode>1108344833</productCode>
             <position>0</position>
             <boardType>ALEX_PMB_PRIMARY</boardType>
             <present>true</present>
@@ -29,6 +30,7 @@
         <XmlEtherSnacksBoard>
             <name>PMBEtherSnacksBoardSecondary</name>
             <alias>1106</alias>
+            <productCode>1108344834</productCode>
             <position>0</position>
             <boardType>ALEX_PMB_SECONDARY</boardType>
             <present>true</present>
