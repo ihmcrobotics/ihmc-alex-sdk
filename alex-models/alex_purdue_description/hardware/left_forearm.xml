@@ -58,6 +58,30 @@
                 </XmlTemperatureSensor>
             </daughterDevices>
         </XmlEtherSnacksBoard>
+
+        <XmlEtherSnacksBoard>
+            <name>LeftGripperEtherSnacksBoard</name>
+            <alias>2111</alias>
+            <position>0</position>
+            <boardType>ALEX_HAND_CONTROL</boardType>
+            <present>true</present>
+            <daughterDevices>
+                <XmlIMU>
+                    <name>left_gripper_z_imu</name>
+                    <alias>0</alias>
+                    <position>1</position>
+                    <imuType>TDK</imuType>
+                    <present>true</present>
+                    <angularVelocityBiasX>0.0</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.0</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+                </XmlIMU>
+                <XmlTemperatureSensor>
+                    <name>left_gripper_z_temp_sensor</name>
+                    <conversionConstant>1.0</conversionConstant>
+                </XmlTemperatureSensor>
+            </daughterDevices>
+        </XmlEtherSnacksBoard>
     </devices>
     <transmissions>
         <XmlCycloidMechanism>
