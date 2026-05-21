@@ -16,7 +16,7 @@
             <alias>2002</alias>
             <position>0</position>
             <actuatorPackage>A052</actuatorPackage> <!-- Use J2L_Nadia for Nadia arms -->
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>514.6153803983825</motorOffset> <!-- Use 302116 for Nadia arms -->
             <outputOffset>2.582398</outputOffset> <!-- Use 255870 for Nadia arms -->
             <present>true</present>
@@ -26,7 +26,7 @@
             <alias>2004</alias>
             <position>0</position>
             <actuatorPackage>A053</actuatorPackage> <!-- Use J3L_Nadia for Nadia arms -->
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <outputEncoderInverted>true</outputEncoderInverted>
             <motorOffset>1462.0399974334346</motorOffset> <!-- Use 1156066 for Nadia arms -->
             <outputOffset>3.481394119367995</outputOffset> <!-- Use 1208760 for Nadia arms -->

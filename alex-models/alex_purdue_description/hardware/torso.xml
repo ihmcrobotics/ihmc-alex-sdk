@@ -8,6 +8,13 @@
             <position>0</position>
             <boardType>ALEX_PMB_PRIMARY</boardType>
             <present>true</present>
+            <pdoList>
+                <XmlPDOType>INPUT_POWER_MONITOR_TXPDO</XmlPDOType>
+                <XmlPDOType>PMB_STATUS_TXPDO</XmlPDOType>
+            </pdoList>
+            <sdoList>
+                <XmlSDOType>PMB_CONTROL_SDO</XmlSDOType>
+            </sdoList>
             <daughterDevices>
                 <XmlIMU>
                     <name>torso_imu_2</name>
@@ -34,6 +41,13 @@
             <position>0</position>
             <boardType>ALEX_PMB_SECONDARY</boardType>
             <present>true</present>
+            <pdoList>
+                <XmlPDOType>OUTPUT_POWER_MONITOR_TXPDO</XmlPDOType>
+                <XmlPDOType>VBUS_DATA_TXPDO</XmlPDOType>
+            </pdoList>
+            <sdoList>
+                <XmlSDOType>LED_CONTROL_SDO</XmlSDOType>
+            </sdoList>
             <daughterDevices>
                 <XmlIMU>
                     <name>torso_imu</name>
