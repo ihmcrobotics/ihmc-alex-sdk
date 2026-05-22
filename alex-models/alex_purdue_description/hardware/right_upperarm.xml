@@ -6,9 +6,9 @@
             <alias>3001</alias>
             <position>0</position>
             <actuatorPackage>A058</actuatorPackage> <!-- Use J1R_Nadia for Nadia arms -->
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>-25.317311525508437</motorOffset> <!-- Use -49685 for Nadia arms -->
-            <outputOffset>0.226147</outputOffset> <!-- Use 296104 for Nadia arms -->
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <motorOffset>-56.88085452098003</motorOffset> <!-- Use -49685 for Nadia arms -->
+            <outputOffset>0.8988753574649246</outputOffset> <!-- Use 296104 for Nadia arms -->
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -17,8 +17,8 @@
             <position>0</position>
             <actuatorPackage>A059</actuatorPackage> <!-- Use J2R_Nadia for Nadia arms -->
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>410948.58671972767</motorOffset> <!-- Use 5991 for Nadia arms -->
-            <outputOffset>5.0262627</outputOffset> <!-- Use 1014295 for Nadia arms -->
+            <motorOffset>-53.9617065575462</motorOffset> <!-- Use 5991 for Nadia arms -->
+            <outputOffset>-0.5640010474284152</outputOffset> <!-- Use 1014295 for Nadia arms -->
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -27,8 +27,8 @@
             <position>0</position>
             <actuatorPackage>A060</actuatorPackage> <!-- Use J3R_Nadia for Nadia arms -->
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>411294.5258190987</motorOffset> <!-- Use 544336 for Nadia arms -->
-            <outputOffset>3.727132</outputOffset> <!-- Use 930653 for Nadia arms -->
+            <motorOffset>-23.454655289388935</motorOffset> <!-- Use 544336 for Nadia arms -->
+            <outputOffset>2.2718737889334677</outputOffset> <!-- Use 930653 for Nadia arms -->
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -37,8 +37,8 @@
             <position>0</position>
             <actuatorPackage>A061</actuatorPackage> <!-- Use J4R_Nadia for Nadia arms -->
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>411568.1922998504</motorOffset> <!-- Use -177406 for Nadia arms -->
-            <outputOffset>0.513157</outputOffset> <!-- Use 887186 for Nadia arms -->
+            <motorOffset>36.4736274765012</motorOffset> <!-- Use -177406 for Nadia arms -->
+            <outputOffset>1.985106155755503</outputOffset> <!-- Use 887186 for Nadia arms -->
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -106,8 +106,8 @@
             <jointName>RIGHT_SHOULDER_X</jointName>
             <motorName>RightJ2Motor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-2.79253</lowerJointLimit>
-            <upperJointLimit>0.349066</upperJointLimit>
+            <lowerJointLimit>-2.87979</lowerJointLimit>
+            <upperJointLimit>0.261799</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>

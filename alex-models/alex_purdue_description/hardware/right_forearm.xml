@@ -8,8 +8,8 @@
             <actuatorPackage>A086</actuatorPackage>
             <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>-4.713446536498026</motorOffset>
-            <outputOffset>2.08501</outputOffset>
+            <motorOffset>-22.787305183292794</motorOffset>
+            <outputOffset>1.0302574522930426</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -19,8 +19,8 @@
             <actuatorPackage>A087</actuatorPackage>
             <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>0.9013592236871322</motorOffset>
-            <outputOffset>0.647135</outputOffset>
+            <motorOffset>4.089225350547782</motorOffset>
+            <outputOffset>3.5135763479664</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -30,8 +30,8 @@
             <actuatorPackage>A088</actuatorPackage>
             <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>32.29169371511179</motorOffset>
-            <outputOffset>5.201767</outputOffset>
+            <motorOffset>-6.4581073487941385</motorOffset>
+            <outputOffset>2.5651049313757692</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -97,8 +97,8 @@
         <XmlCycloidMechanism>
             <jointName>RIGHT_WRIST_X</jointName>
             <motorName>RightJ6Motor</motorName>
-            <lowerJointLimit>-0.610865</lowerJointLimit>
-            <upperJointLimit>1.8326</upperJointLimit>
+            <lowerJointLimit>-0.959931</lowerJointLimit>
+            <upperJointLimit>1.48353</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
@@ -107,8 +107,8 @@
         <XmlCycloidMechanism>
             <jointName>RIGHT_GRIPPER_Y</jointName>
             <motorName>RightJ7Motor</motorName>
-            <lowerJointLimit>-2.61799</lowerJointLimit>
-            <upperJointLimit>2.61799</upperJointLimit>
+            <lowerJointLimit>-0.785398</lowerJointLimit>
+            <upperJointLimit>0.785398</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
