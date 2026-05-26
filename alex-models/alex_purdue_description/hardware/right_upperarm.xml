@@ -6,7 +6,7 @@
             <alias>3001</alias>
             <position>0</position>
             <actuatorPackage>A058</actuatorPackage> <!-- Use J1R_Nadia for Nadia arms -->
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>-56.88085452098003</motorOffset> <!-- Use -49685 for Nadia arms -->
             <outputOffset>0.8988753574649246</outputOffset> <!-- Use 296104 for Nadia arms -->
             <present>true</present>
