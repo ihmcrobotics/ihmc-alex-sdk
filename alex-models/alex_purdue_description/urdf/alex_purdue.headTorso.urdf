@@ -1,9 +1,9 @@
 <?xml version = "1.0" ?>
 <robot name="Alex">
     <!-- NECK, & HEAD JOINTS -->
-    <joint name="PEDESTAL_F" type="revolute">
+    <joint name="SPINE_Z" type="revolute">
         <origin rpy="0 0 0" xyz="0 0 0"/>
-        <parent link="PEDESTAL_LINK"/>
+        <parent link="PELVIS_LINK"/>
         <child link="TORSO_LINK"/>
         <limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
         <dynamics damping="0.0" friction="0.0"/>
