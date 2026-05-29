@@ -26,10 +26,9 @@
             <alias>2004</alias>
             <position>0</position>
             <actuatorPackage>A053</actuatorPackage> <!-- Use J3L_Nadia for Nadia arms -->
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <outputEncoderInverted>true</outputEncoderInverted>
-            <motorOffset>34.952085256453124</motorOffset> <!-- Use 1156066 for Nadia arms -->
-            <outputOffset>1.53454774727024</outputOffset> <!-- Use 1208760 for Nadia arms -->
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <motorOffset>-25.56776275295884</motorOffset> <!-- Use 1156066 for Nadia arms -->
+            <outputOffset>1.5279286989567533</outputOffset> <!-- Use 1208760 for Nadia arms -->
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -101,6 +100,7 @@
             <torqueBreakFrequency>50.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
+            <doPDControlOnTwitter>true</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -112,6 +112,7 @@
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
+            <doPDControlOnTwitter>true</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -123,6 +124,7 @@
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
+            <doPDControlOnTwitter>true</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -134,6 +136,7 @@
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
+            <doPDControlOnTwitter>true</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
     </transmissions>

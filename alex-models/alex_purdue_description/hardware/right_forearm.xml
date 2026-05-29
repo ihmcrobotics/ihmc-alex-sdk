@@ -92,6 +92,7 @@
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
+            <doPDControlOnTwitter>true</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -102,6 +103,7 @@
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
+            <doPDControlOnTwitter>true</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
         <XmlCycloidMechanism>
@@ -112,6 +114,7 @@
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
+            <doPDControlOnTwitter>true</doPDControlOnTwitter>
             <present>true</present>
         </XmlCycloidMechanism>
     </transmissions>
