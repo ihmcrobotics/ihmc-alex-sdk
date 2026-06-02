@@ -7,8 +7,8 @@
             <position>0</position>
             <actuatorPackage>A032</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>23.604285316595416</motorOffset>
-            <outputOffset>6.804469249773541</outputOffset>
+            <motorOffset>17.262744363540207</motorOffset>
+            <outputOffset>6.8026479792472685</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -17,8 +17,8 @@
             <position>0</position>
             <actuatorPackage>A031</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>7.705544837389041</motorOffset>
-            <outputOffset>2.882143002605659</outputOffset>
+            <motorOffset>7.658083853226623</motorOffset>
+            <outputOffset>2.8858477463283467</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -27,8 +27,8 @@
             <position>0</position>
             <actuatorPackage>A035</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>2.29864913781336</motorOffset>
-            <outputOffset>1.20513461677338</outputOffset>
+            <motorOffset>2.332893635471164</motorOffset>
+            <outputOffset>1.206715574170162</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -65,9 +65,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.0</angularVelocityBiasX>
-                    <angularVelocityBiasY>0.0</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+                    <angularVelocityBiasX>0.006833775632284201</angularVelocityBiasX>
+                    <angularVelocityBiasY>-0.017486582541534706</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.012112241455817822</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftHipTempSensor</name>
@@ -88,9 +88,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.0</angularVelocityBiasX>
-                    <angularVelocityBiasY>0.0</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+                    <angularVelocityBiasX>-0.012692819432371969</angularVelocityBiasX>
+                    <angularVelocityBiasY>-0.009704707094327218</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.005070736088803244</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftThighTempSensor</name>
@@ -111,9 +111,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.0</angularVelocityBiasX>
-                    <angularVelocityBiasY>0.0</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+                    <angularVelocityBiasX>0.012591617766734089</angularVelocityBiasX>
+                    <angularVelocityBiasY>-0.005800453362086898</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.0062159128315476654</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>LeftShinTempSensor</name>
@@ -159,7 +159,7 @@
             <jointName>LEFT_HIP_Z</jointName>
             <motorName>LeftHipYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-0.3490658504</lowerJointLimit>
+            <lowerJointLimit>-0.349066</lowerJointLimit>
             <upperJointLimit>1.0472</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
@@ -184,7 +184,7 @@
             <motorName>LeftKneePitchMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
             <lowerJointLimit>0.0</lowerJointLimit>
-            <upperJointLimit>2.445206282</upperJointLimit>
+            <upperJointLimit>2.44346</upperJointLimit>
             <torqueBreakFrequency>100.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
@@ -209,7 +209,7 @@
             <pitchSign>-1.0</pitchSign>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
-            <doDampingControlOnTwitters>true</doDampingControlOnTwitters>
+            <doDampingControlOnTwitters>false</doDampingControlOnTwitters>
             <present>true</present>
         </XmlJointPairMechanism>
     </transmissions>

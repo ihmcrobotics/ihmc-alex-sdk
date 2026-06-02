@@ -7,8 +7,8 @@
             <position>0</position>
             <actuatorPackage>A049</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>6.601170021945993</motorOffset>
-            <outputOffset>1.3596528218266324</outputOffset>
+            <motorOffset>-1.035088258895545</motorOffset>
+            <outputOffset>3.1680390080780687</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -16,10 +16,10 @@
             <alias>4003</alias>
             <position>0</position>
             <actuatorPackage>A050</actuatorPackage>
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>4.364440056865215</motorOffset>
-            <outputOffset>3.0865645357203206</outputOffset>
-            <present>false</present>
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <motorOffset>-8.565625987626039</motorOffset>
+            <outputOffset>3.0670383337326776</outputOffset>
+            <present>true</present>
         </XmlPlatinumTwitter>
 
         <XmlEtherSnacksBoard>
@@ -27,7 +27,7 @@
             <alias>4104</alias>
             <position>0</position>
             <boardType>ALEX</boardType>
-            <present>false</present>
+            <present>true</present>
             <daughterDevices>
                 <XmlIMU>
                     <name>head_imu</name>
@@ -35,9 +35,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.0038882745218764324</angularVelocityBiasX>
-                    <angularVelocityBiasY>0.005124000123349491</angularVelocityBiasY>
-                    <angularVelocityBiasZ>-0.013401231091837131</angularVelocityBiasZ>
+                    <angularVelocityBiasX>0.01668762202334092</angularVelocityBiasX>
+                    <angularVelocityBiasY>-0.005092041702621745</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.008996295434862061</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>HeadTempSensor</name>
@@ -52,8 +52,8 @@
             <jointName>NECK_Z</jointName>
             <motorName>NeckYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-1.5708</lowerJointLimit>
-            <upperJointLimit>1.5708</upperJointLimit>
+            <lowerJointLimit>-1.22173</lowerJointLimit>
+            <upperJointLimit>1.22173</upperJointLimit>
             <torqueBreakFrequency>50.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
@@ -70,7 +70,7 @@
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>
             <doPDControlOnTwitter>true</doPDControlOnTwitter>
-            <present>false</present>
+            <present>true</present>
         </XmlCycloidMechanism>
     </transmissions>
 </XmlHardware>

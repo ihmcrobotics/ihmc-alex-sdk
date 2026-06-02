@@ -9,7 +9,7 @@
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
-                    <name>torso_imu</name>
+                    <name>torso_imu_2</name>
                     <alias>0</alias>
                     <position>1</position>
                     <imuType>TDK</imuType>
@@ -34,14 +34,14 @@
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
-                    <name>torso_imu_2</name>
+                    <name>torso_imu</name>
                     <alias>0</alias>
                     <position>1</position>
                     <imuType>TDK</imuType>
-                    <present>false</present>
-                    <angularVelocityBiasX>0.0</angularVelocityBiasX>
-                    <angularVelocityBiasY>0.0</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
+                    <present>true</present>
+                    <angularVelocityBiasX>0.010130819370697238</angularVelocityBiasX>
+                    <angularVelocityBiasY>-0.004889638371345986</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.008895093769224182</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>TorsoTempSensor2</name>
