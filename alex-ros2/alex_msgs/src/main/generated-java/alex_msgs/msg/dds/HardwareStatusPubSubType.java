@@ -15,7 +15,7 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "47024ba828b19cec71429666718bb7a54e5623fff777e9f3822441900f54f526";
+   		return "fbfcdaae4330c35b4bdc43e1583c3d8581dcc0ffe4d36e4502a5b59a236f3160";
    }
    
    @Override
@@ -200,7 +200,7 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
 
       cdr.write_type_4(data.getMissedDeadlines());
 
-      cdr.write_type_6(data.getBatteryChargePercetage());
+      cdr.write_type_6(data.getBatteryChargePercentage());
 
       cdr.write_type_6(data.getEstimatedRuntimeMinutes());
 
@@ -250,7 +250,7 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       	
       data.setMissedDeadlines(cdr.read_type_4());
       	
-      data.setBatteryChargePercetage(cdr.read_type_6());
+      data.setBatteryChargePercentage(cdr.read_type_6());
       	
       data.setEstimatedRuntimeMinutes(cdr.read_type_6());
       	
@@ -291,7 +291,7 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       ser.write_type_7("bus_over_current_fault", data.getBusOverCurrentFault());
       ser.write_type_4("working_counter_mismatch_count", data.getWorkingCounterMismatchCount());
       ser.write_type_4("missed_deadlines", data.getMissedDeadlines());
-      ser.write_type_6("battery_charge_percetage", data.getBatteryChargePercetage());
+      ser.write_type_6("battery_charge_percentage", data.getBatteryChargePercentage());
       ser.write_type_6("estimated_runtime_minutes", data.getEstimatedRuntimeMinutes());
       ser.write_type_7("bus_over_voltage_warning", data.getBusOverVoltageWarning());
       ser.write_type_7("bus_over_current_warning", data.getBusOverCurrentWarning());
@@ -318,7 +318,7 @@ public class HardwareStatusPubSubType implements us.ihmc.pubsub.TopicDataType<al
       data.setBusOverCurrentFault(ser.read_type_7("bus_over_current_fault"));
       data.setWorkingCounterMismatchCount(ser.read_type_4("working_counter_mismatch_count"));
       data.setMissedDeadlines(ser.read_type_4("missed_deadlines"));
-      data.setBatteryChargePercetage(ser.read_type_6("battery_charge_percetage"));
+      data.setBatteryChargePercentage(ser.read_type_6("battery_charge_percentage"));
       data.setEstimatedRuntimeMinutes(ser.read_type_6("estimated_runtime_minutes"));
       data.setBusOverVoltageWarning(ser.read_type_7("bus_over_voltage_warning"));
       data.setBusOverCurrentWarning(ser.read_type_7("bus_over_current_warning"));

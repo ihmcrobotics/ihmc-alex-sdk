@@ -28,7 +28,7 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
    /**
             * Power Management Board Information
             */
-   public double battery_charge_percetage_;
+   public double battery_charge_percentage_;
    public double estimated_runtime_minutes_;
    public boolean bus_over_voltage_warning_;
    public boolean bus_over_current_warning_;
@@ -76,7 +76,7 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       missed_deadlines_ = other.missed_deadlines_;
 
-      battery_charge_percetage_ = other.battery_charge_percetage_;
+      battery_charge_percentage_ = other.battery_charge_percentage_;
 
       estimated_runtime_minutes_ = other.estimated_runtime_minutes_;
 
@@ -192,16 +192,16 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
    /**
             * Power Management Board Information
             */
-   public void setBatteryChargePercetage(double battery_charge_percetage)
+   public void setBatteryChargePercentage(double battery_charge_percentage)
    {
-      battery_charge_percetage_ = battery_charge_percetage;
+      battery_charge_percentage_ = battery_charge_percentage;
    }
    /**
             * Power Management Board Information
             */
-   public double getBatteryChargePercetage()
+   public double getBatteryChargePercentage()
    {
-      return battery_charge_percetage_;
+      return battery_charge_percentage_;
    }
 
    public void setEstimatedRuntimeMinutes(double estimated_runtime_minutes)
@@ -355,7 +355,7 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.missed_deadlines_, other.missed_deadlines_, epsilon)) return false;
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.battery_charge_percetage_, other.battery_charge_percetage_, epsilon)) return false;
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.battery_charge_percentage_, other.battery_charge_percentage_, epsilon)) return false;
 
       if (!us.ihmc.idl.IDLTools.epsilonEqualsPrimitive(this.estimated_runtime_minutes_, other.estimated_runtime_minutes_, epsilon)) return false;
 
@@ -417,7 +417,7 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
 
       if(this.missed_deadlines_ != otherMyClass.missed_deadlines_) return false;
 
-      if(this.battery_charge_percetage_ != otherMyClass.battery_charge_percetage_) return false;
+      if(this.battery_charge_percentage_ != otherMyClass.battery_charge_percentage_) return false;
 
       if(this.estimated_runtime_minutes_ != otherMyClass.estimated_runtime_minutes_) return false;
 
@@ -470,8 +470,8 @@ public class HardwareStatus extends Packet<HardwareStatus> implements Settable<H
       builder.append(this.working_counter_mismatch_count_);      builder.append(", ");
       builder.append("missed_deadlines=");
       builder.append(this.missed_deadlines_);      builder.append(", ");
-      builder.append("battery_charge_percetage=");
-      builder.append(this.battery_charge_percetage_);      builder.append(", ");
+      builder.append("battery_charge_percentage=");
+      builder.append(this.battery_charge_percentage_);      builder.append(", ");
       builder.append("estimated_runtime_minutes=");
       builder.append(this.estimated_runtime_minutes_);      builder.append(", ");
       builder.append("bus_over_voltage_warning=");

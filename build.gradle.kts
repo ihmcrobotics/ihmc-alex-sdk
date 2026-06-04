@@ -19,7 +19,7 @@ ihmc {
 }
 
 mainDependencies {
-   api("us.ihmc:ihmc_hands_ros2:source")
+//   api("us.ihmc:ihmc_hands_ros2:source")
    api("us.ihmc:ros2-common-interfaces:1.2.5") {
       exclude(group = "org.junit.jupiter", module = "junit-jupiter-api")
       exclude(group = "org.junit.jupiter", module = "junit-jupiter-engine")
@@ -56,12 +56,7 @@ tasks.register("generateMessages") {
          throw GradleException("Could not find ros2-common-interfaces in configurations.runtimeClasspath!")
       }
 
-      generator.addPackageRootToIDLGenerator(file("build/tmp/generateMessages/ros2-common-interfaces/rcl_interfaces").toPath())
-      generator.addPackageRootToIDLGenerator(file("build/tmp/generateMessages/ros2-common-interfaces/common_interfaces").toPath())
       generator.addPackageRootToIDLGenerator(file("alex-ros2").toPath())
-
-      generator.addCustomIDLFiles(file("build/tmp/generateMessages/ros2-common-interfaces/").toPath())
-
       generator.generate(file("build/tmp/generateMessages/generated-idl").toPath(),
                          file("build/tmp/generateMessages/generated-ros1").toPath(),
                          file("build/tmp/generateMessages/generated-java").toPath())
