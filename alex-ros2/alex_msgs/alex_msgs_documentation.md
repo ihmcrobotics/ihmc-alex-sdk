@@ -292,7 +292,7 @@
         - Type: uint32
         - Description: Cumulative count of missed control loop deadlines.
 
-    - battery_charge_percetage
+    - battery_charge_percentage
         - Type: float64
         - Description: Current battery charge as a percentage.
 
