@@ -19,7 +19,7 @@ ihmc {
 }
 
 mainDependencies {
-//   api("us.ihmc:ihmc_hands_ros2:source")
+   api("us.ihmc:ihmc_hands_ros2:source")
    api("us.ihmc:ros2-common-interfaces:1.2.5") {
       exclude(group = "org.junit.jupiter", module = "junit-jupiter-api")
       exclude(group = "org.junit.jupiter", module = "junit-jupiter-engine")
