@@ -6,11 +6,11 @@
 
     - request_auto_startup
         - Type: bool
-        - Description: Requests auto startup — initiates safe power up, clears faults, enables actuators, and sets robot_control_state to user.
+        - Description: Requests auto startup, which does the following: initiates safe power up (request_safe_power_up), clears faults (clear_faults), enables actuators (request_enable_actuators), and sets robot_control_state to user (10 in binary aka 2 in decimal).
 
     - request_auto_shutdown
         - Type: bool
-        - Description: Requests auto shutdown — disables actuators and initiates safe power down.
+        - Description: Requests auto shutdown, which does the following: disables actuators (request_disable_actuators) and initiates safe power down (request_safe_power_down).
 
     - request_safe_power_up
         - Type: bool
@@ -22,11 +22,11 @@
 
     - request_enable_actuators
         - Type: bool
-        - Description: Requests enabling of actuators.
+        - Description: Requests enabling (turning on) of actuators.
 
     - request_disable_actuators
         - Type: bool
-        - Description: Requests disabling of actuators.
+        - Description: Requests disabling (turning off) of actuators.
 
     - clear_faults
         - Type: bool
@@ -34,23 +34,23 @@
 
     - calibrate
         - Type: bool
-        - Description: Triggers actuator calibration.
+        - Description: Triggers robot calibration (tare force/torque sensors, etc).
 
     - servo_actuators
         - Type: bool
-        - Description: Commands actuators to servo (hold position).
+        - Description: When true, sends request to slowly ramp low-level master gain up to 1.0. When false, sends request to slowly ramp low-level master gain down to 0.0.
 
     - unservo_quickly
         - Type: bool
-        - Description: Commands actuators to unservo immediately.
+        - Description: Sends request to immediately set low-level master gain to 0.0.
 
     - use_requested_master_gain
         - Type: bool
-        - Description: When true, applies the value in requested_master_gain to all actuators.
+        - Description: When true, the low-level master gain is set to the value of requested_master_gain, and servo_actuators and unservo_quickly will be ignored
 
     - requested_master_gain
         - Type: float64
-        - Description: Master gain value applied to all actuators when use_requested_master_gain is true.
+        - Description: Master gain value (from 0.0 to 1.0) applied to all actuator gains and setpoints when use_requested_master_gain is true.
 
     - disable_noncritical_faults
         - Type: bool
@@ -66,7 +66,7 @@
 
     - number_of_joints
         - Type: uint32
-        - Description: Number of valid entries in the joint_commands array.
+        - Description: Number of controllable joints.
 
 ---
 
@@ -86,15 +86,15 @@
 
     - is_servoing
         - Type: bool
-        - Description: True if the robot is in the process of servoing.
+        - Description: True if the robot is in the process of servoing (low-level master gain ramping up to 1.0).
 
     - is_unservoing
         - Type: bool
-        - Description: True if the robot is in the process of unservoing.
+        - Description: True if the robot is in the process of unservoing (low-level master gain ramping down to 0.0).
 
     - is_servoed
         - Type: bool
-        - Description: True if the robot is fully servoed.
+        - Description: True if the robot is fully servoed (low-level master gain is at 1.0).
 
     - are_actuators_enabled
         - Type: bool
@@ -102,11 +102,11 @@
 
     - safe_power_up_complete
         - Type: bool
-        - Description: True if the safe power up procedure has completed.
+        - Description: True if the PMB’s safe power up procedure has completed.
 
     - safe_power_down_complete
         - Type: bool
-        - Description: True if the safe power down procedure has completed.
+        - Description: True if the PMB’s safe power down procedure has completed.
 
     - auto_startup_complete
         - Type: bool
@@ -126,7 +126,7 @@
 
     - number_of_joints
         - Type: uint32
-        - Description: Number of valid entries in the joint_states array.
+        - Description: Number of readable joints on the robot.
 
     - imu_states
         - Type: IMUState[<=50]
@@ -134,7 +134,7 @@
 
     - number_of_imus
         - Type: uint32
-        - Description: Number of valid entries in the imu_states array.
+        - Description: Number of IMUs on the robot.
 
     - ft_states
         - Type: ForceTorqueState[<=50]
@@ -142,7 +142,7 @@
 
     - number_of_fts
         - Type: uint32
-        - Description: Number of valid entries in the ft_states array.
+        - Description: Number of force/torque sensors on the robot.
 
 ---
 
@@ -246,11 +246,11 @@
 
     - xml_resources
         - Type: string<=32[11]
-        - Description: List of individual XML files comprising the full XML description of the robot (max 11 entries).
+        - Description: List of individual XML file names comprising the full XML description of the robot (max 11 entries).
 
     - urdf_resources
         - Type: string<=32[10]
-        - Description: List of individual URDF files comprising the full URDF description of the robot (max 10 entries).
+        - Description: List of individual URDF file names comprising the full URDF description of the robot (max 10 entries).
 
     - directory
         - Type: string<=32
@@ -258,11 +258,11 @@
 
 ---
 
-- **HardwareStatus** — Holds hardware status and fault information for Alex
+- **HardwareStatus** — Holds hardware device status and fault information for Alex
 
     - robot_fault
         - Type: bool
-        - Description: True if a general robot-level fault is active.
+        - Description: True if one of the five faults below (motor_fault, missed_deadline_fault, working_counter_fault, bus_over_voltage_fault, bus_over_current_fault) is true. If true, an auto shutdown sequence is triggered.
 
     - motor_fault
         - Type: bool
@@ -270,35 +270,35 @@
 
     - missed_deadline_fault
         - Type: bool
-        - Description: True if a missed control loop deadline fault is active.
+        - Description: True if an EtherCAT missed deadline fault is active (often due to something slowing down the EtherCAT loop, or an EtherCAT device going offline).
 
     - working_counter_fault
         - Type: bool
-        - Description: True if an EtherCAT working counter fault is active.
+        - Description: True if an EtherCAT working counter fault is active (usually due to an EtherCAT device going offline due to disconnection or power loss).
 
     - bus_over_voltage_fault
         - Type: bool
-        - Description: True if a bus over-voltage fault is active.
+        - Description: True if the high-volt motor circuit voltage goes above the maximum safe limit.
 
     - bus_over_current_fault
         - Type: bool
-        - Description: True if a bus over-current fault is active.
+        - Description: True if the high-volt motor circuit current goes above the maximum safe limit.
 
     - working_counter_mismatch_count
         - Type: uint32
-        - Description: Cumulative count of EtherCAT working counter mismatches.
+        - Description: Cumulative count of EtherCAT working counter mismatches. If this number goes high enough it will trigger a working_counter_fault.
 
     - missed_deadlines
         - Type: uint32
-        - Description: Cumulative count of missed control loop deadlines.
+        - Description: Cumulative count of EtherCAT loop missed deadlines. If this number goes high enough it will trigger a missed_deadline_fault.
 
     - battery_charge_percentage
         - Type: float64
-        - Description: Current battery charge as a percentage.
+        - Description: Current charge level of Alex’s battery (if being used) as a percentage.
 
     - estimated_runtime_minutes
         - Type: float64
-        - Description: Estimated remaining runtime in minutes based on current battery state.
+        - Description: Estimated remaining runtime in minutes based on current battery charge percentage.
 
     - bus_over_voltage_warning
         - Type: bool
@@ -310,27 +310,27 @@
 
     - battery_voltage_volts
         - Type: float64
-        - Description: Current battery voltage in volts.
+        - Description: Battery-provided voltage in volts.
 
     - battery_current_amps
         - Type: float64
-        - Description: Current battery draw in amps.
+        - Description: Battery-provided current in amps.
 
     - battery_power_watts
         - Type: float64
-        - Description: Current battery power consumption in watts.
+        - Description: Battery-provided power in watts.
 
     - power_supply_voltage_volts
         - Type: float64
-        - Description: Power supply voltage in volts.
+        - Description: Power supply-provided voltage in volts.
 
     - power_supply_current_amps
         - Type: float64
-        - Description: Power supply current in amps.
+        - Description: Power supply-provided current in amps.
 
     - power_supply_power_watts
         - Type: float64
-        - Description: Power supply power in watts.
+        - Description: Power supply-provided power in watts.
 
     - motor_bus_voltage_volts
         - Type: float64
@@ -374,7 +374,7 @@
 
     - is_operational
         - Type: bool
-        - Description: True if the IMU is functioning normally.
+        - Description: True if the IMU is functioning normally and online.
 
 ---
 
@@ -406,15 +406,15 @@
 
     - max_position_error
         - Type: float64
-        - Description: Maximum allowable position error before a fault is triggered.
+        - Description: Maximum position error for the position control term of the joint’s impedance/PD control law. Values above this are clamped down to this.
 
     - max_velocity_error
         - Type: float64
-        - Description: Maximum allowable velocity error before a fault is triggered.
+        - Description: Maximum velocity error for the velocity control term of the joint’s impedance/PD control law. Values above this are clamped down to this.
 
     - max_torque
         - Type: float64
-        - Description: Maximum torque limit for the joint.
+        - Description: Maximum torque limit for the joint. Values above this are clamped down to this.
 
     - enable
         - Type: bool
@@ -422,7 +422,7 @@
 
     - joint_control_type
         - Type: byte
-        - Description: Control mode for the joint: 0 = position, 1 = velocity, 2 = effort, 3 = disabled.
+        - Description: Control mode for the joint: 0 = position, 1 = velocity, 2 = effort, 3 = disabled. This field is currently not used; all desired position (q_des), velocity (qd_des), and torque (tau_des) setpoints are resolved via a PD law into a single total desired torque value that is sent to the motor controller.
 
 ---
 
@@ -450,11 +450,11 @@
 
     - is_operational
         - Type: bool
-        - Description: True if the joint actuator is functioning normally.
+        - Description: True if the joint actuator is functioning normally and online.
 
 ---
 
-- **ROSDeviceStatusProvider** — Holds status information for a single hardware device
+- **ROSDeviceStatusProvider** — Holds status and fault information for a single hardware device
 
     - name
         - Type: string<=70
@@ -462,7 +462,7 @@
 
     - is_responding
         - Type: bool
-        - Description: True if the device is actively responding on the bus.
+        - Description: True if the device is online and actively responding on the bus.
 
     - is_faulted
         - Type: bool
