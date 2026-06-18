@@ -1,8 +1,8 @@
 <?xml version = "1.0" ?>
 <robot name="Alex">
     <!-- NECK, & HEAD JOINTS -->
-    <joint name="PEDESTAL_F" type="revolute">
-        <origin rpy="0 0 0" xyz="0 0 1"/>
+    <joint name="PEDESTAL_F" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
         <parent link="PEDESTAL_LINK"/>
         <child link="TORSO_LINK"/>
         <limit effort="0.0" lower="0.0" upper="0.0" velocity="0.0"/>
