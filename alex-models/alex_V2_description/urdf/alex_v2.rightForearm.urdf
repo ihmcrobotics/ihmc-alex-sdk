@@ -18,15 +18,15 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/RightElbowPitchLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/RightElbowPitchLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="right_elbow_y_collision">
             <geometry>
-                <capsule radius="0.05" length="0.18"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/RightElbowPitchLink_convex.stl"/>
             </geometry>
-            <origin rpy="0 0 0" xyz="-0.02 0 -0.12"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </collision>
     </link>
 
@@ -47,20 +47,14 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/RightWristYawLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/RightWristYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
-        <collision name="right_wrist_z_box_collision">
-            <origin xyz="-0.06 0 -0.15" rpy="0 0 0"/>
+        <collision name="right_wrist_z_collision">
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <box size="0.01 0.06 0.1"/>
-            </geometry>
-        </collision>
-        <collision name="right_wrist_z_cylinder_collision">
-            <origin xyz="0 0 -0.15" rpy="0 0 0"/>
-            <geometry>
-                <cylinder radius="0.044" length="0.12"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/RightWristYawLink_convex.stl"/>
             </geometry>
         </collision>
     </link>
@@ -82,7 +76,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/RightWristRollLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/RightWristRollLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -105,32 +99,20 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/RightGripperYawLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/RightGripperYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="right_gripper_z_collision">
-            <origin xyz="0 0.01 -0.1" rpy="0 0 0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <capsule radius="0.04" length="0.1"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/RightGripperYawLink_convex.stl"/>
             </geometry>
         </collision>
         <collision name="right_fist_collision">
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.012 -0.075"/>
             <geometry>
                 <cylinder radius="0.047" length="0.06"/>
-            </geometry>
-        </collision>
-        <collision name="right_finger_collision">
-            <origin rpy="0.0 0.0 0.0" xyz="-0.001 -0.013 -0.145"/>
-            <geometry>
-                <box size="0.08 0.025 0.075"/>
-            </geometry>
-        </collision>
-        <collision name="right_thumb_collision">
-            <origin rpy="0.0 -1.1 0.0" xyz="0.08 0.0 -0.06"/>
-            <geometry>
-                <cylinder radius="0.015" length="0.07"/>
             </geometry>
         </collision>
     </link>
