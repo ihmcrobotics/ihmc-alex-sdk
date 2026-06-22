@@ -23,7 +23,7 @@ from pathlib import Path
 
 import trimesh
 
-SUPPORTED_EXTS = {".glb", ".gltf", ".obj", ".stl"}
+SUPPORTED_EXTS = {".obj"}
 
 
 def load_as_single_mesh(path: Path) -> trimesh.Trimesh:

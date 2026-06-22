@@ -80,6 +80,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="left_wrist_x_collision">
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftWristRollLink_convex.stl"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="LEFT_GRIPPER_Z" type="revolute">
@@ -103,16 +109,10 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
-        <collision name="left_gripper_z_collision">
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-            <geometry>
-                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftGripperYawLink_convex.stl"/>
-            </geometry>
-        </collision>
         <collision name="left_fist_collision">
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.012 -0.075"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.055"/>
             <geometry>
-                <cylinder radius="0.047" length="0.06"/>
+                <cylinder radius="0.0285" length="0.11"/>
             </geometry>
         </collision>
     </link>

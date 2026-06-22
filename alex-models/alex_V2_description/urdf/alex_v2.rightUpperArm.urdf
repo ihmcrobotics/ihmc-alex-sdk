@@ -23,6 +23,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="right_shoulder_y_collision">
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/RightShoulderPitchLink_convex.stl"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="RIGHT_SHOULDER_X" type="revolute">
@@ -46,6 +52,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="right_shoulder_x_collision">
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/RightShoulderRollLink_convex.stl"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="RIGHT_SHOULDER_Z" type="revolute">
