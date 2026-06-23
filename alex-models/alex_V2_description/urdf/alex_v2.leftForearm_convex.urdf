@@ -1,149 +1,131 @@
 <?xml version = "1.0" ?>
 <robot name="Alex">
 
-    <joint name="RIGHT_ELBOW_Y" type="revolute">
+    <joint name="LEFT_ELBOW_Y" type="revolute">
         <origin rpy="0.0 0.0 0.0" xyz="0.015 0.0 -0.3127"/>
         <axis xyz="0.0 1.0 0.0"/>
-        <parent link="RIGHT_SHOULDER_Z_LINK"/>
-        <child link="RIGHT_ELBOW_Y_LINK"/>
-        <limit effort="71.28" lower="-2.35619" upper="0.174532925" velocity="4.47"/>
+        <parent link="LEFT_SHOULDER_Z_LINK"/>
+        <child link="LEFT_ELBOW_Y_LINK"/>
+        <limit effort="71.28" lower="-2.35619" upper="0.174533" velocity="4.47"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
-    <link name="RIGHT_ELBOW_Y_LINK">
+    <link name="LEFT_ELBOW_Y_LINK">
         <inertial>
             <mass value="0.45"/>
-            <origin rpy="0 0 0" xyz="-0.01180322 0.0035763 -0.04946747"/>
-            <inertia ixx="0.0007362" ixy="0.0000088" ixz="-0.0000292" iyy="0.0006567" iyz="-0.0001499" izz="0.0004897"/>
+            <origin rpy="0 0 0" xyz="-0.01180322 -0.0035763 -0.04946747"/>
+            <inertia ixx="0.0007362" ixy="-0.0000088" ixz="-0.0000292" iyy="0.0006567" iyz="0.0001499" izz="0.0004897"/>
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/RightElbowPitchLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftElbowPitchLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
-        <collision name="right_elbow_y_collision">
+        <collision name="left_elbow_y_collision">
             <geometry>
-                <capsule radius="0.05" length="0.18"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftElbowPitchLink_convex.stl"/>
             </geometry>
-            <origin rpy="0 0 0" xyz="-0.02 0 -0.12"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </collision>
     </link>
 
-    <joint name="RIGHT_WRIST_Z" type="revolute">
+    <joint name="LEFT_WRIST_Z" type="revolute">
         <origin xyz="-0.015 0.0 0.0" rpy="0.0 0.0 0.0"/>
         <axis xyz="0.0 0.0 1.0"/>
-        <parent link="RIGHT_ELBOW_Y_LINK"/>
-        <child link="RIGHT_WRIST_Z_LINK"/>
+        <parent link="LEFT_ELBOW_Y_LINK"/>
+        <child link="LEFT_WRIST_Z_LINK"/>
         <limit effort="20.86" lower="-2.61799" upper="2.61799" velocity="17.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
-    <link name="RIGHT_WRIST_Z_LINK">
+    <link name="LEFT_WRIST_Z_LINK">
         <inertial>
             <mass value="1.547"/> <!-- This is a measured value. Refer to https://docs.google.com/spreadsheets/d/1VXWFJk3VJUsfkHrDaytB2INq94un1KytIOzcKJD0p44/edit?gid=0#gid=0  -->
             <origin rpy="0 0 0" xyz="-0.00263832 -0.00050534 -0.13018376"/>
-            <inertia ixx="0.0037869" ixy="-0.0000163" ixz="-0.0000252" iyy="0.004071" iyz="0.0000924" izz="0.0015203"/>
+            <inertia ixx="0.0037869" ixy="0.0000163" ixz="-0.0000252" iyy="0.004071" iyz="-0.0000924" izz="0.0015203"/>
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/RightWristYawLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftWristYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
-        <collision name="right_wrist_z_box_collision">
-            <origin xyz="-0.06 0 -0.15" rpy="0 0 0"/>
+        <collision name="left_wrist_z_collision">
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <box size="0.01 0.06 0.1"/>
-            </geometry>
-        </collision>
-        <collision name="right_wrist_z_cylinder_collision">
-            <origin xyz="0 0 -0.15" rpy="0 0 0"/>
-            <geometry>
-                <cylinder radius="0.044" length="0.12"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftWristYawLink_convex.stl"/>
             </geometry>
         </collision>
     </link>
 
-    <joint name="RIGHT_WRIST_X" type="revolute">
-        <origin xyz="0.0 0.013 -0.25" rpy="0.0 0.0 0.0"/>
+    <joint name="LEFT_WRIST_X" type="revolute">
+        <origin xyz="0.0 -0.013 -0.25" rpy="0.0 0.0 0.0"/>
         <axis xyz="1 0 0"/>
-        <parent link="RIGHT_WRIST_Z_LINK"/>
-        <child link="RIGHT_WRIST_X_LINK"/>
-        <limit effort="20.86" lower="-0.610865" upper="1.8326" velocity="17.3"/>
+        <parent link="LEFT_WRIST_Z_LINK"/>
+        <child link="LEFT_WRIST_X_LINK"/>
+        <limit effort="20.86" lower="-1.8326" upper="0.610865" velocity="17.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
-    <link name="RIGHT_WRIST_X_LINK">
+    <link name="LEFT_WRIST_X_LINK">
         <inertial>
             <mass value="0.909"/> <!-- This is a measured value. Refer to https://docs.google.com/spreadsheets/d/1VXWFJk3VJUsfkHrDaytB2INq94un1KytIOzcKJD0p44/edit?gid=0#gid=0  -->
             <origin rpy="0 0 0" xyz="0.00004053 0.01038395 0.00035532"/>
-            <inertia ixx="0.000477" ixy="0.0000079" ixz="-0.0000097" iyy="0.0004902" iyz="0.0000008" izz="0.000514"/>
+            <inertia ixx="0.000477" ixy="-0.0000079" ixz="-0.0000097" iyy="0.0004902" iyz="-0.0000008" izz="0.000514"/>
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/RightWristRollLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftWristRollLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="left_wrist_x_collision">
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftWristRollLink_convex.stl"/>
+            </geometry>
+        </collision>
     </link>
 
-    <joint name="RIGHT_GRIPPER_Z" type="revolute">
-        <origin xyz="0.0 -0.013 -0.031" rpy="0.0 0.0 0.0"/>
+    <joint name="LEFT_GRIPPER_Z" type="revolute">
+        <origin xyz="0.0 0.013 -0.031" rpy="0.0 0.0 0.0"/>
         <axis xyz="0.0 0.0 1.0"/>
-        <parent link="RIGHT_WRIST_X_LINK"/>
-        <child link="RIGHT_GRIPPER_Z_LINK"/>
+        <parent link="LEFT_WRIST_X_LINK"/>
+        <child link="LEFT_GRIPPER_Z_LINK"/>
         <limit effort="20.86" lower="-2.61799" upper="2.61799" velocity="17.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
-    <link name="RIGHT_GRIPPER_Z_LINK">
+    <link name="LEFT_GRIPPER_Z_LINK">
         <inertial> <!--Updated via CAD 03/13/2026-->
             <mass value="0.287"/>
-            <origin rpy="0 0 0" xyz="-0.000217 0.000349 0.009761"/>
-            <inertia ixx="0.0001708" ixy="-0.0000001247" ixz="-0.00000103" iyy="0.0002537" iyz="0.0000004769" izz="0.0002462"/>
+            <origin rpy="0 0 0" xyz="-0.000217 -0.000349 0.009761"/>
+            <inertia ixx="0.0001708" ixy="0.0000001247" ixz="-0.00000103" iyy="0.0002537" iyz="-0.0000004769" izz="0.0002462"/>
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/RightGripperYawLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftGripperYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
-        <collision name="right_gripper_z_collision">
-            <origin xyz="0 0.01 -0.1" rpy="0 0 0"/>
+        <collision name="left_fist_collision">
+            <origin rpy="3.14159 0.0 3.14159" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <capsule radius="0.04" length="0.1"/>
-            </geometry>
-        </collision>
-        <collision name="right_fist_collision">
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.012 -0.075"/>
-            <geometry>
-                <cylinder radius="0.047" length="0.06"/>
-            </geometry>
-        </collision>
-        <collision name="right_finger_collision">
-            <origin rpy="0.0 0.0 0.0" xyz="-0.001 -0.013 -0.145"/>
-            <geometry>
-                <box size="0.08 0.025 0.075"/>
-            </geometry>
-        </collision>
-        <collision name="right_thumb_collision">
-            <origin rpy="0.0 -1.1 0.0" xyz="0.08 0.0 -0.06"/>
-            <geometry>
-                <cylinder radius="0.015" length="0.07"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftFist_convex.stl"/>
             </geometry>
         </collision>
     </link>
 
-    <!-- Right Forearm IMUs -->
-    <joint name="RIGHT_WRIST_Z_IMU_JOINT" type="fixed">
-        <origin rpy="1.571  0.0 1.571" xyz="-0.033554 0.010450 -0.148527"/>
+    <!-- Left Forearm IMUs -->
+    <joint name="LEFT_WRIST_Z_IMU_JOINT" type="fixed">
+        <origin rpy="1.571 0.0 1.571" xyz="-0.033554 0.010450 -0.148527"/>
         <axis xyz="0 0 1"/>
-        <parent link="RIGHT_WRIST_Z_LINK"/>
-        <child link="RIGHT_WRIST_Z_IMU_LINK"/>
+        <parent link="LEFT_WRIST_Z_LINK"/>
+        <child link="LEFT_WRIST_Z_IMU_LINK"/>
     </joint>
 
-    <link name="RIGHT_WRIST_Z_IMU_LINK">
+    <link name="LEFT_WRIST_Z_IMU_LINK">
         <inertial>
             <mass value="0"/>
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -151,8 +133,8 @@
         </inertial>
     </link>
 
-    <gazebo reference="RIGHT_WRIST_Z_IMU_LINK">
-        <sensor name="right_wrist_z_imu" type="imu">
+    <gazebo reference="LEFT_WRIST_Z_IMU_LINK">
+        <sensor name="left_wrist_z_imu" type="imu">
             <always_on>true</always_on>
             <imu>
                 <noise>
@@ -174,14 +156,14 @@
         </sensor>
     </gazebo>
 
-    <joint name="RIGHT_GRIPPER_Z_IMU_JOINT" type="fixed">
+    <joint name="LEFT_GRIPPER_Z_IMU_JOINT" type="fixed">
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <axis xyz="0 0 1"/>
-        <parent link="RIGHT_GRIPPER_Z_LINK"/>
-        <child link="RIGHT_GRIPPER_Z_IMU_LINK"/>
+        <parent link="LEFT_GRIPPER_Z_LINK"/>
+        <child link="LEFT_GRIPPER_Z_IMU_LINK"/>
     </joint>
 
-    <link name="RIGHT_GRIPPER_Z_IMU_LINK">
+    <link name="LEFT_GRIPPER_Z_IMU_LINK">
         <inertial>
             <mass value="0"/>
             <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -189,8 +171,8 @@
         </inertial>
     </link>
 
-    <gazebo reference="RIGHT_GRIPPER_Z_IMU_LINK">
-        <sensor name="right_gripper_z_imu" type="imu">
+    <gazebo reference="LEFT_GRIPPER_Z_IMU_LINK">
+        <sensor name="left_gripper_z_imu" type="imu">
             <always_on>true</always_on>
             <imu>
                 <noise>

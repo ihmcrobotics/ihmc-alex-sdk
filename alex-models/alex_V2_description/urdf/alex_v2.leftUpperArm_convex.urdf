@@ -19,10 +19,16 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/LeftShoulderPitchLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftShoulderPitchLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="left_shoulder_y_collision">
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftShoulderPitchLink_convex.stl"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="LEFT_SHOULDER_X" type="revolute">
@@ -42,10 +48,16 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/LeftShoulderRollLink_shortBicep.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftShoulderRollLink_shortBicep.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="left_shoulder_x_collision">
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftShoulderRollLink_convex.stl"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="LEFT_SHOULDER_Z" type="revolute">
@@ -65,14 +77,14 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/LeftShoulderYawLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftShoulderYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0867"/>
         </visual>
         <collision name="left_shoulder_z_collision">
-            <origin xyz="0 0 -0.12" rpy="0 0 0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0867"/>
             <geometry>
-                <cylinder radius="0.05" length="0.22"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/LeftShoulderYawLink_convex.stl"/>
             </geometry>
         </collision>
     </link>

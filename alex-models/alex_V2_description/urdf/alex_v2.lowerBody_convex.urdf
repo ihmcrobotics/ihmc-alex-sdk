@@ -121,15 +121,15 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/Pelvis.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/Pelvis.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="pelvis_collision">
             <geometry>
-                <box size="0.15 0.10 0.12"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/Pelvis_convex.stl"/>
             </geometry>
-            <origin xyz="0.0 0.0 -0.05" rpy="0.0 0.0 0.0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </collision>
     </link>
     <!-- Pelvis IMU -->
@@ -180,15 +180,15 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/LeftHipRollLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/LeftHipRollLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="left_hip_x_collision">
             <geometry>
-                <box size="0.02 0.12 0.10"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/LeftHipRollLink_convex.stl"/>
             </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="-0.02 0.06 0.0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </collision>
     </link>
     <!-- LeftHipRollIMU-->
@@ -237,7 +237,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/LeftHipYawLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/LeftHipYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -251,21 +251,15 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/LeftThigh.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/LeftThigh.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
         <collision name="left_thigh_collision">
-            <origin xyz="0.03 0.02 -0.18" rpy="0.0 -0.15 0.0" /> <!-- Centered along thigh -->
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
             <geometry>
-                <capsule radius="0.08" length="0.26"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/LeftThigh_convex.stl"/>
             </geometry>
-        </collision>
-        <collision name="left_thigh_lower_collision">
-            <geometry>
-                <cylinder radius ="0.03" length="0.155"/><!-- width (X), depth (Y), height (Z) -->
-            </geometry>
-            <origin rpy="1.5708 0.0 0.0" xyz="0.0 0.016 -0.32"/>
         </collision>
     </link>
     <link name="LEFT_SHIN">
@@ -277,21 +271,15 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/LeftShin.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/LeftShin.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
         <collision name="left_shin_collision">
             <geometry>
-                <capsule radius="0.06" length="0.3"/>  <!-- Adjust based on shin dimensions -->
+                <mesh filename="package://alex_V2_description/meshes/legs/LeftShin_convex.stl"/>
             </geometry>
-            <origin rpy="0.0 0.2 0.0" xyz="0.04 0.0 -0.20"/> <!-- Centered along shin -->
-        </collision>
-        <collision name="left_calf_collision">
-            <geometry>
-                <capsule radius="0.065" length="0.11"/>
-            </geometry>
-            <origin rpy="0.0 0.8 0.0" xyz="0.04 -0.02 -0.08"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </collision>
     </link>
     <!-- LeftThighIMU-->
@@ -376,7 +364,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/AnklePitchLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/AnklePitchLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -390,15 +378,15 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/Foot.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/Foot.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
         <collision name="left_foot_collision">
             <geometry>
-                <box size="0.22 0.1 0.02"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/Foot_convex.stl"/>
             </geometry>
-            <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </collision>
     </link>
 
@@ -412,15 +400,15 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/RightHipRollLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/RightHipRollLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="right_hip_x_collision">
             <geometry>
-                <box size="0.02 0.12 0.10"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/RightHipRollLink_convex.stl"/>
             </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="-0.02 -0.06 0.0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </collision>
     </link>
     <!-- RightHipRollIMU-->
@@ -469,7 +457,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/RightHipYawLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/RightHipYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -483,21 +471,15 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/RightThigh.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/RightThigh.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
         <collision name="right_thigh_collision">
             <geometry>
-                <capsule radius="0.08" length="0.26"/><!-- width (X), depth (Y), height (Z) -->
+                <mesh filename="package://alex_V2_description/meshes/legs/RightThigh_convex.stl"/>
             </geometry>
-            <origin rpy="0.0 -0.15 0.0" xyz="0.03 -0.02 -0.18"/>
-        </collision>
-        <collision name="right_thigh_lower_collision">
-            <geometry>
-                <cylinder radius ="0.03" length="0.155"/><!-- width (X), depth (Y), height (Z) -->
-            </geometry>
-            <origin rpy="1.5708 0.0 0.0" xyz="0.0 -0.016 -0.32"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </collision>
     </link>
     <!-- RightThighIMU-->
@@ -546,21 +528,15 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/RightShin.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/RightShin.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
         <collision name="right_shin_collision">
             <geometry>
-                <capsule radius="0.06" length="0.3"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/RightShin_convex.stl"/>
             </geometry>
-            <origin rpy="0 0.2 0" xyz="0.04 0 -0.20"/> <!-- centered along the shin length -->
-        </collision>
-        <collision name="right_calf_collision">
-            <geometry>
-                <capsule radius="0.065" length="0.11"/>
-            </geometry>
-            <origin rpy="0.0 0.8 0.0" xyz="0.04 0.02 -0.08"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </collision>
     </link>
     <!-- RightShinIMU-->
@@ -608,7 +584,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/AnklePitchLink.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/AnklePitchLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -622,15 +598,15 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/Foot.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/Foot.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
         <collision name="right_foot_collision">
             <geometry>
-                <box size="0.22 0.1 0.02"/>
+                <mesh filename="package://alex_V2_description/meshes/legs/Foot_convex.stl"/>
             </geometry>
-            <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </collision>
     </link>
 
@@ -644,43 +620,16 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V2_description/meshes/AlexV2Torso.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/torso.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.018"/>
         </visual>
-        <collision name="battery_collision">
-            <geometry>
-                <box size="0.11 0.31 0.32"/>
-            </geometry>
-            <origin xyz="-0.13 0.00 0.29" rpy="0 -0.2 0"/>
-        </collision>
         <collision name="torso_collision">
             <geometry>
-                <capsule radius="0.15" length="0.25"/>
+                <mesh filename="package://alex_V2_description/meshes/torso_convex.stl"/>
             </geometry>
-            <origin xyz="-0.01 0.00 0.26" rpy="0 0.0 0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.018"/>
         </collision>
-    </link>
-
-    <!-- TORSO ZED X MINI -->
-    <joint name="TORSO_ZED_X_MINI_JOINT" type="fixed">
-        <origin rpy="0.0 0.907571 0.0" xyz="0.108969 0.0 0.035381"/>
-        <parent link="TORSO_LINK"/>
-        <child link="TORSO_ZED_X_MINI_LINK"/>
-    </joint>
-
-    <link name="TORSO_ZED_X_MINI_LINK">
-        <inertial>
-            <mass value="0"/>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-        </inertial>
-        <visual>
-            <geometry>
-                <mesh filename="package://alex_V1_description/meshes/ZEDXMini.obj"/>
-            </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-        </visual>
     </link>
 
     <!-- TORSO IMU -->

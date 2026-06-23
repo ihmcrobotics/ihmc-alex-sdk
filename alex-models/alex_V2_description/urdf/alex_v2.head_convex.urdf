@@ -6,7 +6,7 @@
         <axis xyz="0 0 1"/>
         <parent link="TORSO_LINK"/>
         <child link="NECK_Z_LINK"/>
-        <limit effort="20.86" lower="-1.22173" upper="1.22173" velocity="17.3"/>
+        <limit effort="20.86" lower="-1.5708" upper="1.5708" velocity="17.3"/>
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="NECK_Y" type="revolute">
@@ -27,7 +27,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V2_description/meshes/AlexV2Neck.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/neck.obj"/>
             </geometry>
 <!--            <material name="gray">-->
 <!--                <color rgba="0.05 0.05 0.05 1.0"/>-->
@@ -43,37 +43,16 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V2_description/meshes/AlexV2Head.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/head.obj"/>
             </geometry>
             <origin rpy="1.5708 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="head_collision">
-            <origin xyz="0.03237 -0.013568 0.007163" rpy="0 0 0"/>
+            <origin rpy="1.5708 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <sphere radius="0.14"/>
+                <mesh filename="package://alex_V2_description/meshes/head_convex.stl"/>
             </geometry>
         </collision>
-    </link>
-
-    <!-- HEAD ZED X MINI -->
-    <joint name="HEAD_ZED_X_MINI_JOINT" type="fixed">
-        <origin rpy="0.0 0.3633 0.0" xyz="0.11603 0.009965 -0.02983"/>
-        <parent link="HEAD_LINK"/>
-        <child link="HEAD_ZED_X_MINI_LINK"/>
-    </joint>
-
-    <link name="HEAD_ZED_X_MINI_LINK">
-        <inertial>
-            <mass value="0"/>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-        </inertial>
-        <visual>
-            <geometry>
-                <mesh filename="package://alex_V1_description/meshes/ZEDXMini.obj"/>
-            </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-        </visual>
     </link>
 
     <!-- HEAD IMU -->
