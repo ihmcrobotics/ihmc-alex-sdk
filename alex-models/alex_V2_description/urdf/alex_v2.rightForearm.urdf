@@ -110,9 +110,9 @@
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="right_fist_collision">
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.055"/>
+            <origin rpy="3.14159 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <cylinder radius="0.0285" length="0.11"/>
+                <mesh filename="package://alex_V2_description/meshes/cycloidal_arm/RightFist_convex.stl"/>
             </geometry>
         </collision>
     </link>
