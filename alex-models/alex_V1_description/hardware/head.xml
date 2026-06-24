@@ -7,8 +7,8 @@
             <position>0</position>
             <actuatorPackage>A019</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>6.913761661923452</motorOffset>
-            <outputOffset>2.71450987492</outputOffset>
+            <motorOffset>9.84438493245598</motorOffset>
+            <outputOffset>6.179307557917613</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -16,9 +16,9 @@
             <alias>4003</alias>
             <position>0</position>
             <actuatorPackage>A018</actuatorPackage>
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>8.944199429202655</motorOffset>
-            <outputOffset>1.66976207026</outputOffset>
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <motorOffset>-7.627265399676058</motorOffset>
+            <outputOffset>1.6345762954435559</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
@@ -52,8 +52,8 @@
             <jointName>NECK_Z</jointName>
             <motorName>NeckYawMotor</motorName>
             <jointPositionOffset>0.0</jointPositionOffset>
-            <lowerJointLimit>-1.5708</lowerJointLimit>
-            <upperJointLimit>1.5708</upperJointLimit>
+            <lowerJointLimit>-1.22173</lowerJointLimit>
+            <upperJointLimit>1.22173</upperJointLimit>
             <torqueBreakFrequency>50.0</torqueBreakFrequency>
             <useFilteredStates>true</useFilteredStates>
             <publishFilteredStates>true</publishFilteredStates>

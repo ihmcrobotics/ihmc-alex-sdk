@@ -7,7 +7,7 @@
         <axis xyz="1 0 0"/>
         <parent link="PELVIS_LINK"/>
         <child link="LEFT_HIP_X_LINK"/>
-        <limit effort="160.7" lower="-0.488692" upper="0.872665" velocity="10.38"/>
+        <limit effort="160.7" lower="-0.349066" upper="0.872665" velocity="10.38"/> <!-- Lower limit comes from robot, not CAD -->
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="LEFT_HIP_Z" type="revolute">
@@ -57,7 +57,7 @@
         <axis xyz="1 0 0"/>
         <parent link="PELVIS_LINK"/>
         <child link="RIGHT_HIP_X_LINK"/>
-        <limit effort="160.7" lower="-0.872665" upper="0.488692" velocity="10.38"/>
+        <limit effort="160.7" lower="-0.872665" upper="0.349066" velocity="10.38"/> <!-- Upper limit comes from robot, not CAD -->
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="RIGHT_HIP_Z" type="revolute">
@@ -136,7 +136,7 @@
     <joint name="PELVIS_IMU_JOINT" type="fixed">
         <parent link="PELVIS_LINK"/>
         <child link="PELVIS_IMU_LINK"/>
-        <origin xyz="-0.08687724 0.01225028 -0.08051472" rpy="-0.01399 -0.013054 1.570796"/>
+        <origin xyz="-0.08687724 0.01225028 -0.08051472" rpy="0.005114 -0.0001262 1.570796"/> <!-- Added 0.005114 roll, -0.0001262 pitch bias -->
     </joint>
     <link name="PELVIS_IMU_LINK">
         <inertial>
@@ -200,7 +200,7 @@
         </inertial>
     </link>
     <joint name="LEFT_HIP_X_IMU_JOINT" type="fixed">
-        <origin rpy="-1.570796 0 1.570796" xyz="-0.01922309 0.10145013 -0.01488788"/>
+        <origin rpy="-1.5803397 -0.0019308 1.570796" xyz="-0.01922309 0.10145013 -0.01488788"/> <!-- Added -0.0095437 roll, -0.0019308 pitch bias -->
         <axis xyz="0 0 1"/>
         <parent link="LEFT_HIP_X_LINK"/>
         <child link="LEFT_HIP_X_IMU_LINK"/>
@@ -302,8 +302,8 @@
             <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
         </inertial>
     </link>
-    <joint name="LEFT_THIGH_IMU_JOINT" type="fixed">
-        <origin rpy="1.437982 0 1.570796" xyz="0.10004 0.03746 -0.21194"/>
+    <joint name="LEFT_THIGH_IMU_JOINT" type="fixed"> <!-- Added 0.1266934 roll, -0.006992 pitch bias -->
+        <origin rpy="1.6974894 -0.006992 1.570796" xyz="0.10004 0.03746 -0.21194"/>
         <axis xyz="0 0 1"/>
         <parent link="LEFT_THIGH"/>
         <child link="LEFT_THIGH_IMU_LINK"/>
@@ -340,7 +340,7 @@
         </inertial>
     </link>
     <joint name="LEFT_SHIN_IMU_JOINT" type="fixed">
-        <origin rpy="1.403695170631842 0 -1.570796" xyz="0.05655120 0.00084826 -0.15664831"/>
+        <origin rpy="1.396297 0.005288 -1.570796" xyz="0.05655120 0.00084826 -0.15664831"/> <!-- Added -0.174499 roll, 0.005288 pitch bias -->
         <axis xyz="0 0 1"/>
         <parent link="LEFT_SHIN"/>
         <child link="LEFT_SHIN_IMU_LINK"/>
@@ -402,7 +402,6 @@
         </collision>
     </link>
 
-
     <!-- RIGHT LEG LINKS -->
     <link name="RIGHT_HIP_X_LINK">
         <inertial>
@@ -433,7 +432,7 @@
         </inertial>
     </link>
     <joint name="RIGHT_HIP_X_IMU_JOINT" type="fixed">
-        <origin rpy="-1.570796 0 1.570796" xyz="-0.01922309 -0.07694987 -0.01488788"/>
+        <origin rpy="-1.582622 0.00171 1.570796" xyz="-0.01922309 -0.07694987 -0.01488788"/> <!-- Added -0.011826 roll, 0.00171 pitch bias -->
         <axis xyz="0 0 1"/>
         <parent link="RIGHT_HIP_X_LINK"/>
         <child link="RIGHT_HIP_X_IMU_LINK"/>
@@ -510,7 +509,7 @@
         </inertial>
     </link>
     <joint name="RIGHT_THIGH_IMU_JOINT" type="fixed">
-        <origin rpy="1.6947717585 0 1.570796" xyz="0.10003618 -0.033541826 -0.21194191"/>
+        <origin rpy="1.69207 -0.005085 1.570796" xyz="0.10003618 -0.033541826 -0.21194191"/> <!-- Added 0.121274 roll, -0.005085 pitch bias -->
         <axis xyz="0 0 1"/>
         <parent link="RIGHT_THIGH"/>
         <child link="RIGHT_THIGH_IMU_LINK"/>
@@ -573,7 +572,7 @@
         </inertial>
     </link>
     <joint name="RIGHT_SHIN_IMU_JOINT" type="fixed">
-        <origin rpy="1.403695170631842 0 -1.570796" xyz="0.05673025 -0.00875818 -0.15674961"/>
+        <origin rpy="1.4114646 0.00076419 -1.570796" xyz="0.05673025 -0.00875818 -0.15674961"/> <!-- Added -0.1593314 roll, 0.00076419 pitch bias -->
         <axis xyz="0 0 1"/>
         <parent link="RIGHT_SHIN"/>
         <child link="RIGHT_SHIN_IMU_LINK"/>
@@ -638,27 +637,34 @@
     <!-- SPINE LINKS -->
     <link name="TORSO_LINK">
         <inertial>
-            <mass value="11.478322779"/> <!-- Original was 4.352, measured mass of whole robot and put delta into this torso mass (08/12/2025 Stefan and Robert)-->
-            <origin rpy="0 0 0" xyz="-0.014 0.001 0.326"/> <!--origin rpy="0 0 0" xyz="0.0 0.0 0.297"/-->
-            <inertia ixx="0.1764967124" ixy="0.00002329659" ixz="0.00830355822" iyy="0.1237602" iyz="0.00072436338" izz="0.1109598365"/>
+            <mass value="22.210"/>
+            <origin rpy="0 0 0" xyz="-0.03897312 0.00001095 0.29977309"/>
+            <inertia ixx="0.35940118" ixy="0.00042074" ixz="0.03637316" iyy="0.36096805" iyz="0.00037731" izz="0.27064087"/>
+            <!--<inertia ixx="1.742" ixy="0.000196314" ixz="0.287774271" iyy="1.823" iyz="-0.002551308" izz="0.261308291"/>-->
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/torso.obj"/>
+                <mesh filename="package://alex_V2_description/meshes/AlexV2Torso.obj"/>
             </geometry>
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.105063"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.018"/>
         </visual>
+        <collision name="battery_collision">
+            <geometry>
+                <box size="0.11 0.31 0.32"/>
+            </geometry>
+            <origin xyz="-0.13 0.00 0.29" rpy="0 -0.2 0"/>
+        </collision>
         <collision name="torso_collision">
             <geometry>
-                <box size="0.27 0.24 0.3"/>
+                <capsule radius="0.15" length="0.25"/>
             </geometry>
-            <origin xyz="-0.01 0.00 0.25" rpy="0 0 0"/>
+            <origin xyz="-0.01 0.00 0.26" rpy="0 0.0 0"/>
         </collision>
     </link>
 
     <!-- TORSO ZED X MINI -->
     <joint name="TORSO_ZED_X_MINI_JOINT" type="fixed">
-        <origin rpy="0.0 0.907571 0.0" xyz="0.1 0.0 0.05"/>
+        <origin rpy="0.0 0.907571 0.0" xyz="0.108969 0.0 0.035381"/>
         <parent link="TORSO_LINK"/>
         <child link="TORSO_ZED_X_MINI_LINK"/>
     </joint>
@@ -679,7 +685,7 @@
 
     <!-- TORSO IMU -->
     <joint name="TORSO_IMU_JOINT" type="fixed">
-        <origin rpy="0.0 0.0 -1.5708" xyz="-0.009753 -0.01075 0.373405"/>
+        <origin rpy="-1.561264 -0.329453 -1.570796" xyz="0.094766 0.018319 0.255014"/> <!-- Added 0.009536 roll, 0.002147 pitch bias -->
         <axis xyz="0 0 1"/>
         <parent link="TORSO_LINK"/>
         <child link="TORSO_IMU_LINK"/>
