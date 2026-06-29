@@ -54,6 +54,12 @@ public class IMUState implements ROS2Message<IMUState>
 
    }
 
+   public IMUState(IMUState from)
+   {
+      this();
+      set(from);
+   }
+
    @Override
    public int calculateSizeBytes(int currentAlignment)
    {

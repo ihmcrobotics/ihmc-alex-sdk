@@ -105,6 +105,12 @@ public class AlexCommand implements ROS2Message<AlexCommand>
 
    }
 
+   public AlexCommand(AlexCommand from)
+   {
+      this();
+      set(from);
+   }
+
    @Override
    public int calculateSizeBytes(int currentAlignment)
    {

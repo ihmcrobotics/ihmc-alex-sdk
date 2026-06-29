@@ -97,6 +97,12 @@ public class HardwareStatus implements ROS2Message<HardwareStatus>
 
    }
 
+   public HardwareStatus(HardwareStatus from)
+   {
+      this();
+      set(from);
+   }
+
    @Override
    public int calculateSizeBytes(int currentAlignment)
    {

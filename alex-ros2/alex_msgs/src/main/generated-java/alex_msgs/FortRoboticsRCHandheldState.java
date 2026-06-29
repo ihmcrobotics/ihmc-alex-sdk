@@ -93,6 +93,12 @@ public class FortRoboticsRCHandheldState implements ROS2Message<FortRoboticsRCHa
 
    }
 
+   public FortRoboticsRCHandheldState(FortRoboticsRCHandheldState from)
+   {
+      this();
+      set(from);
+   }
+
    @Override
    public int calculateSizeBytes(int currentAlignment)
    {

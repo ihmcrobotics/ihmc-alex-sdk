@@ -78,6 +78,12 @@ public class HardwareResources implements ROS2Message<HardwareResources>
 
    }
 
+   public HardwareResources(HardwareResources from)
+   {
+      this();
+      set(from);
+   }
+
    @Override
    public int calculateSizeBytes(int currentAlignment)
    {

@@ -66,6 +66,12 @@ public class OneDOFJointCommand implements ROS2Message<OneDOFJointCommand>
 
    }
 
+   public OneDOFJointCommand(OneDOFJointCommand from)
+   {
+      this();
+      set(from);
+   }
+
    @Override
    public int calculateSizeBytes(int currentAlignment)
    {

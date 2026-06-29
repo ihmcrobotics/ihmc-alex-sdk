@@ -51,6 +51,12 @@ public class OneDOFJointState implements ROS2Message<OneDOFJointState>
 
    }
 
+   public OneDOFJointState(OneDOFJointState from)
+   {
+      this();
+      set(from);
+   }
+
    @Override
    public int calculateSizeBytes(int currentAlignment)
    {

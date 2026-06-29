@@ -95,6 +95,12 @@ public class AlexState implements ROS2Message<AlexState>
 
    }
 
+   public AlexState(AlexState from)
+   {
+      this();
+      set(from);
+   }
+
    @Override
    public int calculateSizeBytes(int currentAlignment)
    {

@@ -49,6 +49,12 @@ public class ForceTorqueState implements ROS2Message<ForceTorqueState>
 
    }
 
+   public ForceTorqueState(ForceTorqueState from)
+   {
+      this();
+      set(from);
+   }
+
    @Override
    public int calculateSizeBytes(int currentAlignment)
    {

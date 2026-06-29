@@ -71,6 +71,12 @@ public class ROSDeviceStatusProvider implements ROS2Message<ROSDeviceStatusProvi
 
    }
 
+   public ROSDeviceStatusProvider(ROSDeviceStatusProvider from)
+   {
+      this();
+      set(from);
+   }
+
    @Override
    public int calculateSizeBytes(int currentAlignment)
    {
