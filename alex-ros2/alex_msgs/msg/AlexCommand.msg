@@ -20,9 +20,6 @@ bool unservo_quickly
 bool use_requested_master_gain
 float64 requested_master_gain
 
-# Option to disable non-critical faults
-bool disable_noncritical_faults
-
 # Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
 byte robot_control_state
 

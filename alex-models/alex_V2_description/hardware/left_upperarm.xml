@@ -30,9 +30,8 @@
             <actuatorPackage>A047</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <outputEncoderInverted>false</outputEncoderInverted> <!-- Only true for Nadia arms on V1-->
-            <outputFromMotorEncoder>true</outputFromMotorEncoder>
-            <motorOffset>312.2373793396527</motorOffset>
-            <outputOffset>2.351380828129715</outputOffset>
+            <motorOffset>48.2806283154893</motorOffset>
+            <outputOffset>2.346754284998407</outputOffset>
             <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>

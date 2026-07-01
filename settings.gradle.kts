@@ -16,10 +16,7 @@ buildscript {
    }
 }
 
-val ihmcHandsRos2Dir = settings.settingsDir.resolve("alex-ros2/ihmc_hands_ros2")
-if (!ihmcHandsRos2Dir.exists()) {
-   ProcessBuilder("git", "submodule", "update", "--init", "--recursive").directory(settings.settingsDir).start().waitFor()
-}
+ProcessBuilder("git", "submodule", "update", "--init", "--recursive").directory(settings.settingsDir).start().waitFor()
 
 val ihmcSettingsConfigurator = us.ihmc.build.IHMCSettingsConfigurator(settings, logger, extra)
 ihmcSettingsConfigurator.checkRequiredPropertiesAreSet()

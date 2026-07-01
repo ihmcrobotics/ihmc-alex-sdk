@@ -40,10 +40,6 @@ module alex_msgs
         boolean use_requested_master_gain;
         double requested_master_gain;
         /**
-         * Option to disable non-critical faults
-         */
-        boolean disable_noncritical_faults;
-        /**
          * Control state of the robot, 0 is do nothing, 1 is hold position, 2 is user control
          */
         octet robot_control_state;
