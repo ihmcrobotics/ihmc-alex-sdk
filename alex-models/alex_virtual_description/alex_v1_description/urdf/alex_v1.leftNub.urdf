@@ -13,7 +13,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/nub.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/nub.obj"/>
             </geometry>
             <origin rpy="0.0 1.57 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
