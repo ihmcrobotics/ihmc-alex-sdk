@@ -2,7 +2,7 @@ import us.ihmc.jros2.generator.jros2GenTask
 
 plugins {
    id("us.ihmc.ihmc-build")
-   id("us.ihmc.jros2.generator") version "1.3.0.999"
+   id("us.ihmc.jros2.generator") version "1.4.0"
 }
 
 ihmc {
@@ -21,7 +21,6 @@ ihmc {
 
 mainDependencies {
    api("us.ihmc:ihmc_hands_ros2:source")
-   api("us.ihmc:jros2:source")
 }
 
 tasks.register<jros2GenTask>("generateMessages") {
