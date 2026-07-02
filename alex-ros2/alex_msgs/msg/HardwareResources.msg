@@ -12,5 +12,8 @@ string<=32[11] xml_resources
 # The list of individual URDF files comprising the full URDF description of the robot
 string<=32[10] urdf_resources
 
-# The directory containing the xml and URDF resources of the desired version of the robot
-string<=32 directory
+# The directory containing the XML resources of the desired version of the robot
+string<=32 hardware_description_directory
+
+# The directory containing the URDF, mesh, and mjcf resources of the desired version of the robot
+string<=32 virtual_description_directory

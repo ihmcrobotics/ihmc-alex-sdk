@@ -15,7 +15,7 @@ public class HardwareResourcesPubSubType implements us.ihmc.pubsub.TopicDataType
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "ba17f8255048fede08a89fbe36d374ff0382ce1825e259af6a5803e6e00de304";
+   		return "dc52433e43aba92bf9f579d794e87866276517573033865d7498ccdbb63672d3";
    }
    
    @Override
@@ -65,6 +65,7 @@ public class HardwareResourcesPubSubType implements us.ihmc.pubsub.TopicDataType
           current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 255 + 1;
       }
       current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 32 + 1;
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 32 + 1;
 
       return current_alignment - initial_alignment;
    }
@@ -94,7 +95,9 @@ public class HardwareResourcesPubSubType implements us.ihmc.pubsub.TopicDataType
               current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + data.getUrdfResources()[i0].length() + 1;
 
       }
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + data.getDirectory().length() + 1;
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + data.getHardwareDescriptionDirectory().length() + 1;
+
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + data.getVirtualDescriptionDirectory().length() + 1;
 
 
       return current_alignment - initial_alignment;
@@ -116,9 +119,13 @@ public class HardwareResourcesPubSubType implements us.ihmc.pubsub.TopicDataType
         	cdr.write_type_d(data.getUrdfResources()[i0]);	
       }
 
-      if(data.getDirectory().length() <= 32)
-      cdr.write_type_d(data.getDirectory());else
-          throw new RuntimeException("directory field exceeds the maximum length: %d > %d".formatted(data.getDirectory().length(), 32));
+      if(data.getHardwareDescriptionDirectory().length() <= 32)
+      cdr.write_type_d(data.getHardwareDescriptionDirectory());else
+          throw new RuntimeException("hardware_description_directory field exceeds the maximum length: %d > %d".formatted(data.getHardwareDescriptionDirectory().length(), 32));
+
+      if(data.getVirtualDescriptionDirectory().length() <= 32)
+      cdr.write_type_d(data.getVirtualDescriptionDirectory());else
+          throw new RuntimeException("virtual_description_directory field exceeds the maximum length: %d > %d".formatted(data.getVirtualDescriptionDirectory().length(), 32));
 
    }
 
@@ -138,7 +145,8 @@ public class HardwareResourcesPubSubType implements us.ihmc.pubsub.TopicDataType
         	cdr.read_type_d(data.getUrdfResources()[i0]);	
       }
       	
-      cdr.read_type_d(data.getDirectory());	
+      cdr.read_type_d(data.getHardwareDescriptionDirectory());	
+      cdr.read_type_d(data.getVirtualDescriptionDirectory());	
 
    }
 
@@ -149,7 +157,8 @@ public class HardwareResourcesPubSubType implements us.ihmc.pubsub.TopicDataType
       ser.write_type_4("num_urdf_resources", data.getNumUrdfResources());
       ser.write_type_f("xml_resources", data.getXmlResources());
       ser.write_type_f("urdf_resources", data.getUrdfResources());
-      ser.write_type_d("directory", data.getDirectory());
+      ser.write_type_d("hardware_description_directory", data.getHardwareDescriptionDirectory());
+      ser.write_type_d("virtual_description_directory", data.getVirtualDescriptionDirectory());
    }
 
    @Override
@@ -159,7 +168,8 @@ public class HardwareResourcesPubSubType implements us.ihmc.pubsub.TopicDataType
       data.setNumUrdfResources(ser.read_type_4("num_urdf_resources"));
       ser.read_type_f("xml_resources", data.getXmlResources());
       ser.read_type_f("urdf_resources", data.getUrdfResources());
-      ser.read_type_d("directory", data.getDirectory());
+      ser.read_type_d("hardware_description_directory", data.getHardwareDescriptionDirectory());
+      ser.read_type_d("virtual_description_directory", data.getVirtualDescriptionDirectory());
    }
 
    public static void staticCopy(alex_msgs.msg.dds.HardwareResources src, alex_msgs.msg.dds.HardwareResources dest)

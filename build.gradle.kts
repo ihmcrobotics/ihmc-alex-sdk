@@ -56,11 +56,11 @@ tasks.register("generateMessages") {
          throw GradleException("Could not find ros2-common-interfaces in configurations.runtimeClasspath!")
       }
 
-      generator.addPackageRootToIDLGenerator(file("build/tmp/generateMessages/ros2-common-interfaces/rcl_interfaces").toPath())
-      generator.addPackageRootToIDLGenerator(file("build/tmp/generateMessages/ros2-common-interfaces/common_interfaces").toPath())
+//      generator.addPackageRootToIDLGenerator(file("build/tmp/generateMessages/ros2-common-interfaces/rcl_interfaces").toPath())
+//      generator.addPackageRootToIDLGenerator(file("build/tmp/generateMessages/ros2-common-interfaces/common_interfaces").toPath())
       generator.addPackageRootToIDLGenerator(file("alex-ros2").toPath())
 
-      generator.addCustomIDLFiles(file("build/tmp/generateMessages/ros2-common-interfaces/").toPath())
+//      generator.addCustomIDLFiles(file("build/tmp/generateMessages/ros2-common-interfaces/").toPath())
 
       generator.generate(file("build/tmp/generateMessages/generated-idl").toPath(),
                          file("build/tmp/generateMessages/generated-ros1").toPath(),

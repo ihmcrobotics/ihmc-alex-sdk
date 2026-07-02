@@ -28,9 +28,13 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
             */
    public java.lang.StringBuilder[] urdf_resources_;
    /**
-            * The directory containing the xml and URDF resources of the desired version of the robot
+            * The directory containing the XML resources of the desired version of the robot
             */
-   public java.lang.StringBuilder directory_;
+   public java.lang.StringBuilder hardware_description_directory_;
+   /**
+            * The directory containing the URDF, mesh, and mjcf resources of the desired version of the robot
+            */
+   public java.lang.StringBuilder virtual_description_directory_;
 
    public HardwareResources()
    {
@@ -46,7 +50,8 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
       {
           urdf_resources_[i3] = new java.lang.StringBuilder();
       }
-      directory_ = new java.lang.StringBuilder(32);
+      hardware_description_directory_ = new java.lang.StringBuilder(32);
+      virtual_description_directory_ = new java.lang.StringBuilder(32);
    }
 
    public HardwareResources(HardwareResources other)
@@ -73,8 +78,11 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
             urdf_resources_[i7].append(other.urdf_resources_[i7]);
       }
 
-      directory_.setLength(0);
-      directory_.append(other.directory_);
+      hardware_description_directory_.setLength(0);
+      hardware_description_directory_.append(other.hardware_description_directory_);
+
+      virtual_description_directory_.setLength(0);
+      virtual_description_directory_.append(other.virtual_description_directory_);
 
    }
 
@@ -127,27 +135,51 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
    }
 
    /**
-            * The directory containing the xml and URDF resources of the desired version of the robot
+            * The directory containing the XML resources of the desired version of the robot
             */
-   public void setDirectory(java.lang.String directory)
+   public void setHardwareDescriptionDirectory(java.lang.String hardware_description_directory)
    {
-      directory_.setLength(0);
-      directory_.append(directory);
+      hardware_description_directory_.setLength(0);
+      hardware_description_directory_.append(hardware_description_directory);
    }
 
    /**
-            * The directory containing the xml and URDF resources of the desired version of the robot
+            * The directory containing the XML resources of the desired version of the robot
             */
-   public java.lang.String getDirectoryAsString()
+   public java.lang.String getHardwareDescriptionDirectoryAsString()
    {
-      return getDirectory().toString();
+      return getHardwareDescriptionDirectory().toString();
    }
    /**
-            * The directory containing the xml and URDF resources of the desired version of the robot
+            * The directory containing the XML resources of the desired version of the robot
             */
-   public java.lang.StringBuilder getDirectory()
+   public java.lang.StringBuilder getHardwareDescriptionDirectory()
    {
-      return directory_;
+      return hardware_description_directory_;
+   }
+
+   /**
+            * The directory containing the URDF, mesh, and mjcf resources of the desired version of the robot
+            */
+   public void setVirtualDescriptionDirectory(java.lang.String virtual_description_directory)
+   {
+      virtual_description_directory_.setLength(0);
+      virtual_description_directory_.append(virtual_description_directory);
+   }
+
+   /**
+            * The directory containing the URDF, mesh, and mjcf resources of the desired version of the robot
+            */
+   public java.lang.String getVirtualDescriptionDirectoryAsString()
+   {
+      return getVirtualDescriptionDirectory().toString();
+   }
+   /**
+            * The directory containing the URDF, mesh, and mjcf resources of the desired version of the robot
+            */
+   public java.lang.StringBuilder getVirtualDescriptionDirectory()
+   {
+      return virtual_description_directory_;
    }
 
 
@@ -180,7 +212,9 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
       {
                 if (!us.ihmc.idl.IDLTools.epsilonEqualsStringBuilder(this.urdf_resources_[i11], other.urdf_resources_[i11], epsilon)) return false;}
 
-      if (!us.ihmc.idl.IDLTools.epsilonEqualsStringBuilder(this.directory_, other.directory_, epsilon)) return false;
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsStringBuilder(this.hardware_description_directory_, other.hardware_description_directory_, epsilon)) return false;
+
+      if (!us.ihmc.idl.IDLTools.epsilonEqualsStringBuilder(this.virtual_description_directory_, other.virtual_description_directory_, epsilon)) return false;
 
 
       return true;
@@ -205,7 +239,9 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
       for(int i15 = 0; i15 < urdf_resources_.length; ++i15)
       {
                 if (!us.ihmc.idl.IDLTools.equals(this.urdf_resources_[i15], otherMyClass.urdf_resources_[i15])) return false;}
-      if (!us.ihmc.idl.IDLTools.equals(this.directory_, otherMyClass.directory_)) return false;
+      if (!us.ihmc.idl.IDLTools.equals(this.hardware_description_directory_, otherMyClass.hardware_description_directory_)) return false;
+
+      if (!us.ihmc.idl.IDLTools.equals(this.virtual_description_directory_, otherMyClass.virtual_description_directory_)) return false;
 
 
       return true;
@@ -225,8 +261,10 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
       builder.append(java.util.Arrays.toString(this.xml_resources_));      builder.append(", ");
       builder.append("urdf_resources=");
       builder.append(java.util.Arrays.toString(this.urdf_resources_));      builder.append(", ");
-      builder.append("directory=");
-      builder.append(this.directory_);
+      builder.append("hardware_description_directory=");
+      builder.append(this.hardware_description_directory_);      builder.append(", ");
+      builder.append("virtual_description_directory=");
+      builder.append(this.virtual_description_directory_);
       builder.append("}");
       return builder.toString();
    }
