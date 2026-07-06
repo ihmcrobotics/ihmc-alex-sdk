@@ -13,7 +13,7 @@ uint32 working_counter_mismatch_count
 uint32 missed_deadlines
 
 # Power Management Board Information
-float64 battery_charge_percetage
+float64 battery_charge_percentage
 float64 estimated_runtime_minutes
 bool bus_over_voltage_warning
 bool bus_over_current_warning

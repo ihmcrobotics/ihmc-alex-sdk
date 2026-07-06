@@ -32,7 +32,7 @@ module alex_msgs
         /**
          * Power Management Board Information
          */
-        double battery_charge_percetage;
+        double battery_charge_percentage;
         double estimated_runtime_minutes;
         boolean bus_over_voltage_warning;
         boolean bus_over_current_warning;
