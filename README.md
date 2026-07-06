@@ -21,7 +21,6 @@ configurations, each body segment is split into its own file to be selected if t
     - `meshes`: Contains the OBJ and MTL files to describe each link on Alex
     - `mjcf`: Contains XML files for use with MuJoCo
     - `urdf`: URDF files describing Alex for use in visualization/simulation within the IHMC Java Framework
-      - For simplicity when switching robot configurations, each body segment is split into its own file to be selected if that segment is included
 
 ### alex-ros2
 This directory contains all files specific to ROS communication between Alex's onboard low-level control process, and any external high-level process
