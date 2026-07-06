@@ -20,7 +20,7 @@ ihmc {
 }
 
 mainDependencies {
-   api("us.ihmc:ihmc_hands_ros2:source")
+   api("us.ihmc:ihmc_hands_ros2:0.3.0")
 }
 
 tasks.register<jros2GenTask>("generateMessages") {
