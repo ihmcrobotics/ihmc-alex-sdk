@@ -15,7 +15,7 @@ public class HardwareResourcesPubSubType implements us.ihmc.pubsub.TopicDataType
    @Override
    public final java.lang.String getDefinitionChecksum()
    {
-   		return "dc52433e43aba92bf9f579d794e87866276517573033865d7498ccdbb63672d3";
+   		return "ec8e24c1875f12ede6a1f9631b636139db0444a36958df93587231b00bf34944";
    }
    
    @Override
@@ -64,8 +64,8 @@ public class HardwareResourcesPubSubType implements us.ihmc.pubsub.TopicDataType
       {
           current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 255 + 1;
       }
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 32 + 1;
-      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 32 + 1;
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 46 + 1;
+      current_alignment += 4 + us.ihmc.idl.CDR.alignment(current_alignment, 4) + 46 + 1;
 
       return current_alignment - initial_alignment;
    }
@@ -119,13 +119,13 @@ public class HardwareResourcesPubSubType implements us.ihmc.pubsub.TopicDataType
         	cdr.write_type_d(data.getUrdfResources()[i0]);	
       }
 
-      if(data.getHardwareDescriptionDirectory().length() <= 32)
+      if(data.getHardwareDescriptionDirectory().length() <= 46)
       cdr.write_type_d(data.getHardwareDescriptionDirectory());else
-          throw new RuntimeException("hardware_description_directory field exceeds the maximum length: %d > %d".formatted(data.getHardwareDescriptionDirectory().length(), 32));
+          throw new RuntimeException("hardware_description_directory field exceeds the maximum length: %d > %d".formatted(data.getHardwareDescriptionDirectory().length(), 46));
 
-      if(data.getVirtualDescriptionDirectory().length() <= 32)
+      if(data.getVirtualDescriptionDirectory().length() <= 46)
       cdr.write_type_d(data.getVirtualDescriptionDirectory());else
-          throw new RuntimeException("virtual_description_directory field exceeds the maximum length: %d > %d".formatted(data.getVirtualDescriptionDirectory().length(), 32));
+          throw new RuntimeException("virtual_description_directory field exceeds the maximum length: %d > %d".formatted(data.getVirtualDescriptionDirectory().length(), 46));
 
    }
 

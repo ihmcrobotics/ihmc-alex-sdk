@@ -13,7 +13,7 @@ string<=32[11] xml_resources
 string<=32[10] urdf_resources
 
 # The directory containing the XML resources of the desired version of the robot
-string<=32 hardware_description_directory
+string<=46 hardware_description_directory
 
 # The directory containing the URDF, mesh, and mjcf resources of the desired version of the robot
-string<=32 virtual_description_directory
+string<=46 virtual_description_directory

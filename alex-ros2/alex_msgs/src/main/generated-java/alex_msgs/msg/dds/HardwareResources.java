@@ -50,8 +50,8 @@ public class HardwareResources extends Packet<HardwareResources> implements Sett
       {
           urdf_resources_[i3] = new java.lang.StringBuilder();
       }
-      hardware_description_directory_ = new java.lang.StringBuilder(32);
-      virtual_description_directory_ = new java.lang.StringBuilder(32);
+      hardware_description_directory_ = new java.lang.StringBuilder(46);
+      virtual_description_directory_ = new java.lang.StringBuilder(46);
    }
 
    public HardwareResources(HardwareResources other)
