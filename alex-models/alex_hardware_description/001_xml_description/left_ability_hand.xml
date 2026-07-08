@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XmlHardware>
+    <transmissions>
+        <XmlHand>
+            <name>left_ability_hand</name>
+            <side>LEFT</side>
+            <type>ABILITY_HAND</type>
+            <parentBoardAlias>2107</parentBoardAlias>
+            <joint>left_ability_hand_index_q1</joint>
+            <joint>left_ability_hand_index_q2</joint>
+            <joint>left_ability_hand_middle_q1</joint>
+            <joint>left_ability_hand_middle_q2</joint>
+            <joint>left_ability_hand_ring_q1</joint>
+            <joint>left_ability_hand_ring_q2</joint>
+            <joint>left_ability_hand_pinky_q1</joint>
+            <joint>left_ability_hand_pinky_q2</joint>
+            <joint>left_ability_hand_thumb_q1</joint>
+            <joint>left_ability_hand_thumb_q2</joint>
+            <present>true</present>
+        </XmlHand>
+    </transmissions>
+</XmlHardware>
