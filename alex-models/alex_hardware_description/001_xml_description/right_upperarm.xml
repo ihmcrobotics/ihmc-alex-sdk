@@ -9,6 +9,7 @@
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>-176.10363716052257</motorOffset> <!-- Use -49685 for Nadia arms -->
             <outputOffset>0.2247331199783722</outputOffset> <!-- Use 296104 for Nadia arms -->
+            <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -19,6 +20,7 @@
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>410897.7900344206</motorOffset> <!-- Use 5991 for Nadia arms -->
             <outputOffset>5.0416783079173015</outputOffset> <!-- Use 1014295 for Nadia arms -->
+            <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -29,6 +31,7 @@
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
             <motorOffset>409737.0088501842</motorOffset> <!-- Use 544336 for Nadia arms -->
             <outputOffset>3.727401306658285</outputOffset> <!-- Use 930653 for Nadia arms -->
+            <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -39,6 +42,7 @@
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
             <motorOffset>411728.0518826685</motorOffset> <!-- Use -177406 for Nadia arms -->
             <outputOffset>6.794161964376099</outputOffset> <!-- Use 887186 for Nadia arms -->
+            <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
 
