@@ -26,8 +26,11 @@ string<=32[11] xml_resources
 # The list of individual URDF files comprising the full URDF description of the robot
 string<=32[10] urdf_resources
 
-# The directory containing the xml and URDF resources of the desired version of the robot
-string<=32 directory}</pre>
+# The directory containing the XML resources of the desired version of the robot
+string<=46 hardware_description_directory
+
+# The directory containing the URDF, mesh, and mjcf resources of the desired version of the robot
+string<=46 virtual_description_directory}</pre>
 */
 public class HardwareResources implements ROS2Message<HardwareResources>
 {
@@ -54,11 +57,17 @@ public class HardwareResources implements ROS2Message<HardwareResources>
    // This is not strictly enforced in Java / jros2.
    private final StringBuilder[] urdf_resources_;
    /**
-      The directory containing the xml and URDF resources of the desired version of the robot
+      The directory containing the XML resources of the desired version of the robot
    */
-   // Note: The length of this string should not exceed 32 characters.
+   // Note: The length of this string should not exceed 46 characters.
    // This is not strictly enforced in Java / jros2.
-   private final StringBuilder directory_;
+   private final StringBuilder hardware_description_directory_;
+   /**
+      The directory containing the URDF, mesh, and mjcf resources of the desired version of the robot
+   */
+   // Note: The length of this string should not exceed 46 characters.
+   // This is not strictly enforced in Java / jros2.
+   private final StringBuilder virtual_description_directory_;
 
    public HardwareResources()
    {
@@ -74,7 +83,8 @@ public class HardwareResources implements ROS2Message<HardwareResources>
       {
          urdf_resources_[i] = new StringBuilder(32);
       }
-      directory_ = new StringBuilder(32);
+      hardware_description_directory_ = new StringBuilder(46);
+      virtual_description_directory_ = new StringBuilder(46);
 
    }
 
@@ -99,7 +109,8 @@ public class HardwareResources implements ROS2Message<HardwareResources>
       {
          currentAlignment += 4 + CDRBuffer.alignment(currentAlignment, 4) + (1 * urdf_resources_[i].length()) + 1; // urdf_resources_[i]
       }
-      currentAlignment += 4 + CDRBuffer.alignment(currentAlignment, 4) + (1 * directory_.length()) + 1; // directory_
+      currentAlignment += 4 + CDRBuffer.alignment(currentAlignment, 4) + (1 * hardware_description_directory_.length()) + 1; // hardware_description_directory_
+      currentAlignment += 4 + CDRBuffer.alignment(currentAlignment, 4) + (1 * virtual_description_directory_.length()) + 1; // virtual_description_directory_
 
       return currentAlignment - initialAlignment;
    }
@@ -117,7 +128,8 @@ public class HardwareResources implements ROS2Message<HardwareResources>
       {
          buffer.writeString(urdf_resources_[i]);
       }
-      buffer.writeString(directory_);
+      buffer.writeString(hardware_description_directory_);
+      buffer.writeString(virtual_description_directory_);
 
    }
 
@@ -134,7 +146,8 @@ public class HardwareResources implements ROS2Message<HardwareResources>
       {
          buffer.readString(urdf_resources_[i]);
       }
-      buffer.readString(directory_);
+      buffer.readString(hardware_description_directory_);
+      buffer.readString(virtual_description_directory_);
 
    }
 
@@ -151,8 +164,10 @@ public class HardwareResources implements ROS2Message<HardwareResources>
       {
          urdf_resources_[i] = from.urdf_resources_[i];
       }
-      directory_.delete(0, directory_.length());
-      directory_.insert(0, from.directory_);
+      hardware_description_directory_.delete(0, hardware_description_directory_.length());
+      hardware_description_directory_.insert(0, from.hardware_description_directory_);
+      virtual_description_directory_.delete(0, virtual_description_directory_.length());
+      virtual_description_directory_.insert(0, from.virtual_description_directory_);
 
    }
 
@@ -186,20 +201,35 @@ public class HardwareResources implements ROS2Message<HardwareResources>
       return urdf_resources_;
    }
 
-   public StringBuilder getDirectory()
+   public StringBuilder getHardwareDescriptionDirectory()
    {
-      return directory_;
+      return hardware_description_directory_;
    }
 
-   public java.lang.String getDirectoryAsString()
+   public java.lang.String getHardwareDescriptionDirectoryAsString()
    {
-      return directory_.toString();
+      return hardware_description_directory_.toString();
    }
 
-   public void setDirectory(java.lang.String s)
+   public void setHardwareDescriptionDirectory(java.lang.String s)
    {
-      this.directory_.delete(0, this.directory_.length());
-      this.directory_.insert(0, s);
+      this.hardware_description_directory_.delete(0, this.hardware_description_directory_.length());
+      this.hardware_description_directory_.insert(0, s);
+   }
+   public StringBuilder getVirtualDescriptionDirectory()
+   {
+      return virtual_description_directory_;
+   }
+
+   public java.lang.String getVirtualDescriptionDirectoryAsString()
+   {
+      return virtual_description_directory_.toString();
+   }
+
+   public void setVirtualDescriptionDirectory(java.lang.String s)
+   {
+      this.virtual_description_directory_.delete(0, this.virtual_description_directory_.length());
+      this.virtual_description_directory_.insert(0, s);
    }
 
    @Override
@@ -215,8 +245,10 @@ public class HardwareResources implements ROS2Message<HardwareResources>
       builder.append(java.util.Arrays.toString(xml_resources_));
       builder.append("urdf_resources_=");
       builder.append(java.util.Arrays.toString(urdf_resources_));
-      builder.append("directory_=");
-      builder.append(directory_.toString());
+      builder.append("hardware_description_directory_=");
+      builder.append(hardware_description_directory_.toString());
+      builder.append("virtual_description_directory_=");
+      builder.append(virtual_description_directory_.toString());
 
       builder.append("}");
       return builder.toString();

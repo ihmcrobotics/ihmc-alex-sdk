@@ -20,6 +20,7 @@ ihmc {
 }
 
 mainDependencies {
+   api("us.ihmc:jros2:1.4.0")
    api("us.ihmc:ihmc_hands_ros2:0.3.0")
 }
 
