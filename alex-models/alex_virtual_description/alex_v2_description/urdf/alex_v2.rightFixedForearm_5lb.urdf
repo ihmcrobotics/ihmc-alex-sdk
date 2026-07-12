@@ -21,7 +21,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/cycloidal_arm/RIGHT_ELBOW_PITCH_LINK_413mm_LENGTH_5LB.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RIGHT_ELBOW_PITCH_LINK_413mm_LENGTH_5LB.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
