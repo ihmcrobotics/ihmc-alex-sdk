@@ -26,7 +26,7 @@
             <name>HeadEtherSnacksBoard</name>
             <alias>4104</alias>
             <position>0</position>
-            <boardType>ALEX</boardType>
+            <boardType>ALEX_HEAD</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
