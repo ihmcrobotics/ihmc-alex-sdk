@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <CycloidParameters>
     <physicalParameters>
-        <kt>0.198</kt>
-        <gearRatio>20.0</gearRatio>
-        <inputResolution>18</inputResolution>
-        <outputResolution>20</outputResolution>
+        <kt>0.094</kt>
+        <gearRatio>19.0</gearRatio>
+        <inputResolution>17</inputResolution>
+        <outputResolution>17</outputResolution>
     </physicalParameters>
     <silParameters>
-        <frictionGain>0.062</frictionGain>
-        <frictionSlope>7.1</frictionSlope>
-        <dampingGain>0.000113</dampingGain>
+        <frictionGain>0.0</frictionGain>
+        <frictionSlope>0.0</frictionSlope>
+        <dampingGain>0.0</dampingGain>
     </silParameters>
 </CycloidParameters>
