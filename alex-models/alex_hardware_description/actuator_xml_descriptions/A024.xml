@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <CycloidParameters>
     <physicalParameters>
-        <kt>0.25</kt>
+        <kt>0.253</kt>
         <gearRatio>19.9993282</gearRatio>
         <inputResolution>18</inputResolution>
         <outputResolution>20</outputResolution>
