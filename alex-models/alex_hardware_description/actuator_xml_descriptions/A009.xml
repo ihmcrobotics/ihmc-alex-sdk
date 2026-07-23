@@ -2,7 +2,7 @@
 <CycloidParameters>
     <physicalParameters>
         <kt>0.253</kt>
-        <gearRatio>18.96355699</gearRatio>
+        <gearRatio>19</gearRatio> <!-- Ratio from validation 18.96355699 -->
         <inputResolution>17</inputResolution>
         <outputResolution>17</outputResolution>
     </physicalParameters>
