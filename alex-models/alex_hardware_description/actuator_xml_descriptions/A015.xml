@@ -2,7 +2,7 @@
 <CycloidParameters>
     <physicalParameters>
         <kt>0.1754</kt>  <!-- RMS KT 0.248 -->
-        <gearRatio>18.98669449</gearRatio> <!-- Ratio from validation 18.98669449 -->
+        <gearRatio>19</gearRatio> <!-- Ratio from validation 18.98669449 -->
         <inputResolution>17</inputResolution>
         <outputResolution>17</outputResolution>
     </physicalParameters>
