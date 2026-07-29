@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <CycloidParameters>
     <physicalParameters>
-        <kt>0.2135</kt> <!-- KT from validation 0.21 -->
+        <kt>0.2135</kt> <!-- KT from validation 0.21. Datasheet RMS KT 0.302 -->
         <gearRatio>19.02941786</gearRatio> <!-- Ratio from validation 19.02941786 -->
         <inputResolution>17</inputResolution>
         <outputResolution>17</outputResolution>
