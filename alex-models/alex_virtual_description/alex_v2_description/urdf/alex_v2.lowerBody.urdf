@@ -384,19 +384,19 @@
     <link name="LEFT_FOOT">
         <inertial>
             <!-- Mass is measured by Robert as 0.810 Feb 6 -->
-            <mass value="0.810"/>
-            <origin rpy="0 0 0" xyz="0.03793372	-0.00000219	-0.0443663"/>
-            <inertia ixx="0.00082919" ixy="0.000006674" ixz="0.00022883" iyy="0.0024327" iyz="-0.0000044" izz="0.0025653"/>
+            <mass value="0.756"/>
+            <origin rpy="0 0 0" xyz="0.04204688	0	-0.047328"/>
+            <inertia ixx="0.00062407" ixy="1.021e-8" ixz="0.00010436" iyy="0.00333476" iyz="-1.164e-9" izz="0.00373961"/>
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/Foot.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/AlexV2Foot.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
         <collision name="left_foot_collision">
             <geometry>
-                <box size="0.22 0.1 0.02"/>
+                <box size="0.22 0.1 0.02"/> <!-- HELP!!!!!!! New feet may need new collisions, be advised -->
             </geometry>
             <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
         </collision>
@@ -616,19 +616,19 @@
     <link name="RIGHT_FOOT">
         <inertial>
             <!-- Mass is measured by Robert as 0.810 Feb 6 -->
-            <mass value="0.810"/>
-            <origin rpy="0 0 0" xyz="0.03793372	-0.00000219	-0.0443663"/>
-            <inertia ixx="0.00082919" ixy="0.000006674" ixz="0.00022883" iyy="0.0024327" iyz="-0.0000044" izz="0.0025653"/>
+            <mass value="0.756"/>
+            <origin rpy="0 0 0" xyz="0.04204688	0	-0.047328"/>
+            <inertia ixx="0.00062407" ixy="1.021e-8" ixz="0.00010436" iyy="0.00333476" iyz="-1.164e-9" izz="0.00373961"/>
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/Foot.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/AlexV2Foot.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
-        <collision name="right_foot_collision">
+        <collision name="left_foot_collision">
             <geometry>
-                <box size="0.22 0.1 0.02"/>
+                <box size="0.22 0.1 0.02"/> <!-- HELP!!!!!!! New feet may need new collisions, be advised -->
             </geometry>
             <origin rpy="0 0 0" xyz="0.05 0 -0.06"/>
         </collision>
