@@ -383,10 +383,10 @@
     </link>
     <link name="LEFT_FOOT">
         <inertial>
-            <!-- Mass is measured by Robert as 0.810 Feb 6 -->
-            <mass value="0.756"/>
-            <origin rpy="0 0 0" xyz="0.04204688	0	-0.047328"/>
-            <inertia ixx="0.00062407" ixy="1.021e-8" ixz="0.00010436" iyy="0.00333476" iyz="-1.164e-9" izz="0.00373961"/>
+            <!-- Mass is measured by Nikki as 0.852 July 31 2026 -->
+            <mass value="0.852"/>
+            <origin rpy="0 0 0" xyz="0.03888706	-0.00003791	-0.03137803"/>
+            <inertia ixx="0.00077506" ixy="-1.904e-7" ixz="0.00019156" iyy="0.00357256" iyz="0.00000105" izz="0.00390806"/>
         </inertial>
         <visual>
             <geometry>
@@ -615,10 +615,10 @@
     </link>
     <link name="RIGHT_FOOT">
         <inertial>
-            <!-- Mass is measured by Robert as 0.810 Feb 6 -->
-            <mass value="0.756"/>
-            <origin rpy="0 0 0" xyz="0.04204688	0	-0.047328"/>
-            <inertia ixx="0.00062407" ixy="1.021e-8" ixz="0.00010436" iyy="0.00333476" iyz="-1.164e-9" izz="0.00373961"/>
+            <!-- Mass is measured by Nikki as 0.852 July 31 2026 -->
+            <mass value="0.852"/>
+            <origin rpy="0 0 0" xyz="0.03888706	-0.00003791	-0.03137803"/>
+            <inertia ixx="0.00077506" ixy="-1.904e-7" ixz="0.00019156" iyy="0.00357256" iyz="0.00000105" izz="0.00390806"/>
         </inertial>
         <visual>
             <geometry>
@@ -626,7 +626,7 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
-        <collision name="left_foot_collision">
+        <collision name="right_foot_collision">
             <geometry>
                 <box size="0.22 0.1 0.02"/> <!-- HELP!!!!!!! New feet may need new collisions, be advised -->
             </geometry>
