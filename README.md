@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="media/17_Alex_v2_ArmsCrossed_4.png" width="20%" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="media/17_Alex_v2_ArmsCrossed_4.jpg" width="20%" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="media/25_Alex_v2_Crouch_HelpingHand.png" width="40%" /><br>
   <a href="https://robots.ihmc.us/">IHMC Robotics</a>
 </p>
