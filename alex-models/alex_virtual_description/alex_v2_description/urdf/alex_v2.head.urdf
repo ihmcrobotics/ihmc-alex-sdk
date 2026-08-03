@@ -70,7 +70,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/ZEDXMini.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/ZEDXMini.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
