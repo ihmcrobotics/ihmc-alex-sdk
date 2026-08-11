@@ -92,15 +92,33 @@ Units are metres. Motive can be configured in millimetres; check it.
 Motive will happily report a position for an occluded marker, inferred from the rigid-body
 asset. Publishing that with `visible = true` is the worst thing you can do to this pipeline.
 
-The consumer registers a cluster from whichever markers are visible. A cluster of three real
-markers plus one *invented* one registers with a small, clean residual to the **wrong pose** — and
-the rigidity and conditioning gates cannot detect it, because the invented marker is by
-construction exactly where the model says it should be.
+**`visible = true` means: this camera system geometrically triangulated this marker, this frame.**
+Nothing else qualifies.
 
-So: `visible = true` means *this camera system geometrically triangulated this marker this
-frame*. If Motive exposes an occluded / model-solved / PC-solved flag, honour it. If you cannot
-tell whether a marker was observed or solved, **turn off asset-based marker solving in Motive**
-rather than guessing.
+NatNet exposes this per marker in the labelled-marker `params` bitfield — occluded,
+point-cloud-solved, model-solved. Read it and honour it. (Confirm the exact bit semantics against
+your NatNet SDK version; they are stable across 3.x/4.x but worth a five-minute check.) Only if
+you genuinely cannot get at those flags should you fall back to **turning off asset-based marker
+solving in Motive**, which removes the ambiguity at the cost of the feature.
+
+Why this matters more than it looks: the consumer does *not* use Motive's rigid-body pose. It
+runs its own registration of the marker cluster against its own separately calibrated layout —
+that is the entire point of the framework. A model-solved marker smuggles Motive's pose estimate
+back in through the marker channel, expressed in *Motive's* stored layout, which is the very
+thing that calibration exists to replace.
+
+The damage is quantifiable. A cluster of three real markers plus one model-solved one registers
+with a **smaller** residual and **better** conditioning than three real markers alone, while the
+pose it produces is biased by roughly `delta / (N * r)` in rotation, where `delta` is the
+disagreement between Motive's layout and the calibrated one. For a pelvis bracket (`N = 4`,
+`r ~ 70 mm`) and a `delta` of 2 mm, that is ~7 mrad — about 6 mm of centre-of-mass error through
+the body's lever arm, larger than every other term in the error budget combined. It is
+systematic, so it does not average out, and no gate downstream can see it: the rigidity check
+looks for distances that vary too *much*, and a synthetic marker's vary too *little*.
+
+Omitting a marker, or flagging it `visible = false`, costs one refused cluster, which is counted
+and visible on screen. Publishing it as observed costs a wrong answer that looks better than the
+right one.
 
 Omitting a marker entirely from all three sequences is equivalent to `visible = false`. Either is
 fine; publishing a stale position with `visible = true` is not.
