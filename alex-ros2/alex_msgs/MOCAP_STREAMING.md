@@ -1,0 +1,272 @@
+# Publishing motion-capture markers to Alex
+
+This is the contract for whatever process talks to Motive and republishes marker positions as
+ROS 2. That process is **not** in this repository — this document plus
+[`msg/MocapMarkerArray.msg`](msg/MocapMarkerArray.msg) is the whole interface.
+
+The consumer is `alex-mocap`, which registers each marker cluster against a calibrated layout to
+recover per-link poses. It never sees Motive; it sees only this topic.
+
+---
+
+## What to publish
+
+| | |
+|---|---|
+| **Topic** | `mocap_markers` |
+| **Type** | `alex_msgs::msg::dds_::MocapMarkerArray_` (Java: `alex_msgs.MocapMarkerArray`) |
+| **QoS** | **BEST_EFFORT** |
+| **Domain** | **42** on the current consumer machine — see *Network* below, this is not the default |
+| **Rate** | Motive's frame rate, typically 100–200 Hz. Publish every frame; do not decimate. |
+
+Best-effort is deliberate. The consumer stages one frame and drops the rest by design, so
+reliable delivery would spend retransmissions on data that is already stale. A dropped frame
+costs one tick of a held pose; a *late* frame costs a reconstruction of where the robot used to
+be.
+
+Dependency for a JVM publisher:
+
+```kotlin
+api("us.ihmc:ihmc-alex-sdk:0.4.0")   // brings alex_msgs + us.ihmc:jros2
+```
+
+---
+
+## Network — read this before writing any code
+
+The consumer machine (`Cyber-1327`, `10.100.5.115/8` on `enp4s0`) is currently configured
+**loopback-only**. As shipped, nothing you publish from another machine will ever arrive, and
+there will be no error on either side — DDS discovery simply never matches.
+
+`~/.ihmc/jros2.properties` on the consumer, as of this writing:
+
+```properties
+jros2.fastdds.interface.whitelist= 127.0.0.1/8
+jros2.ros.domain.id=42
+jros2.fastdds.intraprocess.delivery=false
+```
+
+Two things follow.
+
+**Domain 42, not 0.** Whatever you publish from must be on the same domain. jros2 resolves it
+from, in order: `jros2.properties` (cwd, then JAR resources, then `$HOME/.ihmc/`), then the
+`ROS_DOMAIN_ID` environment variable, then the default. The properties file wins, so exporting
+`ROS_DOMAIN_ID=42` on a machine that also has a `jros2.properties` will not do what you expect.
+
+**The whitelist must be widened on the consumer** to include the LAN interface — this is the
+consumer side's job, not yours, but it is the first thing to check when nothing arrives:
+
+```properties
+jros2.fastdds.interface.whitelist= 127.0.0.1/8, 10.100.5.115/8
+jros2.ros.domain.id=42
+```
+
+Corresponding environment variables, if you prefer them on the publisher side:
+`FASTDDS_INTERFACE_WHITELIST`, `ROS_DOMAIN_ID`, `FASTDDS_INRAPROCESS_DELIVERY` (note the typo in
+that last one — it is spelled that way in jros2 and must be matched exactly).
+
+The publisher must also be reachable on the same subnet. Tailscale (`100.78.167.88`) is present
+on the consumer; if the Motive machine is only reachable that way, that address has to go in the
+whitelist instead, and multicast discovery over Tailscale is its own problem — prefer a real LAN
+path.
+
+---
+
+## Three things that are silent when wrong
+
+These will not throw, will not warn, and will produce a plausible reconstruction that is simply
+incorrect. They are listed first because they are the whole reason this document exists.
+
+### 1. Z-up, metres
+
+Motive streams **Y-up by default.** `alex-mocap` requires Z-up.
+
+Fix it in Motive (`Streaming → Up Axis → Z-Up`) or rotate before publishing. A Y-up stream
+reconstructs a robot lying on its side that still registers cleanly, because the marker
+constellation is internally consistent either way — nothing downstream can detect it.
+
+Units are metres. Motive can be configured in millimetres; check it.
+
+### 2. Never flag a solved marker as visible
+
+Motive will happily report a position for an occluded marker, inferred from the rigid-body
+asset. Publishing that with `visible = true` is the worst thing you can do to this pipeline.
+
+The consumer registers a cluster from whichever markers are visible. A cluster of three real
+markers plus one *invented* one registers with a small, clean residual to the **wrong pose** — and
+the rigidity and conditioning gates cannot detect it, because the invented marker is by
+construction exactly where the model says it should be.
+
+So: `visible = true` means *this camera system geometrically triangulated this marker this
+frame*. If Motive exposes an occluded / model-solved / PC-solved flag, honour it. If you cannot
+tell whether a marker was observed or solved, **turn off asset-based marker solving in Motive**
+rather than guessing.
+
+Omitting a marker entirely from all three sequences is equivalent to `visible = false`. Either is
+fine; publishing a stale position with `visible = true` is not.
+
+### 3. The timestamp epoch
+
+`timestamp_nanoseconds` must share an epoch with the robot's encoder stream, or the
+reconstructed pose silently lags whatever it is compared against — which shows up as a phase
+error in the estimator comparison and reads like an estimator bug.
+
+If you can resolve Motive's own timestamp into that epoch, publish it. If you cannot, publish the
+transmit time (`System.nanoTime()` offset to wall clock, or `clock_gettime(CLOCK_REALTIME)`) and
+**say so in the handoff** — the consumer reports clock skew as a diagnostic and someone needs to
+know whether that number is meaningful.
+
+---
+
+## Message fields
+
+```
+uint64 timestamp_nanoseconds     # see trap 3
+uint32 frame_number              # Motive's frame counter, monotonic; gaps distinguish
+                                 #   "network dropped a frame" from "Motive stopped"
+int32[<=256] motive_id           # stable per-marker id, must match the labelling file
+geometry_msgs/Point[<=256] position   # metres, Motive world frame W, Z-up
+bool[<=256] visible              # see trap 2
+```
+
+The three sequences are **parallel and must be the same length**: entry `i` of `position` and
+`visible` describes marker `motive_id[i]`. The consumer drops any frame where they disagree, and
+counts it.
+
+`motive_id` may be the packed `(model_id << 16) | marker_id` that Motive uses for markers in an
+asset, or the point-cloud streaming id. Either is fine — the only requirements are that it is
+**stable across frames** and that it **matches the labelling file** (below).
+
+Do **not** apply any floor-tilt correction. That is a measured session constant applied
+downstream; baking it into the stream makes it invisible and unrecorded.
+
+---
+
+## The labelling file — please produce this too
+
+The consumer addresses markers by *name*, not by Motive id, because the names carry the
+marker-to-link assignment. Someone has to write down that mapping, and the publisher side is the
+only place that knows Motive's ids.
+
+Produce a file like this alongside the stream:
+
+```
+# alex-mocap marker labelling, format 1
+# motiveId,markerName
+1001,PELVIS_LINK_M0
+1002,PELVIS_LINK_M1
+1003,PELVIS_LINK_M2
+1004,PELVIS_LINK_M3
+2001,LEFT_THIGH_M0
+...
+```
+
+**The naming rule is load-bearing.** Clusters are inferred as *everything before the last
+underscore*, and that prefix must be the **exact URDF link name**. So a marker on `PELVIS_LINK`
+is `PELVIS_LINK_M0`, giving cluster `PELVIS_LINK`. A marker named `PELVIS_M0` yields a cluster
+called `PELVIS`, which is not a link, and the run fails at startup — loudly, which is the good
+case.
+
+Rules:
+- ≥ 3 markers per link, 4 recommended. Three is the minimum for a pose; four gives redundancy
+  when one is occluded.
+- Ids unique, names unique.
+- A marker's id must not be reused for a different physical marker between sessions.
+
+Nothing can catch a marker that is physically on the thigh but labelled as a shank marker. That
+assignment is taken on trust, and it yields a clean calibration of the wrong thing. Check it
+against the actual robot when the markers go on.
+
+---
+
+## Worked publisher
+
+```java
+import alex_msgs.MocapMarkerArray;
+import us.ihmc.jros2.ROS2Node;
+import us.ihmc.jros2.ROS2Publisher;
+import us.ihmc.jros2.ROS2QoSProfile;
+import us.ihmc.jros2.ROS2Topic;
+
+ROS2Node node = new ROS2Node("motive_bridge");
+
+ROS2Topic<MocapMarkerArray> topic = new ROS2Topic<>().appendedWith("mocap_markers")
+                                                     .withType(MocapMarkerArray.class)
+                                                     .withQoS(ROS2QoSProfile.BEST_EFFORT);
+
+ROS2Publisher<MocapMarkerArray> publisher = node.createPublisher(topic);
+
+// Allocate once, reuse every frame.
+MocapMarkerArray message = new MocapMarkerArray();
+
+// ... per NatNet frame:
+message.setTimestampNanoseconds(timestampNanoseconds);
+message.setFrameNumber(frameNumber);
+
+message.getMotiveId().clear();
+message.getPosition().clear();
+message.getVisible().clear();
+
+for (int i = 0; i < markerCount; i++)
+{
+   message.getMotiveId().add(motiveId[i]);
+
+   // add() returns a preallocated element to fill in place -- no allocation per frame.
+   geometry_msgs.Point point = message.getPosition().add();
+   point.setX(x[i]);           // metres, Z-up
+   point.setY(y[i]);
+   point.setZ(z[i]);
+
+   message.getVisible().add(observed[i]);   // trap 2: observed, not solved
+}
+
+publisher.publish(message);
+```
+
+`clear()` before each frame is not optional — the sequences retain their previous contents
+otherwise, and you would publish a growing frame until the 256 cap throws.
+
+Cap is 256 markers per frame. Alex's marker sets run well under that; if you need more, the
+bound is in `MocapMarkerArray.msg` and both sides must be regenerated.
+
+---
+
+## Verifying it works, before anyone connects a robot
+
+0. **Same machine first.** Run a publisher and a subscriber on the *publisher* box before
+   involving the network at all. If that fails, the problem is the message or the QoS. If it
+   works and the cross-machine case does not, the problem is the whitelist or the domain — see
+   *Network*. Conflating the two is how a day disappears.
+
+1. **Is it on the wire at all?**
+   ```
+   ROS_DOMAIN_ID=42 ros2 topic list | grep mocap_markers
+   ROS_DOMAIN_ID=42 ros2 topic hz  /mocap_markers      # should sit at Motive's frame rate
+   ROS_DOMAIN_ID=42 ros2 topic echo /mocap_markers --once
+   ```
+   If `ros2 topic list` shows nothing, check the domain and the interface whitelist on **both**
+   machines before suspecting anything else. Note `ros2` CLI needs the `alex_msgs` type available
+   to echo the payload; without it you will still see the topic listed, which is enough to prove
+   discovery works.
+
+2. **Is it Z-up?** Hold a marker at a known height and echo it. `position.z` should be that
+   height, and `position.y` should not be. This takes ten seconds and catches trap 1.
+
+3. **Is `visible` honest?** Occlude one marker by hand. Its `visible` must go false. If it stays
+   true with a plausible position, asset solving is on — trap 2, fix it now.
+
+4. **Are the sequences parallel?** `ros2 topic echo --once` and count. Three different lengths
+   means every frame will be dropped.
+
+5. **Is `frame_number` monotonic and gap-free** over a quiet minute? Gaps here are the network;
+   a frozen counter is Motive.
+
+---
+
+## What the consumer does with it
+
+For context, not because you need to implement any of it: the marker frame goes to
+`NatNetMocapSource.onFrameReceived(...)`, then per-cluster rigid registration against the
+calibrated layout (`LinkPoseEstimator`), then pelvis pose extraction, and finally a translucent
+ghost robot drawn at that pose next to the real one in the SCS2 visualizer. Full detail lives in
+`alex-mocap/RUNNING.md` and `FRAMEWORK.md`.
