@@ -23,7 +23,7 @@ uint64 timestamp_nanoseconds
 uint32 frame_number
 
 # The three sequences below are parallel and MUST be the same length: entry i of
-# `position` and `visible` describes marker `motive_id[i]`. A consumer that sees them
+# `position` and `provenance` describes marker `motive_id[i]`. A consumer that sees them
 # disagree drops the whole frame.
 
 # Stable per-marker identifier, consistent across frames, matching the consumer's
@@ -32,16 +32,43 @@ uint32 frame_number
 # is stable and the labelling file agrees.
 int32[<=256] motive_id
 
-# Marker position in W. Ignored when the corresponding `visible` is false; publishing NaN
-# there is encouraged but not required.
+# Marker position in W. Ignored when the corresponding provenance is NOT_SEEN; publishing
+# NaN there is encouraged but not required.
 geometry_msgs/Point[<=256] position
 
-# False when Motive did not actually see the marker this frame -- occluded, or solved by
-# the asset rather than observed. A marker may also simply be omitted from all three
-# sequences, which means the same thing.
+# How this frame's position for this marker was arrived at. NOT a visibility flag: the
+# consumer decides which provenances it will register against, and reports the mix per
+# cluster, so that "three real markers and one the asset invented" is a thing you can see
+# rather than a thing you find out about later.
 #
-# What must NOT happen is publishing a stale or model-solved position with visible=true.
-# The consumer's rigidity and conditioning gates cannot detect an invented marker, and a
-# cluster completed by three real markers and one invented one registers cleanly to the
-# wrong pose.
-bool[<=256] visible
+# Read these from NatNet's labelled-marker params bitfield. Confirm the bit semantics
+# against your SDK version.
+
+# Not reported this frame, or reported with no usable position. Equivalent to omitting the
+# marker from all three sequences.
+uint8 PROVENANCE_NOT_SEEN=0
+
+# Triangulated from two or more cameras AND labelled by the asset. The only provenance the
+# consumer registers against by default.
+uint8 PROVENANCE_OBSERVED=1
+
+# Triangulated from two or more cameras, but labelled by the point-cloud solve rather than
+# by the asset. The POSITION is a real measurement; only the identity is less certain.
+# Kept distinct from MODEL_SOLVED because the failure modes are opposite: this one risks
+# the wrong label on a real point, that one is not a measurement at all.
+uint8 PROVENANCE_POINT_CLOUD_SOLVED=2
+
+# Inferred from the asset: Motive estimated the rigid body from the markers it DID see and
+# reported this one at the pose implied by its stored layout. This is not a measurement --
+# it carries no new information and it carries Motive's layout, which is the thing this
+# project's calibration exists to replace. Registering against it biases the pose by about
+# delta/(N*r) in rotation while making the residual SMALLER and the conditioning BETTER.
+# Publish it if you have it, honestly labelled; do not launder it as OBSERVED.
+uint8 PROVENANCE_MODEL_SOLVED=3
+
+# The publisher could not determine provenance. Deliberately representable, and deliberately
+# not spelled OBSERVED: a stream nobody labelled should be visible as such rather than
+# indistinguishable from one that was checked. Treated as unusable by default, and counted.
+uint8 PROVENANCE_UNKNOWN=4
+
+uint8[<=256] provenance

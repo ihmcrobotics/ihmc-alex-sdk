@@ -87,41 +87,59 @@ constellation is internally consistent either way — nothing downstream can det
 
 Units are metres. Motive can be configured in millimetres; check it.
 
-### 2. Never flag a solved marker as visible
+### 2. Label provenance honestly; never launder a solved marker as observed
 
-Motive will happily report a position for an occluded marker, inferred from the rigid-body
-asset. Publishing that with `visible = true` is the worst thing you can do to this pipeline.
+Motive will happily report a position for an occluded marker, inferred from the rigid-body asset.
+There is no `visible` boolean in this message precisely because that flattens a distinction that
+matters. Instead each marker carries a `provenance` byte:
 
-**`visible = true` means: this camera system geometrically triangulated this marker, this frame.**
-Nothing else qualifies.
+| Constant | Value | Meaning |
+|---|---|---|
+| `PROVENANCE_NOT_SEEN` | 0 | not reported, or no usable position |
+| `PROVENANCE_OBSERVED` | 1 | triangulated by >=2 cameras **and** labelled by the asset |
+| `PROVENANCE_POINT_CLOUD_SOLVED` | 2 | triangulated by >=2 cameras, labelled by point-cloud solve |
+| `PROVENANCE_MODEL_SOLVED` | 3 | **not a measurement** -- inferred from the asset pose |
+| `PROVENANCE_UNKNOWN` | 4 | publisher could not determine provenance |
 
-NatNet exposes this per marker in the labelled-marker `params` bitfield — occluded,
-point-cloud-solved, model-solved. Read it and honour it. (Confirm the exact bit semantics against
-your NatNet SDK version; they are stable across 3.x/4.x but worth a five-minute check.) Only if
-you genuinely cannot get at those flags should you fall back to **turning off asset-based marker
-solving in Motive**, which removes the ambiguity at the cost of the feature.
+The constants are generated onto the message class: `MocapMarkerArray.PROVENANCE_OBSERVED`, etc.
 
-Why this matters more than it looks: the consumer does *not* use Motive's rigid-body pose. It
-runs its own registration of the marker cluster against its own separately calibrated layout —
+Read these from NatNet's labelled-marker `params` bitfield -- occluded, point-cloud-solved,
+model-solved. (Confirm the exact bit semantics against your NatNet SDK version; they are stable
+across 3.x/4.x but worth a five-minute check.) **Publish everything you have, labelled truthfully.**
+The consumer decides what to register against and reports the mix per cluster, so "three real
+markers and one the asset invented" becomes something visible rather than something discovered
+later.
+
+If you genuinely cannot get at those flags, publish `PROVENANCE_UNKNOWN` rather than guessing
+`OBSERVED`. A stream nobody labelled should look like one. The fallback of last resort is turning
+off asset-based marker solving in Motive, which removes the ambiguity at the cost of the feature.
+
+**Why 2 and 3 are not the same thing.** Point-cloud-solved is a real triangulation whose *label*
+is uncertain -- the position is measured, the identity is a guess. Model-solved is the opposite:
+the identity is certain and the position is invented. They fail in opposite directions and want
+opposite treatment, which a boolean cannot express.
+
+**Why model-solved is the dangerous one.** The consumer does not use Motive's rigid-body pose. It
+runs its own registration of each marker cluster against its own separately calibrated layout --
 that is the entire point of the framework. A model-solved marker smuggles Motive's pose estimate
-back in through the marker channel, expressed in *Motive's* stored layout, which is the very
-thing that calibration exists to replace.
+back in through the marker channel, expressed in *Motive's* stored layout, which is the very thing
+that calibration exists to replace.
 
-The damage is quantifiable. A cluster of three real markers plus one model-solved one registers
-with a **smaller** residual and **better** conditioning than three real markers alone, while the
-pose it produces is biased by roughly `delta / (N * r)` in rotation, where `delta` is the
-disagreement between Motive's layout and the calibrated one. For a pelvis bracket (`N = 4`,
-`r ~ 70 mm`) and a `delta` of 2 mm, that is ~7 mrad — about 6 mm of centre-of-mass error through
-the body's lever arm, larger than every other term in the error budget combined. It is
-systematic, so it does not average out, and no gate downstream can see it: the rigidity check
-looks for distances that vary too *much*, and a synthetic marker's vary too *little*.
+The damage is quantifiable. Registration stiffness goes as `N * r^2` for `N` markers at cluster
+radius `r`; one correspondence displaced by `delta` applies torque `r * delta`, so the pose biases
+by
 
-Omitting a marker, or flagging it `visible = false`, costs one refused cluster, which is counted
-and visible on screen. Publishing it as observed costs a wrong answer that looks better than the
-right one.
+    dtheta ~ delta / (N * r),      dt ~ delta / N
 
-Omitting a marker entirely from all three sequences is equivalent to `visible = false`. Either is
-fine; publishing a stale position with `visible = true` is not.
+For a pelvis bracket (`N = 4`, `r ~ 70 mm`) and `delta ~ 2 mm` -- roughly the disagreement between
+Motive's layout and the calibrated one -- that is ~7 mrad, about 6 mm of centre-of-mass error
+through the body's lever arm. Larger than every other term in the error budget combined, and
+systematic, so it does not average out.
+
+And it is invisible: a synthetic marker sits at nominal geometry with zero noise, so adding it
+makes the registration residual *smaller* and the conditioning *better* while the answer gets
+worse. The rigidity check looks for inter-marker distances varying too *much*; these vary too
+*little*.
 
 ### 3. The timestamp epoch
 
@@ -144,11 +162,11 @@ uint32 frame_number              # Motive's frame counter, monotonic; gaps disti
                                  #   "network dropped a frame" from "Motive stopped"
 int32[<=256] motive_id           # stable per-marker id, must match the labelling file
 geometry_msgs/Point[<=256] position   # metres, Motive world frame W, Z-up
-bool[<=256] visible              # see trap 2
+uint8[<=256] provenance          # see trap 2 -- NOT a visibility flag
 ```
 
 The three sequences are **parallel and must be the same length**: entry `i` of `position` and
-`visible` describes marker `motive_id[i]`. The consumer drops any frame where they disagree, and
+`provenance` describes marker `motive_id[i]`. The consumer drops any frame where they disagree, and
 counts it.
 
 `motive_id` may be the packed `(model_id << 16) | marker_id` that Motive uses for markers in an
@@ -223,7 +241,7 @@ message.setFrameNumber(frameNumber);
 
 message.getMotiveId().clear();
 message.getPosition().clear();
-message.getVisible().clear();
+message.getProvenance().clear();
 
 for (int i = 0; i < markerCount; i++)
 {
@@ -235,11 +253,39 @@ for (int i = 0; i < markerCount; i++)
    point.setY(y[i]);
    point.setZ(z[i]);
 
-   message.getVisible().add(observed[i]);   // trap 2: observed, not solved
+   message.getProvenance().add(provenanceOf(params[i]));   // trap 2: label it truthfully
 }
 
 publisher.publish(message);
 ```
+
+The one piece of real work is the mapping. Sketch, to be checked against your SDK's
+`sMarker.params` bit definitions — the ordering below is the usual NatNet 3.x/4.x layout, but
+**verify it before trusting a capture**, because getting it inverted is exactly trap 2:
+
+```java
+private static final short OCCLUDED           = 0x01;   // bit 0
+private static final short POINT_CLOUD_SOLVED = 0x02;   // bit 1
+private static final short MODEL_SOLVED       = 0x04;   // bit 2
+
+static byte provenanceOf(short params)
+{
+   // Order matters: a model-solved marker is typically ALSO flagged occluded, and the
+   // occlusion is the less specific fact. Test the specific bits first.
+   if ((params & MODEL_SOLVED) != 0)
+      return MocapMarkerArray.PROVENANCE_MODEL_SOLVED;
+   if ((params & OCCLUDED) != 0)
+      return MocapMarkerArray.PROVENANCE_NOT_SEEN;
+   if ((params & POINT_CLOUD_SOLVED) != 0)
+      return MocapMarkerArray.PROVENANCE_POINT_CLOUD_SOLVED;
+
+   return MocapMarkerArray.PROVENANCE_OBSERVED;
+}
+```
+
+If you cannot get `params` at all, return `PROVENANCE_UNKNOWN` from this method rather than
+`PROVENANCE_OBSERVED`. The consumer will refuse the markers and say why, which is recoverable; a
+stream that claims everything was observed is not.
 
 `clear()` before each frame is not optional — the sequences retain their previous contents
 otherwise, and you would publish a growing frame until the 256 cap throws.
@@ -270,8 +316,10 @@ bound is in `MocapMarkerArray.msg` and both sides must be regenerated.
 2. **Is it Z-up?** Hold a marker at a known height and echo it. `position.z` should be that
    height, and `position.y` should not be. This takes ten seconds and catches trap 1.
 
-3. **Is `visible` honest?** Occlude one marker by hand. Its `visible` must go false. If it stays
-   true with a plausible position, asset solving is on — trap 2, fix it now.
+3. **Is `provenance` honest?** Occlude one marker by hand. Its provenance must leave `OBSERVED`
+   — `NOT_SEEN` if Motive drops it, `MODEL_SOLVED` if the asset fills it in. If it stays
+   `OBSERVED` with a plausible position, you are reading the params bitfield wrong: trap 2, and
+   the consumer cannot detect it downstream.
 
 4. **Are the sequences parallel?** `ros2 topic echo --once` and count. Three different lengths
    means every frame will be dropped.

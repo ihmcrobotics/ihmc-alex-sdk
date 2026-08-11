@@ -50,7 +50,7 @@ uint64 timestamp_nanoseconds
 uint32 frame_number
 
 # The three sequences below are parallel and MUST be the same length: entry i of
-# `position` and `visible` describes marker `motive_id[i]`. A consumer that sees them
+# `position` and `provenance` describes marker `motive_id[i]`. A consumer that sees them
 # disagree drops the whole frame.
 
 # Stable per-marker identifier, consistent across frames, matching the consumer's
@@ -59,19 +59,46 @@ uint32 frame_number
 # is stable and the labelling file agrees.
 int32[<=256] motive_id
 
-# Marker position in W. Ignored when the corresponding `visible` is false; publishing NaN
-# there is encouraged but not required.
+# Marker position in W. Ignored when the corresponding provenance is NOT_SEEN; publishing
+# NaN there is encouraged but not required.
 geometry_msgs/Point[<=256] position
 
-# False when Motive did not actually see the marker this frame -- occluded, or solved by
-# the asset rather than observed. A marker may also simply be omitted from all three
-# sequences, which means the same thing.
+# How this frame's position for this marker was arrived at. NOT a visibility flag: the
+# consumer decides which provenances it will register against, and reports the mix per
+# cluster, so that "three real markers and one the asset invented" is a thing you can see
+# rather than a thing you find out about later.
 #
-# What must NOT happen is publishing a stale or model-solved position with visible=true.
-# The consumer's rigidity and conditioning gates cannot detect an invented marker, and a
-# cluster completed by three real markers and one invented one registers cleanly to the
-# wrong pose.
-bool[<=256] visible
+# Read these from NatNet's labelled-marker params bitfield. Confirm the bit semantics
+# against your SDK version.
+
+# Not reported this frame, or reported with no usable position. Equivalent to omitting the
+# marker from all three sequences.
+uint8 PROVENANCE_NOT_SEEN=0
+
+# Triangulated from two or more cameras AND labelled by the asset. The only provenance the
+# consumer registers against by default.
+uint8 PROVENANCE_OBSERVED=1
+
+# Triangulated from two or more cameras, but labelled by the point-cloud solve rather than
+# by the asset. The POSITION is a real measurement; only the identity is less certain.
+# Kept distinct from MODEL_SOLVED because the failure modes are opposite: this one risks
+# the wrong label on a real point, that one is not a measurement at all.
+uint8 PROVENANCE_POINT_CLOUD_SOLVED=2
+
+# Inferred from the asset: Motive estimated the rigid body from the markers it DID see and
+# reported this one at the pose implied by its stored layout. This is not a measurement --
+# it carries no new information and it carries Motive's layout, which is the thing this
+# project's calibration exists to replace. Registering against it biases the pose by about
+# delta/(N*r) in rotation while making the residual SMALLER and the conditioning BETTER.
+# Publish it if you have it, honestly labelled; do not launder it as OBSERVED.
+uint8 PROVENANCE_MODEL_SOLVED=3
+
+# The publisher could not determine provenance. Deliberately representable, and deliberately
+# not spelled OBSERVED: a stream nobody labelled should be visible as such rather than
+# indistinguishable from one that was checked. Treated as unusable by default, and counted.
+uint8 PROVENANCE_UNKNOWN=4
+
+uint8[<=256] provenance
 }</pre>
 */
 public class MocapMarkerArray implements ROS2Message<MocapMarkerArray>
@@ -97,27 +124,49 @@ public class MocapMarkerArray implements ROS2Message<MocapMarkerArray>
    */
    private final IDLIntSequence motive_id_;
    /**
-      Marker position in W. Ignored when the corresponding `visible` is false; publishing NaN
-      there is encouraged but not required.
+      Marker position in W. Ignored when the corresponding provenance is NOT_SEEN; publishing
+      NaN there is encouraged but not required.
    */
    private final IDLObjectSequence<geometry_msgs.Point> position_;
    /**
-      False when Motive did not actually see the marker this frame -- occluded, or solved by
-      the asset rather than observed. A marker may also simply be omitted from all three
-      sequences, which means the same thing.
-
-      What must NOT happen is publishing a stale or model-solved position with visible=true.
-      The consumer's rigidity and conditioning gates cannot detect an invented marker, and a
-      cluster completed by three real markers and one invented one registers cleanly to the
-      wrong pose.
+      Not reported this frame, or reported with no usable position. Equivalent to omitting the
+      marker from all three sequences.
    */
-   private final IDLBoolSequence visible_;
+   public static final byte PROVENANCE_NOT_SEEN = 0;
+   /**
+      Triangulated from two or more cameras AND labelled by the asset. The only provenance the
+      consumer registers against by default.
+   */
+   public static final byte PROVENANCE_OBSERVED = 1;
+   /**
+      Triangulated from two or more cameras, but labelled by the point-cloud solve rather than
+      by the asset. The POSITION is a real measurement; only the identity is less certain.
+      Kept distinct from MODEL_SOLVED because the failure modes are opposite: this one risks
+      the wrong label on a real point, that one is not a measurement at all.
+   */
+   public static final byte PROVENANCE_POINT_CLOUD_SOLVED = 2;
+   /**
+      Inferred from the asset: Motive estimated the rigid body from the markers it DID see and
+      reported this one at the pose implied by its stored layout. This is not a measurement --
+      it carries no new information and it carries Motive's layout, which is the thing this
+      project's calibration exists to replace. Registering against it biases the pose by about
+      delta/(N*r) in rotation while making the residual SMALLER and the conditioning BETTER.
+      Publish it if you have it, honestly labelled; do not launder it as OBSERVED.
+   */
+   public static final byte PROVENANCE_MODEL_SOLVED = 3;
+   /**
+      The publisher could not determine provenance. Deliberately representable, and deliberately
+      not spelled OBSERVED: a stream nobody labelled should be visible as such rather than
+      indistinguishable from one that was checked. Treated as unusable by default, and counted.
+   */
+   public static final byte PROVENANCE_UNKNOWN = 4;
+   private final IDLByteSequence provenance_;
 
    public MocapMarkerArray()
    {
       motive_id_ = new IDLIntSequence(0, 256);
       position_ = new IDLObjectSequence<geometry_msgs.Point>(0, 256, geometry_msgs.Point.class);
-      visible_ = new IDLBoolSequence(0, 256);
+      provenance_ = new IDLByteSequence(0, 256);
 
    }
 
@@ -136,7 +185,7 @@ public class MocapMarkerArray implements ROS2Message<MocapMarkerArray>
       currentAlignment += 4 + CDRBuffer.alignment(currentAlignment, 4); // frame_number_
       currentAlignment += motive_id_.calculateSizeBytes(currentAlignment);
       currentAlignment += position_.calculateSizeBytes(currentAlignment);
-      currentAlignment += visible_.calculateSizeBytes(currentAlignment);
+      currentAlignment += provenance_.calculateSizeBytes(currentAlignment);
 
       return currentAlignment - initialAlignment;
    }
@@ -148,7 +197,7 @@ public class MocapMarkerArray implements ROS2Message<MocapMarkerArray>
       buffer.writeInt(frame_number_);
       motive_id_.serialize(buffer);
       position_.serialize(buffer);
-      visible_.serialize(buffer);
+      provenance_.serialize(buffer);
 
    }
 
@@ -159,7 +208,7 @@ public class MocapMarkerArray implements ROS2Message<MocapMarkerArray>
       frame_number_ = buffer.readInt();
       motive_id_.deserialize(buffer);
       position_.deserialize(buffer);
-      visible_.deserialize(buffer);
+      provenance_.deserialize(buffer);
 
    }
 
@@ -170,7 +219,7 @@ public class MocapMarkerArray implements ROS2Message<MocapMarkerArray>
       frame_number_ = from.frame_number_;
       motive_id_.set(from.motive_id_);
       position_.set(from.position_);
-      visible_.set(from.visible_);
+      provenance_.set(from.provenance_);
 
    }
 
@@ -204,9 +253,9 @@ public class MocapMarkerArray implements ROS2Message<MocapMarkerArray>
       return position_;
    }
 
-   public IDLBoolSequence getVisible()
+   public IDLByteSequence getProvenance()
    {
-      return visible_;
+      return provenance_;
    }
 
 
@@ -223,8 +272,18 @@ public class MocapMarkerArray implements ROS2Message<MocapMarkerArray>
       builder.append(motive_id_);
       builder.append("position_=");
       builder.append(position_);
-      builder.append("visible_=");
-      builder.append(visible_);
+      builder.append("PROVENANCE_NOT_SEEN=");
+      builder.append(PROVENANCE_NOT_SEEN);
+      builder.append("PROVENANCE_OBSERVED=");
+      builder.append(PROVENANCE_OBSERVED);
+      builder.append("PROVENANCE_POINT_CLOUD_SOLVED=");
+      builder.append(PROVENANCE_POINT_CLOUD_SOLVED);
+      builder.append("PROVENANCE_MODEL_SOLVED=");
+      builder.append(PROVENANCE_MODEL_SOLVED);
+      builder.append("PROVENANCE_UNKNOWN=");
+      builder.append(PROVENANCE_UNKNOWN);
+      builder.append("provenance_=");
+      builder.append(provenance_);
 
       builder.append("}");
       return builder.toString();
