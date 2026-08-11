@@ -29,8 +29,8 @@
             <position>0</position>
             <actuatorPackage>A043</actuatorPackage>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>56.17366255589614</motorOffset>
-            <outputOffset>2.912126837783423</outputOffset>
+            <motorOffset>410115.6442270356</motorOffset>
+            <outputOffset>2.9122431440659646</outputOffset>
             <dynamicBrakingEnabled>true</dynamicBrakingEnabled>
             <present>true</present>
         </XmlPlatinumTwitter>
