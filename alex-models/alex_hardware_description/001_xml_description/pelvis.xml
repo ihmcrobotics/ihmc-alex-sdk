@@ -49,6 +49,9 @@
                     <angularVelocityBiasX>-0.019942908320279583</angularVelocityBiasX>
                     <angularVelocityBiasY>-0.01199134942640296</angularVelocityBiasY>
                     <angularVelocityBiasZ>0.0011030842173576823</angularVelocityBiasZ>
+                    <linearAccelerationBiasX>-0.1</linearAccelerationBiasX>
+                    <linearAccelerationBiasY>0.0</linearAccelerationBiasY>
+                    <linearAccelerationBiasZ>0.0</linearAccelerationBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>PelvisTempSensor</name>
