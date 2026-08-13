@@ -5,69 +5,45 @@
             <name>RightJ5Motor</name>
             <alias>3008</alias>
             <position>0</position>
-            <actuatorPackage>A071</actuatorPackage>
+            <actuatorPackage>J5R_Nadia</actuatorPackage>
             <useLatestCode>false</useLatestCode>
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>35.88015541095457</motorOffset>
-            <outputOffset>5.9057825923394685</outputOffset>
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <motorOffset>-4.713446536498026</motorOffset>
+            <outputOffset>2.08501</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>RightJ6Motor</name>
             <alias>3009</alias>
             <position>0</position>
-            <actuatorPackage>A072</actuatorPackage>
+            <actuatorPackage>J6R_Nadia</actuatorPackage>
             <useLatestCode>false</useLatestCode>
-            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>-1.3554568348834337</motorOffset>
-            <outputOffset>1.5778704867602065</outputOffset>
+            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
+            <motorOffset>0.9013592236871322</motorOffset>
+            <outputOffset>0.647135</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
             <name>RightJ7Motor</name>
             <alias>3010</alias>
             <position>0</position>
-            <actuatorPackage>A073</actuatorPackage>
+            <actuatorPackage>J7R_Nadia</actuatorPackage>
             <useLatestCode>false</useLatestCode>
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>7.505014783889408</motorOffset>
-            <outputOffset>0.5655841598241649</outputOffset>
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <motorOffset>32.29169371511179</motorOffset>
+            <outputOffset>5.201767</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
 
         <XmlEtherSnacksBoard>
-            <name>RightWristEtherSnacksBoard</name>
+            <name>RightForearmEtherSnacksBoard</name>
             <alias>3107</alias>
-            <position>0</position>
-            <boardType>ALEX</boardType>
-            <present>true</present>
-            <daughterDevices>
-                <XmlIMU>
-                    <name>right_wrist_z_imu</name>
-                    <alias>0</alias>
-                    <position>1</position>
-                    <imuType>TDK</imuType>
-                    <present>true</present>
-                    <angularVelocityBiasX>0.016224224922788515</angularVelocityBiasX> <!-- Use 0.032885214928856314 for Nadia arms -->
-                    <angularVelocityBiasY>-0.004916270388619109</angularVelocityBiasY> <!-- Use -0.01019473621215273 for Nadia arms -->
-                    <angularVelocityBiasZ>0.016591746761157662</angularVelocityBiasZ> <!-- Use -0.008692690437948404 for Nadia arms -->
-                </XmlIMU>
-                <XmlTemperatureSensor>
-                    <name>right_wrist_temp_sensor</name>
-                    <conversionConstant>1.0</conversionConstant>
-                </XmlTemperatureSensor>
-            </daughterDevices>
-        </XmlEtherSnacksBoard>
-
-        <XmlEtherSnacksBoard>
-            <name>RightGripperEtherSnacksBoard</name>
-            <alias>3111</alias>
             <position>0</position>
             <boardType>ALEX_HAND_CONTROL</boardType>
             <present>true</present>
             <daughterDevices>
                 <XmlIMU>
-                    <name>right_gripper_z_imu</name>
+                    <name>right_wrist_z_imu</name>
                     <alias>0</alias>
                     <position>1</position>
                     <imuType>TDK</imuType>
@@ -77,7 +53,7 @@
                     <angularVelocityBiasZ>0.0</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
-                    <name>right_gripper_z_temp_sensor</name>
+                    <name>right_forearm_temp_sensor</name>
                     <conversionConstant>1.0</conversionConstant>
                 </XmlTemperatureSensor>
             </daughterDevices>
