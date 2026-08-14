@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MotorParameters>
+    <manufacturer>TQ Robodrive</manufacturer>
+    <model>ILM85x26</model>
+
+    <kt>0.253</kt>
+    <resistanceLineToLine>0.320</resistanceLineToLine>
+    <busVoltage>48.0</busVoltage>
+    <maxCurrentContinuous>11.5</maxCurrentContinuous>
+    <maxCurrentPeak>37.1541501976</maxCurrentPeak>
+
+    <maxTorqueContinuous>2.9</maxTorqueContinuous>
+    <maxTorquePeak>9.4</maxTorquePeak>
+    <maxSpeed>1560</maxSpeed>
+    <polePairs>10</polePairs>
+    <mass>0.670</mass>
+
+    <housingThermalCapacitance>467.859628062775</housingThermalCapacitance>
+    <windingThermalCapacitance>121.607575559668</windingThermalCapacitance>
+    <windingResistanceAtReferenceTemperature>0.320</windingResistanceAtReferenceTemperature>
+    <referenceTemperature>22.4915937430372</referenceTemperature>
+    <maxWindingTemperature>125.0</maxWindingTemperature>
+    <housingToAmbientThermalResistance>0.910279698549021</housingToAmbientThermalResistance>
+    <windingToHousingThermalResistance>0.264919629290712</windingToHousingThermalResistance>
+</MotorParameters>

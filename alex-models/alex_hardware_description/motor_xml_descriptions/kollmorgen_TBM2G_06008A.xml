@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MotorParameters>
+    <manufacturer>Kollmorgen</manufacturer>
+    <model>TBM2G-06008A</model>
+
+    <kt>0.09545941546</kt>
+    <resistanceLineToLine>1.598985807</resistanceLineToLine>
+    <busVoltage>48.0</busVoltage>
+    <maxCurrentContinuous>3.66647960616</maxCurrentContinuous>
+    <maxCurrentPeak>12.7803003415</maxCurrentPeak>
+
+    <maxTorqueContinuous>0.35</maxTorqueContinuous>
+    <maxTorquePeak>1.22</maxTorquePeak>
+    <maxSpeed>8000</maxSpeed>
+    <polePairs>10</polePairs>
+    <mass>0.139</mass>
+
+<!--    <housingThermalCapacitance>557.702088375483</housingThermalCapacitance>-->
+<!--    <windingThermalCapacitance>24.2272716001963</windingThermalCapacitance>-->
+<!--    <windingResistanceAtReferenceTemperature>0.651</windingResistanceAtReferenceTemperature>-->
+<!--    <referenceTemperature>30.4648047818955</referenceTemperature>-->
+<!--    <maxWindingTemperature>125.0</maxWindingTemperature>-->
+<!--    <housingToAmbientThermalResistance>1.5347695708307</housingToAmbientThermalResistance>-->
+<!--    <windingToHousingThermalResistance>0.364305635159693</windingToHousingThermalResistance>-->
+</MotorParameters>

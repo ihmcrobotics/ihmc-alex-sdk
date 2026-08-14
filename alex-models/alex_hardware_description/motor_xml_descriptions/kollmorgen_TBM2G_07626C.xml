@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MotorParameters>
+    <manufacturer>Kollmorgen</manufacturer>
+    <model>TBM2G-07626C</model>
+
+    <kt>0.21354624791</kt>
+    <resistanceLineToLine>0.579</resistanceLineToLine>
+    <busVoltage>48.0</busVoltage>
+    <maxCurrentContinuous>7.49252218505</maxCurrentContinuous>
+    <maxCurrentPeak>26.5047972296</maxCurrentPeak>
+
+    <maxTorqueContinuous>1.60</maxTorqueContinuous>
+    <maxTorquePeak>5.66</maxTorquePeak>
+    <maxSpeed>8000</maxSpeed>
+    <polePairs>10</polePairs>
+    <mass>0.596</mass>
+
+    <housingThermalCapacitance>970.338429546758</housingThermalCapacitance>
+    <windingThermalCapacitance>72.4031172220431</windingThermalCapacitance>
+    <windingResistanceAtReferenceTemperature>0.579</windingResistanceAtReferenceTemperature>
+    <referenceTemperature>28.596083444663</referenceTemperature>
+    <maxWindingTemperature>125.0</maxWindingTemperature>
+    <housingToAmbientThermalResistance>1.19668013600521</housingToAmbientThermalResistance>
+    <windingToHousingThermalResistance>1.01873749710617</windingToHousingThermalResistance>
+</MotorParameters>

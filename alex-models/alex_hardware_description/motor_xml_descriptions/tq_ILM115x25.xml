@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MotorParameters>
+    <manufacturer>TQ Robodrive</manufacturer>
+    <model>ILM115x25</model>
+
+    <kt>0.281</kt>
+    <resistanceLineToLine>0.140</resistanceLineToLine>
+    <busVoltage>48.0</busVoltage>
+    <maxCurrentContinuous>14.1</maxCurrentContinuous>
+    <maxCurrentPeak>45.1957295374</maxCurrentPeak>
+
+    <maxTorqueContinuous>3.9</maxTorqueContinuous>
+    <maxTorquePeak>12.7</maxTorquePeak>
+    <maxSpeed>1400</maxSpeed>
+    <polePairs>15</polePairs>
+    <mass>1.070</mass>
+
+    <housingThermalCapacitance>100.05153970371</housingThermalCapacitance>
+    <windingThermalCapacitance>1061.96388275945</windingThermalCapacitance>
+    <windingResistanceAtReferenceTemperature>0.140</windingResistanceAtReferenceTemperature>
+    <referenceTemperature>21.9932680531089</referenceTemperature>
+    <maxWindingTemperature>125.0</maxWindingTemperature>
+    <housingToAmbientThermalResistance>0.418283667825815</housingToAmbientThermalResistance>
+    <windingToHousingThermalResistance>0.507862723154025</windingToHousingThermalResistance>
+</MotorParameters>
