@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  Per-actuator armature (rotor + gearbox inertia reflected through the gear ratio, in kg*m^2)
+  for Alex V2, for use as MuJoCo's <joint armature="..."/> in sim.
+
+  Armature is a property of the motor+gearbox package, not of the joint it happens to drive:
+  the same actuator model is reused across multiple joints, so values are keyed by motor part
+  number under <motors>, and <joints> maps each URDF joint name (see alex_v2.lowerBody.urdf,
+  alex_v2.leftUpperArm.urdf, etc.) to the motor that drives it.
+
+  PLACEHOLDER VALUES: seeded from ihmc-lab/alex.py (source/ihmc_lab/ihmc_lab/robots/alex.py),
+  which is the only place these were found paired with real motor part numbers. Not yet
+  cross-checked against V2 hardware or the datasheet-backed actuator_xml_descriptions catalog
+  (alex-models/alex_hardware_description/actuator_xml_descriptions/); confirm before trusting
+  these for anything beyond a first pass.
+-->
+<ArmatureParameters>
+    <motors>
+        <!-- Hip pitch / knee pitch -->
+        <Motor name="ILM_11525SS">
+            <armature>0.167</armature>
+        </Motor>
+        <!-- Hip yaw -->
+        <Motor name="TBM2G_06826C">
+            <armature>0.020</armature>
+        </Motor>
+        <!-- Ankle pitch and roll -->
+        <Motor name="TBM2G_07626C">
+            <armature>0.037</armature>
+        </Motor>
+        <!-- Hip roll / spine yaw / shoulder pitch+roll -->
+        <Motor name="ILM_8526SS">
+            <armature>0.062</armature>
+        </Motor>
+        <!-- Shoulder yaw / elbow pitch -->
+        <Motor name="TBM2G_06826A">
+            <armature>0.022</armature>
+        </Motor>
+        <!-- Neck, wrist, gripper -->
+        <Motor name="TBM2G_06008A">
+            <armature>0.005</armature>
+        </Motor>
+    </motors>
+
+    <joints>
+        <Joint name="LEFT_HIP_X" motor="ILM_8526SS"/>
+        <Joint name="RIGHT_HIP_X" motor="ILM_8526SS"/>
+        <Joint name="LEFT_HIP_Y" motor="ILM_11525SS"/>
+        <Joint name="RIGHT_HIP_Y" motor="ILM_11525SS"/>
+        <Joint name="LEFT_HIP_Z" motor="TBM2G_06826C"/>
+        <Joint name="RIGHT_HIP_Z" motor="TBM2G_06826C"/>
+        <Joint name="LEFT_KNEE_Y" motor="ILM_11525SS"/>
+        <Joint name="RIGHT_KNEE_Y" motor="ILM_11525SS"/>
+        <Joint name="LEFT_ANKLE_Y" motor="TBM2G_07626C"/>
+        <Joint name="RIGHT_ANKLE_Y" motor="TBM2G_07626C"/>
+        <Joint name="LEFT_ANKLE_X" motor="TBM2G_07626C"/>
+        <Joint name="RIGHT_ANKLE_X" motor="TBM2G_07626C"/>
+        <Joint name="SPINE_Z" motor="ILM_8526SS"/>
+        <Joint name="NECK_Z" motor="TBM2G_06008A"/>
+        <Joint name="NECK_Y" motor="TBM2G_06008A"/>
+        <Joint name="LEFT_SHOULDER_Y" motor="ILM_8526SS"/>
+        <Joint name="RIGHT_SHOULDER_Y" motor="ILM_8526SS"/>
+        <Joint name="LEFT_SHOULDER_X" motor="ILM_8526SS"/>
+        <Joint name="RIGHT_SHOULDER_X" motor="ILM_8526SS"/>
+        <Joint name="LEFT_SHOULDER_Z" motor="TBM2G_06826A"/>
+        <Joint name="RIGHT_SHOULDER_Z" motor="TBM2G_06826A"/>
+        <Joint name="LEFT_ELBOW_Y" motor="TBM2G_06826A"/>
+        <Joint name="RIGHT_ELBOW_Y" motor="TBM2G_06826A"/>
+        <Joint name="LEFT_WRIST_Z" motor="TBM2G_06008A"/>
+        <Joint name="RIGHT_WRIST_Z" motor="TBM2G_06008A"/>
+        <Joint name="LEFT_WRIST_X" motor="TBM2G_06008A"/>
+        <Joint name="RIGHT_WRIST_X" motor="TBM2G_06008A"/>
+        <Joint name="LEFT_GRIPPER_Z" motor="TBM2G_06008A"/>
+        <Joint name="RIGHT_GRIPPER_Z" motor="TBM2G_06008A"/>
+    </joints>
+</ArmatureParameters>
