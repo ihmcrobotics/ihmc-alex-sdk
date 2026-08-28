@@ -17,8 +17,8 @@
             <position>0</position>
             <actuatorPackage>A028</actuatorPackage>
             <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
-            <motorOffset>3.3554072048355916</motorOffset>
-            <outputOffset>1.6044068575594088</outputOffset>
+            <motorOffset>-6.995415633519471</motorOffset>
+            <outputOffset>4.24279560373118</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
@@ -45,9 +45,12 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>-0.024618636767277876</angularVelocityBiasX>
-                    <angularVelocityBiasY>0.0022583950647610987</angularVelocityBiasY>
-                    <angularVelocityBiasZ>-0.010404596508264953</angularVelocityBiasZ>
+                    <angularVelocityBiasX>-0.020470433884671884</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.0019818877102502834</angularVelocityBiasY>
+                    <angularVelocityBiasZ>-0.011367870321024192</angularVelocityBiasZ>
+                    <linearAccelerationBiasX>0.11921042193200003</linearAccelerationBiasX>
+                    <linearAccelerationBiasY>-0.165918319084</linearAccelerationBiasY>
+                    <linearAccelerationBiasZ>0.0</linearAccelerationBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>PelvisTempSensor</name>

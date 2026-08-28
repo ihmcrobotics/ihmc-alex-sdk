@@ -39,9 +39,9 @@
                     <position>1</position>
                     <imuType>TDK</imuType>
                     <present>true</present>
-                    <angularVelocityBiasX>0.010130819370697238</angularVelocityBiasX>
-                    <angularVelocityBiasY>-0.004889638371345986</angularVelocityBiasY>
-                    <angularVelocityBiasZ>0.008895093769224182</angularVelocityBiasZ>
+                    <angularVelocityBiasX>-0.016289174178465662</angularVelocityBiasX>
+                    <angularVelocityBiasY>0.0015623505738090436</angularVelocityBiasY>
+                    <angularVelocityBiasZ>0.006349965289278487</angularVelocityBiasZ>
                 </XmlIMU>
                 <XmlTemperatureSensor>
                     <name>TorsoTempSensor2</name>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <CycloidParameters>
     <physicalParameters>
-        <kt>0.28</kt>
-        <gearRatio>19.00510762</gearRatio>
+        <kt>0.28</kt> <!-- This KT is wrong and should be updated -->
+        <gearRatio>19</gearRatio> <!-- From validation 19.00510762 -->
         <inputResolution>17</inputResolution>
         <outputResolution>17</outputResolution>
     </physicalParameters>
