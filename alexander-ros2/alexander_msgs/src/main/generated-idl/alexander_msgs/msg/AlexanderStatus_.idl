@@ -1,0 +1,27 @@
+#ifndef __alexander_msgs__msg__AlexanderStatus__idl__
+#define __alexander_msgs__msg__AlexanderStatus__idl__
+
+#include "alexander_msgs/msg/./ECATDeviceStatus_.idl"
+module alexander_msgs
+{
+  module msg
+  {
+    module dds
+    {
+
+      @TypeCode(type="alexander_msgs::msg::dds_::AlexanderStatus_")
+      struct AlexanderStatus
+      {
+        double time;
+        boolean motors_enabled;
+        boolean is_faulted;
+        boolean working_counter_fault;
+        boolean missed_deadline_fault;
+        boolean motor_fault;
+        sequence<alexander_msgs::msg::dds::ECATDeviceStatus> device_statuses;
+      };
+    };
+  };
+};
+
+#endif

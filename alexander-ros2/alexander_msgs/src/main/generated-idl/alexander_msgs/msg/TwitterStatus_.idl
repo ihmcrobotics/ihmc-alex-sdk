@@ -1,0 +1,25 @@
+#ifndef __alexander_msgs__msg__TwitterStatus__idl__
+#define __alexander_msgs__msg__TwitterStatus__idl__
+
+module alexander_msgs
+{
+  module msg
+  {
+    module dds
+    {
+
+      @TypeCode(type="alexander_msgs::msg::dds_::TwitterStatus_")
+      struct TwitterStatus
+      {
+        /**
+         * Holds the name of the twitter as well as the status and error code of that twitter
+         */
+        string twitter_name;
+        long status_code;
+        long error_code;
+      };
+    };
+  };
+};
+
+#endif
