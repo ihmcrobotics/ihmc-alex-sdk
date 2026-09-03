@@ -396,7 +396,7 @@
         </visual>
         <collision name="left_foot_collision">
             <geometry>
-                <box size="0.22 0.1 0.02"/> <!-- HELP!!!!!!! New feet may need new collisions, be advised -->
+                <box size="0.22 0.1 0.02"/>
             </geometry>
             <origin rpy="0 0 0" xyz="0.053 0 -0.045"/>
         </collision>
@@ -628,7 +628,7 @@
         </visual>
         <collision name="right_foot_collision">
             <geometry>
-                <box size="0.22 0.1 0.02"/> <!-- HELP!!!!!!! New feet may need new collisions, be advised -->
+                <box size="0.22 0.1 0.02"/>
             </geometry>
             <origin rpy="0 0 0" xyz="0.053 0 -0.045"/>
         </collision>
