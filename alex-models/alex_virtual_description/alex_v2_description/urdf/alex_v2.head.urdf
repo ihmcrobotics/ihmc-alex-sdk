@@ -7,6 +7,8 @@
         <parent link="TORSO_LINK"/>
         <child link="NECK_Z_LINK"/>
         <limit effort="6.0" lower="-1.22173" upper="1.22173" velocity="17.3"/>
+        <!-- Lowered this limit to 6.0 to prevent slamming into the hard stops at the actual limit (around 24Nm) and overheating. We observed this happening
+        on hardware and had a motor burn out. During normal operation we observed that the neck never needed more then about 5Nm so we made the limit 6Nm. -->
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
     <joint name="NECK_Y" type="revolute">
@@ -15,10 +17,12 @@
         <parent link="NECK_Z_LINK"/>
         <child link="HEAD_LINK"/>
         <limit effort="6.0" lower="-0.488692" upper="0.488692" velocity="17.3"/>
+        <!-- Lowered this limit to 6.0 to prevent slamming into the hard stops at the actual limit (around 24Nm) and overheating. We observed this happening
+        on hardware and had a motor burn out. During normal operation we observed that the neck never needed more then about 5Nm so we made the limit 6Nm. -->
         <dynamics damping="0.05" friction="0.0"/>
     </joint>
 
-    <!-- NECK & HEAD LINKS -->
+<!-- NECK & HEAD LINKS -->
     <link name="NECK_Z_LINK">
         <inertial>
             <mass value="0.50522843"/>
