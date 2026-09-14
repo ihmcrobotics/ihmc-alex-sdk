@@ -8,8 +8,8 @@
             <actuatorPackage>A074</actuatorPackage>
             <useLatestCode>false</useLatestCode>
             <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>-26.944524219807015</motorOffset>
-            <outputOffset>3.7154321905914003</outputOffset>
+            <motorOffset>-44.97971665506293</motorOffset>
+            <outputOffset>-0.23139066444845868</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>
