@@ -18,13 +18,13 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RightElbowPitchLink.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/cycloidal_arm/RightElbowPitchLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="right_elbow_y_collision">
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RightElbowPitchLink_convex.stl"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/cycloidal_arm/RightElbowPitchLink_convex.stl"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </collision>
@@ -47,14 +47,14 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RightWristYawLink.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/cycloidal_arm/RightWristYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="right_wrist_z_collision">
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RightWristYawLink_convex.stl"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/cycloidal_arm/RightWristYawLink_convex.stl"/>
             </geometry>
         </collision>
     </link>
@@ -76,14 +76,14 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RightWristRollLink.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/cycloidal_arm/RightWristRollLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="right_wrist_x_collision">
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RightWristRollLink_convex.stl"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/cycloidal_arm/RightWristRollLink_convex.stl"/>
             </geometry>
         </collision>
     </link>
@@ -105,14 +105,14 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RightGripperYawLink.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/cycloidal_arm/RightGripperYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
         <collision name="right_fist_collision">
             <origin rpy="3.14159 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RightFist_convex.stl"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/cycloidal_arm/RightFist_convex.stl"/>
             </geometry>
         </collision>
     </link>
