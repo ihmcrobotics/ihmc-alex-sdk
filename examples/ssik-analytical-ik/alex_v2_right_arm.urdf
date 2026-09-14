@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot name="alex_v2_right_arm">
+  <link name="RIGHT_ELBOW_Y_LINK"/>
+  <link name="RIGHT_GRIPPER_Z_LINK"/>
+  <link name="RIGHT_SHOULDER_X_LINK"/>
+  <link name="RIGHT_SHOULDER_Y_LINK"/>
+  <link name="RIGHT_SHOULDER_Z_LINK"/>
+  <link name="RIGHT_WRIST_X_LINK"/>
+  <link name="RIGHT_WRIST_Z_LINK"/>
+  <link name="TORSO_LINK"/>
+  <joint name="RIGHT_SHOULDER_Y" type="revolute">
+    <parent link="TORSO_LINK"/><child link="RIGHT_SHOULDER_Y_LINK"/>
+    <origin xyz="0.002 -0.10350000 0.36000000" rpy="-0.698132 0.0 0.0"/><axis xyz="0.0 1.0 0.0"/>
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="3"/>
+  </joint>
+  <joint name="RIGHT_SHOULDER_X" type="revolute">
+    <parent link="RIGHT_SHOULDER_Y_LINK"/><child link="RIGHT_SHOULDER_X_LINK"/>
+    <origin xyz="0.0 -0.15676000 -0.01300000" rpy="0.698132 0.0 0.0"/><axis xyz="1 0 0"/>
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="3"/>
+  </joint>
+  <joint name="RIGHT_SHOULDER_Z" type="revolute">
+    <parent link="RIGHT_SHOULDER_X_LINK"/><child link="RIGHT_SHOULDER_Z_LINK"/>
+    <origin xyz="0.0 -0.035 0.0" rpy="0.0 0.0 0.0"/><axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="3"/>
+  </joint>
+  <joint name="RIGHT_ELBOW_Y" type="revolute">
+    <parent link="RIGHT_SHOULDER_Z_LINK"/><child link="RIGHT_ELBOW_Y_LINK"/>
+    <origin xyz="0.015 0.0 -0.3127" rpy="0.0 0.0 0.0"/><axis xyz="0.0 1.0 0.0"/>
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="3"/>
+  </joint>
+  <joint name="RIGHT_WRIST_Z" type="revolute">
+    <parent link="RIGHT_ELBOW_Y_LINK"/><child link="RIGHT_WRIST_Z_LINK"/>
+    <origin xyz="-0.015 0.0 0.0" rpy="0.0 0.0 0.0"/><axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="3"/>
+  </joint>
+  <joint name="RIGHT_WRIST_X" type="revolute">
+    <parent link="RIGHT_WRIST_Z_LINK"/><child link="RIGHT_WRIST_X_LINK"/>
+    <origin xyz="0.0 0.013 -0.25" rpy="0.0 0.0 0.0"/><axis xyz="1 0 0"/>
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="3"/>
+  </joint>
+  <joint name="RIGHT_GRIPPER_Z" type="revolute">
+    <parent link="RIGHT_WRIST_X_LINK"/><child link="RIGHT_GRIPPER_Z_LINK"/>
+    <origin xyz="0.0 -0.013 -0.031" rpy="0.0 0.0 0.0"/><axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-3.14159" upper="3.14159" effort="100" velocity="3"/>
+  </joint>
+</robot>
