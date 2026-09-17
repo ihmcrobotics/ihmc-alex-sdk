@@ -1,0 +1,1132 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="Alex">
+
+    
+    <joint name="LEFT_HIP_X" type="revolute">
+        <origin rpy="0 0 0" xyz="-0.0081 0.002975 -0.00075" />
+        <axis xyz="1 0 0" />
+        <parent link="PELVIS_LINK" />
+        <child link="LEFT_HIP_X_LINK" />
+        <limit effort="150" lower="-0.3490658504" upper="0.872664626" velocity="9" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="LEFT_HIP_Z" type="revolute">
+        <origin rpy="0 0 0" xyz="0.003 0.005 -0.004" />
+        <axis xyz="0 0 1" />
+        <parent link="LEFT_HIP_X_LINK" />
+        <child link="LEFT_HIP_Z_LINK" />
+        <limit effort="60" lower="-0.3490658504" upper="1.0472" velocity="11" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="LEFT_HIP_Y" type="revolute">
+        <origin rpy="0 0 0" xyz="0.005225 -0.002865 -0.002625" />
+        <axis xyz="0 1 0" />
+        <parent link="LEFT_HIP_Z_LINK" />
+        <child link="LEFT_THIGH" />
+        <limit effort="200" lower="-2.61799" upper="0.785398" velocity="8" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="LEFT_KNEE_Y" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0.0009 -0.016" />
+        <axis xyz="0 1 0" />
+        <parent link="LEFT_THIGH" />
+        <child link="LEFT_SHIN" />
+        <limit effort="200" lower="0" upper="2.445206282" velocity="8" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="LEFT_ANKLE_Y" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 -0.0205" />
+        <axis xyz="0 1 0" />
+        <parent link="LEFT_SHIN" />
+        <child link="LEFT_ANKLE_Y_LINK" />
+        <limit effort="180" lower="-1.0472" upper="0.523599" velocity="8" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="LEFT_ANKLE_X" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 -0.0006" />
+        <axis xyz="1 0 0" />
+        <parent link="LEFT_ANKLE_Y_LINK" />
+        <child link="LEFT_FOOT" />
+        <limit effort="90" lower="-0.436332" upper="0.436332" velocity="8" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+
+    
+    <joint name="RIGHT_HIP_X" type="revolute">
+        <origin rpy="0 0 0" xyz="-0.0081 -0.002975 -0.00075" />
+        <axis xyz="1 0 0" />
+        <parent link="PELVIS_LINK" />
+        <child link="RIGHT_HIP_X_LINK" />
+        <limit effort="150" lower="-0.872664626" upper="0.3490658504" velocity="9" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="RIGHT_HIP_Z" type="revolute">
+        <origin rpy="0 0 0" xyz="0.003 -0.005 -0.004" />
+        <axis xyz="0 0 1" />
+        <parent link="RIGHT_HIP_X_LINK" />
+        <child link="RIGHT_HIP_Z_LINK" />
+        <limit effort="60" lower="-1.0472" upper="0.3490658504" velocity="11" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="RIGHT_HIP_Y" type="revolute">
+        <origin rpy="0 0 0" xyz="0.005225 0.002865 -0.002625" />
+        <axis xyz="0 1 0" />
+        <parent link="RIGHT_HIP_Z_LINK" />
+        <child link="RIGHT_THIGH" />
+        <limit effort="200" lower="-2.61799" upper="0.785398" velocity="8" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="RIGHT_KNEE_Y" type="revolute">
+        <origin rpy="0 0 0" xyz="0 -0.0009 -0.016" />
+        <axis xyz="0 1 0" />
+        <parent link="RIGHT_THIGH" />
+        <child link="RIGHT_SHIN" />
+        <limit effort="200" lower="0" upper="2.445206282" velocity="8" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="RIGHT_ANKLE_Y" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 -0.0205" />
+        <axis xyz="0 1 0" />
+        <parent link="RIGHT_SHIN" />
+        <child link="RIGHT_ANKLE_Y_LINK" />
+        <limit effort="180" lower="-1.0472" upper="0.523599" velocity="8" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="RIGHT_ANKLE_X" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 -0.0006" />
+        <axis xyz="1 0 0" />
+        <parent link="RIGHT_ANKLE_Y_LINK" />
+        <child link="RIGHT_FOOT" />
+        <limit effort="90" lower="-0.436332" upper="0.436332" velocity="8" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+
+    
+    <joint name="SPINE_Z" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0.0009" /> 
+        <axis xyz="0 0 1" />
+        <parent link="PELVIS_LINK" />
+        <child link="TORSO_LINK" />
+        <limit effort="150" lower="-0.5235987756" upper="0.5235987756" velocity="9.0" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+
+    
+    <joint name="LEFT_SHOULDER_Y" type="revolute">
+        <origin xyz="-0.00075 0.0057737 0.0176492" rpy="0.698132 0.0 0.0" />
+        <axis xyz="0.0 1.0 0.0" />
+        <parent link="TORSO_LINK" />
+        <child link="LEFT_SHOULDER_Y_LINK" />
+        <limit effort="150.0" lower="-3.141592" upper="1.22173" velocity="9.0" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="LEFT_SHOULDER_X" type="revolute">
+        <origin rpy="-0.698132 0.0 0.0" xyz="0 0.007838 -0.00065" />
+        <axis xyz="1 0 0" />
+        <parent link="LEFT_SHOULDER_Y_LINK" />
+        <child link="LEFT_SHOULDER_X_LINK" />
+        <limit effort="150.0" lower="-0.349066" upper="2.79253" velocity="9.0" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="LEFT_SHOULDER_Z" type="revolute">
+        <origin rpy="0.0 0.0 0.0" xyz="0 0.00175 0" />
+        <axis xyz="0.0 0.0 1.0" />
+        <parent link="LEFT_SHOULDER_X_LINK" />
+        <child link="LEFT_SHOULDER_Z_LINK" />
+        <limit effort="80.0" lower="-1.91986" upper="1.22173" velocity="11.5" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="LEFT_ELBOW_Y" type="revolute">
+        <origin rpy="0.0 0.0 0.0" xyz="0.00075 0 -0.015635" />
+        <axis xyz="0.0 1.0 0.0" />
+        <parent link="LEFT_SHOULDER_Z_LINK" />
+        <child link="LEFT_ELBOW_Y_LINK" />
+        <limit effort="80.0" lower="-2.35619" upper="0.174532925" velocity="11.5" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+
+    
+    <joint name="NECK_Z" type="revolute">
+        <origin rpy="0 0 0" xyz="-0.00075 0 0.02252015" />
+        <axis xyz="0 0 1" />
+        <parent link="TORSO_LINK" />
+        <child link="NECK_Z_LINK" />
+        <limit effort="20" lower="-1.5708" upper="1.5708" velocity="20" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="NECK_Y" type="revolute">
+        <origin rpy="0 0 0" xyz="0.00125 0.0005 0.00947985" />
+        <axis xyz="0 1 0" />
+        <parent link="NECK_Z_LINK" />
+        <child link="HEAD_LINK" />
+        <limit effort="20" lower="-1.0472" upper="1.0472" velocity="20" />
+        <dynamics damping="0.05" friction="0.0" /> 
+    </joint>
+
+    
+    <joint name="RIGHT_SHOULDER_Y" type="revolute">
+        <origin xyz="-0.00075 -0.0057737 0.0176492" rpy="-0.698132 0.0 0.0" />
+        <axis xyz="0.0 1.0 0.0" />
+        <parent link="TORSO_LINK" />
+        <child link="RIGHT_SHOULDER_Y_LINK" />
+        <limit effort="1000" lower="-3.141592" upper="1.22173" velocity="100" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="RIGHT_SHOULDER_X" type="revolute">
+        <origin rpy="0.698132 0.0 0.0" xyz="0 -0.007838 -0.00065" />
+        <axis xyz="1 0 0" />
+        <parent link="RIGHT_SHOULDER_Y_LINK" />
+        <child link="RIGHT_SHOULDER_X_LINK" />
+        <limit effort="1000" lower="-2.79253" upper="0.349066" velocity="100" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="RIGHT_SHOULDER_Z" type="revolute">
+        <origin rpy="0.0 0.0 0.0" xyz="0 -0.00175 -0" />
+        <axis xyz="0.0 0.0 1.0" />
+        <parent link="RIGHT_SHOULDER_X_LINK" />
+        <child link="RIGHT_SHOULDER_Z_LINK" />
+         <limit effort="1000" lower="-1.22173" upper="1.91986" velocity="100" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+    <joint name="RIGHT_ELBOW_Y" type="revolute">
+        <origin rpy="0.0 0.0 0.0" xyz="0.00075 0 -0.015635" />
+        <axis xyz="0.0 1.0 0.0" />
+        <parent link="RIGHT_SHOULDER_Z_LINK" />
+        <child link="RIGHT_ELBOW_Y_LINK" />
+        <limit effort="1000" lower="-2.35619" upper="0.174532925" velocity="100" />
+        <dynamics damping="0.05" friction="0.0" />
+    </joint>
+
+    
+    <link name="PELVIS_LINK">
+        <inertial>
+            <mass value="0.000895125" /> 
+            <origin rpy="0 0 0" xyz="-0.0041284825 1.822e-06 -0.001621392" />
+            <inertia ixx="9.3039281e-09" ixy="1.1070188e-12" ixz="1.8172458e-10" iyy="1.2222677e-08" iyz="8.4847e-12" izz="1.4597501e-08" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/Pelvis.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+        <collision name="pelvis_collision">
+            <geometry>
+                    <box size="0.01 0.005 0.007" />
+            </geometry>
+            <origin xyz="-0.004 0 -0.0025" rpy="0.0 0.0 0.0" />
+        </collision> 
+    </link>
+    
+    <joint name="PELVIS_STIM_IMU_JOINT" type="fixed">
+        <parent link="PELVIS_LINK" />
+        <child link="PELVIS_STIM_IMU_LINK" />
+        <origin xyz="-0.004343862 0.000612514 -0.004025736" rpy="-0.01399 -0.013054 1.570796" />
+    </joint>
+
+    <link name="PELVIS_STIM_IMU_LINK">
+        <inertial>
+            <mass value="0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+
+    <gazebo reference="PELVIS_STIM_IMU_LINK">
+        <sensor name="pelvis_stim_imu" type="imu">
+            <always_on>1</always_on>
+            <update_rate>1000.0</update_rate>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0.0</mean>
+                        <stddev>2e-4</stddev>
+                        <bias_mean>0.0000075</bias_mean>
+                        <bias_stddev>0.0000008</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0.0</mean>
+                        <stddev>1.7e-2</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+    
+
+    
+    <link name="LEFT_HIP_X_LINK">
+        <inertial>
+            <mass value="0.00029150975" />
+            <origin rpy="0 0 0" xyz="0.0021754555 0.004354303 -0.0017628805" />
+            <inertia ixx="1.466525e-09" ixy="-1.8624688e-10" ixz="4.1603125e-11" iyy="1.6179438e-09" iyz="1.5135625e-10" izz="1.7315031e-09" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/LeftHipRollLink.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+
+    
+	<link name="LEFT_HIP_X_IMU_LINK">
+		<inertial>
+			<mass value="0" />
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+	</link>
+	<joint name="LEFT_HIP_X_IMU_JOINT" type="fixed">
+		<origin rpy="-1.570796 0 1.570796" xyz="-0.0009611545 0.0050725065 -0.000744394" />
+		<axis xyz="0 0 1" />
+		<parent link="LEFT_HIP_X_LINK" />
+		<child link="LEFT_HIP_X_IMU_LINK" />
+	</joint>
+	<gazebo reference="LEFT_HIP_X_IMU_JOINT">
+		<sensor name="left_hip_x_imu" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+    <link name="LEFT_HIP_Z_LINK">
+         <inertial>
+             <mass value="9.371524e-05" />
+             <origin rpy="0 0 0" xyz="0.0022747975 -0.0002627855 -0.000468727" />
+             <inertia ixx="9.428875e-10" ixy="-4.8671875e-11" ixz="2.3155625e-10" iyy="1.0262563e-09" iyz="-1.2763125e-10" izz="9.1394688e-10" />
+         </inertial>
+         <visual>
+             <geometry>
+                 <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/LeftHipYawLink.obj" />
+             </geometry>
+             <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+         </visual>
+     </link>
+     <link name="LEFT_THIGH">
+         <inertial>
+             <mass value="0.00103575" />
+             <origin rpy="0 0 0" xyz="0.000708651 0.0016343905 -0.005274157" />
+             <inertia ixx="2.90413e-08" ixy="1.1056875e-10" ixz="2.8894438e-09" iyy="3.0522941e-08" iyz="-1.3558438e-09" izz="8.7906188e-09" />
+         </inertial>
+         <visual>
+             <geometry>
+                 <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/LeftThigh.obj" />
+             </geometry>
+             <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+         </visual>
+     </link>
+    <link name="LEFT_SHIN">
+        <inertial>
+            <mass value="0.00079257148" />
+            <origin rpy="0 0 0" xyz="0.0019039825 -5.40525e-05 -0.0062050135" />
+            <inertia ixx="2.7568775e-08" ixy="-1.6754063e-10" ixz="-1.9833094e-09" iyy="2.863375e-08" iyz="1.3071875e-11" izz="4.9039031e-09" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/LeftShin.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+
+    
+    <link name="LEFT_THIGH_IMU_LINK">
+        <inertial>
+            <mass value="0" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <joint name="LEFT_THIGH_IMU_JOINT" type="fixed">
+        <origin rpy="1.6947717585 0 1.570796" xyz="0.005002 0.001873 -0.010597" />
+        <axis xyz="0 0 1" />
+        <parent link="LEFT_THIGH" />
+        <child link="LEFT_THIGH_IMU_LINK" />
+    </joint>
+    <gazebo reference="LEFT_THIGH_IMU_LINK">
+        <sensor name="left_thigh_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    
+	<link name="LEFT_SHIN_IMU_LINK">
+		<inertial>
+			<mass value="0" />
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+	</link>
+	<joint name="LEFT_SHIN_IMU_JOINT" type="fixed">
+		<origin rpy="1.403695170631842 0 -1.570796" xyz="0.00282756 4.2413e-05 -0.0078324155" />
+		<axis xyz="0 0 1" />
+		<parent link="LEFT_SHIN" />
+		<child link="LEFT_SHIN_IMU_LINK" />
+	</joint>
+	<gazebo reference="LEFT_SHIN_IMU_LINK">
+		<sensor name="left_shin_imu" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+    <link name="LEFT_ANKLE_Y_LINK">
+        <inertial>
+            <mass value="6.30704e-06" />
+            <origin rpy="0 0 0" xyz="1.47e-08 1.11e-08 -0.0002314985" />
+            <inertia ixx="5.415625e-12" ixy="6.625e-17" ixz="-3.9375e-17" iyy="2.23125e-12" iyz="-6.3125e-18" izz="5.784375e-12" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/AnklePitchLink.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+    <link name="LEFT_FOOT">
+        <inertial>
+            <mass value="0.00016103909" />
+            <origin rpy="0 0 0" xyz="0.001896686 -1.095e-07 -0.002218315" />
+            <inertia ixx="4.1153125e-10" ixy="3.29375e-12" ixz="1.1386563e-10" iyy="1.2057438e-09" iyz="-1.790625e-12" izz="1.2708563e-09" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/Foot.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+        <collision name="left_foot_collision">
+            <geometry>
+                <box size="0.011 0.005 0.001" />
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.0025 0 -0.003" />
+        </collision>
+    </link>
+
+    
+	<link name="LEFT_FOOT_IMU_LINK">
+		<inertial>
+			<mass value="0" />
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+	</link>
+	<joint name="LEFT_FOOT_IMU_JOINT" type="fixed">
+		<origin rpy="0 0 1.570796" xyz="-0.001787763 0.000590089 -0.0024898525" />
+		<axis xyz="0 0 1" />
+		<parent link="LEFT_FOOT" />
+		<child link="LEFT_FOOT_IMU_LINK" />
+	</joint>
+	<gazebo reference="LEFT_FOOT_IMU_LINK">
+		<sensor name="left_foot_imu" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+    
+    <link name="RIGHT_HIP_X_LINK">
+        <inertial>
+            <mass value="0.00029140428" />
+            <origin rpy="0 0 0" xyz="0.0021759785 -0.0043444675 -0.0017626785" />
+            <inertia ixx="1.4640813e-09" ixy="1.9070938e-10" ixz="4.090625e-11" iyy="1.6165719e-09" iyz="-1.4820313e-10" izz="1.7282656e-09" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/RightHipRollLink.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+
+    
+	<link name="RIGHT_HIP_X_IMU_LINK">
+		<inertial>
+			<mass value="0" />
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+	</link>
+	<joint name="RIGHT_HIP_X_IMU_JOINT" type="fixed">
+		<origin rpy="-1.570796 0 1.570796" xyz="-0.0009611545 -0.0038474935 -0.000744394" />
+		<axis xyz="0 0 1" />
+		<parent link="RIGHT_HIP_X_LINK" />
+		<child link="RIGHT_HIP_X_IMU_LINK" />
+	</joint>
+	<gazebo reference="RIGHT_HIP_X_IMU_LINK">
+		<sensor name="right_hip_x_imu" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+    <link name="RIGHT_HIP_Z_LINK">
+        <inertial>
+            <mass value="9.6600894e-05" />
+            <origin rpy="0 0 0" xyz="0.002274637 0.000262892 -0.0004687525" />
+            <inertia ixx="9.9262188e-10" ixy="1.8146875e-11" ixz="2.5186875e-10" iyy="1.0786875e-09" iyz="1.4825313e-10" izz="9.7888438e-10" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/RightHipYawLink.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+    <link name="RIGHT_THIGH">
+        <inertial>
+            <mass value="0.0010345218" />
+            <origin rpy="0 0 0" xyz="0.000705923 -0.001641196 -0.0052713975" />
+            <inertia ixx="2.9004697e-08" ixy="-7.6025e-11" ixz="2.8657938e-09" iyy="3.0449459e-08" iyz="1.3244969e-09" izz="8.7513844e-09" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/RightThigh.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+
+    
+	<link name="RIGHT_THIGH_IMU_LINK">
+		<inertial>
+			<mass value="0" />
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+	</link>
+	<joint name="RIGHT_THIGH_IMU_JOINT" type="fixed">
+		<origin rpy="1.6947717585 0 1.570796" xyz="0.005001809 -0.0016770913 -0.010597096" />
+		<axis xyz="0 0 1" />
+		<parent link="RIGHT_THIGH" />
+		<child link="RIGHT_THIGH_IMU_LINK" />
+	</joint>
+	<gazebo reference="RIGHT_THIGH_IMU_LINK">
+		<sensor name="right_thigh_imu" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+    <link name="RIGHT_SHIN">
+        <inertial>
+            <mass value="0.00079204241" />
+            <origin rpy="0 0 0" xyz="0.001903824 5.66875e-05 -0.0062043825" />
+            <inertia ixx="2.7281925e-08" ixy="1.684125e-10" ixz="-2.0626875e-09" iyy="2.8305625e-08" iyz="9.19625e-11" izz="4.8938031e-09" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/RightShin.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+
+    
+	<link name="RIGHT_SHIN_IMU_LINK">
+		<inertial>
+			<mass value="0" />
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+	</link>
+	<joint name="RIGHT_SHIN_IMU_JOINT" type="fixed">
+		<origin rpy="1.403695170631842 0 -1.570796" xyz="0.0028365125 -0.000437909 -0.0078374805" />
+		<axis xyz="0 0 1" />
+		<parent link="RIGHT_SHIN" />
+		<child link="RIGHT_SHIN_IMU_LINK" />
+	</joint>
+	<gazebo reference="RIGHT_SHIN_IMU_LINK">
+		<sensor name="right_shin_imu" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+    <link name="RIGHT_ANKLE_Y_LINK">
+        <inertial>
+            <mass value="6.30704e-06" />
+            <origin rpy="0 0 0" xyz="1.47e-08 1.11e-08 -0.0002314985" />
+            <inertia ixx="5.415625e-12" ixy="6.625e-17" ixz="-3.9375e-17" iyy="2.23125e-12" iyz="-6.3125e-18" izz="5.784375e-12" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/AnklePitchLink.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+    <link name="RIGHT_FOOT">
+        <inertial>
+            <mass value="0.00016103909" />
+            <origin rpy="0 0 0" xyz="0.001896686 -1.095e-07 -0.002218315" />
+            <inertia ixx="4.1153125e-10" ixy="3.29375e-12" ixz="1.1386563e-10" iyy="1.2057438e-09" iyz="-1.790625e-12" izz="1.2708563e-09" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/legs/Foot.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+        <collision name="right_foot_collision">
+            <geometry>
+                    <box size="0.011 0.005 0.001" />
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.0025 0 -0.003" />
+        </collision>
+    </link>
+
+    
+	<link name="RIGHT_FOOT_IMU_LINK">
+		<inertial>
+			<mass value="0" />
+			<origin rpy="0 0 0" xyz="0 0 0" />
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+	</link>
+	<joint name="RIGHT_FOOT_IMU_JOINT" type="fixed">
+		<origin rpy="0 0 1.570796" xyz="-0.001787763 0.000590089 -0.0024898525" />
+		<axis xyz="0 0 1" />
+		<parent link="RIGHT_FOOT" />
+		<child link="RIGHT_FOOT_IMU_LINK" />
+	</joint>
+	<gazebo reference="RIGHT_FOOT_IMU_LINK">
+		<sensor name="right_foot_imu" type="imu">
+			<always_on>true</always_on>
+			<imu>
+				<noise>
+					<type>gaussian</type>
+					<rate>
+						<mean>0</mean>
+						<stddev>0.0002</stddev>
+						<bias_mean>7.5e-06</bias_mean>
+						<bias_stddev>8e-07</bias_stddev>
+					</rate>
+					<accel>
+						<mean>0</mean>
+						<stddev>0.017</stddev>
+						<bias_mean>0.1</bias_mean>
+						<bias_stddev>0.001</bias_stddev>
+					</accel>
+				</noise>
+			</imu>
+		</sensor>
+	</gazebo>
+
+   
+    <link name="TORSO_LINK">
+        <inertial>
+            <mass value="0.0013597903" /> 
+            <origin rpy="0 0 0" xyz="-0.0007 5e-05 0.0163" />
+            <inertia ixx="5.5155223e-08" ixy="7.2801844e-12" ixz="2.5948619e-09" iyy="3.8675063e-08" iyz="2.2636356e-10" izz="3.4674949e-08" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/torso.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0.00525315" />
+        </visual>
+    </link>
+
+    
+    <joint name="TORSO_IMU_JOINT" type="fixed">
+        <origin rpy="0.0 0.0 -1.5708" xyz="-0.00048765 -0.0005375 0.01867025" />
+        <axis xyz="0 0 1" />
+        <parent link="TORSO_LINK" />
+        <child link="TORSO_IMU_LINK" />
+    </joint>
+
+    <link name="TORSO_IMU_LINK">
+        <inertial>
+            <mass value="0" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+     </link>
+
+    <gazebo reference="TORSO_IMU_LINK">
+        <sensor name="torso_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    
+   <link name="NECK_Z_LINK">
+        <inertial>
+            <mass value="0.00012896572" />
+            <origin rpy="0 0 0" xyz="0.0003132855 0.00029917 0.007574058" />
+            <inertia ixx="1.9104813e-09" ixy="-1.6325e-11" ixz="-1.829125e-10" iyy="1.8828219e-09" iyz="-8.7728125e-11" izz="3.0621875e-10" />
+        </inertial>
+        <visual>
+            <geometry>
+                <cylinder radius="0.0025" length="0.005" />
+            </geometry>
+            <material name="gray">
+                <color rgba="0.5 0.5 0.5 1.0" />
+            </material>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+    <link name="HEAD_LINK">
+        <inertial>
+            <mass value="0.00015883242" />
+            <origin rpy="0 0 0" xyz="0.00203832 -0.000198339 0.00035815" />
+            <inertia ixx="1.3257094e-09" ixy="-2.7621875e-11" ixz="1.7026563e-10" iyy="1.5682031e-09" iyz="-3.3946875e-11" izz="1.4124313e-09" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/ALX02_01_A02_HeadLink.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>-
+
+    
+    <joint name="HEAD_IMU_JOINT" type="fixed">
+        <origin rpy="0.56723 0.0 1.5708 " xyz="0.0020278 -0.00070775 0.0028508" />
+        <axis xyz="0 0 1" />
+        <parent link="HEAD_LINK" />
+        <child link="HEAD_IMU_LINK" />
+    </joint>
+
+    <link name="HEAD_IMU_LINK">
+        <inertial>
+            <mass value="0" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+     </link>
+
+    <gazebo reference="HEAD_IMU_LINK">
+        <sensor name="head_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    
+    <link name="LEFT_SHOULDER_Y_LINK">
+        <inertial>
+            <mass value="0.0003791499" />
+            <origin rpy="0 0 0" xyz="-0.000132 0.0060675 -0.0003412" />
+            <inertia ixx="3.4833e-09" ixy="7.551875e-11" ixz="4.709375e-11" iyy="2.1866094e-09" iyz="9.6489688e-10" izz="3.1231875e-09" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/LeftShoulderPitchLink.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+    <link name="LEFT_SHOULDER_X_LINK"> 
+        <inertial>
+            <mass value="0.00014520097" />
+            <origin rpy="0 0 0" xyz="0.0005265 0.001062 -0.00526345" />
+            <inertia ixx="2.4588469e-09" ixy="5.1303125e-11" ixz="-2.3655e-10" iyy="2.2720281e-09" iyz="3.1012188e-10" izz="5.6390625e-10" />
+        </inertial>
+        <visual>
+            <geometry>
+                    <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/LeftShoulderRollLink_longBicep.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+    <link name="LEFT_SHOULDER_Z_LINK">
+        <inertial>
+            <mass value="0.00039175" />
+            <origin rpy="0 0 0" xyz="0.0002552015 0.000137 -0.0108725" />
+            <inertia ixx="8.3161156e-09" ixy="9.28125e-13" ixz="4.60175e-10" iyy="8.2289938e-09" iyz="1.2499063e-10" izz="9.6389063e-10" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/LeftShoulderYawLink.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0.004335" />
+        </visual>
+    </link>
+    <link name="LEFT_ELBOW_Y_LINK"> 
+        <inertial>
+            
+            <mass value="8.6715731e-05" />
+            <origin rpy="0 0 0" xyz="-0.0005454675 -0.0005735945 -0.0051943575" />
+            <inertia ixx="4.2896406e-09" ixy="1.06125e-11" ixz="-9.5221875e-11" iyy="4.3058188e-09" iyz="2.5477188e-10" izz="1.7427813e-10" />
+
+            
+            
+            
+            
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/LEFT_ELBOW_PITCH_LINK_413mm_LENGTH.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+        
+    </link>
+
+    
+    <link name="LEFT_SHOULDER_Y_IMU_LINK">
+        <inertial>
+            <mass value="0" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    
+    <joint name="LEFT_SHOULDER_Y_IMU_JOINT" type="fixed">
+        <origin rpy="-1.570796 1.570796 0" xyz="0.00087 0.003472 -0.0015125" />
+        <axis xyz="0 0 1" />
+        <parent link="LEFT_SHOULDER_Y_LINK" />
+        <child link="LEFT_SHOULDER_Y_IMU_LINK" />
+    </joint>
+    <gazebo reference="LEFT_SHOULDER_Y_IMU_LINK">
+        <sensor name="left_shoulder_pitch_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    
+    
+    <link name="LEFT_SHOULDER_Z_IMU_LINK">
+        <inertial>
+            <mass value="0" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+     </link>
+    <joint name="LEFT_SHOULDER_Z_IMU_JOINT" type="fixed">
+        <origin rpy="-1.570796 3.1415926 -0.314159" xyz="-0.0003817295 -0.00061662 -0.0159" />
+        <axis xyz="0 0 1" />
+        <parent link="LEFT_SHOULDER_Z_LINK" />
+        <child link="LEFT_SHOULDER_Z_IMU_LINK" />
+    </joint>
+    <gazebo reference="LEFT_SHOULDER_Z_IMU_LINK">
+        <sensor name="left_shoulder_yaw_imu" type="imu">
+            <always_on>true</always_on>
+                <pose>0 0 0 0 0 0 </pose>
+                <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    
+    <link name="RIGHT_SHOULDER_Y_LINK">
+        <inertial>
+            <mass value="0.0003759404" />
+            <origin rpy="0 0 0" xyz="-0.000132 -0.0060675 -0.0003412" />
+            <inertia ixx="3.4622625e-09" ixy="-8.2746875e-11" ixz="-4.8734375e-11" iyy="2.1721813e-09" iyz="-9.6489688e-10" izz="3.0994e-09" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RightShoulderPitchLink.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+    <link name="RIGHT_SHOULDER_X_LINK"> 
+        <inertial>
+            <mass value="0.00014519841" />
+            <origin rpy="0 0 0" xyz="0.0005265 -0.001062 -0.00526345" />
+            <inertia ixx="2.4590781e-09" ixy="-5.1275e-11" ixz="-2.3625313e-10" iyy="2.2722219e-09" iyz="-3.0973125e-10" izz="5.6395313e-10" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RightShoulderRollLink_longBicep.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+    </link>
+    <link name="RIGHT_SHOULDER_Z_LINK">
+        <inertial>
+            <mass value="0.00038763911" />
+            <origin rpy="0 0 0" xyz="0.000262 -0.000137 -0.0108725" />
+            <inertia ixx="8.2130313e-09" ixy="3.1125e-12" ixz="4.8196875e-10" iyy="8.1448188e-09" iyz="-1.2646875e-10" izz="9.5260625e-10" />
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RightShoulderYawLink.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0.004335" />
+        </visual>
+    </link>
+    <link name="RIGHT_ELBOW_Y_LINK"> 
+        <inertial>
+            
+            <mass value="8.6715208e-05" />
+            <origin rpy="0 0 0" xyz="-0.0005454675 0.0005735945 -0.0051943575" />
+            <inertia ixx="4.2895469e-09" ixy="-1.054375e-11" ixz="-9.516875e-11" iyy="4.3058469e-09" iyz="-2.5415313e-10" izz="1.7415625e-10" />
+
+            
+            
+            
+            
+        </inertial>
+        <visual>
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v1_description/meshes/cycloidal_arm/RIGHT_ELBOW_PITCH_LINK_413mm_LENGTH.obj" />
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0 0 0" />
+        </visual>
+
+    </link>
+
+    
+    
+    <joint name="RIGHT_SHOULDER_Y_IMU_JOINT" type="fixed">
+        <origin rpy="1.570796 -1.570796 0" xyz="0.000875 -0.00352 -0.000389" />
+        <axis xyz="0 0 1" />
+        <parent link="RIGHT_SHOULDER_Y_LINK" />
+        <child link="RIGHT_SHOULDER_Y_IMU_LINK" />
+    </joint>
+    <link name="RIGHT_SHOULDER_Y_IMU_LINK">
+        <inertial>
+          <mass value="0" />
+          <origin rpy="0 0 0" xyz="0 0 0" />
+          <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <gazebo reference="RIGHT_SHOULDER_Y_IMU_LINK">
+        <sensor name="right_shoulder_pitch_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    
+    <joint name="RIGHT_SHOULDER_Z_IMU_JOINT" type="fixed">
+        <origin rpy="1.570796 0 0.314159" xyz="0.0001 0.0008 -0.0159" />
+        <axis xyz="0 0 1" />
+        <parent link="RIGHT_SHOULDER_Z_LINK" />
+        <child link="RIGHT_SHOULDER_Z_IMU_LINK" />
+    </joint>
+
+    <link name="RIGHT_SHOULDER_Z_IMU_LINK">
+        <inertial>
+            <mass value="0" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+     </link>
+
+    <gazebo reference="RIGHT_SHOULDER_Z_IMU_LINK">
+        <sensor name="right_shoulder_yaw_imu" type="imu">
+            <always_on>true</always_on>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+                    </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+                    </accel>
+                </noise>
+            </imu>
+        </sensor>
+    </gazebo>
+</robot>
