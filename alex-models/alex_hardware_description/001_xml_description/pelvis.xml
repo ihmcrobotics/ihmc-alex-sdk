@@ -16,10 +16,10 @@
             <alias>5003</alias>
             <position>0</position>
             <actuatorPackage>A005</actuatorPackage>
-            <outputEncoderInverted>true</outputEncoderInverted> <!--Commutation inverted (CW=pos)-->
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>15.9310935379642</motorOffset>
-            <outputOffset>4.8023525561352995</outputOffset>
+            <outputEncoderInverted>false</outputEncoderInverted> <!--Commutation inverted (CW=pos)-->
+            <reversePositiveMotorDirection>false</reversePositiveMotorDirection>
+            <motorOffset>1.719680667756208</motorOffset>
+            <outputOffset>6.134920983093614</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>

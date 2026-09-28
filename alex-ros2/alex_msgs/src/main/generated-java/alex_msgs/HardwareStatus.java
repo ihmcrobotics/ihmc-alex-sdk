@@ -42,7 +42,7 @@ float64 motor_bus_current_amps
 float64 motor_bus_power_watts
 
 # Joint States
-ROSDeviceStatusProvider[<=75] device_status_providers}</pre>
+ROSDeviceStatusProvider[<=100] device_status_providers}</pre>
 */
 public class HardwareStatus implements ROS2Message<HardwareStatus>
 {
@@ -93,7 +93,7 @@ public class HardwareStatus implements ROS2Message<HardwareStatus>
       bus_over_current_fault_ = (boolean) false;
       bus_over_voltage_warning_ = (boolean) false;
       bus_over_current_warning_ = (boolean) false;
-      device_status_providers_ = new IDLObjectSequence<alex_msgs.ROSDeviceStatusProvider>(0, 75, alex_msgs.ROSDeviceStatusProvider.class);
+      device_status_providers_ = new IDLObjectSequence<alex_msgs.ROSDeviceStatusProvider>(0, 100, alex_msgs.ROSDeviceStatusProvider.class);
 
    }
 
