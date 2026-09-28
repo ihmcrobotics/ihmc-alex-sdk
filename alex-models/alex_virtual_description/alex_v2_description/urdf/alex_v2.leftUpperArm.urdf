@@ -79,7 +79,7 @@
 
     <!-- LEFT SHOULDER PITCH IMU Information -->
     <joint name="LEFT_SHOULDER_Y_IMU_JOINT" type="fixed">
-        <origin rpy="-1.570796 1.570796 0" xyz="0.0174 0.06944 -0.03025"/>
+        <origin rpy="3.1415 0 -1.5702" xyz="0.0174 0.06944 -0.03025"/>
         <axis xyz="0 0 1"/>
         <parent link="LEFT_SHOULDER_Y_LINK"/>
         <child link="LEFT_SHOULDER_Y_IMU_LINK"/>
