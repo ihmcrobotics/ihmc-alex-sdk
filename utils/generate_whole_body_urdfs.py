@@ -3,8 +3,8 @@
 Assemble the Alex V2 composite URDF parts into single whole-body URDF files.
 
 Each body segment of Alex lives in its own URDF so configurations can be mixed and matched. This script stitches
-a fixed set of those parts together (the same way downstream consumers such as ihmc-lab do) and writes the result
-next to the parts, so tools that expect a single URDF can load the robot directly.
+a fixed set of those parts together and writes the result next to the parts, so tools that expect a single URDF 
+can load the robot directly.
 
 Outputs (in alex-models/alex_virtual_description/alex_v2_description/urdf):
   alex_v2.wholeBody.urdf                      - full body with cycloidal forearms, no hands
