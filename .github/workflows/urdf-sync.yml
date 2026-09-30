@@ -1,0 +1,36 @@
+name: Whole-body URDF sync
+
+# Regenerates the Alex V2 whole-body URDFs from their composite parts and fails if they differ from the committed files.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ develop ]
+    paths:
+      - "alex-models/alex_virtual_description/**"
+      - "alex-ros2/ihmc_hands_ros2"
+      - "utils/generate_whole_body_urdfs.py"
+      - ".github/workflows/urdf-sync.yml"
+  pull_request:
+    paths:
+      - "alex-models/alex_virtual_description/**"
+      - "alex-ros2/ihmc_hands_ros2"
+      - "utils/generate_whole_body_urdfs.py"
+      - ".github/workflows/urdf-sync.yml"
+
+jobs:
+  urdf-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check whole-body URDFs match their parts
+        run: python3 utils/generate_whole_body_urdfs.py --check
