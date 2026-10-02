@@ -1,8 +1,0 @@
-<?xml version = "1.0" ?>
-<robot name="Alex">
-    <joint name="LEFT_ABILITY_HAND_ADAPTER" type="fixed">
-        <origin xyz="0 -0.0175 -0.02" rpy="3.141592 0 0"/>
-        <parent link="LEFT_GRIPPER_Z_LINK"/>
-        <child link="left_ability_hand_base"/>
-    </joint>
-</robot>
