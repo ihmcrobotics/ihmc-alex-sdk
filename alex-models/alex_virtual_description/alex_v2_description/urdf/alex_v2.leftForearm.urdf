@@ -86,6 +86,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="left_wrist_x_collision">
+            <origin xyz="0 0.01 0.0" rpy="0 0 0"/>
+            <geometry>
+                <capsule radius="0.05" length="0.03"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="LEFT_GRIPPER_Z" type="revolute">
@@ -109,30 +115,6 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
-        <collision name="left_gripper_z_collision">
-            <origin xyz="0 -0.01 -0.1" rpy="0 0 0"/>
-            <geometry>
-                <capsule radius="0.04" length="0.1"/>
-            </geometry>
-        </collision>
-        <collision name="left_fist_collision">
-            <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.012 -0.075"/>
-            <geometry>
-                <cylinder radius="0.047" length="0.06"/>
-            </geometry>
-        </collision>
-        <collision name="left_finger_collision">
-            <origin rpy="0.0 0.0 0.0" xyz="-0.001 0.013 -0.145"/>
-            <geometry>
-                <box size="0.08 0.025 0.075"/>
-            </geometry>
-        </collision>
-        <collision name="left_thumb_collision">
-            <origin rpy="0.0 -1.1 0.0" xyz="0.08 0.0 -0.06"/>
-            <geometry>
-                <cylinder radius="0.015" length="0.07"/>
-            </geometry>
-        </collision>
     </link>
 
     <!-- Left Forearm IMUs -->
