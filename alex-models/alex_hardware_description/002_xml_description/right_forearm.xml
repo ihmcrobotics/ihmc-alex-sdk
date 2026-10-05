@@ -7,9 +7,9 @@
             <position>0</position>
             <actuatorPackage>A071</actuatorPackage>
             <useLatestCode>false</useLatestCode>
-            <reversePositiveMotorDirection>true</reversePositiveMotorDirection>
-            <motorOffset>35.88015541095457</motorOffset>
-            <outputOffset>5.9057825923394685</outputOffset>
+            <outputEncoderInverted>true</outputEncoderInverted>
+            <motorOffset>43.595565739243895</motorOffset>
+            <outputOffset>0.34538864690313753</outputOffset>
             <present>true</present>
         </XmlPlatinumTwitter>
         <XmlPlatinumTwitter>

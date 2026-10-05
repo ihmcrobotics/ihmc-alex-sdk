@@ -378,13 +378,13 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/Foot.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/AlexV2Foot.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
         <collision name="left_foot_collision">
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/Foot_convex.stl"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/foot_convex.stl"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </collision>
@@ -598,13 +598,13 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/Foot.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/AlexV2Foot.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
         <collision name="right_foot_collision">
             <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/Foot_convex.stl"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/foot_convex.stl"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </collision>
@@ -651,6 +651,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="zed_collision">
+            <geometry>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/ZEDXMini_convex.stl"/>
+            </geometry>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+        </collision>
     </link>
 
     <!-- TORSO IMU -->
