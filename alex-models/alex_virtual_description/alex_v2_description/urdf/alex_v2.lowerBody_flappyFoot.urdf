@@ -375,9 +375,9 @@
             <inertia ixx="1.180000e-03" ixy="4.009129e-04" ixz="3.706497e-04" iyy="2.857000e-03" iyz="-1.366126e-04" izz="2.003956e-03"/>
         </inertial>
         <visual>
-            <origin rpy="0.0 0.0 0.0" xyz="0.126 -0.030 -0.055"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <sphere radius="0.025"/>
+                <mesh filename="package://alex_V2_description/meshes/LeftFlappyFootInnerLink.obj"/>
             </geometry>
         </visual>
         <collision name="left_foot_y_inner_front_collision">
@@ -386,12 +386,6 @@
                 <sphere radius="0.025"/>
             </geometry>
         </collision>
-        <visual>
-            <origin rpy="0.0 0.0 0.0" xyz="-0.029 0.004 -0.050"/>
-            <geometry>
-                <sphere radius="0.033"/>
-            </geometry>
-        </visual>
         <collision name="left_foot_y_inner_heel_collision">
             <origin rpy="0.0 0.0 0.0" xyz="-0.029 0.004 -0.050"/>
             <geometry>
@@ -406,9 +400,9 @@
             <inertia ixx="3.49356e-04" ixy="-2.18212e-04" ixz="4.83438e-04" iyy="1.16700e-03" iyz="1.23340e-04" izz="9.50205e-04"/>
         </inertial>
         <visual>
-            <origin rpy="0.0 0.0 0.0" xyz="0.111 0.028 -0.055"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <sphere radius="0.025"/>
+                <mesh filename="package://alex_V2_description/meshes/LeftFlappyFootOuterLink.obj"/>
             </geometry>
         </visual>
         <collision name="left_foot_y_outer_collision">
@@ -624,9 +618,9 @@
             <inertia ixx="1.180000e-03" ixy="-4.009129e-04" ixz="3.706497e-04" iyy="2.857000e-03" iyz="1.366126e-04" izz="2.003956e-03"/>
         </inertial>
         <visual>
-            <origin rpy="0.0 0.0 0.0" xyz="0.126 0.030 -0.055"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <sphere radius="0.025"/>
+                <mesh filename="package://alex_V2_description/meshes/RightFlappyFootInnerLink.obj"/>
             </geometry>
         </visual>
         <collision name="right_foot_y_inner_front_collision">
@@ -635,12 +629,6 @@
                 <sphere radius="0.025"/>
             </geometry>
         </collision>
-        <visual>
-            <origin rpy="0.0 0.0 0.0" xyz="-0.029 -0.004 -0.050"/>
-            <geometry>
-                <sphere radius="0.033"/>
-            </geometry>
-        </visual>
         <collision name="right_foot_y_inner_heel_collision">
             <origin rpy="0.0 0.0 0.0" xyz="-0.029 -0.004 -0.050"/>
             <geometry>
@@ -656,9 +644,9 @@
             <inertia ixx="3.49356e-04" ixy="2.18212e-04" ixz="4.83438e-04" iyy="1.16700e-03" iyz="-1.23340e-04" izz="9.50205e-04"/>
         </inertial>
         <visual>
-            <origin rpy="0.0 0.0 0.0" xyz="0.111 -0.028 -0.055"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <sphere radius="0.025"/>
+                <mesh filename="package://alex_V2_description/meshes/RightFlappyFootOuterLink.obj"/>
             </geometry>
         </visual>
         <collision name="right_foot_y_outer_collision">
