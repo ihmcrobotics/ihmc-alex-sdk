@@ -121,7 +121,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/Pelvis.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/Pelvis.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -180,7 +180,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/LeftHipRollLink.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/LeftHipRollLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -237,7 +237,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/LeftHipYawLink.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/LeftHipYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -251,7 +251,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/LeftThigh.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/LeftThigh.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -277,7 +277,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/LeftShin.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/LeftShin.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -377,7 +377,7 @@
         <visual>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://alex_V2_description/meshes/LeftFlappyFootInnerLink.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/LeftFlappyFootInnerLink.obj"/>
             </geometry>
         </visual>
         <collision name="left_foot_y_inner_front_collision">
@@ -402,7 +402,7 @@
         <visual>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://alex_V2_description/meshes/LeftFlappyFootOuterLink.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/LeftFlappyFootOuterLink.obj"/>
             </geometry>
         </visual>
         <collision name="left_foot_y_outer_collision">
@@ -423,7 +423,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/RightHipRollLink.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/RightHipRollLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
@@ -480,7 +480,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/RightHipYawLink.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/RightHipYawLink.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -494,7 +494,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/RightThigh.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/RightThigh.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -557,7 +557,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/legs/RightShin.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/legs/RightShin.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
         </visual>
@@ -620,7 +620,7 @@
         <visual>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://alex_V2_description/meshes/RightFlappyFootInnerLink.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/RightFlappyFootInnerLink.obj"/>
             </geometry>
         </visual>
         <collision name="right_foot_y_inner_front_collision">
@@ -646,7 +646,7 @@
         <visual>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="package://alex_V2_description/meshes/RightFlappyFootOuterLink.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/RightFlappyFootOuterLink.obj"/>
             </geometry>
         </visual>
         <collision name="right_foot_y_outer_collision">
@@ -667,7 +667,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V2_description/meshes/AlexV2Torso.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/AlexV2Torso.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 -0.018"/>
         </visual>
@@ -700,7 +700,7 @@
         </inertial>
         <visual>
             <geometry>
-                <mesh filename="package://alex_V1_description/meshes/ZEDXMini.obj"/>
+                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/ZEDXMini.obj"/>
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
