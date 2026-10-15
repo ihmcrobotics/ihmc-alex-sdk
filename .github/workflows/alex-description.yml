@@ -1,0 +1,67 @@
+name: alex_description
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ develop ]
+    paths:
+      - alex-models/alex_virtual_description/**
+      - alex-ros2/ihmc_hands_ros2
+      - alex_description/**
+      - utils/generate_alex_description.py
+      - .github/workflows/alex-description.yml
+  pull_request:
+    paths:
+      - alex-models/alex_virtual_description/**
+      - alex-ros2/ihmc_hands_ros2
+      - alex_description/**
+      - utils/generate_alex_description.py
+      - .github/workflows/alex-description.yml
+
+jobs:
+  alex-description:
+    runs-on: self-hosted
+    container:
+      image: osrf/ros:jazzy-desktop
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Check committed generated URDFs are up to date
+        run: |
+          python3 utils/generate_alex_description.py
+          if [[ -n "$(git status --porcelain -- alex_description)" ]]; then
+            git status --short -- alex_description
+            echo "::error::Generated URDFs are out of date with their fragments. Run 'python3 utils/generate_alex_description.py' and commit the result."
+            exit 1
+          fi
+
+      - name: Build and validate alex_description
+        run: |
+          source /opt/ros/jazzy/setup.bash
+          workspace="$RUNNER_TEMP/alex_description_ws"
+          rm -rf "$workspace" && mkdir -p "$workspace/src"
+          cp -r alex_description "$workspace/src/"
+          cd "$workspace"
+          colcon build
+          source install/setup.bash
+          share="$(ros2 pkg prefix alex_description)/share/alex_description"
+          for urdf in "$share"/urdf/*.urdf; do
+            check_urdf "$urdf" > /dev/null
+            echo "$(basename "$urdf"): parsed"
+          done
+          python3 - "$share" <<'EOF'
+          import pathlib, re, sys
+          share = pathlib.Path(sys.argv[1])
+          missing = [f"{urdf.name}: {path}" for urdf in (share / "urdf").glob("*.urdf")
+                     for path in re.findall(r'package://alex_description/([^"]+)', urdf.read_text())
+                     if not (share / path).is_file()]
+          if missing:
+              sys.exit("Missing mesh files:\n" + "\n".join(missing))
+          print("All mesh references resolve")
+          EOF

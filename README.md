@@ -1,32 +1,40 @@
-<p align="center">
-  <img src="media/alexander_running.png" width="30%" /><br>
-  <a href="https://robots.ihmc.us/">IHMC Robotics</a>
-</p>
+<p align="center"><img src="media/banner.svg" alt="IHMC Alex Humanoid"></p>
 
 # ihmc-alex-sdk
-Light SDK with resources for visualizing/simulating Alex, properly initializing hardware, and communicating between low and high-level processes.
+Robot models, hardware configuration, and ROS 2 messages for the [IHMC](https://robots.ihmc.us/) Alex Humanoid.
 
-## SDK Structure
-### alex-models
-This directory contains all files specific to describing Alex V1 (`alex_V1_description`) and Alex V2 (`alex_V2_description`). The subdirectories in the version 
-directories are as follows:
-- `hardware`: Contains XML files describing the hardware on the robot, including parameters for all sensors and actuators
-  - For simplicity when switching robot configurations, each body segment is split into its own file to be selected if that segment is included
-- `meshes`: Contains the OBJ and MTL files to describe each link on Alex
-- `mjcf`: Contains XML files for use with MuJoCo
-- `rl_urdf`: URDF files describing Alex for use in reinforcement learning applications.
-- `urdf`: URDF files describing Alex for use in visualization/simulation within the IHMC Java Framework
-  - For simplicity when switching robot configurations, each body segment is split into its own file to be selected if that segment is included
-### alex-ros2
-This directory contains all files specific to ROS communication between the low-level and high-level communication of Alex
-- `alex_msgs`: Contains all Alex-specific messages used for communication
-  - The generated Java code for using these messages is contained within `src/main/generated-java`
-- `ihmc-hands-ros2`: Git submodule of [`ihmc-hands-ros2`](https://github.com/ihmcrobotics/ihmc_hands_ros2)
-  - This contains URDF and OBJ files for hands used on Alex and ROS messages for communication with hands
+```
+git clone --recurse-submodules https://github.com/ihmcrobotics/ihmc-alex-sdk.git
+```
+
+## Contents
+| Directory | What's in it |
+|---|---|
+| `alex_description` | ROS 2 description package with single-file URDFs and meshes, for RViz, MoveIt, Pinocchio, etc. |
+| `alex-models/alex_virtual_description` | Per-segment URDFs and meshes (V2), used by IHMC software |
+| `alex-models/alex_hardware_description` | Hardware configuration for each unit (e.g. `001_xml_description`) and each actuator package |
+| `alex-ros2/alex_msgs` | ROS 2 messages for commanding the robot and reading its state, with generated Java bindings |
+| `alex-ros2/ihmc_hands_ros2` | Submodule with the hand models and messages |
+| `utils` | Scripts for generating the URDFs, collision meshes, and README banner |
+
+## Using the URDF
+Put `alex_description` in a colcon workspace's `src` directory, then:
+```
+colcon build --packages-select alex_description
+source install/setup.bash
+ros2 launch alex_description display.launch.py  # model:=alex_v2.wholeBody_convex.urdf for no hands
+```
+
+`alex_description` is generated from the segment URDFs. Don't edit it by hand. After changing a segment, run
+`python3 utils/generate_alex_description.py` and commit the result. CI fails if it's out of date.
+
+## Using from Java
+```kotlin
+api("us.ihmc:ihmc-alex-sdk:0.4.0")
+```
 
 ## Maintainers
 * Stefan Fasano (sfasano@ihmc.org)
 * Reese Peterson (rpeterson@ihmc.org)
 * Dexton Anderson (danderson@ihmc.org)
 * Robert Griffin (rgriffin@ihmc.org)
-* Duncan Calvert (dcalvert@ihmc.org)

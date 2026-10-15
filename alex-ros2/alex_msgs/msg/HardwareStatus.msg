@@ -28,4 +28,4 @@ float64 motor_bus_current_amps
 float64 motor_bus_power_watts
 
 # Joint States
-ROSDeviceStatusProvider[<=75] device_status_providers
+ROSDeviceStatusProvider[<=100] device_status_providers
