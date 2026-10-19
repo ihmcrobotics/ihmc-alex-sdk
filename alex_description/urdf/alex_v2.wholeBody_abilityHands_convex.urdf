@@ -720,7 +720,7 @@
     </visual>
   </link>
   <joint name="HEAD_IMU_JOINT" type="fixed">
-    <origin rpy="0.0 0.0 0.0" xyz="-0.02432603 -0.00225290 0.07425800" />
+    <origin rpy="0.0 0.0 -1.5702" xyz="-0.02432603 -0.00225290 0.07425800" />
     <axis xyz="0 0 1" />
     <parent link="HEAD_LINK" />
     <child link="HEAD_IMU_LINK" />
@@ -837,7 +837,7 @@
     </collision>
   </link>
   <joint name="LEFT_SHOULDER_Y_IMU_JOINT" type="fixed">
-    <origin rpy="-1.570796 1.570796 0" xyz="0.0174 0.06944 -0.03025" />
+    <origin rpy="3.1415 0 -1.5702" xyz="0.014320 0.079919 -0.002860" />
     <axis xyz="0 0 1" />
     <parent link="LEFT_SHOULDER_Y_LINK" />
     <child link="LEFT_SHOULDER_Y_IMU_LINK" />
@@ -1169,7 +1169,7 @@
     </collision>
   </link>
   <joint name="RIGHT_SHOULDER_Y_IMU_JOINT" type="fixed">
-    <origin rpy="1.570796 -1.570796 0" xyz="0.0175 -0.0704 -0.00778" />
+    <origin rpy="3.1415 0 -1.5702" xyz="0.014320 -0.104252 -0.002729" />
     <axis xyz="0 0 1" />
     <parent link="RIGHT_SHOULDER_Y_LINK" />
     <child link="RIGHT_SHOULDER_Y_IMU_LINK" />
