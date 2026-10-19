@@ -115,6 +115,12 @@
             </geometry>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
         </visual>
+        <collision name="left_gripper_z_collision">
+            <origin xyz="0 -0.01 -0.1" rpy="0 0 0"/>
+            <geometry>
+                <capsule radius="0.04" length="0.1"/>
+            </geometry>
+        </collision>
     </link>
 
     <!-- Left Forearm IMUs -->
