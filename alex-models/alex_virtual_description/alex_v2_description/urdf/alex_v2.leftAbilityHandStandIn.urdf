@@ -16,17 +16,10 @@
                 <box size="0.157 0.053 0.184"/>
             </geometry>
         </visual>
-        <collision name="left_ability_hand_stand_in_collision">
-            <origin rpy="0 0 0" xyz="0.037 -0.003 0.092"/>
+        <collision name="left_hand_collision">
+            <origin xyz="0 -0.01 -0.1" rpy="0 0 0" />
             <geometry>
-                <box size="0.157 0.053 0.184"/>
-            </geometry>
-        </collision>
-        <!-- Moved from LEFT_GRIPPER_Z_LINK in alex_v2.leftForearm_convex.urdf -->
-        <collision name="left_fist_collision">
-            <origin rpy="0.0 0.0 3.14159" xyz="0.0 -0.0175 -0.02"/>
-            <geometry>
-                <mesh filename="package://alex_virtual_description/alex_v2_description/meshes/cycloidal_arm/LeftFist_convex.stl"/>
+                <capsule radius="0.04" length="0.1" />
             </geometry>
         </collision>
     </link>
