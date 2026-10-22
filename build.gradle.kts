@@ -12,7 +12,7 @@ ihmc {
    openSource = true
 
    configureDependencyResolution()
-   resourceDirectory("main", "../../alex-models")
+   resourceDirectory("main", "../../alex_description")
    resourceDirectory("main", "../../alex-ros2")
    ihmc.sourceSet("main").resources.exclude("/ihmc_hands_ros2")
    javaDirectory("main", "../../alex-ros2/alex_msgs/src/main/generated-java")
