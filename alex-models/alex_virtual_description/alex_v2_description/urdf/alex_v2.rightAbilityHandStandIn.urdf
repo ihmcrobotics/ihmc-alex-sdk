@@ -11,13 +11,13 @@
             <inertia ixx="0.0007060" ixy="0.00001845" ixz="-0.000006654" iyy="0.001161" iyz="0.00008590" izz="0.0005593"/>
         </inertial>
         <visual>
-            <origin rpy="0 0 0" xyz="-0.037 -0.003 0.092"/>
+            <origin xyz="0 -0.01 0.1" rpy="0 0 0" />
             <geometry>
-                <box size="0.157 0.053 0.184"/>
+                <capsule radius="0.04" length="0.1" />
             </geometry>
         </visual>
         <collision name="right_hand_collision">
-        <origin xyz="0 -0.01 0.1" rpy="0 0 0" />
+            <origin xyz="0 -0.01 0.1" rpy="0 0 0" />
             <geometry>
                 <capsule radius="0.04" length="0.1" />
             </geometry>
