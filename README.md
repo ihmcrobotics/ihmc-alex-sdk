@@ -11,8 +11,7 @@ git clone --recurse-submodules https://github.com/ihmcrobotics/ihmc-alex-sdk.git
 | Directory | What's in it |
 |---|---|
 | `alex_description` | ROS 2 description package with single-file URDFs and meshes, for RViz, MoveIt, Pinocchio, etc. |
-| `alex-models/alex_virtual_description` | Per-segment URDFs and meshes (V2), used by IHMC software |
-| `alex-models/alex_hardware_description` | Hardware configuration for each unit (e.g. `001_xml_description`) and each actuator package |
+| `alex_description/urdf_src` | Per-segment URDFs (V2), used by IHMC software |
 | `alex-ros2/alex_msgs` | ROS 2 messages for commanding the robot and reading its state, with generated Java bindings |
 | `alex-ros2/ihmc_hands_ros2` | Submodule with the hand models and messages |
 | `utils` | Scripts for generating the URDFs, collision meshes, and README banner |
