@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 Generates alex_description, a standalone ROS 2 robot description package with whole-body
-URDFs of the IHMC Alex Humanoid, from the per-segment URDF fragments in alex-models and the
-hand models in ihmc_hands_ros2.
+URDFs of the IHMC Alex Humanoid, from the per-segment URDF fragments in alex_description/urdf_src
+and the hand models in ihmc_hands_ros2.
 
 Each variant is merged into a single URDF, every referenced mesh (plus its .mtl and
 textures) is copied into the package, and mesh URIs are rewritten to
@@ -22,15 +22,17 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 PACKAGE_NAME = "alex_description"
 PACKAGE_VERSION = "0.1.0"
 
-V2_URDF_DIR = REPO_ROOT / "alex-models/alex_virtual_description/alex_v2_description/urdf"
+PACKAGE_DIR = REPO_ROOT / PACKAGE_NAME
+V2_URDF_DIR = PACKAGE_DIR / "urdf_src"
+V2_MESH_DIR = PACKAGE_DIR / "meshes/alex_v2"
 HANDS_ROOT = REPO_ROOT / "alex-ros2/ihmc_hands_ros2"
 ABILITY_HAND_URDF_DIR = HANDS_ROOT / "urdf/abilityHand"
 
 # Maps the package:// prefixes used by the source URDFs to (source directory, destination
 # directory under meshes/). Longest prefix wins.
 MESH_SOURCES = {
-    "package://alex_virtual_description/alex_v2_description/meshes/":
-        (REPO_ROOT / "alex-models/alex_virtual_description/alex_v2_description/meshes", "alex_v2"),
+    "package://alex_description/meshes/alex_v2/":
+        (V2_MESH_DIR, "alex_v2"),
     "package://abilityHand/":
         (HANDS_ROOT / "meshes/abilityHand", "ability_hand"),
 }
@@ -143,8 +145,9 @@ def copy_with_dependencies(source, destination, copied):
         return
     if not source.is_file():
         raise FileNotFoundError(f"Referenced mesh file not found: {source}")
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(source, destination)
+    if source != destination:
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
     copied.add(destination)
     for dependency in mesh_dependencies(source):
         dependency_source = source.parent / dependency
@@ -288,10 +291,12 @@ Window Geometry:
 
 
 def generate_package():
-    output = REPO_ROOT / PACKAGE_NAME
-    shutil.rmtree(output, ignore_errors=True)
+    output = PACKAGE_DIR
+    # Only the generated outputs are cleaned; urdf_src/ and meshes/alex_v2/ are the sources.
+    for subdir in ("urdf", "launch", "rviz", "meshes/ability_hand"):
+        shutil.rmtree(output / subdir, ignore_errors=True)
     for subdir in ("urdf", "meshes", "launch", "rviz"):
-        (output / subdir).mkdir(parents=True)
+        (output / subdir).mkdir(parents=True, exist_ok=True)
     meshes_dir = output / "meshes"
     copied = set()
     root_links = set()

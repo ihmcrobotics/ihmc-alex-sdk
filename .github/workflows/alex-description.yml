@@ -5,14 +5,12 @@ on:
   push:
     branches: [ develop ]
     paths:
-      - alex-models/alex_virtual_description/**
       - alex-ros2/ihmc_hands_ros2
       - alex_description/**
       - utils/generate_alex_description.py
       - .github/workflows/alex-description.yml
   pull_request:
     paths:
-      - alex-models/alex_virtual_description/**
       - alex-ros2/ihmc_hands_ros2
       - alex_description/**
       - utils/generate_alex_description.py
