@@ -12,18 +12,14 @@ ihmc {
    openSource = true
 
    configureDependencyResolution()
-   resourceDirectory("main", "../../alex-models")
+
+   // The following 3 lines ensure only alex_description/ and alex_msgs/ are added to classpath
+   resourceDirectory("main", "../../")
    resourceDirectory("main", "../../alex-ros2")
-   ihmc.sourceSet("main").resources.exclude("/ihmc_hands_ros2")
+   ihmc.sourceSet("main").resources.include("alex_description/**", "alex_msgs/**")
+
    javaDirectory("main", "../../alex-ros2/alex_msgs/src/main/generated-java")
    configurePublications()
-}
-
-// Under an alex_description/ folder, so the URDFs' package://alex_description/ mesh URIs resolve on the classpath
-tasks.named<Copy>("processResources") {
-   from(projectDir) {
-      include("alex_description/**")
-   }
 }
 
 mainDependencies {
